@@ -4,7 +4,9 @@ Mix.setPublicPath('public');
 
 Mix.js('resources/js/app.js', 'public/js');
 
-Mix.sass('resources/sass/app.scss', 'public/css');
+Mix.postCss('resources/css/app.css', 'public/css', [
+    require('tailwindcss')('./resources/css/config.js'),
+]);
 
 if (Mix.inProduction()) {
     Mix.version();
