@@ -9,6 +9,7 @@ module.exports = {
 
         ...require('./sizes'),
         ...require('./colors'),
+        ...require('./positions'),
         ...require('./utils'),
     },
     variants: {
