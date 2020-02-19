@@ -19,6 +19,10 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+$app->singleton('markdown', function ($app) {
+    return new ParsedownExtra;
+});
+
 // Register Service Providers.
 
 $app->register(\App\Http\RouteServiceProvider::class);
