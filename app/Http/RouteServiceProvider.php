@@ -25,7 +25,7 @@ class RouteServiceProvider extends ServiceProvider
     public function mapWebRoutes($options)
     {
         $this->app->router->group($options, function ($router) {
-            $router->addRoute('GET', '[/{page}]', PageController::class);
+            $router->addRoute('GET', '/[{page:.*}]', PageController::class);
         });
     }
 }
