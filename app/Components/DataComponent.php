@@ -21,6 +21,11 @@ class DataComponent
         return $this->type;
     }
 
+    public function data()
+    {
+        return $this->data;
+    }
+
     public function get($key = null, $default = null)
     {
         return Arr::get($this->data, $key, $default);
