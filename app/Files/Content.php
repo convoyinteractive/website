@@ -22,7 +22,7 @@ class Content
         return Arr::get($this->data, $key, $default);
     }
 
-    public function sections()
+    public function components()
     {
         return $this->transform(
             $this->get('body')
