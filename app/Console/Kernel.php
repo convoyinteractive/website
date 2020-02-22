@@ -9,7 +9,7 @@ class Kernel extends ConsoleKernel
 {
     protected $commands = [
         ClearCache::class,
-        LinkContents::class
+        LinkAssets::class,
     ];
 
     protected function schedule(Schedule $schedule)
