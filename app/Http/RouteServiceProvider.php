@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\UpdateLocale;
 use App\Http\Middleware\CacheResponse;
 use Illuminate\Support\ServiceProvider;
 use App\Http\Controllers\PageController;
@@ -12,20 +13,21 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->app->routeMiddleware([
             'cache' => CacheResponse::class,
+            'locale' => UpdateLocale::class,
         ]);
     }
 
     public function boot()
     {
         $this->mapWebRoutes([
-            'middleware' => 'cache'
+            'middleware' => ['locale', 'cache']
         ]);
     }
 
     public function mapWebRoutes($options)
     {
         $this->app->router->group($options, function ($router) {
-            $router->addRoute('GET', '/[{page:.*}]', PageController::class);
+            $router->addRoute('GET', '{locale}[/{page:.*}]', PageController::class);
         });
     }
 }
