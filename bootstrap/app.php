@@ -26,5 +26,6 @@ $app->singleton('markdown', function ($app) {
 // Register Service Providers.
 
 $app->register(\App\Http\RouteServiceProvider::class);
+$app->register(\App\View\ViewServiceProvider::class);
 
 return $app;
