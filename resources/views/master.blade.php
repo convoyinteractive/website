@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
 <body>
+    @include('partials.navigation')
     @yield('content')
     <script src="{{ mix('/js/app.js') }}"></script>
 </body>

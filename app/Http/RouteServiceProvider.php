@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\LoadGlobals;
 use App\Http\Middleware\UpdateLocale;
 use App\Http\Middleware\CacheResponse;
 use Illuminate\Support\ServiceProvider;
@@ -14,13 +15,14 @@ class RouteServiceProvider extends ServiceProvider
         $this->app->routeMiddleware([
             'cache' => CacheResponse::class,
             'locale' => UpdateLocale::class,
+            'globals' => LoadGlobals::class,
         ]);
     }
 
     public function boot()
     {
         $this->mapWebRoutes([
-            'middleware' => ['locale', 'cache']
+            'middleware' => ['cache', 'locale', 'globals']
         ]);
     }
 
