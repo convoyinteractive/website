@@ -20,7 +20,7 @@ class UpdateLocale
             throw new NotFoundHttpException;
         }
 
-        config(['app.locale' => $locale]);
+        app('translator')->setLocale($locale);
 
         return $next($request);
     }
