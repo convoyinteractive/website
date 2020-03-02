@@ -23,7 +23,7 @@ module.exports = {
     /* Typogtraphy */
 
     fontFamily: {
-        sans: ['Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        body: ['Roboto Slab', 'sans-serif'],
         serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
         mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
     },
