@@ -1,6 +1,7 @@
 /node_modules
 /vendor
 .env
+.env.*
 
 public/css
 public/js
