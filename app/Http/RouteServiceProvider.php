@@ -8,6 +8,7 @@ use App\Http\Middleware\UpdateLocale;
 use App\Http\Middleware\CacheResponse;
 use Illuminate\Support\ServiceProvider;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\LocaleController;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,8 @@ class RouteServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        $this->app->router->addRoute('GET', '/', LocaleController::class);
+
         $this->mapWebRoutes([
             'middleware' => ['preview', 'cache', 'locale', 'globals']
         ]);
