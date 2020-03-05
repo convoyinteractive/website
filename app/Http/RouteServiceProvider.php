@@ -15,7 +15,6 @@ class RouteServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->routeMiddleware([
-            'preview' => Preview::class,
             'cache' => CacheResponse::class,
             'locale' => UpdateLocale::class,
             'globals' => LoadGlobals::class,
@@ -24,10 +23,13 @@ class RouteServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->app->router->addRoute('GET', '/', LocaleController::class);
+        $this->app->router->addRoute('GET', '/', [
+            'middleware' => Preview::class,
+            'uses' => LocaleController::class
+        ]);
 
         $this->mapWebRoutes([
-            'middleware' => ['preview', 'cache', 'locale', 'globals']
+            'middleware' => ['cache', 'locale', 'globals']
         ]);
     }
 
