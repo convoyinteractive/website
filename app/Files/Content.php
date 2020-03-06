@@ -32,6 +32,10 @@ class Content
     protected function transform($items)
     {
         return Collection::make($items)->map(function ($item) {
+            if (Arr::has($item, 'relation')) {
+                return Relation::make($item['relation'])->content();
+            }
+
             if (Arr::has($item, 'data')) {
                 return new DataComponent($item['type'], $item['data']);
             }
