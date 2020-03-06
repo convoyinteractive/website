@@ -21,7 +21,7 @@
             </div>
         </main>
 
-        <footer class="bg-black text-white block px-6 py-12">
+        <footer class="bg-black text-white block px-6 py-12 mt-32">
             <hr class="my-8">
             @include('partials.socials')
         </footer>

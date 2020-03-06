@@ -1,6 +1,6 @@
 @if($content->has('meta.title'))
     <div class="px-6 py-12 md:py-32 lg:py-50 lg:w-5/6 mx-auto">
-        <h1 class="text-6 md:text-10 lg:text-16 bold uppercase">{{ $content->get('meta.title') }}</h1>
+        <h1 class="text-6 md:text-10 lg:text-16 font-bold uppercase">{{ $content->get('meta.title') }}</h1>
         {{ $content->get('meta.subtitle') }}
     </div>
 @endif
