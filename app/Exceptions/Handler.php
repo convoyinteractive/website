@@ -22,7 +22,10 @@ class Handler extends ExceptionHandler
 
     public function render($request, Exception $exception)
     {
-        dd($exception);
+        if (in_array(app('env'), ['local', 'dev'])) {
+            return parent::render($request, $exception);
+        }
+
         if ($exception instanceof HttpException) {
             $statusCode = $exception->getStatusCode();
 
