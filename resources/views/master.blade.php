@@ -7,8 +7,20 @@
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
 <body class="font-body">
-    @include('partials.navigation')
-    @yield('content')
+    <div class="flex flex-col min-h-screen">
+        <header class="block px-6">
+            @include('partials.navigation')
+        </header>
+
+        <main role="main" class="block flex-1 px-6">
+            @yield('content')
+        </main>
+
+        <footer class="bg-black text-white block px-6 py-12">
+            <hr class="my-8">
+            @include('partials.socials')
+        </footer>
+    </div>
     <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 </html>
