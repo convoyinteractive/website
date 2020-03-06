@@ -10,14 +10,19 @@ class LoadGlobals
     public function handle($request, Closure $next)
     {
         app('view')->composer('partials.navigation', function ($view) {
-            $content = new Content(
-                $this->files('content/globals/'. app('translator')->getLocale(). '/navigation.yml')
-            );
-
-            $view->with('navigation', $content->components());
+            $view->with('cases', $this->content('cases.yml')->components());
         });
 
         return $next($request);
+    }
+
+    protected function content($file)
+    {
+        $data = $this->files(
+            sprintf('content/globals/%s/%s', app('translator')->getLocale(), $file)
+        );
+
+        return new Content($data);
     }
 
     protected function files($path)
