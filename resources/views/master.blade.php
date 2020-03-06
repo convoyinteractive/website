@@ -12,8 +12,13 @@
             @include('partials.navigation')
         </header>
 
-        <main role="main" class="block flex-1 px-6">
-            @yield('content')
+        <main role="main" class="block flex-1">
+            <div class="py-6">
+                @yield('header')
+            </div>
+            <div class="px-6">
+                @yield('content')
+            </div>
         </main>
 
         <footer class="bg-black text-white block px-6 py-12">

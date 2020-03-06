@@ -2,6 +2,10 @@
     'meta' => $content->get('meta'),
 ])
 
+@section('header')
+    @include('partials.hero', compact('content'))
+@endsection
+
 @section('content')
     @include('partials.facts', [
         'facts' => $content->get('meta')

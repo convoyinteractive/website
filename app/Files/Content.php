@@ -17,6 +17,11 @@ class Content
         $this->data = $this->parse($raw);
     }
 
+    public function has($key)
+    {
+        return Arr::has($this->data, $key);
+    }
+
     public function get($key = null, $default = null)
     {
         return Arr::get($this->data, $key, $default);
