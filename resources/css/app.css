@@ -1,6 +1,7 @@
 /* purgecss start ignore */
 @tailwind base;
 @tailwind components;
+@import "markdown.css";
 /* purgecss end ignore */
 
 @tailwind utilities;
