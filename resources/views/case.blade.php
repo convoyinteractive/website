@@ -1,16 +1,16 @@
 @extends('master', [
-    'meta' => $content->meta(),
+    'meta' => $content->meta,
 ])
 
 @section('header')
     @include('partials.hero', [
-        'meta' => $content->meta(),
+        'meta' => $content->meta,
     ])
 @endsection
 
 @section('content')
     @include('partials.facts', [
-        'facts' => $content->get('meta')
+        'facts' => $content->facts
     ])
 
     @foreach($content->components() as $component)

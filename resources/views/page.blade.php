@@ -1,10 +1,10 @@
 @extends('master', [
-    'meta' => $content->meta(),
+    'meta' => $content->meta,
 ])
 
 @section('header')
     @include('partials.hero', [
-        'meta' => $content->meta(),
+        'meta' => $content->meta,
     ])
 @endsection
 
