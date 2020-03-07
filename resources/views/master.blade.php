@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    @include('partials.meta', ['meta' => $meta])
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @include('partials.meta', compact('meta'))
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>

@@ -1,9 +1,11 @@
 @extends('master', [
-    'meta' => $content->get('meta'),
+    'meta' => $content->meta(),
 ])
 
 @section('header')
-    @include('partials.hero', compact('content'))
+    @include('partials.hero', [
+        'meta' => $content->meta(),
+    ])
 @endsection
 
 @section('content')

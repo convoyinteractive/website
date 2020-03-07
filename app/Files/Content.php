@@ -27,6 +27,11 @@ class Content
         return Arr::get($this->data, $key, $default);
     }
 
+    public function meta()
+    {
+        return new DataComponent('meta', $this->get('meta'));
+    }
+
     public function components()
     {
         return $this->transform(
