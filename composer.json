@@ -3,10 +3,10 @@
     "description": "The Convoy Interactive Website",
     "type": "project",
     "require": {
-        "php": "^7.2",
+        "php": "^7.2.5",
         "erusev/parsedown": "^1.7",
         "erusev/parsedown-extra": "^0.8.1",
-        "laravel/lumen-framework": "^6.0",
+        "laravel/lumen-framework": "^7.0",
         "symfony/yaml": "^5.0"
     },
     "autoload": {

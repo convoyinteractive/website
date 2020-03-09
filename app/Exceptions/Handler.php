@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-use Exception;
+use Throwable;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Laravel\Lumen\Exceptions\Handler as ExceptionHandler;
@@ -15,12 +15,12 @@ class Handler extends ExceptionHandler
         HttpException::class,
     ];
 
-    public function report(Exception $exception)
+    public function report(Throwable $exception)
     {
         parent::report($exception);
     }
 
-    public function render($request, Exception $exception)
+    public function render($request, Throwable $exception)
     {
         if (in_array(app('env'), ['local', 'dev'])) {
             return parent::render($request, $exception);
