@@ -10,7 +10,9 @@ module.exports = {
 
     /* Border */
 
-    borderRadius: {},
+    borderRadius: {
+        circle: '999px',
+    },
 
     borderWidth: {},
 
