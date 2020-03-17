@@ -16,7 +16,7 @@ class CacheResponse
 
     public function handle($request, Closure $next)
     {
-        if (in_array(app('env'), ['local', 'dev', 'stage'])) {
+        if (in_array(app()->environment(), ['local', 'dev', 'stage'])) {
             return $next($request);
         }
 

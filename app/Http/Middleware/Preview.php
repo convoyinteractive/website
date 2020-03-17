@@ -10,7 +10,7 @@ class Preview
     {
         if (
             ! $request->preview
-            || $this->isProduction()
+            || app()->isProduction()
         ) {
             return $next($request);
         }
@@ -20,10 +20,5 @@ class Preview
         exec("cd {$root} && git pull && git checkout {$branch}");
 
         return $next($request);
-    }
-
-    protected function isProduction()
-    {
-        return app('env') === 'production';
     }
 }

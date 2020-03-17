@@ -12,4 +12,14 @@ class Container extends Application
 
         $this->make('cache');
     }
+
+    public function isProduction()
+    {
+        return $this->environment() === 'production';
+    }
+
+    public function isStage()
+    {
+        return $this->environment() === 'stage';
+    }
 }
