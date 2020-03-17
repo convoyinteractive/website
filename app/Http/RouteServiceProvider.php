@@ -2,7 +2,6 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\Preview;
 use App\Http\Middleware\LoadGlobals;
 use App\Http\Middleware\UpdateLocale;
 use App\Http\Middleware\CacheResponse;
@@ -23,14 +22,11 @@ class RouteServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->app->router->addRoute('GET', '/', [
-            'middleware' => Preview::class,
-            'uses' => LocaleController::class
-        ]);
-
         $this->mapWebRoutes([
             'middleware' => ['cache', 'locale', 'globals']
         ]);
+
+        $this->app->router->addRoute('GET', '/', LocaleController::class);
     }
 
     public function mapWebRoutes($options)
