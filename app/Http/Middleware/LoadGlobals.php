@@ -19,7 +19,7 @@ class LoadGlobals
     protected function content($file)
     {
         $data = $this->files(
-            sprintf('content/globals/%s/%s', app('translator')->getLocale(), $file)
+            sprintf('content/components/%s/%s', app('translator')->getLocale(), $file)
         );
 
         return new Content($data);
