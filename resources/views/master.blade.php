@@ -27,6 +27,6 @@
             @include('partials.socials')
         </footer>
     </div>
-    <script src="{{ mix('/js/app.js') }}"></script>
+    <script data-turbolinks-eval="false" src="{{ mix('/js/app.js') }}"></script>
 </body>
 </html>

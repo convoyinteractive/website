@@ -2,6 +2,7 @@
 
 use App\Container;
 use App\Http\Middleware\Preview;
+use App\Http\Middleware\Turbolinks;
 use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -33,6 +34,8 @@ $app->singleton('markdown', function ($app) {
 if ($app->isStage()) {
     $app->middleware(Preview::class);
 }
+
+$app->middleware(Turbolinks::class);
 
 // Register Service Providers.
 
