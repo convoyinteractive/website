@@ -6,9 +6,10 @@
     @include('partials.meta', compact('meta'))
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <script src="{{ mix('/js/app.js') }}"></script>
 </head>
 <body class="font-body">
-    <div class="flex flex-col min-h-screen">
+    <div id="convoy" class="flex flex-col min-h-screen">
         <header class="block px-6">
             @include('partials.navigation')
         </header>
@@ -27,6 +28,5 @@
             @include('partials.socials')
         </footer>
     </div>
-    <script data-turbolinks-eval="false" src="{{ mix('/js/app.js') }}"></script>
 </body>
 </html>
