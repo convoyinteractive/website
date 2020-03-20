@@ -46,6 +46,10 @@ class Content
                 return Relation::make($item['relation'])->content();
             }
 
+            if (Arr::has($item, 'svg')) {
+                return Svg::make($item['svg'])->content();
+            }
+
             if (Arr::has($item, 'data')) {
                 return new DataComponent($item['type'], $item['data']);
             }
