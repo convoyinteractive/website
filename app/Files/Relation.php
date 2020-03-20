@@ -19,7 +19,7 @@ class Relation
     public function content()
     {
         $data = $this->files(
-            sprintf('content/pages/%s/%s.yml', app('translator')->getLocale(), $this->path)
+            sprintf('content/collections/%s/%s.yml', app('translator')->getLocale(), $this->path)
         );
 
         return new Content($data);
