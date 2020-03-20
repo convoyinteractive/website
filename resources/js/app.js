@@ -25,3 +25,9 @@ document.addEventListener("turbolinks:load",
         el: '#convoy',
     })
 );
+
+// Register web components.
+import Navigation from './components/Navigation';
+import SlideFromRight from './components/SlideFromRight';
+Vue.component('nav-menu', Navigation);
+Vue.component('off-canvas', SlideFromRight);

@@ -14,6 +14,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
+    "gsap": "^3.2.4",
     "turbolinks": "^5.2.0",
     "vue": "^2.6.11"
   }
