@@ -10,7 +10,10 @@ class LoadGlobals
     public function handle($request, Closure $next)
     {
         app('view')->composer('partials.navigation', function ($view) {
-            $view->with('cases', $this->content('cases.yml')->components());
+            $view->with('navigation', [
+                'about' => $this->content('about.yml')->components(),
+                'cases' => $this->content('cases.yml')->components(),
+            ]);
         });
 
         return $next($request);
