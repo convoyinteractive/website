@@ -9,4 +9,7 @@ public/assets
 public/images
 public/mix-manifest.json
 
+storage/content/*
+!storage/content/.gitkeep
+
 composer.lock
