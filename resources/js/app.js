@@ -17,8 +17,10 @@ Turbolinks.start();
 */
 import Vue from "vue";
 import Turbovue from "./mixins/Turbovue";
+import ClickAway from "./mixins/ClickAway";
 
 Vue.mixin(Turbovue);
+Vue.directive("click-away", ClickAway);
 
 document.addEventListener("turbolinks:load",
     event => new Vue({
