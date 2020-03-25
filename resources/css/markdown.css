@@ -14,5 +14,5 @@
 .markdown h5,
 .markdown h6,
 .markdown p {
-    @apply mb-3;
+    @apply max-w-4xl mx-auto mb-3;
 }

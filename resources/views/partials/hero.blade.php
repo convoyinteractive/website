@@ -1,7 +1,7 @@
 @if($meta->has('title'))
-    <div class="px-6 py-12 md:py-32 lg:py-50">
-        <h1 class="text-6 md:text-10 lg:text-16 font-bold uppercase">{{ $meta->get('title') }}</h1>
-        {{ $meta->get('subtitle') }}
+    <div class="px-6 font-sans lg:w-5/6 mx-auto my-40">
+        <h1 class="font-bold text-6xl">{{ $meta->get('title') }}</h1>
+        <span class="block text-sm">{{ $meta->get('subtitle') }}</span>
     </div>
 @endif
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <script src="{{ mix('/js/app.js') }}"></script>
 </head>
-<body class="font-body">
+<body class="font-serif text-xl leading-normal">
     <div id="convoy" class="flex flex-col min-h-screen">
         <header class="block px-6">
             @include('partials.navigation')
