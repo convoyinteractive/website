@@ -1,3 +1,5 @@
+import Turbolinks from "turbolinks";
+
 export default {
     data: () => {
         return {
@@ -7,7 +9,13 @@ export default {
     },
 
     mounted() {
-        document.addEventListener("turbolinks:click", event => this.close());
+        document.addEventListener("turbolinks:click", event => {
+            if (this.isOpen) {
+                Turbolinks.clearCache();
+            }
+
+            this.close();
+        });
     },
 
     methods: {
