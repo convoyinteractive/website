@@ -5,3 +5,7 @@
 /* purgecss end ignore */
 
 @tailwind utilities;
+
+.turbolinks-progress-bar {
+    @apply bg-green h-2;
+}

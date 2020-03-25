@@ -13,7 +13,8 @@ module.exports = {
             transparent: "transparent",
             black: "#000000",
             white: "#ffffff",
-            gray: "#f6f6f6"
+            gray: "#f6f6f6",
+            green: "#00ff00"
         },
         spacing: {
             px: "1px",
