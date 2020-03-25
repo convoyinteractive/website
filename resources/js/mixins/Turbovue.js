@@ -3,15 +3,14 @@
  * licensed under MIT Copyright (c) Jeffrey Guenther
  *
  * @see https://github.com/jeffreyguenther/vue-turbolinks
-*/
+ */
 
 const destroy = vue => {
-    let event = vue.$options.turbolinksDestroyEvent || 'turbolinks:visit';
-    document.addEventListener(event, function teardown() {
+    document.addEventListener("turbolinks:before-render", function teardown() {
         vue.$destroy();
         document.removeEventListener(event, teardown);
     });
-}
+};
 
 export default {
     beforeMount() {
@@ -20,8 +19,8 @@ export default {
 
             this.$turbolinksCachedHtml = this.$el.outerHTML;
 
-            this.$once('hook:destroyed', () => {
-                this.$el.outerHTML = this.$turbolinksCachedHtml
+            this.$once("hook:destroyed", () => {
+                this.$el.outerHTML = this.$turbolinksCachedHtml;
             });
         }
     }

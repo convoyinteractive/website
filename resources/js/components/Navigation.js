@@ -6,6 +6,10 @@ export default {
         };
     },
 
+    mounted() {
+        document.addEventListener("turbolinks:click", event => this.close());
+    },
+
     methods: {
         open(value) {
             this.current = value;
@@ -20,5 +24,5 @@ export default {
         isActive(key) {
             return this.current === key;
         }
-    },
-}
+    }
+};
