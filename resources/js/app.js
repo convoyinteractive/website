@@ -4,7 +4,7 @@
  */
 const ready = (element, callback) => {
     document.addEventListener("turbolinks:load", event =>
-        callback(element, event)
+        callback(element, event),
     );
 };
 

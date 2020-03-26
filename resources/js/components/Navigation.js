@@ -4,7 +4,7 @@ export default {
     data: () => {
         return {
             isOpen: false,
-            current: null
+            current: null,
         };
     },
 
@@ -31,6 +31,6 @@ export default {
 
         isActive(key) {
             return this.current === key;
-        }
-    }
+        },
+    },
 };

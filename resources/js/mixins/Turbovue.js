@@ -23,5 +23,5 @@ export default {
                 this.$el.outerHTML = this.$turbolinksCachedHtml;
             });
         }
-    }
+    },
 };

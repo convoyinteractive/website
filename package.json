@@ -1,21 +1,22 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run dev -- --watch",
-    "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-  },
-  "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.1.0",
-    "cross-env": "^7.0.2",
-    "laravel-mix": "^5.0.4",
-    "resolve-url-loader": "^3.1.1",
-    "tailwindcss": "^1.2.0",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "dependencies": {
-    "gsap": "^3.2.4",
-    "turbolinks": "^5.2.0",
-    "vue": "^2.6.11"
-  }
+    "private": true,
+    "scripts": {
+        "prettier": "prettier --write 'resources/**/*.{css,js}'",
+        "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run dev -- --watch",
+        "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "@fullhuman/postcss-purgecss": "^2.1.0",
+        "cross-env": "^7.0.2",
+        "laravel-mix": "^5.0.4",
+        "resolve-url-loader": "^3.1.1",
+        "tailwindcss": "^1.2.0",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "dependencies": {
+        "gsap": "^3.2.4",
+        "turbolinks": "^5.2.0",
+        "vue": "^2.6.11"
+    }
 }
