@@ -10,7 +10,9 @@
                     @endforeach
                 </div>
                 <div v-show="isActive('cases')">
-                    Cases
+                    @foreach($navigation['cases'] as $item)
+                        {{ var_dump($item) }}
+                    @endforeach
                 </div>
                 <div v-show="isActive('contact')">
                     Contact
