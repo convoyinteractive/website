@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "gsap": "^3.2.4",
+        "mediajs": "^0.2.0",
         "turbolinks": "^5.2.0",
         "vue": "^2.6.11"
     }
