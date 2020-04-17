@@ -4,26 +4,18 @@ namespace App\Components;
 
 use Illuminate\Support\Arr;
 
-class DataComponent
+class Component
 {
-    protected $type;
-
     protected $data;
 
-    public function __construct($type, $data)
+    public function __construct($data)
     {
-        $this->type = $type;
         $this->data = $data;
     }
 
     public function type()
     {
-        return $this->type;
-    }
-
-    public function data()
-    {
-        return $this->data;
+        return $this->get('type', 'component');
     }
 
     public function get($key = null, $default = null)

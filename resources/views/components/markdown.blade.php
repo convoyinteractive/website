@@ -1,3 +1,3 @@
 <div class="markdown {{ $class ?? '' }}">
-    {{ html($component->data()) }}
+    {{ $component->html() }}
 </div>

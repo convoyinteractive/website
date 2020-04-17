@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Files\Content;
-use Illuminate\Filesystem\Filesystem;
+use App\Repositories\Collection;
 
 class PageController
 {
-    public function __invoke($locale, $page = null, Filesystem $files)
+    public function __invoke($locale, $page = null, Collection $collection)
     {
         $filename = $page ?? 'home';
 
-        $content = new Content(
-            $files->get(storage_path("content/collections/{$locale}/{$filename}.yml"))
-        );
+        $content = $collection->fetch("{$locale}/{$filename}");
 
-        return view($content->get('view') ?? 'page', compact('content'));
+        return view($content->template(), compact('content'));
     }
 }

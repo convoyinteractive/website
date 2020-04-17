@@ -1,1 +1,1 @@
-{{ $component->get('content') }}
+{{ $component->html() }}

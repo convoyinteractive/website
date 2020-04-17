@@ -3,16 +3,22 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Files\Content;
+use App\Repositories\Component;
 
 class LoadGlobals
 {
+    protected $component;
+
+    public function __construct(Component $component)
+    {
+        $this->component = $component;
+    }
     public function handle($request, Closure $next)
     {
         app('view')->composer('partials.navigation', function ($view) {
             $view->with('navigation', [
-                'about' => $this->content('about.yml')->components(),
-                'cases' => $this->content('cases.yml')->components(),
+                'about' => $this->content('about')->components(),
+                'cases' => $this->content('cases')->components(),
             ]);
         });
 
@@ -21,15 +27,6 @@ class LoadGlobals
 
     protected function content($file)
     {
-        $data = $this->files(
-            sprintf('content/components/%s/%s', app('translator')->getLocale(), $file)
-        );
-
-        return new Content($data);
-    }
-
-    protected function files($path)
-    {
-        return app('files')->get(storage_path($path));
+        return $this->component->fetch(app('translator')->getLocale(). '/' .$file);
     }
 }
