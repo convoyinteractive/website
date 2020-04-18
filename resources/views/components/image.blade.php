@@ -1,5 +1,5 @@
-<figure>
-    <div class="{{ $class ?? '' }}">
+<figure class="{{ $class ?? '' }}">
+    <div>
         <picture>
             <source media="(min-width: 500px)" srcset="{{ $component->get('sizes.large') }}">
             <img src="{{ $component->get('sizes.small') }}" alt="{{ $component->get('alt') }}">
