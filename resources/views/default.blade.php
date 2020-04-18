@@ -11,9 +11,11 @@
 @section('content')
     @foreach($content->components() as $component)
         <div class="pt-12">
-            @include("components.{$component->type()}", [
-                'component' => $component
-            ])
+            @include(view()->exists("components.{$component->type()}")
+                ? "components.{$component->type()}"
+                : "components.error",
+                compact('component')
+            )
         </div>
     @endforeach
 @endsection

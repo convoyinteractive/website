@@ -6,6 +6,6 @@ class Page extends Data
 {
     public function template()
     {
-        return $this->get('view', 'page');
+        return $this->get('type');
     }
 }
