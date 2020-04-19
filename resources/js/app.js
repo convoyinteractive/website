@@ -40,3 +40,15 @@ import Navigation from "./components/Navigation";
 import SlideFromRight from "./components/SlideFromRight";
 Vue.component("nav-menu", Navigation);
 Vue.component("off-canvas", SlideFromRight);
+
+/**
+ * Next we will load the "dragable" library and add touch and drag gestures to scrollable
+ * elements. This library listens for the "mousedown", "mouseup" and "mousemove" events
+ * and updates the scrollbars. Now we may use a mouse or trackpad like a touchscreen.
+ */
+import Dragable from "./Dragable";
+ready("[dragable]", elements =>
+    Array.from(document.querySelectorAll(elements)).forEach(element =>
+        tap(new Dragable(element), dragable => dragable.mount()),
+    ),
+);
