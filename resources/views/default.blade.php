@@ -11,7 +11,7 @@
     @endif
 
     @if($content->has('meta.image'))
-    <picture class="block w-full mb-40">
+    <picture class="block w-full mb-40 pointer-events-none">
         <source media="(min-width: 500px)" srcset="{{ $content->get('meta.image.sizes.large') }}">
         <img class="block w-full" src="{{ $content->get('meta.image.sizes.small') }}" alt="{{ $content->get('meta.image.alt') }}">
     </picture>
