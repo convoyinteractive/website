@@ -1,3 +1,5 @@
+import { tap } from "@tobiasthaden/tap";
+
 /**
  * First we'll register our ready helper. The given callback receives the element
  * as its first argument and will be handled as soon as the load event fires.

@@ -15,6 +15,7 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
+        "@tobiasthaden/tap": "^1.0.0",
         "gsap": "^3.2.6",
         "mediajs": "^0.2.0",
         "turbolinks": "^5.2.0",
