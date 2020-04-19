@@ -18,6 +18,11 @@ class Component
         return $this->get('type', 'component');
     }
 
+    public function is($types)
+    {
+        return in_array($this->type(), is_array($types) ? $types : [$types]);
+    }
+
     public function get($key = null, $default = null)
     {
         return Arr::get($this->data, $key, $default);
