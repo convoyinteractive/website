@@ -18,12 +18,17 @@
     @endif
 
     @foreach($content->components() as $component)
-        <div class="pt-12">
-            @include(view()->exists("components.{$component->type()}")
-                ? "components.{$component->type()}"
-                : "components.error",
-                compact('component')
-            )
+        <div class="my-20 mx-auto flex {{ $component->is(['markdown', 'list']) ? 'w-10/12' : 'w-full' }}" id="{{ $component->get('name') }}">
+            @if($component->has('title'))
+                <div class="w-3/10">
+                    {{ $component->get('title') }}
+                </div>
+            @endif
+
+            @include(view()->exists("components.{$component->type()}") ? "components.{$component->type()}" : "components.error", [
+                'component' => $component,
+                'class' => $styles->get($component->type(), 'p-6'),
+            ])
         </div>
     @endforeach
 @endsection

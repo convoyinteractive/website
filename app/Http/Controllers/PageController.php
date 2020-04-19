@@ -6,12 +6,11 @@ use App\Repositories\Collection;
 
 class PageController
 {
-    public function __invoke($locale, $page = null, Collection $collection)
+    public function __invoke($locale, $page = 'home', Collection $collection)
     {
-        $filename = $page ?? 'home';
+        $content = $collection->fetch("{$locale}/{$page}");
+        $styles = collect(config('view.styles')[$content->template()]);
 
-        $content = $collection->fetch("{$locale}/{$filename}");
-
-        return view($content->template(), compact('content'));
+        return view($content->template(), compact('content', 'styles'));
     }
 }
