@@ -52,14 +52,3 @@ if (! function_exists('mix')) {
         return new HtmlString($manifestDirectory.$manifest[$path]);
     }
 }
-
-if (! function_exists('html')) {
-    function html($markdown)
-    {
-        $html = app('markdown')->text(
-            str_replace('\]\((?!https?:\/\/)', '](/contents/', $markdown)
-        );
-
-        return new HtmlString($html);
-    }
-}
