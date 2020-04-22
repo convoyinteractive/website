@@ -9,7 +9,7 @@ class Page extends Data
 {
     public function template()
     {
-        return $this->get('type');
+        return $this->get('type', 'default');
     }
 
     public function styles()
