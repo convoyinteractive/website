@@ -27,7 +27,7 @@
 
             @include(view()->exists("components.{$component->type()}") ? "components.{$component->type()}" : "components.error", [
                 'component' => $component,
-                'class' => $styles->get($component->type(), 'p-6'),
+                'class' => $content->styles()->get($component->type(), 'p-6'),
             ])
         </div>
     @endforeach
