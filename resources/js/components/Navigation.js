@@ -19,6 +19,10 @@ export default {
     },
 
     methods: {
+        toggle(value) {
+            this.isActive(value) ? this.close() : this.open(value);
+        },
+
         open(value) {
             this.current = value;
             this.isOpen = true;
