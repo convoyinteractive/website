@@ -1,8 +1,8 @@
 <figure class="{{ $class ?? '' }}">
     <div>
-        <picture class="pointer-events-none">
+        <picture class="w-full pointer-events-none">
             <source media="(min-width: 500px)" srcset="{{ $component->get('sizes.large') }}">
-            <img src="{{ $component->get('sizes.small') }}" alt="{{ $component->get('alt') }}">
+            <img class="w-full" src="{{ $component->get('sizes.small') }}" alt="{{ $component->get('alt') }}">
         </picture>
     </div>
 

@@ -12,6 +12,11 @@ class Page extends Data
         return $this->get('type', 'default');
     }
 
+    public function hero()
+    {
+        return $this->toComponent($this->get('meta.hero'), []);
+    }
+
     public function styles()
     {
         $config = Arr::get(

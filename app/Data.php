@@ -51,13 +51,18 @@ class Data
                 $item['items'] = $this->transform($item['items']);
             }
 
-            try {
-                $component = new $this->components[$item['type']]($item);
-                return $component;
-            } catch (Throwable $e) {
-                return new Components\Component($item);
-            }
+            return $this->toComponent($item);
         });
+    }
+
+    protected function toComponent($item)
+    {
+        try {
+            $component = new $this->components[$item['type']]($item);
+            return $component;
+        } catch (Throwable $e) {
+            return new Components\Component($item);
+        }
     }
 
     protected function isNested($item)
