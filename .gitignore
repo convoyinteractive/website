@@ -7,6 +7,7 @@ public/css
 public/js
 public/assets
 public/images
+public/vendor*
 public/mix-manifest.json
 
 storage/content/*
