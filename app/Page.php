@@ -9,7 +9,9 @@ class Page extends Data
 {
     public function template()
     {
-        return $this->get('type', 'default');
+        return view()->exists($this->get('type'))
+            ? $this->get('type')
+            : 'default';
     }
 
     public function hero()
@@ -17,13 +19,14 @@ class Page extends Data
         return $this->toComponent($this->get('meta.hero'), []);
     }
 
-    public function styles()
+    public function styles($key = [], $default = null)
     {
-        $config = Arr::get(
-            config('view.styles'),
-            $this->template()
-        );
+        if (! is_array($key)) {
+            $key = [$key];
+        }
 
-        return new Collection($config ?? []);
+        array_unshift($key, $this->get('type'));
+
+        return Arr::get(config('view.styles'), implode('.', $key), $default);
     }
 }
