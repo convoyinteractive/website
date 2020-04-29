@@ -53,3 +53,21 @@ ready("[dragable]", elements =>
         tap(new Dragable(element), dragable => dragable.mount()),
     ),
 );
+
+/**
+ * Let's load our "day 'n' night" library. The library accepts a document selector and provides
+ * two methods "sunrise" and "sunset" that keep track of our scroll position. On sunrise the
+ * daynight-attribute values are added to the class-attribute, on sunset they get removed.
+ */
+import DayNight from "./DayNight";
+ready(".daynight", elements =>
+    Array.from(document.querySelectorAll(elements)).forEach(element =>
+        tap(new DayNight(element), daynight => {
+            daynight
+                .sunrise({ offset: "50%", direction: "down" })
+                .sunset({ offset: "50%", direction: "up" })
+                .sunrise({ offset: "-50%", direction: "up" })
+                .sunset({ offset: "-50%", direction: "down" });
+        }),
+    ),
+);

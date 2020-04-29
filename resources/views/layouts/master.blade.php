@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <script src="{{ mix('/js/app.js') }}"></script>
 </head>
-<body class="font-serif text-xl leading-normal">
+<body class="font-serif text-xl leading-normal transition duration-200 ease-in-out" daynight="<?= $content->styles('waypoints.daynight') ?>">
     <div id="convoy" class="flex flex-col min-h-screen">
         <header class="block px-6">
             @include('layouts.partials.navigation')

@@ -10,6 +10,9 @@ return [
 
     'styles' => [
         'default' => [
+            'waypoints' => [
+                'daynight' => 'bg-black text-white',
+            ],
             'hero' => [
                 'wrap' => 'block',
                 'title' => 'px-6 font-sans lg:w-10/12 mx-auto my-40',
@@ -32,7 +35,7 @@ return [
                 'component' => 'w-7/10 px-6 ml-auto',
             ],
             'quote' => [
-                'component' => 'w-full min-h-screen flex items-center bg-black text-white',
+                'component' => 'w-full min-h-screen flex items-center daynight',
             ],
         ],
 
