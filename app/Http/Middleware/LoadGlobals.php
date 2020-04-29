@@ -15,7 +15,7 @@ class LoadGlobals
     }
     public function handle($request, Closure $next)
     {
-        app('view')->composer('partials.navigation', function ($view) {
+        app('view')->composer('layouts.partials.navigation', function ($view) {
             $view->with('navigation', [
                 'about' => $this->content('about')->components(),
                 'cases' => $this->content('cases')->components(),
