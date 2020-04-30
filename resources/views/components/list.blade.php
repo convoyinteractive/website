@@ -1,6 +1,6 @@
 <ul class="{{ $class ?? '' }}">
     @foreach ($component->get('items', []) as $item)
-        <li>
+        <li class="border-dotted border-t-2 border-black py-10">
             @include(
                 view()->exists("components.{$item->type()}")
                     ? "components.{$item->type()}"
