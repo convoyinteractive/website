@@ -1,8 +1,10 @@
 <nav-menu inline-template>
     <nav v-click-away="close" @keydown.esc="close" tabindex="0" class="focus:outline-none">
-        <slide-from-right>
-            <div v-show="isOpen" class="fixed bg-black opacity-25 inset-y-0 right-0 w-full pointer-events-none"></div>
-        </slide-from-right>
+        <fade-in-out>
+            <div v-show="isOpen" aria-hidden="true">
+                <div class="fixed bg-black opacity-25 inset-y-0 right-0 w-full pointer-events-none"></div>
+            </div>
+        </fade-in-out>
         <slide-from-right>
             <div v-show="isOpen" class="bg-white text-black fixed inset-y-0 right-0 pl-6 pr-12 sm:-mr-6 overflow-y-auto pt-20 w-full sm:w-8/12 md:w-6/12 lg:w-4/12">
                 <div v-show="isActive('about')">

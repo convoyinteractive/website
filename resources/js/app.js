@@ -39,6 +39,9 @@ ready("#convoy", el => new Vue({ el }));
 // prettier-ignore
 {
     Vue.component("nav-menu", () => import( /* webpackChunkName: "js/navigation" */ "./components/Navigation"));
+
+    // Transitions
+    Vue.component("fade-in-out", () => import( /* webpackChunkName: "js/fadeinout" */ "./components/FadeInOut"));
     Vue.component("slide-from-right", () => import( /* webpackChunkName: "js/slidefromright" */ "./components/SlideFromRight"));
 }
 
