@@ -4,7 +4,7 @@
             <div v-show="isOpen" class="fixed bg-black opacity-25 inset-y-0 right-0 w-full pointer-events-none"></div>
         </slide-from-right>
         <slide-from-right>
-            <div v-show="isOpen" class="bg-white text-black fixed inset-y-0 right-0 px-6 pt-20 w-full max-w-lg">
+            <div v-show="isOpen" class="bg-white text-black fixed inset-y-0 right-0 pl-6 pr-12 -mr-6 overflow-y-auto pt-20 w-full max-w-lg">
                 <div v-show="isActive('about')">
                     @foreach($navigation['about'] as $item)
                     <a href="{{ $item->get('path') }}" class="block font-sans font-bold text-4xl mb-10">
