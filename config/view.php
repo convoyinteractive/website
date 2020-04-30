@@ -26,12 +26,12 @@ return [
             ],
             'list' => [
                 'wrap' => 'my-20 mx-auto flex w-10/12',
-                'title' => 'w-3/10',
+                'title' => 'font-sans text-2xl semibold w-3/10',
                 'component' => 'w-7/10 px-6 ml-auto',
             ],
             'markdown' => [
                 'wrap' => 'my-20 mx-auto flex w-10/12',
-                'title' => 'w-3/10',
+                'title' => 'font-sans text-2xl semibold w-3/10',
                 'component' => 'w-7/10 px-6 ml-auto',
             ],
             'quote' => [
@@ -52,12 +52,12 @@ return [
             ],
             'list' => [
                 'wrap' => 'my-20 mx-auto flex w-10/12',
-                'title' => 'w-3/10',
+                'title' => 'font-sans text-2xl semibold w-3/10',
                 'component' => 'w-7/10 px-6 ml-auto',
             ],
             'markdown' => [
                 'wrap' => 'my-20 mx-auto flex w-10/12',
-                'title' => 'w-3/10',
+                'title' => 'font-sans text-2xl semibold w-3/10',
                 'component' => 'w-7/10 px-6 ml-auto',
             ],
             'quote' => [

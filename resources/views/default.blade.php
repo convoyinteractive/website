@@ -6,7 +6,7 @@
     <div class="{{ $content->styles('hero.wrap') }}">
         <div class="{{ $content->styles('hero.title') }}">
             @if($content->has('meta.title'))
-            <h1 class="font-bold text-6xl">{{ $content->get('meta.title') }}</h1>
+            <h1 class="font-bold text-6xl leading-tight">{{ $content->get('meta.title') }}</h1>
             <span class="block text-sm">{{ $content->get('meta.subtitle') }}</span>
             @endif
         </div>
