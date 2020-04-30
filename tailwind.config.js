@@ -159,6 +159,7 @@ module.exports = {
         }),
         inset: {
             "0": "0",
+            "10": "40px",
             auto: "auto",
         },
         letterSpacing: {

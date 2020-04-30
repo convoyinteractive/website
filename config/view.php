@@ -25,12 +25,12 @@ return [
                 'component' => 'mx-auto max-w-6xl',
             ],
             'list' => [
-                'wrap' => 'my-20 mx-auto flex w-10/12',
-                'title' => 'font-sans text-2xl xl:text-like-2xl font-semibold w-3/10',
+                'wrap' => 'my-20 mx-auto flex items-start w-10/12',
+                'title' => 'sticky top-10 pb-10 font-sans text-2xl xl:text-like-2xl font-semibold w-3/10',
                 'component' => 'w-7/10 px-6 ml-auto',
             ],
             'markdown' => [
-                'wrap' => 'my-20 mx-auto flex w-10/12',
+                'wrap' => 'my-20 mx-auto flex items-start w-10/12',
                 'title' => 'font-sans text-2xl xl:text-like-2xl font-semibold w-3/10',
                 'component' => 'w-7/10 px-6 ml-auto',
             ],
