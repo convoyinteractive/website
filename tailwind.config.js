@@ -7,7 +7,7 @@ module.exports = {
             sm: "480px",
             md: "768px",
             lg: "1024px",
-            xl: "1280px",
+            xl: "1680px",
         },
         colors: {
             transparent: "transparent",
@@ -126,14 +126,19 @@ module.exports = {
         fontSize: {
             xs: "0.8125rem",
             sm: "0.90625rem",
+            "like-sm": "0.864vw",
             base: "1rem",
             lg: "1.125rem",
             xl: "1.375rem",
+            "like-xl": "1.31vw",
             "2xl": "1.5rem",
+            "like-2xl": "1.429vw",
             "3xl": "2rem",
+            "like-3xl": "1.905vw",
             "4xl": "2.25rem",
             "5xl": "3rem",
             "6xl": "4.5rem",
+            "like-6xl": "4.286vw",
         },
         fontWeight: {
             hairline: "100",
