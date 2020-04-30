@@ -43,6 +43,7 @@ return [
             'hero' => [
                 'wrap' => 'flex justify-between items-center lg:w-10/12 mx-auto my-40',
                 'title' => 'px-6 font-sans',
+                'component' => 'lg:w-4/10'
             ],
             'gallery' => [
                 'component' => 'flex items-center overflow-x-auto col-gap-12 pb-6 -mb-6',

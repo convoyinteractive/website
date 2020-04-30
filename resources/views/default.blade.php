@@ -13,7 +13,7 @@
 
         @include(view()->exists("components.{$content->hero()->type()}") ? "components.{$content->hero()->type()}" : "components.error", [
             'component' => $content->hero(),
-            'class' => '',
+            'class' => $content->styles('hero.component'),
         ])
     </div>
 
