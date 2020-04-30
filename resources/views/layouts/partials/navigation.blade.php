@@ -1,5 +1,5 @@
 <nav-menu inline-template>
-    <nav v-click-away="close" @keydown.esc="close" tabindex="0">
+    <nav v-click-away="close" @keydown.esc="close" tabindex="0" class="focus:outline-none">
         <slide-from-right>
             <div v-show="isOpen" class="fixed bg-black opacity-25 inset-y-0 right-0 w-full pointer-events-none"></div>
         </slide-from-right>
