@@ -1,4 +1,4 @@
-import "waypoints/lib/noframework.waypoints.js";
+import Waypoints from "./mixins/Waypoints";
 
 export default class DayNight {
     constructor(element) {
@@ -7,7 +7,7 @@ export default class DayNight {
     }
 
     sunrise({ direction, offset }) {
-        new Waypoint({
+        new Waypoints.Waypoint({
             element: this.element,
             handler: way => {
                 if (way === direction) {
@@ -21,7 +21,7 @@ export default class DayNight {
     }
 
     sunset({ direction, offset }) {
-        new Waypoint({
+        new Waypoints.Waypoint({
             element: this.element,
             handler: way => {
                 if (way === direction) {

@@ -55,6 +55,15 @@ ready("[dragable]", elements =>
 );
 
 /**
+ * Next we will initialize waypoints – unfortunately waypoints does not support modular imports,
+ * so we wrapped the library in a exportable object and register an additional 'init' method.
+ * The method allows us to handle any events that affect all the waypoints instances.
+ */
+
+import Waypoints from "./mixins/Waypoints";
+Waypoints.init();
+
+/**
  * Let's load our "day 'n' night" library. The library accepts a document selector and provides
  * two methods "sunrise" and "sunset" that keep track of our scroll position. On sunrise the
  * daynight-attribute values are added to the class-attribute, on sunset they get removed.
