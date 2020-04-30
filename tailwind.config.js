@@ -99,6 +99,8 @@ module.exports = {
             move: "move",
             "not-allowed": "not-allowed",
         },
+        divideColor: theme => theme("borderColor"),
+        divideWidth: theme => theme("borderWidth"),
         fill: {
             current: "currentColor",
         },
@@ -253,6 +255,7 @@ module.exports = {
         },
         padding: theme => theme("spacing"),
         placeholderColor: theme => theme("colors"),
+        space: theme => theme("spacing"),
         stroke: {
             current: "currentColor",
         },
