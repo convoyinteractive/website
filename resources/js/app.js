@@ -80,3 +80,18 @@ ready(".daynight", elements =>
         }),
     ),
 );
+
+/**
+ * Vivus
+ */
+import Vivus from "vivus";
+ready(".vivus", elements =>
+    Array.from(document.querySelectorAll(elements)).forEach(
+        element =>
+            new Vivus(element, {
+                start: "inViewport",
+                type: "delayed",
+                duration: 150,
+            }),
+    ),
+);
