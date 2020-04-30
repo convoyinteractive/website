@@ -21,8 +21,8 @@
         <div class="{{ $content->styles([$component->type(), 'wrap']) }}" id="{{ $component->get('name') }}">
             @if($component->has('title'))
             <div class="{{ $content->styles([$component->type(), 'title']) }}">
-                    {{ $component->get('title') }}
-                </div>
+                {{ $component->get('title') }}
+            </div>
             @endif
 
             @include(view()->exists("components.{$component->type()}") ? "components.{$component->type()}" : "components.error", [
