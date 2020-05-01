@@ -19,7 +19,7 @@ return [
                 'component' => 'block w-full pointer-events-none'
             ],
             'gallery' => [
-                'component' => 'flex items-center overflow-x-auto col-gap-12 pb-6 -mb-6',
+                'component' => 'flex items-center overflow-x-auto space-x-12 pb-6 -mb-6',
             ],
             'image' => [
                 'component' => 'mx-auto max-w-6xl',
