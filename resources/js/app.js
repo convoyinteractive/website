@@ -98,3 +98,11 @@ ready(".vivus", elements =>
             }),
     ),
 );
+
+//
+
+ready("title", title => {
+    title = document.title;
+    window.onfocus = () => (document.title = title);
+    window.onblur = () => (document.title = "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧");
+});
