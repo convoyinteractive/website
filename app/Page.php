@@ -19,7 +19,7 @@ class Page extends Data
         return $this->toComponent($this->get('meta.hero'), []);
     }
 
-    public function styles($key = [], $default = null)
+    public function styles($key = [])
     {
         if (! is_array($key)) {
             $key = [$key];
@@ -27,6 +27,13 @@ class Page extends Data
 
         array_unshift($key, $this->get('type'));
 
-        return Arr::get(config('view.styles'), implode('.', $key), $default);
+        $default = $key;
+        $default[0] = 'default';
+
+        return Arr::get(
+            config('view.styles'),
+            implode('.', $key),
+            Arr::get(config('view.styles'), implode('.', $default), null)
+        );
     }
 }
