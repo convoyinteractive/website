@@ -11,7 +11,7 @@ return [
     'styles' => [
         'default' => [
             'waypoints' => [
-                'daynight' => 'bg-black text-white',
+                'daynight' => 'bg-green-soft text-black',
             ],
             'hero' => [
                 'wrap' => 'block',
