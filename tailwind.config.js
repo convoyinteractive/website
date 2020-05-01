@@ -132,6 +132,7 @@ module.exports = {
             "like-sm": "0.864vw",
             base: "1rem",
             lg: "1.125rem",
+            "like-lg": "1.0715vw",
             xl: "1.375rem",
             "like-xl": "1.31vw",
             "2xl": "1.5rem",
