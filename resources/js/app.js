@@ -41,10 +41,8 @@ Vue.component("nav-menu", () =>
 Vue.component("fade-in-out", () =>
     import(/* webpackChunkName: "js/transitions" */ "./components/FadeInOut"),
 );
-Vue.component("slide-from-right", () =>
-    import(
-        /* webpackChunkName: "js/transitions" */ "./components/SlideFromRight"
-    ),
+Vue.component("slide-to-left", () =>
+    import(/* webpackChunkName: "js/transitions" */ "./components/SlideToLeft"),
 );
 
 /**

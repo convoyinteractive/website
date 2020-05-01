@@ -5,7 +5,7 @@
                 <div class="fixed bg-black opacity-25 inset-y-0 right-0 w-full pointer-events-none"></div>
             </div>
         </fade-in-out>
-        <slide-from-right>
+        <slide-to-left>
             <div v-show="isOpen" class="bg-white text-black fixed inset-y-0 right-0 pl-6 pr-12 sm:-mr-6 overflow-y-auto pt-20 w-full sm:w-8/12 md:w-6/12 lg:w-4/12">
                 <div v-show="isActive('about')">
                     @foreach($navigation['about'] as $item)
@@ -23,7 +23,7 @@
                     Contact
                 </div>
             </div>
-        </slide-from-right>
+        </slide-to-left>
 
         <div class="fixed inset-x-0 bottom-0 sm:bottom-auto sm:top-0 p-6 sm:px-12 text-black">
             <div class="flex items-center rounded-full bg-white sm:bg-transparent shadow sm:shadow-none justify-between sm:justify-end sm:space-x-10">
