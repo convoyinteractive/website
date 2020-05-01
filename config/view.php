@@ -45,6 +45,11 @@ return [
                 'title' => 'px-6 font-sans',
                 'component' => 'lg:w-4/10 px-6'
             ],
+            'definition' => [
+                'wrap' => 'my-40 md:px-6',
+                'title' => 'px-6 font-sans text-3xl xl:text-like-3xl font-semibold text-center mb-10',
+                'component' => 'lg:w-10/12 mx-auto bg-green-soft px-6 py-20',
+            ],
         ],
     ],
 ];
