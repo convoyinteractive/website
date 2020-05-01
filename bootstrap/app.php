@@ -26,7 +26,9 @@ $app->singleton(
 );
 
 $app->singleton('markdown', function ($app) {
-    return new ParsedownExtra;
+    $parsedown = new ParsedownExtra;
+    $parsedown->setBreaksEnabled(true);
+    return $parsedown;
 });
 
 // Register global middlewares.
