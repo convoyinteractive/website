@@ -35,15 +35,17 @@ Vue.mixin(Turbovue);
 Vue.directive("click-away", ClickAway);
 ready("#convoy", el => new Vue({ el }));
 
-// Next we'll register our vue components - these components will be asynchronously loaded when needed.
-// prettier-ignore
-{
-    Vue.component("nav-menu", () => import( /* webpackChunkName: "js/navigation" */ "./components/Navigation"));
-
-    // Transitions
-    Vue.component("fade-in-out", () => import( /* webpackChunkName: "js/fadeinout" */ "./components/FadeInOut"));
-    Vue.component("slide-from-right", () => import( /* webpackChunkName: "js/slidefromright" */ "./components/SlideFromRight"));
-}
+Vue.component("nav-menu", () =>
+    import(/* webpackChunkName: "js/navigation" */ "./components/Navigation"),
+);
+Vue.component("fade-in-out", () =>
+    import(/* webpackChunkName: "js/transitions" */ "./components/FadeInOut"),
+);
+Vue.component("slide-from-right", () =>
+    import(
+        /* webpackChunkName: "js/transitions" */ "./components/SlideFromRight"
+    ),
+);
 
 /**
  * Next we will load the "dragable" library and add touch and drag gestures to scrollable
