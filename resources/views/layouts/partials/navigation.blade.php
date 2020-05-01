@@ -25,19 +25,13 @@
             </div>
         </slide-from-right>
 
-        <div class="fixed inset-x-0 bottom-0 sm:bottom-auto sm:top-0 p-6 sm:px-12">
-            <div class="flex items-center rounded-full bg-white sm:bg-transparent shadow sm:shadow-none justify-between sm:justify-end">
-                <button @click="toggle('about')" class="font-sans text-sm xl:text-like-sm text-center flex-grow sm:flex-grow-0 p-4 sm:p-0 sm:mr-5">
-                    {{ __('About') }}
+        <div class="fixed inset-x-0 bottom-0 sm:bottom-auto sm:top-0 p-6 sm:px-12 text-black">
+            <div class="flex items-center rounded-full bg-white sm:bg-transparent shadow sm:shadow-none justify-between sm:justify-end sm:space-x-10">
+                @foreach(['about', 'cases', 'contact'] as $item)
+                <button @click="toggle('{{$item}}')" class="font-sans text-sm xl:text-like-sm text-center flex-grow sm:flex-grow-0 p-4 sm:p-0">
+                    {{ __(ucwords($item)) }}
                 </button>
-
-                <button @click="toggle('cases')" class="font-sans text-sm xl:text-like-sm text-center flex-grow sm:flex-grow-0 p-4 sm:p-0 sm:mr-5">
-                    {{ __('Cases') }}
-                </button>
-
-                <button @click="toggle('contact')" class="font-sans text-sm xl:text-like-sm text-center flex-grow sm:flex-grow-0 p-4 sm:p-0 sm:mr-0">
-                    {{ __('Contact') }}
-                </button>
+                @endforeach
             </div>
         </div>
     </nav>
