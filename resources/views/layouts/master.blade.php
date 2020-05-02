@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dragable>
+<html lang="{{ app('translator')->getLocale() }}" dragable>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +19,11 @@
         </main>
 
         <footer class="bg-black text-white block px-6 py-12 mt-32">
+            <div class="flex space-x-6 font-sans text-sm uppercase">
+                @foreach ($meta->get('alternates', []) as $locale => $path)
+                    <a href="/{{$locale}}/{{$path}}">{{$locale}}</a>
+                @endforeach
+            </div>
             <hr class="my-8">
             @include('layouts.partials.socials')
         </footer>
