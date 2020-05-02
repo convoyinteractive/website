@@ -18,7 +18,7 @@
             @yield('content')
         </main>
 
-        <footer class="bg-black text-white block px-6 py-12 mt-32">
+        <footer class="px-6 sm:px-12 pt-12 pb-40 sm:pb-12 mt-32 bg-black text-white">
             <div class="flex space-x-6 font-sans text-sm uppercase">
                 @foreach ($meta->get('alternates', []) as $locale => $path)
                     <a href="/{{$locale}}/{{$path}}">{{$locale}}</a>

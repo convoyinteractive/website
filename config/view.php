@@ -15,7 +15,7 @@ return [
             ],
             'hero' => [
                 'wrap' => 'block',
-                'title' => 'px-6 font-sans lg:w-10/12 mx-auto my-40',
+                'title' => 'px-6 sm:px-12 mx-auto my-40 lg:w-10/12',
                 'component' => 'block w-full pointer-events-none'
             ],
             'gallery' => [
@@ -25,30 +25,32 @@ return [
                 'component' => 'mx-auto max-w-6xl',
             ],
             'list' => [
-                'wrap' => 'my-20 mx-auto md:flex items-start lg:w-10/12',
-                'title' => 'md:sticky top-10 pb-10 font-sans text-2xl xl:text-like-2xl font-semibold md:w-3/10 px-6',
-                'component' => 'md:w-7/10 px-6 ml-auto',
+                'wrap' => 'sm:px-6 mx-auto my-20 md:flex md:items-start md:justify-end lg:w-10/12',
+                'title' => 'px-6 pb-10 md:sticky top-32 font-sans text-2xl xl:text-like-2xl font-semibold md:w-3/10',
+                'component' => 'px-6 md:w-7/10',
             ],
             'markdown' => [
-                'wrap' => 'my-20 mx-auto md:flex items-start lg:w-10/12',
-                'title' => 'font-sans text-2xl xl:text-like-2xl font-semibold md:w-3/10 px-6 mb-10',
-                'component' => 'md:w-7/10 px-6 ml-auto',
+                'wrap' => 'sm:px-6 mx-auto my-20 md:flex md:items-start md:justify-end lg:w-10/12',
+                'title' => 'px-6 pb-10 font-sans text-2xl xl:text-like-2xl font-semibold md:w-3/10',
+                'component' => 'px-6 md:w-7/10',
             ],
             'quote' => [
-                'component' => 'w-full min-h-screen flex items-center daynight',
+                'wrap' => 'w-full min-h-screen flex items-center daynight',
+                'component' => 'sm:px-6',
             ],
         ],
 
         'services' => [
             'hero' => [
-                'wrap' => 'md:flex justify-between items-center lg:w-10/12 mx-auto my-40',
-                'title' => 'px-6 font-sans',
-                'component' => 'lg:w-4/10 px-6'
+                'wrap' => 'px-6 md:flex mx-auto my-40 md:items-center md:justify-between lg:w-10/12',
+                'title' => 'sm:px-6 lg:w-6/10',
+                'component' => 'sm:px-6 lg:w-4/10'
             ],
+
             'definition' => [
-                'wrap' => 'my-40 md:px-6',
-                'title' => 'px-6 font-sans text-3xl xl:text-like-3xl font-semibold text-center mb-10',
-                'component' => 'lg:w-10/12 mx-auto bg-green-soft px-6 py-20',
+                'wrap' => 'md:px-12 mx-auto my-40 lg:w-10/12',
+                'title' => 'mb-10 font-sans text-3xl xl:text-like-3xl font-semibold text-center',
+                'component' => 'px-6 py-12 sm:px-12 lg:px-32 lg:py-20 xl:px-40 mx-auto bg-green-soft',
             ],
         ],
     ],

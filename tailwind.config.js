@@ -163,7 +163,8 @@ module.exports = {
         }),
         inset: {
             "0": "0",
-            "10": "40px",
+            "12": "48px",
+            "32": "128px",
             auto: "auto",
         },
         letterSpacing: {

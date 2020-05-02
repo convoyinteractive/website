@@ -7,7 +7,7 @@
     </div>
 
     @if($component->has('caption'))
-        <figcaption class="font-sans text-center text-sm xl:text-like-sm mt-2">
+        <figcaption class="px-6 mt-2 font-sans text-center text-sm xl:text-like-sm">
             {{ $component->get('caption') }}
         </figcaption>
     @endif
