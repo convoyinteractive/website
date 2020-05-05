@@ -9,12 +9,14 @@
         </div>
 
         <fade-in-out>
-            <div v-show="isOpen" aria-hidden="true">
+            {{-- The "display: none" inline-style prevents an annoying flash before the component is fully rendered. --}}
+            <div v-show="isOpen" aria-hidden="true" style="display: none">
                 <div class="fixed bg-black opacity-25 inset-y-0 right-0 w-full pointer-events-none"></div>
             </div>
         </fade-in-out>
         <slide-to-left>
-            <div v-show="isOpen" class="bg-white text-black fixed inset-y-0 right-0 pl-6 pr-12 sm:-mr-6 overflow-y-auto pt-20 w-full sm:w-8/12 md:w-6/12 lg:w-4/12">
+            {{-- The "display: none" inline-style prevents an annoying flash before the component is fully rendered. --}}
+            <div v-show="isOpen" style="display: none" class="bg-white text-black fixed inset-y-0 right-0 pl-6 pr-12 sm:-mr-6 overflow-y-auto pt-20 w-full sm:w-8/12 md:w-6/12 lg:w-4/12">
                 <div v-show="isActive('about')">
                     @foreach($navigation['about'] as $item)
                     <a href="{{ $item->get('path') }}" class="block font-sans font-bold text-3xl xl:text-like-3xl mb-10">
