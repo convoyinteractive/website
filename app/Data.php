@@ -41,7 +41,7 @@ class Data
 
     public function __get($key)
     {
-        return new Components\Component($this->get($key) ?? []);
+        return $this->toComponent($this->get($key) ?? []);
     }
 
     protected function transform($items)
@@ -55,7 +55,7 @@ class Data
         });
     }
 
-    protected function toComponent($item)
+    protected function toComponent($item = [])
     {
         try {
             $component = new $this->components[$item['type']]($item);
