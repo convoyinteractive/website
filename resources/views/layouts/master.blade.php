@@ -10,7 +10,7 @@
 </head>
 <body class="font-serif text-xl xl:text-like-xl leading-relaxed transition duration-200 ease-in-out" daynight="<?= $content->styles('waypoints.daynight') ?>">
     <div id="convoy" class="flex flex-col min-h-screen">
-        <header class="block px-6">
+        <header class="block px-6 z-50">
             @include('layouts.partials.navigation')
         </header>
 
