@@ -2,6 +2,12 @@ module.exports = {
     prefix: "",
     important: false,
     separator: ":",
+    purge: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.vue",
+        "./resources/**/*.js",
+        "./config/view.php",
+    ],
     theme: {
         screens: {
             sm: "480px",
