@@ -84,12 +84,16 @@ ready(".daynight", elements =>
     ),
 );
 
-//
-import Lottie from "lottie-web";
+/**
+ * Next we will load our animation library that uses airbnb's lottie-web under the hood. We
+ * provide a slightly improved api and extend the functionality by supporting waypoints.
+ * All elements with a "lottie-payload" attribute will be automatically regsitered.
+ */
+import Lottie from "./Lottie";
 ready("[lottie-payload]", elements => {
     Array.from(document.querySelectorAll(elements)).map(container => {
         let path = container.getAttribute("lottie-payload");
-        return Lottie.loadAnimation({ container, path });
+        tap(new Lottie({ container, path }), lottie => lottie.play("inview"));
     });
 });
 
