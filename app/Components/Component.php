@@ -18,6 +18,11 @@ class Component
         return $this->get('type', 'component');
     }
 
+    public function exists()
+    {
+        return !! $this->data;
+    }
+
     public function is($types)
     {
         return in_array($this->type(), is_array($types) ? $types : [$types]);

@@ -11,10 +11,12 @@
             @endif
         </div>
 
-        @include(view()->exists("components.{$content->hero()->type()}") ? "components.{$content->hero()->type()}" : "components.error", [
-            'component' => $content->hero(),
-            'class' => $content->styles('hero.component'),
-        ])
+        @if($content->hero()->exists())
+            @include(view()->exists("components.{$content->hero()->type()}") ? "components.{$content->hero()->type()}" : "components.error", [
+                'component' => $content->hero(),
+                'class' => $content->styles('hero.component'),
+            ])
+        @endif
     </div>
 
     @foreach($content->components() as $component)
