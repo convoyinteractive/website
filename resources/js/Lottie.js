@@ -6,7 +6,7 @@
  * @see https://github.com/imakewebthings/waypoints
  */
 
-import Airbnb from "lottie-web";
+import Airbnb from "lottie-web/build/player/lottie_light";
 import Waypoints from "./mixins/Waypoints";
 
 export default class Lottie {
