@@ -17,6 +17,7 @@
     "dependencies": {
         "@tobiasthaden/tap": "^1.0.0",
         "gsap": "^3.2.6",
+        "lottie-web": "^5.6.8",
         "mediajs": "^0.2.0",
         "turbolinks": "^5.2.0",
         "vue": "^2.6.11",

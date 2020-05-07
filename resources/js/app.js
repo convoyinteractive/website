@@ -85,6 +85,15 @@ ready(".daynight", elements =>
 );
 
 //
+import Lottie from "lottie-web";
+ready("[lottie-payload]", elements => {
+    Array.from(document.querySelectorAll(elements)).map(container => {
+        let path = container.getAttribute("lottie-payload");
+        return Lottie.loadAnimation({ container, path });
+    });
+});
+
+//
 
 ready("title", title => {
     title = document.title;
