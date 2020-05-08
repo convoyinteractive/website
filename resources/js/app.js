@@ -75,11 +75,12 @@ import DayNight from "./DayNight";
 ready(".daynight", elements =>
     Array.from(document.querySelectorAll(elements)).forEach(element =>
         tap(new DayNight(element), daynight => {
+            let offset = -element.clientHeight + window.innerHeight / 2;
             daynight
                 .sunrise({ offset: "50%", direction: "down" })
                 .sunset({ offset: "50%", direction: "up" })
-                .sunrise({ offset: "-50%", direction: "up" })
-                .sunset({ offset: "-50%", direction: "down" });
+                .sunrise({ offset: offset, direction: "up" })
+                .sunset({ offset: offset, direction: "down" });
         }),
     ),
 );
