@@ -11,12 +11,17 @@ return [
     'styles' => [
         'default' => [
             'waypoints' => [
-                'daynight' => 'bg-green-soft text-black',
+                'daynight' => 'bg-black text-white',
             ],
             'hero' => [
                 'wrap' => 'block',
                 'title' => 'px-6 sm:px-12 mx-auto my-40 lg:w-10/12',
                 'component' => 'block w-full pointer-events-none'
+            ],
+            'definition' => [
+                'wrap' => 'px-6 mx-auto my-40 daynight',
+                'title' => 'mb-10 font-sans text-3xl xl:text-like-3xl font-semibold text-center',
+                'component' => 'sm:px-6 py-12 sm:px-12 lg:py-20 mx-auto lg:w-10/12',
             ],
             'gallery' => [
                 'component' => 'flex items-center overflow-x-auto space-x-12 pb-6 -mb-6',
@@ -45,12 +50,6 @@ return [
                 'wrap' => 'px-6 md:flex mx-auto my-40 md:items-center md:justify-between lg:w-10/12',
                 'title' => 'sm:px-6 lg:w-6/10',
                 'component' => 'sm:px-6 lg:w-4/10'
-            ],
-
-            'definition' => [
-                'wrap' => 'md:px-12 mx-auto my-40 lg:w-10/12',
-                'title' => 'mb-10 font-sans text-3xl xl:text-like-3xl font-semibold text-center',
-                'component' => 'px-6 py-12 sm:px-12 lg:px-32 lg:py-20 xl:px-40 mx-auto bg-green-soft',
             ],
         ],
     ],
