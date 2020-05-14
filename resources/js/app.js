@@ -5,7 +5,12 @@ import { tap } from "@tobiasthaden/tap";
  * as its first argument and will be handled as soon as the load event fires.
  */
 const ready = (element, callback) => {
-    document.addEventListener("turbolinks:load", event =>
+    if (!callback) {
+        return document.addEventListener("turbolinks:load", event =>
+            element(event),
+        );
+    }
+    return document.addEventListener("turbolinks:load", event =>
         callback(element, event),
     );
 };
