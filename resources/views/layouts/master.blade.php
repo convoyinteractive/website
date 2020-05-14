@@ -18,13 +18,13 @@
             @yield('content')
         </main>
 
-        <footer class="px-6 sm:px-12 pt-12 pb-40 sm:pb-12 mt-32 bg-black text-white">
-            <div class="flex space-x-6 font-sans text-sm uppercase">
+        <footer class="px-10 sm:px-20 pt-10 pb-40 sm:pb-10 mt-30 bg-black text-white">
+            <div class="flex space-x-10 font-sans text-sm uppercase">
                 @foreach ($meta->get('alternates', []) as $locale => $path)
                     <a href="/{{$locale}}/{{$path}}">{{$locale}}</a>
                 @endforeach
             </div>
-            <hr class="my-8">
+            <hr class="my-10">
             @include('layouts.partials.socials')
         </footer>
     </div>
