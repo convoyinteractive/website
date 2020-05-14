@@ -19,6 +19,7 @@ class LoadGlobals
             $view->with('navigation', [
                 'about' => $this->content('about')->components(),
                 'cases' => $this->content('cases')->components(),
+                'contact' => $this->content('contact')->components(),
             ]);
         });
 

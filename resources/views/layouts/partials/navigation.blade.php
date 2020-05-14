@@ -9,27 +9,32 @@
         <slide-to-left>
             {{-- The "display: none" inline-style prevents an annoying flash before the component is fully rendered. --}}
             <div v-show="isOpen" style="display: none" class="bg-white text-black fixed inset-y-0 right-0 pl-6 pr-12 sm:-mr-6 overflow-y-auto pt-20 w-full sm:w-8/12 md:w-6/12 lg:w-4/12">
-                <div v-show="isActive('about')">
+                <div v-show="isActive('about')" class="h-full py-10 px-6">
                     @foreach($navigation['about'] as $item)
                     <a href="{{ $item->get('path') }}" class="block font-sans font-bold text-3xl xl:text-like-3xl mb-10">
                         {{ $item->get('label') }}
                     </a>
                     @endforeach
                 </div>
-                <div v-show="isActive('cases')">
+                <div v-show="isActive('work')" class="h-full py-10 px-6">
                     @foreach($navigation['cases'] as $item)
                     {{ var_dump($item) }}
                     @endforeach
                 </div>
-                <div v-show="isActive('contact')">
-                    Contact
+                <div v-show="isActive('hello')" class="flex flex-col justify-between h-full py-10 px-6">
+                    @foreach($navigation['contact'] as $component)
+                        @include(view()->exists("components.{$component->type()}") ? "components.{$component->type()}" : "components.error", [
+                            'component' => $component,
+                            'class' => '',
+                        ])
+                    @endforeach
                 </div>
             </div>
         </slide-to-left>
 
         <div class="px-6 pt-6 sm:px-12 sm:pt-10 fixed inset-x-0 bottom-0 sm:bottom-auto sm:top-0 text-black">
             <div class="flex items-center rounded-full bg-white sm:bg-transparent shadow sm:shadow-none justify-between sm:justify-end sm:space-x-10">
-                @foreach(['about', 'cases', 'contact'] as $item)
+                @foreach(['work', 'about', 'hello'] as $item)
                 <button @click="toggle('{{$item}}')" class="font-sans text-sm xl:text-like-sm text-center flex-grow sm:flex-grow-0 sm:p-0 h-12 sm:h-8">
                     {{ __(ucwords($item)) }}
                 </button>
