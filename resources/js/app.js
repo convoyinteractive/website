@@ -35,10 +35,19 @@ Turbolinks.start();
 import Vue from "vue";
 import Turbovue from "./mixins/Turbovue";
 import ClickAway from "./mixins/ClickAway";
+import Cursor, { DefaultCursor } from "./mixins/Cursor";
 
 Vue.mixin(Turbovue);
+Vue.directive("cursor", Cursor);
 Vue.directive("click-away", ClickAway);
-ready("#convoy", el => new Vue({ el }));
+
+ready(
+    () =>
+        new Vue({
+            el: "#convoy",
+            data: { cursor: DefaultCursor },
+        }),
+);
 
 Vue.component("nav-menu", () =>
     import(/* webpackChunkName: "js/navigation" */ "./components/Navigation"),
