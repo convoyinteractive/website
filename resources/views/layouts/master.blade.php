@@ -18,6 +18,26 @@
             @yield('content')
         </main>
 
+        <snake inline-template>
+            <div>
+                <div v-if="active" class="fixed inset-0">
+                    <canvas
+                        @keyup.esc="stop"
+                        @keyup.up="moveUp"
+                        @keyup.down="moveDown"
+                        @keyup.left="moveLeft"
+                        @keyup.right="moveRight"
+                        tabindex="0"
+                        class="mx-auto"
+                        width="800"
+                        height="800"
+                        ref="canvas"
+                    ></canvas>
+                </div>
+                <button v-if="fresh" @click="run" class="w-4 h-4 bg-green"></button>
+            </div>
+        </snake>
+
         <footer class="px-10 sm:px-20 pt-10 pb-40 sm:pb-10 mt-30 bg-black text-white">
             <div class="flex space-x-10 font-sans text-sm uppercase">
                 @foreach ($meta->get('alternates', []) as $locale => $path)

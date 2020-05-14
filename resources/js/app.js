@@ -58,6 +58,9 @@ Vue.component("fade-in-out", () =>
 Vue.component("slide-to-left", () =>
     import(/* webpackChunkName: "js/transitions" */ "./components/SlideToLeft"),
 );
+Vue.component("snake", () =>
+    import(/* webpackChunkName: "js/snake" */ "./components/Snake"),
+);
 
 /**
  * Next we will load the "dragable" library and add touch and drag gestures to scrollable
