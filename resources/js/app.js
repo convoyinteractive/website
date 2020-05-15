@@ -107,7 +107,7 @@ ready(".daynight", elements =>
  * provide a slightly improved api and extend the functionality by supporting waypoints.
  * All elements with a "lottie-payload" attribute will be automatically regsitered.
  */
-import Lottie from "./Lottie";
+import Lottie from "./components/Lottie";
 ready("[lottie-payload]", elements => {
     Array.from(document.querySelectorAll(elements)).map(container => {
         let path = container.getAttribute("lottie-payload");
