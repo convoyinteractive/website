@@ -24,6 +24,7 @@ return [
                 'component' => 'sm:px-10 py-10 sm:px-20 lg:py-20 mx-auto lg:w-10/12',
             ],
             'gallery' => [
+                'wrap' => 'overflow-hidden',
                 'component' => 'flex items-center overflow-x-auto space-x-10 pb-10 -mb-10',
             ],
             'image' => [
@@ -42,6 +43,13 @@ return [
             'quote' => [
                 'wrap' => 'w-full min-h-screen flex items-center daynight',
                 'component' => 'sm:px-10',
+            ],
+        ],
+
+        'case' => [
+            'gallery' => [
+                'wrap' => 'overflow-hidden',
+                'component' => 'px-10 sm:px-20 flex items-center space-x-10 carousel',
             ],
         ],
 

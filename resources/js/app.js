@@ -117,6 +117,15 @@ ready("[lottie-payload]", elements => {
 
 //
 
+import Carousel from "./components/Carousel";
+ready(".carousel", elements =>
+    Array.from(document.querySelectorAll(elements)).map(
+        element => new Carousel(element),
+    ),
+);
+
+//
+
 ready("title", title => {
     title = document.title;
     window.onfocus = () => (document.title = title);
