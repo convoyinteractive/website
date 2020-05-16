@@ -14,3 +14,4 @@ storage/content/*
 !storage/content/.gitkeep
 
 composer.lock
+package-lock.json
