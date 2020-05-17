@@ -6,6 +6,7 @@
         "php": "^7.2.5",
         "erusev/parsedown": "^1.7",
         "erusev/parsedown-extra": "^0.8.1",
+        "htmlmin/htmlmin": "^7.0",
         "laravel/lumen-framework": "^7.0",
         "symfony/yaml": "^5.0"
     },
