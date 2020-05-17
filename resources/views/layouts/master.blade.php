@@ -38,13 +38,27 @@
             </div>
         </snake>
 
-        <footer class="px-10 sm:px-20 pt-10 pb-40 sm:pb-10 mt-30 bg-black text-white">
-            <div class="flex space-x-10 font-sans text-sm uppercase">
+        <footer class="
+            px-10 sm:px-20 xl:px-screen-20
+            pt-10 pb-40 sm:py-10 xl:py-screen-10
+            mt-30 xl:mt-screen-30
+            bg-black
+            text-white
+        ">
+            <div class="
+                flex
+                font-sans
+                text-sm
+                uppercase
+                space-x-10 xl:space-x-screen-10
+            ">
                 @foreach ($meta->get('alternates', []) as $locale => $path)
                     <a href="/{{$locale}}/{{$path}}">{{$locale}}</a>
                 @endforeach
             </div>
-            <hr class="my-10">
+            <hr class="
+                my-10 xl:my-screen-10
+            ">
             @include('layouts.partials.socials')
         </footer>
     </div>
