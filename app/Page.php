@@ -30,10 +30,12 @@ class Page extends Data
         $default = $key;
         $default[0] = 'default';
 
-        return Arr::get(
+        $styles = Arr::get(
             config('view.styles'),
             implode('.', $key),
-            Arr::get(config('view.styles'), implode('.', $default), null)
+            Arr::get(config('view.styles'), implode('.', $default), [])
         );
+
+        return implode(' ', $styles);
     }
 }
