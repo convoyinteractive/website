@@ -134,8 +134,9 @@ module.exports = {
             default: "1",
         },
         fontFamily: {
-            sans: ["system-ui", "-apple-system", "sans-serif"],
-            serif: ["Roboto Slab", "serif"],
+            hero: ["Grtsk Tera", "sans-serif"],
+            sans: ["Grtsk Peta", "sans-serif"],
+            serif: ["Brava Slab", "serif"],
             mono: [],
         },
         fontSize: {

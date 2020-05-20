@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @include('layouts.partials.meta', compact('meta'))
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//lib.convoyinteractive.com/fonts/grtsk/style.css?v1">
+    <link rel="stylesheet" href="//lib.convoyinteractive.com/fonts/brava/style.css?v1">
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <script src="{{ mix('/js/app.js') }}"></script>
 </head>
