@@ -18,7 +18,8 @@ return [
             ],
             'hero' => [
                 'wrap' => [
-                    'block'
+                    'block',
+                    'my-50 xl:my-screen-50',
                 ],
                 'title' => [
                     'px-10 sm:px-20 xl:px-screen-20',
@@ -36,7 +37,7 @@ return [
                 'wrap' => [
                     'px-10 xl:px-screen-10',
                     'mx-auto',
-                    'my-40',
+                    'my-50 xl:my-screen-50',
                     'daynight',
                 ],
                 'title' => [
@@ -56,17 +57,21 @@ return [
             'gallery' => [
                 'wrap' => [
                     'overflow-hidden',
+                    'my-50 xl:my-screen-50',
                 ],
                 'component' => [
                     'flex',
                     'items-center',
                     'overflow-x-auto',
-                    'space-x-10 xl:space-x-screen-10',
+                    'space-x-30 xl:space-x-screen-30',
                     'pb-10',
                     '-mb-10',
                 ],
             ],
             'image' => [
+                'wrap' => [
+                    'my-50 xl:my-screen-50',
+                ],
                 'component' => [
                     'mx-auto',
                     'max-w-6xl',
@@ -76,7 +81,7 @@ return [
                 'wrap' => [
                     'sm:px-10 xl:px-screen-10',
                     'mx-auto',
-                    'my-20 xl:my-screen-20',
+                    'my-50 xl:my-screen-50',
                     'md:flex',
                     'md:items-start',
                     'md:justify-end',
@@ -101,7 +106,7 @@ return [
                 'wrap' => [
                     'sm:px-10 xl:px-screen-10',
                     'mx-auto',
-                    'my-20 xl:my-screen-20',
+                    'my-30 xl:my-screen-30',
                     'md:flex',
                     'md:items-start',
                     'md:justify-end',
@@ -136,12 +141,15 @@ return [
 
         'case' => [
             'gallery' => [
-                'wrap' => ['overflow-hidden'],
+                'wrap' => [
+                    'overflow-hidden',
+                    'my-50 xl:my-screen-50',
+                ],
                 'component' => [
                     'px-10 sm:px-20 xl:px-screen-10',
                     'flex',
                     'items-center',
-                    'space-x-10 xl:space-x-screen-10',
+                    'space-x-30 xl:space-x-screen-30',
                     'carousel',
                 ],
             ],
