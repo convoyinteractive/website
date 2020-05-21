@@ -12,6 +12,7 @@ import Waypoints from "../mixins/Waypoints";
 export default class Lottie {
     constructor(options) {
         options.autoplay = false;
+        options.loop = false;
 
         this.animation = Airbnb.loadAnimation(options);
 
