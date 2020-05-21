@@ -1,5 +1,21 @@
 import { tap } from "@tobiasthaden/tap";
 
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+        navigator.serviceWorker.register("/service-worker.js").then(
+            function(registration) {
+                console.log(
+                    "ServiceWorker registration successful with scope: ",
+                    registration.scope,
+                );
+            },
+            function(err) {
+                console.log("ServiceWorker registration failed: ", err);
+            },
+        );
+    });
+}
+
 /**
  * First we'll register our ready helper. The given callback receives the element
  * as its first argument and will be handled as soon as the load event fires.

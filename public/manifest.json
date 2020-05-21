@@ -1,0 +1,8 @@
+{
+    "short_name": "Convoy",
+    "name": "Convoy Interactive",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/"
+}
