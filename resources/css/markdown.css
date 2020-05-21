@@ -4,7 +4,18 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-    @apply font-sans font-semibold;
+    @apply font-sans font-semibold text-3xl;
+}
+
+@screen xl {
+    .markdown h1,
+    .markdown h2,
+    .markdown h3,
+    .markdown h4,
+    .markdown h5,
+    .markdown h6 {
+        @apply text-like-3xl;
+    }
 }
 
 .markdown h1,
@@ -13,6 +24,10 @@
 .markdown h4,
 .markdown h5,
 .markdown h6,
-.markdown p {
-    margin-bottom: 1.5em;
+.markdown p:not(:last-child) {
+    margin-bottom: 2em;
+}
+
+.markdown .cta {
+    @apply font-sans font-semibold;
 }
