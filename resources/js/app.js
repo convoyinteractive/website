@@ -52,6 +52,9 @@ ready(
 Vue.component("nav-menu", () =>
     import(/* webpackChunkName: "js/navigation" */ "./components/Navigation"),
 );
+Vue.component("newsletter-sign-up", () =>
+    import(/* webpackChunkName: "js/newsletter" */ "./components/Newsletter"),
+);
 Vue.component("fade-in-out", () =>
     import(/* webpackChunkName: "js/transitions" */ "./components/FadeInOut"),
 );

@@ -48,7 +48,7 @@ class SubscriptionsController
 
         // TODO: Send double-opt-in mail.
         $url = url("/newsletter/$request->email?") . http_build_query([
-            'hl' => $request->hl,
+            'hl' => $request->locale,
             'sign' => $this->signature->make($request->email),
         ]);
 
