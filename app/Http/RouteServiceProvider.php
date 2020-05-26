@@ -29,7 +29,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->app->router->addRoute('GET', '/', LocaleController::class);
     }
 
-    public function mapWebRoutes($options)
+    protected function mapWebRoutes($options)
     {
         $this->app->router->group($options, function ($router) {
             $router->addRoute('GET', '{locale}[/{page:.*}]', PageController::class);
