@@ -27,7 +27,7 @@ class SubscriptionsController
             return response(403);
         }
 
-        return $this->subscription->subscribe($email, [
+        $this->subscription->subscribe($email, [
             'language' => $request->hl ?? 'en',
         ]);
 
