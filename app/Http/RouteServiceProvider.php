@@ -8,6 +8,7 @@ use App\Http\Middleware\CacheResponse;
 use Illuminate\Support\ServiceProvider;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\SubscriptionsController;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -22,6 +23,10 @@ class RouteServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        $this->mapApiRoutes([
+            'prefix' => 'api'
+        ]);
+
         $this->mapWebRoutes([
             'middleware' => ['cache', 'locale', 'globals']
         ]);
@@ -29,9 +34,18 @@ class RouteServiceProvider extends ServiceProvider
         $this->app->router->addRoute('GET', '/', LocaleController::class);
     }
 
+    protected function mapApiRoutes($options)
+    {
+        $this->app->router->group($options, function ($router) {
+            $router->addRoute('POST', 'subscriptions', SubscriptionsController::class . '@store');
+            $router->addRoute('DELETE', 'subscriptions/{email}', SubscriptionsController::class . '@destroy');
+        });
+    }
+
     protected function mapWebRoutes($options)
     {
         $this->app->router->group($options, function ($router) {
+            $router->addRoute('GET', 'newsletter/{email}', SubscriptionsController::class . '@confirm');
             $router->addRoute('GET', '{locale}[/{page:.*}]', PageController::class);
         });
     }
