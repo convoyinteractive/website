@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Signature;
 use Illuminate\Http\Request;
 use App\Repositories\Subscription;
+use Laravel\Lumen\Routing\ProvidesConvenienceMethods;
 
 class SubscriptionsController
 {
+    use ProvidesConvenienceMethods;
+
     protected $signature;
 
     protected $subscription;
@@ -34,7 +37,10 @@ class SubscriptionsController
 
     public function store(Request $request)
     {
-        // TODO: Validate the request
+        $this->validate($request, [
+            'email' => ['required', 'email'],
+            'privacy' => ['accepted'],
+        ]);
 
         if ($this->subscription->isMember($request->email)) {
             return ['message' =>  __('You are already subscribed.')];
