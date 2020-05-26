@@ -4,6 +4,7 @@
     "type": "project",
     "require": {
         "php": "^7.2.5",
+        "drewm/mailchimp-api": "^2.5",
         "erusev/parsedown": "^1.7",
         "erusev/parsedown-extra": "^0.8.1",
         "htmlmin/htmlmin": "^7.0",
