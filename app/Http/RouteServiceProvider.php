@@ -8,6 +8,7 @@ use App\Http\Middleware\CacheResponse;
 use Illuminate\Support\ServiceProvider;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SubscriptionsController;
 
 class RouteServiceProvider extends ServiceProvider
@@ -46,6 +47,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->app->router->group($options, function ($router) {
             $router->addRoute('GET', 'newsletter/{email}', SubscriptionsController::class . '@confirm');
+            $router->addRoute('GET', '{locale}/newsletter/{name}', NewsletterController::class);
             $router->addRoute('GET', '{locale}[/{page:.*}]', PageController::class);
         });
     }
