@@ -44,6 +44,11 @@ class Data
         return $this->toComponent($this->get($key) ?? []);
     }
 
+    public function __set($name, $value)
+    {
+        $this->data[$name] = $value;
+    }
+
     protected function transform($items)
     {
         return Collection::make($items)->map(function ($item) {
