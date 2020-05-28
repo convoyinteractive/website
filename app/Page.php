@@ -14,6 +14,11 @@ class Page extends Data
             : 'default';
     }
 
+    public function isType($type)
+    {
+        return $this->get('type', 'default') === $type;
+    }
+
     public function hero()
     {
         return $this->toComponent($this->get('meta.hero'), []);
