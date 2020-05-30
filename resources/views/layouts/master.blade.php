@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @include('layouts.partials.meta', compact('meta'))
     <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="//lib.convoyinteractive.com/fonts/grtsk/style.css?v1">
-    <link rel="stylesheet" href="//lib.convoyinteractive.com/fonts/brava/style.css?v1">
+    <link rel="stylesheet" href="//lib.convoyinteractive.com/fonts?a=brava,grtsk">
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <script src="{{ mix('/js/app.js') }}"></script>
 </head>
