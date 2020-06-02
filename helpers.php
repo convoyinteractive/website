@@ -51,4 +51,20 @@ if (! function_exists('mix')) {
 
         return new HtmlString($manifestDirectory.$manifest[$path]);
     }
+
+    if (! function_exists('asset')) {
+        function asset($path, $query = [])
+        {
+            $hash = hash_hmac(
+                'sha256',
+                implode('_', array_merge($query, ['path' => "/$path"])),
+                env('APP_KEY')
+            );
+
+
+            return "//lib.convoyinteractive.com/{$path}?" . http_build_query(array_merge($query, [
+                'sign' => $hash,
+            ]));
+        }
+    }
 }
