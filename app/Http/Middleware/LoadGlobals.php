@@ -17,7 +17,7 @@ class LoadGlobals
     {
         app('view')->composer('layouts.partials.navigation', function ($view) {
             $view->with('navigation', [
-                'about' => $this->content('sitemap')->components(),
+                'about' => $this->content('about')->components(),
                 'cases' => $this->content('cases')->components(),
                 'contact' => $this->content('contact')->components(),
             ]);
