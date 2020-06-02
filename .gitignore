@@ -16,3 +16,4 @@ storage/content/*
 composer.lock
 package-lock.json
 public/service-worker.js
+storage/content
