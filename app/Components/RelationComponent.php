@@ -3,14 +3,16 @@
 namespace App\Components;
 
 use Exception;
-use App\Repositories\Collection;
+use App\Repositories\Component as ComponentRepository;
+use App\Repositories\Collection as CollectionRepository;
 
 class RelationComponent extends Component
 {
     protected $relation;
 
     protected $availableRelationTypes = [
-        'collection' => Collection::class,
+        'component' => ComponentRepository::class,
+        'collection' => CollectionRepository::class,
     ];
 
     public function __construct($data)
@@ -34,7 +36,7 @@ class RelationComponent extends Component
     protected function fetchRelation()
     {
         $repo = new $this->availableRelationTypes[$this->data['as']];
-        $this->relation = $repo->fetch($this->get('path'));
+        $this->data['items'] = $repo->fetch($this->get('resource', null))->components();
     }
 
     protected function validate()
@@ -44,7 +46,6 @@ class RelationComponent extends Component
                 sprintf('Could not transform the related data to a "%s".', $this->data['as'])
             );
         }
-
         return $this;
     }
 }
