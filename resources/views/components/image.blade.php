@@ -1,4 +1,4 @@
-<figure class="{{ $class ?? '' }}">
+<figure class="{{ $class ?? '' }}" aria-label="{{ $component->get('alt') }}">
     <div>
         <picture class="w-full pointer-events-none">
             <source media="(min-width: 500px)" srcset="{{ asset($component->get('sizes.large'), []) }}">

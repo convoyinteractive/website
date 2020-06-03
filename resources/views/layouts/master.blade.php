@@ -35,7 +35,7 @@
                         ref="canvas"
                     ></canvas>
                 </div>
-                <button v-if="fresh" @click="run" class="w-4 h-4 bg-green"></button>
+                <button v-if="fresh" @click="run" class="w-4 h-4 bg-green" aria-label="Snake Game"></button>
             </div>
         </snake>
 
