@@ -137,6 +137,27 @@ return [
                     'sm:px-10 xl:px-screen-10'
                 ],
             ],
+            'relation' => [
+                'clients' => [
+                    'title' => [
+                        'mb-10 xl:mb-screen-10',
+                        'font-sans',
+                        'text-3xl xl:text-like-3xl',
+                        'font-semibold',
+                        'text-center',
+                    ]
+                ],
+
+                'services' => [
+                    'title' => [
+                        'mb-10 xl:mb-screen-10',
+                        'font-sans',
+                        'text-3xl xl:text-like-3xl',
+                        'font-semibold',
+                        'text-center',
+                    ]
+                ],
+            ],
         ],
 
         'case' => [

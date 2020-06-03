@@ -22,7 +22,10 @@
     @foreach($content->components() as $component)
         <div class="{{ $content->styles([$component->type(), 'wrap']) }}" id="{{ $component->get('name') }}">
             @if($component->has('title'))
-            <div class="{{ $content->styles([$component->type(), 'title']) }}">
+            <div class="{{ $content->styles([
+                $component->type(),
+                $component->is('relation') ? "{$component->get('resource')}.title" : "title"
+            ]) }}">
                 {{ $component->get('title') }}
             </div>
             @endif
