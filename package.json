@@ -17,7 +17,7 @@
     "dependencies": {
         "@tobiasthaden/tap": "^1.0.0",
         "axios": "^0.19.2",
-        "gsap": "^3.2.6",
+        "gsap": "^3.3.0",
         "lottie-web": "^5.6.8",
         "mediajs": "^0.2.0",
         "turbolinks": "^5.2.0",
