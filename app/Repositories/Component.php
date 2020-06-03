@@ -7,10 +7,12 @@ use Symfony\Component\Yaml\Yaml;
 
 class Component
 {
-    public function fetch($path)
+    public function fetch($resource, $locale = null)
     {
+        $locale = $locale ?: app('translator')->getLocale();
+
         $raw = app('files')->get(
-            storage_path('content/components/'.$path.'.yml')
+            storage_path("content/components/{$locale}/{$resource}.yml")
         );
 
         return new Data(app(Yaml::class)->parse($raw));

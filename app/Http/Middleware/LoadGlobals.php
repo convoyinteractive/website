@@ -17,17 +17,12 @@ class LoadGlobals
     {
         app('view')->composer('layouts.partials.navigation', function ($view) {
             $view->with('navigation', [
-                'about' => $this->content('about')->components(),
-                'cases' => $this->content('cases')->components(),
-                'contact' => $this->content('contact')->components(),
+                'about' => $this->component->fetch('about')->components(),
+                'cases' => $this->component->fetch('cases')->components(),
+                'contact' => $this->component->fetch('contact')->components(),
             ]);
         });
 
         return $next($request);
-    }
-
-    protected function content($file)
-    {
-        return $this->component->fetch(app('translator')->getLocale(). '/' .$file);
     }
 }
