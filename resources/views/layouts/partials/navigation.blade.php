@@ -1,5 +1,5 @@
 <nav-menu inline-template>
-    <nav v-click-away="close" @keydown.esc="close" tabindex="0" class="focus:outline-none">
+    <nav v-click-away="close" @keydown="onKeydown">
         <div class="
             px-10 sm:px-20 xl:px-screen-20
             pt-10 xl:pt-screen-10
@@ -71,7 +71,7 @@
                     sm:-mr-10 xl:-mr-screen-10
                     w-full sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12
                 ">
-                <div v-show="isActive('about')" class="
+                <div ref="about" v-show="isActive('about')" class="
                     h-full
                     p-10 xl:p-screen-10
                 ">
@@ -87,7 +87,7 @@
                     </a>
                     @endforeach
                 </div>
-                <div v-show="isActive('work')" class="
+                <div ref="work" v-show="isActive('work')" class="
                     h-full
                     p-10 xl:p-screen-10
                 ">
@@ -95,7 +95,7 @@
                     {{ var_dump($item) }}
                     @endforeach
                 </div>
-                <div v-show="isActive('hello')" class="
+                <div ref="hello" v-show="isActive('hello')" class="
                     flex flex-col justify-between
                     h-full
                     p-10 xl:p-screen-10

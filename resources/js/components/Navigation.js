@@ -5,6 +5,8 @@ export default {
         return {
             isOpen: false,
             current: null,
+            children: [],
+            selected: null,
         };
     },
 
@@ -26,11 +28,46 @@ export default {
         open(value) {
             this.current = value;
             this.isOpen = true;
+            this.children = Array.from(this.$refs[value].querySelectorAll("a"));
+
+            if (this.hasChildren()) {
+                this.$nextTick(() => this.focus(0));
+            }
         },
 
         close() {
             this.current = null;
             this.isOpen = false;
+            this.children = [];
+            this.selected = null;
+        },
+
+        focus(index) {
+            if (!this.hasChildren()) {
+                return;
+            }
+
+            index = Math.min(Math.max(index, 0), this.children.length - 1);
+            this.selected = index;
+            this.children[index].focus();
+        },
+
+        onKeydown(key) {
+            switch (key.code) {
+                case "Escape":
+                    this.close();
+                    break;
+                case "ArrowDown":
+                    this.focus(this.selected + 1);
+                    break;
+                case "ArrowUp":
+                    this.focus(this.selected - 1);
+                    break;
+            }
+        },
+
+        hasChildren() {
+            return !!this.children.length;
         },
 
         isActive(key) {
