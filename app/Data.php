@@ -52,6 +52,10 @@ class Data
     protected function transform($items)
     {
         return Collection::make($items)->map(function ($item) {
+            if ($this->hasAddon($item)) {
+                $item['addon'] = $this->toComponent($item['addon']);
+            }
+
             if ($this->isNested($item)) {
                 $item['items'] = $this->transform($item['items']);
             }
@@ -68,6 +72,11 @@ class Data
         } catch (Throwable $e) {
             return new Components\Component($item);
         }
+    }
+
+    protected function hasAddon($item)
+    {
+        return Arr::has($item, 'addon');
     }
 
     protected function isNested($item)
