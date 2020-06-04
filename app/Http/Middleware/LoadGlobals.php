@@ -23,6 +23,10 @@ class LoadGlobals
             ]);
         });
 
+        app('view')->composer('layouts.partials.socials', function ($view) {
+            $view->with('socials', $this->component->fetch('socials')->components());
+        });
+
         return $next($request);
     }
 }
