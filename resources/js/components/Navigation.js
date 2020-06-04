@@ -33,6 +33,8 @@ export default {
             if (this.hasChildren()) {
                 this.$nextTick(() => this.focus(0));
             }
+
+            document.body.style.overflow = "hidden";
         },
 
         close() {
@@ -40,6 +42,8 @@ export default {
             this.isOpen = false;
             this.children = [];
             this.selected = null;
+
+            document.body.style.overflow = "auto";
         },
 
         focus(index) {
