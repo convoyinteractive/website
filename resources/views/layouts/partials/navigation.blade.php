@@ -92,7 +92,10 @@
                     p-10 xl:p-screen-10
                 ">
                     @foreach($navigation['cases'] as $item)
-                    {{ var_dump($item) }}
+                        <a class="block font-sans mb-10 xl:mb-screen-10" href="/{{ implode('/', [app('translator')->getLocale(), $item->get('resource')]) }}">
+                            <span class="block text-3xl xl:text-like-3xl font-semibold leading-snug">{{ $item->get('meta.title') }}</span>
+                            <span class="block text-sm xl:text-like-sm">{{ $item->get('meta.subtitle') }}</span>
+                        </a>
                     @endforeach
                 </div>
                 <div ref="hello" v-show="isActive('hello')" class="
