@@ -64,6 +64,9 @@ Vue.component("slide-to-left", () =>
 Vue.component("snake", () =>
     import(/* webpackChunkName: "js/snake" */ "./components/Snake"),
 );
+Vue.component("draw-svg", () =>
+    import(/* webpackChunkName: "js/draw-svg" */ "./components/DrawSvg"),
+);
 
 /**
  * Next we will load the "dragable" library and add touch and drag gestures to scrollable
@@ -104,19 +107,6 @@ ready(".daynight", elements =>
         }),
     ),
 );
-
-/**
- * Next we will load our animation library that uses airbnb's lottie-web under the hood. We
- * provide a slightly improved api and extend the functionality by supporting waypoints.
- * All elements with a "lottie-payload" attribute will be automatically regsitered.
- */
-import Lottie from "./components/Lottie";
-ready("[lottie-payload]", elements => {
-    Array.from(document.querySelectorAll(elements)).map(container => {
-        let path = container.getAttribute("lottie-payload");
-        tap(new Lottie({ container, path }), lottie => lottie.play("inview"));
-    });
-});
 
 //
 
