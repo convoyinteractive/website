@@ -10,12 +10,6 @@ return [
 
     'styles' => [
         'default' => [
-            'waypoints' => [
-                'daynight' => [
-                    'bg-black',
-                    'text-white',
-                ],
-            ],
             'hero' => [
                 'wrap' => [
                     'block',
@@ -38,7 +32,6 @@ return [
                     'px-10 xl:px-screen-10',
                     'mx-auto',
                     'my-50 xl:my-screen-50',
-                    'daynight',
                 ],
                 'title' => [
                     'mb-10 xl:mb-screen-10',
@@ -131,7 +124,6 @@ return [
                     'min-h-screen',
                     'flex',
                     'items-center',
-                    'daynight',
                 ],
                 'component' => [
                     'sm:px-10 xl:px-screen-10'

@@ -21,28 +21,8 @@ document.addEventListener("turbolinks:load", () => {
  * so we wrapped the library in a exportable object and register an additional 'init' method.
  * The method allows us to handle any events that affect all the waypoints instances.
  */
-
 import Waypoints from "./mixins/Waypoints";
 Waypoints.init();
-
-/**
- * Let's load our "day 'n' night" library. The library accepts a document selector and provides
- * two methods "sunrise" and "sunset" that keep track of our scroll position. On sunrise the
- * daynight-attribute values are added to the class-attribute, on sunset they get removed.
- */
-import DayNight from "./DayNight";
-document.addEventListener("turbolinks:load", () => {
-    Array.from(document.querySelectorAll(".daynight")).forEach(element =>
-        tap(new DayNight(element), daynight => {
-            let offset = -element.clientHeight + window.innerHeight / 2;
-            daynight
-                .sunrise({ offset: "50%", direction: "down" })
-                .sunset({ offset: "50%", direction: "up" })
-                .sunrise({ offset: offset, direction: "up" })
-                .sunset({ offset: offset, direction: "down" });
-        }),
-    );
-});
 
 /**
  * Now we'll load vue to sprinkle our frontend with reactivity. Caused by the caching from turbolinks
