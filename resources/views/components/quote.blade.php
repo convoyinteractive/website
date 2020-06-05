@@ -1,4 +1,4 @@
-<blockquote class="{{ $class ?? '' }}">
+<blockquote {{ $attributes }}>
     <div class="lg:w-10/12 lg:flex items-center justify-between flex-row-reverse mx-auto">
         <div class="block px-10 my-10 lg:w-7/10 font-sans text-3xl xl:text-like-3xl leading-normal font-semibold">
             <p>{{ $component->get('body') }}</p>

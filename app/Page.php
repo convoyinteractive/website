@@ -2,8 +2,7 @@
 
 namespace App;
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
+use Illuminate\Support\HtmlString;
 
 class Page extends Data
 {
@@ -24,23 +23,14 @@ class Page extends Data
         return $this->toComponent($this->get('meta.hero'), []);
     }
 
-    public function styles($key = [])
+    public function attributes($key = [])
     {
         if (! is_array($key)) {
             $key = [$key];
         }
 
-        array_unshift($key, $this->get('type'));
-
-        $default = $key;
-        $default[0] = 'default';
-
-        $styles = Arr::get(
-            config('view.styles'),
-            implode('.', $key),
-            Arr::get(config('view.styles'), implode('.', $default), [])
+        return new HtmlString(
+            (string) new Attributes($this, $key)
         );
-
-        return implode(' ', $styles);
     }
 }

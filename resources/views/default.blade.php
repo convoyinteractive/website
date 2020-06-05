@@ -3,8 +3,8 @@
 ])
 
 @section('content')
-    <div class="{{ $content->styles('hero.wrap') }}">
-        <div class="{{ $content->styles('hero.title') }}">
+    <div {{ $content->attributes('hero.wrap') }}>
+        <div {{ $content->attributes('hero.title') }}>
             @if($content->has('meta.title'))
             <h1 class="font-bold font-hero text-6xl xl:text-like-6xl leading-tight lg:w-6/10">{{ $content->get('meta.title') }}</h1>
             <span class="block font-sans font-light text-sm xl:text-like-sm">{{ $content->get('meta.subtitle') }}</span>
@@ -14,25 +14,25 @@
         @if($content->hero()->exists())
             @include(view()->exists("components.{$content->hero()->type()}") ? "components.{$content->hero()->type()}" : "components.error", [
                 'component' => $content->hero(),
-                'class' => $content->styles('hero.component'),
+                'attributes' => $content->attributes('hero.component'),
             ])
         @endif
     </div>
 
     @foreach($content->components() as $component)
-        <div class="{{ $content->styles([$component->type(), 'wrap']) }}" id="{{ $component->get('name') }}">
+        <div {{ $content->attributes([$component->type(), 'wrap']) }}>
             @if($component->has('title'))
-            <div class="{{ $content->styles([
+            <div {{ $content->attributes([
                 $component->type(),
                 $component->is('relation') ? "{$component->get('resource')}.title" : "title"
-            ]) }}">
+            ]) }}>
                 {{ $component->get('title') }}
             </div>
             @endif
 
             @include(view()->exists("components.{$component->type()}") ? "components.{$component->type()}" : "components.error", [
                 'component' => $component,
-                'class' => $content->styles([$component->type(), 'component']),
+                'attributes' => $content->attributes([$component->type(), 'component']),
             ])
         </div>
     @endforeach

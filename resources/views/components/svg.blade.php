@@ -1,3 +1,3 @@
-<div class="{{ $class ?? '' }}">
+<div {{ $attributes ?? '' }}>
     {{ $component->html() }}
 </div>
