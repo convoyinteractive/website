@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app('translator')->getLocale() }}" dragable>
+<html lang="{{ app('translator')->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

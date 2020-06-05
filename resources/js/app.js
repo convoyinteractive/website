@@ -69,15 +69,12 @@ Vue.component("draw-svg", () =>
 );
 
 /**
- * Next we will load the "dragable" library and add touch and drag gestures to scrollable
- * elements. This library listens for the "mousedown", "mouseup" and "mousemove" events
- * and updates the scrollbars. Now we may use a mouse or trackpad like a touchscreen.
+ * Next we'll load the "dragable" component to add touch and drag gestures. The component listens
+ * for the native "mousedown", "mouseup" and "mousemove" events. Then it updates the scrollbars
+ * and animates the inner view. Now we may use a mouse or trackpad like it is a touchscreen.
  */
-import Dragable from "./Dragable";
-ready("[dragable]", elements =>
-    Array.from(document.querySelectorAll(elements)).forEach(element =>
-        tap(new Dragable(element), dragable => dragable.mount()),
-    ),
+Vue.component("dragable", () =>
+    import(/* webpackChunkName: "js/dragable" */ "./components/Dragable"),
 );
 
 /**
