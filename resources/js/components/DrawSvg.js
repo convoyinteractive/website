@@ -6,18 +6,16 @@
 import Lottie from "../Lottie";
 
 export default {
-    render: function(createElement) {
-        return createElement("div", {
-            ref: "container",
-        });
-    },
+    render: h => h("div", { ref: "container" }),
 
     props: ["from"],
 
     mounted() {
-        new Lottie({
+        let animation = new Lottie({
             container: this.$refs.container,
             path: this.from,
-        }).play("inview");
+        });
+
+        this.$nextTick(() => animation.play("inview"));
     },
 };
