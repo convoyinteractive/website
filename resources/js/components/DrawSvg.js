@@ -8,7 +8,7 @@ import Lottie from "../Lottie";
 export default {
     render: h => h("div", { ref: "container" }),
 
-    props: ["from"],
+    props: ["from", "mode"],
 
     mounted() {
         let animation = new Lottie({
@@ -16,6 +16,6 @@ export default {
             path: this.from,
         });
 
-        this.$nextTick(() => animation.play("inview"));
+        this.$nextTick(() => animation.play(this.mode));
     },
 };

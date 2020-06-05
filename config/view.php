@@ -237,6 +237,7 @@ return [
                         'sm:px-10 xl:px-screen-10',
                         'lg:w-4/10',
                     ],
+                    'mode' => ['inview']
                 ],
             ],
         ],
