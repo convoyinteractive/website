@@ -189,12 +189,34 @@ return [
                         'w-full',
                         'min-h-screen',
                         'flex',
-                        'items-center',
+                        'items-center justify-center',
                     ],
                 ],
                 'component' => [
                     'class' => [
-                        'sm:px-10 xl:px-screen-10'
+                        'flex flex-row-reverse',
+                        'items-center justify-between',
+                        'sm:px-10 xl:px-screen-10',
+                        'w-10/12',
+                    ],
+                ],
+                'body' => [
+                    'class' => [
+                        'block',
+                        'px-10',
+                        'my-10',
+                        'lg:w-7/10',
+                        'font-sans font-semibold',
+                        'text-3xl xl:text-like-3xl',
+                        'leading-normal',
+                    ],
+                ],
+                'author' => [
+                    'class' => [
+                        'block',
+                        'px-10',
+                        'my-10',
+                        'lg:w-3/10 xl:w-2/10'
                     ],
                 ],
             ],
