@@ -58,6 +58,25 @@ return [
                         'lg:w-10/12',
                     ],
                 ],
+                'term' => [
+                    'class' => [
+                        'mb-10',
+                        'text-xl xl:text-like-xl',
+                        'font-sans font-semibold',
+                    ],
+                ],
+                'item' => [
+                    'class' => [
+                        'mb-10',
+                        'pb-10',
+                        'border-b-2 border-dotted',
+                    ],
+                ],
+                'items' => [
+                    'markdown' => [
+                        'class' => ['markdown'],
+                    ],
+                ],
             ],
             'gallery' => [
                 'wrap' => [
