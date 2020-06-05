@@ -18,11 +18,12 @@ export default class Lottie {
 
         this.handlers = {
             inview: animation => this.handleInView(animation),
+            onscroll: animation => this.handleOnScroll(animation),
         };
     }
 
     play(option) {
-        if (!option) {
+        if (!this.handlers.hasOwnProperty(option)) {
             return this.animation.play();
         }
 
@@ -36,6 +37,36 @@ export default class Lottie {
                 animation.play();
             },
             offset: "50%",
+        });
+    }
+
+    handleOnScroll(animation) {
+        animation.addEventListener("DOMLoaded", e => {
+            new Waypoints.Waypoint({
+                element: animation.wrapper,
+                handler: function() {
+                    let offset = this.triggerPoint;
+
+                    let animate = function() {
+                        let distance = Math.round(
+                            (animation.totalFrames /
+                                animation.wrapper.clientHeight) *
+                                (window.pageYOffset - offset),
+                        );
+
+                        let frame = Math.min(
+                            animation.totalFrames,
+                            Math.max(1, distance),
+                        );
+
+                        animation.goToAndStop(frame, true);
+                        window.requestAnimationFrame(animate);
+                    };
+
+                    animate();
+                },
+                offset: "50%",
+            });
         });
     }
 }

@@ -153,6 +153,11 @@ return [
                     ],
                 ],
             ],
+            'lottie' => [
+                'component' => [
+                    'mode' => ['onscroll'],
+                ],
+            ],
             'markdown' => [
                 'wrap' => [
                     'class' => [
