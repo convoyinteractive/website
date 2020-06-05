@@ -76,6 +76,14 @@ return [
                         '-mb-10',
                     ],
                 ],
+                'items' => [
+                    'image' => [
+                        'class' => [
+                            'w-6/10 lg:w-4/10',
+                            'flex-shrink-0',
+                        ],
+                    ]
+                ]
             ],
             'image' => [
                 'wrap' => [
