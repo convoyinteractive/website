@@ -105,14 +105,6 @@ ready(".daynight", elements =>
     ),
 );
 
-//
-
-import Carousel from "./components/Carousel";
-ready(".carousel", elements =>
-    Array.from(document.querySelectorAll(elements)).map(
-        element => new Carousel(element),
-    ),
-);
 
 //
 
