@@ -1,7 +1,7 @@
 /**
- * Here we will load our animation library that uses airbnb's lottie-web under the hood. We
- * provide a slightly improved api and extend the functionality by supporting waypoints.
- * All elements with a "lottie-payload" attribute will be automatically regsitered.
+ * Here we will load our animation library that uses airbnb's lottie-web under the hood.
+ * Nevertheless, we provide an improved api and extend the functionality by supporting
+ * waypoints. The component requires a configuration file via the "from" property.
  */
 import Lottie from "../Lottie";
 
