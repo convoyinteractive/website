@@ -120,6 +120,11 @@ return [
                         'md:w-7/10',
                     ],
                 ],
+                'items' => [
+                    'markdown' => [
+                        'class' => ['markdown'],
+                    ],
+                ],
             ],
             'markdown' => [
                 'wrap' => [
