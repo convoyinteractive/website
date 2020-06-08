@@ -20,7 +20,10 @@
     </div>
 
     @foreach($content->components() as $component)
-        <div {{ $content->attributes([$component->type(), 'wrap']) }}>
+        <div {{ $content->attributes([
+            $component->type(),
+            $component->is('relation') ? "{$component->get('resource')}.wrap" : "wrap"
+        ]) }}>
             @if($component->has('title'))
             <div {{ $content->attributes([
                 $component->type(),

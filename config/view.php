@@ -328,13 +328,47 @@ return [
                 ],
 
                 'services' => [
+                    'wrap' => [
+                        'class' => [
+                            'sm:px-10 xl:px-screen-10',
+                            'mx-auto',
+                            'my-30 xl:my-screen-30',
+                            'md:flex',
+                            'md:items-start',
+                            'md:justify-end',
+                            'lg:w-10/12',
+                        ]
+                    ],
                     'title' => [
                         'class' => [
-                            'mb-10 xl:mb-screen-10',
+                            'px-10 xl:px-screen-10',
+                            'pb-10 xl:pb-screen-10',
                             'font-sans',
-                            'text-3xl xl:text-like-3xl',
+                            'text-2xl xl:text-like-2xl',
                             'font-semibold',
-                            'text-center',
+                            'md:w-3/10',
+                        ],
+                    ],
+                    'component' => [
+                        'class' => [
+                            'flex flex-wrap',
+                            'px-5 xl:px-screen-5',
+                            'md:w-7/10',
+                        ],
+                    ],
+                    'item' => [
+                        'class' => [
+                            'w-5/10',
+                            'px-5 xl:px-screen-5',
+                        ],
+                    ],
+                    'term' => [
+                        'class' => [
+                            'border-dotted',
+                            'bg-white',
+                            'border-t border-b',
+                            '-mb-px',
+                            'py-10 xl:py-screen-10',
                         ],
                     ],
                 ],
