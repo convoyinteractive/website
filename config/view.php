@@ -200,6 +200,9 @@ return [
                         'flex',
                         'items-center justify-center',
                     ],
+                    'v-theme' => [
+                        'true'
+                    ]
                 ],
                 'component' => [
                     'class' => [

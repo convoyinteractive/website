@@ -15,16 +15,19 @@
             </a>
         </div>
 
-        <div class="
-            px-10 sm:px-20 xl:px-screen-20
-            pt-10 xl:pt-screen-10
-            fixed
-            inset-x-0
-            bottom-0 sm:bottom-auto
-            sm:top-0
-            text-black
-            z-40
-        ">
+        <div
+            class="
+                px-10 sm:px-20 xl:px-screen-20
+                pt-10 xl:pt-screen-10
+                fixed
+                inset-x-0
+                bottom-0 sm:bottom-auto
+                sm:top-0
+                text-black sm:text-inherit
+                z-40
+            "
+            :class="{'sm:text-black': isOpen}"
+        >
             <div class="
                 mb-5 sm:mb-0
                 rounded-full

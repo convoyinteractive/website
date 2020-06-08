@@ -16,6 +16,7 @@ module.exports = {
             xl: "1680px",
         },
         colors: {
+            inherit: "inherit",
             transparent: "transparent",
             black: "#000000",
             white: "#ffffff",

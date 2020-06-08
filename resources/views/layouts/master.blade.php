@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <script src="{{ mix('/js/app.js') }}"></script>
 </head>
-<body class="font-serif text-xl xl:text-like-xl leading-relaxed">
+<body class="font-serif text-xl xl:text-like-xl leading-relaxed transition duration-500 ease-in-out"
+    theme='@json($meta->get("colors", [
+        "text" => "#ffffff",
+        "background" => "#000000"
+    ]))'>
     <div id="convoy" class="flex flex-col min-h-screen">
         <header class="block px-6 z-50">
             @include('layouts.partials.navigation')

@@ -33,12 +33,16 @@ Waypoints.init();
  */
 import Vue from "vue";
 import Turbovue from "./mixins/Turbovue";
-import ClickAway from "./mixins/ClickAway";
-import Cursor, { DefaultCursor } from "./mixins/Cursor";
-
 Vue.mixin(Turbovue);
-Vue.directive("cursor", Cursor);
+
+import ClickAway from "./mixins/ClickAway";
 Vue.directive("click-away", ClickAway);
+
+import Cursor, { DefaultCursor } from "./mixins/Cursor";
+Vue.directive("cursor", Cursor);
+
+import Theme from "./mixins/Theme";
+Vue.directive("theme", Theme);
 
 document.addEventListener(
     "turbolinks:load",
