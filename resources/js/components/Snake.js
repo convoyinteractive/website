@@ -1,6 +1,26 @@
 const pixel = 16;
 
 export default {
+    template: `
+    <div>
+        <div v-if="active" class="fixed inset-0">
+            <canvas
+                @keyup.esc="stop"
+                @keyup.up="moveUp"
+                @keyup.down="moveDown"
+                @keyup.left="moveLeft"
+                @keyup.right="moveRight"
+                tabindex="0"
+                class="mx-auto"
+                width="800"
+                height="800"
+                ref="canvas"
+            ></canvas>
+        </div>
+        <button v-if="fresh" @click="run" class="w-4 h-4 bg-green" aria-label="Snake Game"></button>
+    </div>
+    `,
+
     data() {
         return {
             fresh: true,
