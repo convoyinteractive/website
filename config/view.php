@@ -155,6 +155,10 @@ return [
             ],
             'lottie' => [
                 'component' => [
+                    'class' => [
+                        'w-5/12',
+                        'mx-auto',
+                    ],
                     'mode' => ['onscroll'],
                 ],
             ],
@@ -226,6 +230,69 @@ return [
                 ],
             ],
             'relation' => [
+                'awards' => [
+                    'title' => [
+                        'class' => [
+                            'mb-10 xl:mb-screen-10',
+                            'font-sans',
+                            'text-3xl xl:text-like-3xl',
+                            'font-semibold',
+                            'text-center',
+                        ],
+                    ],
+                    'component' => [
+                        'class' => [
+                            'flex flex-wrap',
+                            'px-5 sm:px-15 xl:px-screen-15',
+                        ],
+                    ],
+                    'items' => [
+                        'class' => [
+                            'flex flex-col',
+                            'justify-between',
+                            'w-2/12',
+                            'p-5 xl:p-screen-5',
+                        ],
+                    ],
+                    'card' => [
+                        'class' => [
+                            'relative',
+                            'flex',
+                            'flex-shrink-0',
+                            'h-full',
+                            'items-center',
+                            'justify-center',
+                            'bg-gray',
+                            'w-full',
+                            'p-10 xl:p-screen-10',
+                        ],
+                    ],
+                    'caption' => [
+                        'class' => [
+                            'mt-5',
+                            'text-sm',
+                            'text-center',
+                            'font-sans',
+                        ],
+                    ],
+                    'count' => [
+                        'class' => [
+                            'absolute',
+                            'flex',
+                            'items-center justify-center',
+                            'text-xs',
+                            'font-sans',
+                            'transform -translate-y-1/2',
+                            'top-0 right-0',
+                            'mr-5 xl:mr-screen-5',
+                            'w-8 h-8',
+                            'rounded-full',
+                            'bg-green',
+                            'text-white',
+                        ],
+                    ],
+                ],
+
                 'clients' => [
                     'title' => [
                         'class' => [
@@ -235,7 +302,29 @@ return [
                             'font-semibold',
                             'text-center',
                         ],
-                    ]
+                    ],
+                    'component' => [
+                        'class' => [
+                            'flex flex-wrap',
+                            'px-5 sm:px-15 xl:px-screen-15',
+                        ],
+                    ],
+                    'items' => [
+                        'class' => [
+                            'w-3/12',
+                            'p-5 xl:p-screen-5',
+                        ],
+                    ],
+                    'card' => [
+                        'class' => [
+                            'flex',
+                            'items-center',
+                            'justify-center',
+                            'bg-gray',
+                            'w-full h-full',
+                            'p-10 xl:p-screen-10',
+                        ],
+                    ],
                 ],
 
                 'services' => [

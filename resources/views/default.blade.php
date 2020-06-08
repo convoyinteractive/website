@@ -32,7 +32,10 @@
 
             @include(view()->exists("components.{$component->type()}") ? "components.{$component->type()}" : "components.error", [
                 'component' => $component,
-                'attributes' => $content->attributes([$component->type(), 'component']),
+                'attributes' => $content->attributes([
+                    $component->type(),
+                    $component->is('relation') ? "{$component->get('resource')}.component" : "component"
+                ]),
             ])
         </div>
     @endforeach
