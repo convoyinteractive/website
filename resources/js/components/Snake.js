@@ -1,5 +1,3 @@
-const pixel = 16;
-
 export default {
     template: `
     <div class="z-0">
@@ -13,8 +11,8 @@ export default {
                 @keyup.right="moveRight"
                 tabindex="0"
                 class="outline-none border border-white mx-auto"
-                width="800"
-                height="800"
+                :width="size"
+                :height="size"
                 ref="canvas"
             ></canvas>
         </div>
@@ -27,22 +25,43 @@ export default {
             fresh: true,
             active: false,
             frames: 0,
+            size: 300,
             snake: {
-                x: 160,
-                y: 160,
-                dx: pixel,
+                x: 0,
+                y: 0,
+                dx: 0,
                 dy: 0,
                 items: [],
                 count: 4,
             },
             apple: {
-                x: 320,
-                y: 320,
+                x: 0,
+                y: 0,
             },
         };
     },
 
+    beforeMount() {
+        let viewport = Math.min(window.innerHeight, window.innerWidth);
+
+        if (viewport > 600) {
+            this.size = 400;
+        }
+
+        if (viewport > 800) {
+            this.size = 600;
+        }
+
+        if (viewport > 1000) {
+            this.size = 800;
+        }
+    },
+
     computed: {
+        pixel() {
+            return this.size / 25;
+        },
+
         canvas() {
             return this.$refs.canvas;
         },
@@ -76,19 +95,19 @@ export default {
             this.snake.y += this.snake.dy;
 
             if (this.snake.x < 0) {
-                this.snake.x = this.canvas.width - pixel;
+                this.snake.x = this.canvas.width - this.pixel;
             } else if (this.snake.x >= this.canvas.width) {
                 this.snake.x = 0;
             }
 
             if (this.snake.y < 0) {
-                this.snake.y = this.canvas.height - pixel;
+                this.snake.y = this.canvas.height - this.pixel;
             } else if (this.snake.y >= this.canvas.height) {
                 this.snake.y = 0;
             }
 
             if (this.snake.y < 0) {
-                this.snake.y = this.canvas.height - pixel;
+                this.snake.y = this.canvas.height - this.pixel;
             } else if (this.snake.y >= this.canvas.height) {
                 this.snake.y = 0;
             }
@@ -105,8 +124,8 @@ export default {
             this.context.fillRect(
                 this.apple.x,
                 this.apple.y,
-                pixel - 1,
-                pixel - 1,
+                this.pixel - 1,
+                this.pixel - 1,
             );
         },
 
@@ -114,13 +133,18 @@ export default {
             this.context.fillStyle = "#00ff00";
 
             this.snake.items.forEach((cell, index) => {
-                this.context.fillRect(cell.x, cell.y, pixel - 1, pixel - 1);
+                this.context.fillRect(
+                    cell.x,
+                    cell.y,
+                    this.pixel - 1,
+                    this.pixel - 1,
+                );
 
                 if (cell.x === this.apple.x && cell.y === this.apple.y) {
                     this.snake.count++;
 
-                    this.apple.x = this.random(0, 50) * pixel;
-                    this.apple.y = this.random(0, 50) * pixel;
+                    this.apple.x = this.random(0, 25) * this.pixel;
+                    this.apple.y = this.random(0, 25) * this.pixel;
                 }
 
                 for (let i = index + 1; i < this.snake.items.length; i++) {
@@ -128,15 +152,15 @@ export default {
                         cell.x === this.snake.items[i].x &&
                         cell.y === this.snake.items[i].y
                     ) {
-                        this.snake.x = 160;
-                        this.snake.y = 160;
+                        this.snake.x = 0;
+                        this.snake.y = 0;
                         this.snake.items = [];
                         this.snake.count = 4;
-                        this.snake.dx = pixel;
+                        this.snake.dx = this.pixel;
                         this.snake.dy = 0;
 
-                        this.apple.x = this.random(0, 50) * pixel;
-                        this.apple.y = this.random(0, 50) * pixel;
+                        this.apple.x = this.random(0, 25) * this.pixel;
+                        this.apple.y = this.random(0, 25) * this.pixel;
                     }
                 }
             });
@@ -172,34 +196,36 @@ export default {
 
         moveLeft() {
             if (this.snake.dx === 0) {
-                this.snake.dx = -pixel;
+                this.snake.dx = -this.pixel;
                 this.snake.dy = 0;
             }
         },
 
         moveRight() {
             if (this.snake.dx === 0) {
-                this.snake.dx = pixel;
+                this.snake.dx = this.pixel;
                 this.snake.dy = 0;
             }
         },
 
         moveUp() {
             if (this.snake.dy === 0) {
-                this.snake.dy = -pixel;
+                this.snake.dy = -this.pixel;
                 this.snake.dx = 0;
             }
         },
 
         moveDown() {
             if (this.snake.dy === 0) {
-                this.snake.dy = pixel;
+                this.snake.dy = this.pixel;
                 this.snake.dx = 0;
             }
         },
 
         stop() {
             this.active = false;
+            document.body.style.color = null;
+            document.body.style.background = null;
         },
     },
 };
