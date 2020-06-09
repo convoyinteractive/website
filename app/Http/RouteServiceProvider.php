@@ -2,13 +2,16 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\Turbolinks;
 use App\Http\Middleware\LoadGlobals;
 use App\Http\Middleware\UpdateLocale;
 use App\Http\Middleware\CacheResponse;
 use Illuminate\Support\ServiceProvider;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\ComponentsController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\CollectionsController;
 use App\Http\Controllers\SubscriptionsController;
 
 class RouteServiceProvider extends ServiceProvider
@@ -19,6 +22,7 @@ class RouteServiceProvider extends ServiceProvider
             'cache' => CacheResponse::class,
             'locale' => UpdateLocale::class,
             'globals' => LoadGlobals::class,
+            'turbolinks' => Turbolinks::class,
         ]);
     }
 
@@ -38,6 +42,8 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes($options)
     {
         $this->app->router->group($options, function ($router) {
+            $router->addRoute('GET', 'components/{resource}', ComponentsController::class);
+            $router->addRoute('GET', 'collections/{resource}', CollectionsController::class);
             $router->addRoute('POST', 'subscriptions', SubscriptionsController::class . '@store');
             $router->addRoute('DELETE', 'subscriptions/{email}', SubscriptionsController::class . '@destroy');
         });

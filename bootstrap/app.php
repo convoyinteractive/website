@@ -37,8 +37,6 @@ if ($app->isStage()) {
     $app->middleware(Preview::class);
 }
 
-$app->middleware(Turbolinks::class);
-
 // Register Service Providers.
 
 $app->register(\App\Http\RouteServiceProvider::class);

@@ -6,8 +6,9 @@ use Throwable;
 use App\Components;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use JsonSerializable;
 
-class Data
+class Data implements JsonSerializable
 {
     protected $data;
 
@@ -47,6 +48,11 @@ class Data
     public function __set($name, $value)
     {
         $this->data[$name] = $value;
+    }
+
+    public function jsonSerialize()
+    {
+        return (array) $this->data;
     }
 
     protected function transform($items)
