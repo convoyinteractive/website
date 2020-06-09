@@ -2,8 +2,9 @@ const pixel = 16;
 
 export default {
     template: `
-    <div>
-        <div v-if="active" class="fixed inset-0">
+    <div class="z-0">
+        <div v-if="active" class="fixed inset-0 bg-black text-white space-y-10 p-10">
+            <div class="text-3xl xl:text-like-3xl text-center font-sans font-semibold">{{ count }}</div>
             <canvas
                 @keyup.esc="stop"
                 @keyup.up="moveUp"
@@ -11,7 +12,7 @@ export default {
                 @keyup.left="moveLeft"
                 @keyup.right="moveRight"
                 tabindex="0"
-                class="mx-auto"
+                class="outline-none border border-white mx-auto"
                 width="800"
                 height="800"
                 ref="canvas"
@@ -48,6 +49,10 @@ export default {
 
         context() {
             return this.canvas.getContext("2d");
+        },
+
+        count() {
+            return Math.max(0, this.snake.count - 4);
         },
     },
 
@@ -96,7 +101,7 @@ export default {
         },
 
         drawApple() {
-            this.context.fillStyle = "#000000";
+            this.context.fillStyle = "#ffffff";
             this.context.fillRect(
                 this.apple.x,
                 this.apple.y,
@@ -141,6 +146,9 @@ export default {
             this.active = true;
             this.fresh = false;
             this.$nextTick(() => this.canvas.focus());
+
+            document.body.style.color = "#FFFFFF";
+            document.body.style.background = "#000000";
 
             let loop = () => {
                 window.requestAnimationFrame(loop);
