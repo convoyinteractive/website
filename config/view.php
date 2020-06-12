@@ -109,8 +109,8 @@ return [
                             'w-6/10 lg:w-4/10',
                             'flex-shrink-0',
                         ],
-                    ]
-                ]
+                    ],
+                ],
             ],
             'image' => [
                 'wrap' => [
@@ -180,7 +180,7 @@ return [
                         'md:items-start',
                         'md:justify-end',
                         'lg:w-10/12',
-                    ]
+                    ],
                 ],
                 'title' => [
                     'class' => [
@@ -210,7 +210,7 @@ return [
                     ],
                     'v-theme' => [
                         'true'
-                    ]
+                    ],
                 ],
                 'component' => [
                     'class' => [
@@ -240,147 +240,143 @@ return [
                     ],
                 ],
             ],
-            'relation' => [
-                'awards' => [
-                    'title' => [
-                        'class' => [
-                            'mb-10 xl:mb-screen-10',
-                            'font-sans',
-                            'text-3xl xl:text-like-3xl',
-                            'font-semibold',
-                            'text-center',
-                        ],
-                    ],
-                    'component' => [
-                        'class' => [
-                            'flex flex-wrap',
-                            'px-5 sm:px-15 xl:px-screen-15',
-                        ],
-                    ],
-                    'items' => [
-                        'class' => [
-                            'flex flex-col',
-                            'justify-between',
-                            'w-2/12',
-                            'p-5 xl:p-screen-5',
-                        ],
-                    ],
-                    'card' => [
-                        'class' => [
-                            'relative',
-                            'flex',
-                            'flex-shrink-0',
-                            'h-full',
-                            'items-center',
-                            'justify-center',
-                            'bg-gray',
-                            'w-full',
-                            'p-10 xl:p-screen-10',
-                        ],
-                    ],
-                    'caption' => [
-                        'class' => [
-                            'mt-5',
-                            'text-sm',
-                            'text-center',
-                            'font-sans',
-                        ],
-                    ],
-                    'count' => [
-                        'class' => [
-                            'absolute',
-                            'flex',
-                            'items-center justify-center',
-                            'text-xs',
-                            'font-sans',
-                            'transform -translate-y-1/2',
-                            'top-0 right-0',
-                            'mr-5 xl:mr-screen-5',
-                            'w-8 h-8',
-                            'rounded-full',
-                            'bg-green',
-                            'text-white',
-                        ],
+            'awards' => [
+                'title' => [
+                    'class' => [
+                        'mb-10 xl:mb-screen-10',
+                        'font-sans',
+                        'text-3xl xl:text-like-3xl',
+                        'font-semibold',
+                        'text-center',
                     ],
                 ],
-
-                'clients' => [
-                    'title' => [
-                        'class' => [
-                            'mb-10 xl:mb-screen-10',
-                            'font-sans',
-                            'text-3xl xl:text-like-3xl',
-                            'font-semibold',
-                            'text-center',
-                        ],
-                    ],
-                    'component' => [
-                        'class' => [
-                            'flex flex-wrap',
-                            'px-5 sm:px-15 xl:px-screen-15',
-                        ],
-                    ],
-                    'items' => [
-                        'class' => [
-                            'w-3/12',
-                            'p-5 xl:p-screen-5',
-                        ],
-                    ],
-                    'card' => [
-                        'class' => [
-                            'flex',
-                            'items-center',
-                            'justify-center',
-                            'bg-gray',
-                            'w-full h-full',
-                            'px-10 py-20 xl:px-screen-10 xl:py-screen-20',
-                        ],
+                'component' => [
+                    'class' => [
+                        'flex flex-wrap',
+                        'px-5 sm:px-15 xl:px-screen-15',
                     ],
                 ],
-
-                'services' => [
-                    'wrap' => [
-                        'class' => [
-                            'sm:px-10 xl:px-screen-10',
-                            'mx-auto',
-                            'my-30 xl:my-screen-30',
-                            'md:flex',
-                            'md:items-start',
-                            'md:justify-end',
-                            'lg:w-10/12',
-                        ]
+                'items' => [
+                    'class' => [
+                        'flex flex-col',
+                        'justify-between',
+                        'w-2/12',
+                        'p-5 xl:p-screen-5',
                     ],
-                    'title' => [
-                        'class' => [
-                            'px-10 xl:px-screen-10',
-                            'pb-10 xl:pb-screen-10',
-                            'font-sans',
-                            'text-2xl xl:text-like-2xl',
-                            'font-semibold',
-                            'md:w-3/10',
-                        ],
+                ],
+                'card' => [
+                    'class' => [
+                        'relative',
+                        'flex',
+                        'flex-shrink-0',
+                        'h-full',
+                        'items-center',
+                        'justify-center',
+                        'bg-gray',
+                        'w-full',
+                        'p-10 xl:p-screen-10',
                     ],
-                    'component' => [
-                        'class' => [
-                            'flex flex-wrap',
-                            'px-5 xl:px-screen-5',
-                            'md:w-7/10',
-                        ],
+                ],
+                'caption' => [
+                    'class' => [
+                        'mt-5',
+                        'text-sm',
+                        'text-center',
+                        'font-sans',
                     ],
-                    'item' => [
-                        'class' => [
-                            'w-5/10',
-                            'px-5 xl:px-screen-5',
-                        ],
+                ],
+                'count' => [
+                    'class' => [
+                        'absolute',
+                        'flex',
+                        'items-center justify-center',
+                        'text-xs',
+                        'font-sans',
+                        'transform -translate-y-1/2',
+                        'top-0 right-0',
+                        'mr-5 xl:mr-screen-5',
+                        'w-8 h-8',
+                        'rounded-full',
+                        'bg-green',
+                        'text-white',
                     ],
-                    'term' => [
-                        'class' => [
-                            'border-dotted',
-                            'border-t-2 border-b-2',
-                            'border-gray-mid',
-                            '-mb-05',
-                            'py-10 xl:py-screen-10',
-                        ],
+                ],
+            ],
+            'clients' => [
+                'title' => [
+                    'class' => [
+                        'mb-10 xl:mb-screen-10',
+                        'font-sans',
+                        'text-3xl xl:text-like-3xl',
+                        'font-semibold',
+                        'text-center',
+                    ],
+                ],
+                'component' => [
+                    'class' => [
+                        'flex flex-wrap',
+                        'px-5 sm:px-15 xl:px-screen-15',
+                    ],
+                ],
+                'items' => [
+                    'class' => [
+                        'w-3/12',
+                        'p-5 xl:p-screen-5',
+                    ],
+                ],
+                'card' => [
+                    'class' => [
+                        'flex',
+                        'items-center',
+                        'justify-center',
+                        'bg-gray',
+                        'w-full h-full',
+                        'px-10 py-20 xl:px-screen-10 xl:py-screen-20',
+                    ],
+                ],
+            ],
+            'services' => [
+                'wrap' => [
+                    'class' => [
+                        'sm:px-10 xl:px-screen-10',
+                        'mx-auto',
+                        'my-30 xl:my-screen-30',
+                        'md:flex',
+                        'md:items-start',
+                        'md:justify-end',
+                        'lg:w-10/12',
+                    ],
+                ],
+                'title' => [
+                    'class' => [
+                        'px-10 xl:px-screen-10',
+                        'pb-10 xl:pb-screen-10',
+                        'font-sans',
+                        'text-2xl xl:text-like-2xl',
+                        'font-semibold',
+                        'md:w-3/10',
+                    ],
+                ],
+                'component' => [
+                    'class' => [
+                        'flex flex-wrap',
+                        'px-5 xl:px-screen-5',
+                        'md:w-7/10',
+                    ],
+                ],
+                'item' => [
+                    'class' => [
+                        'w-5/10',
+                        'px-5 xl:px-screen-5',
+                    ],
+                ],
+                'term' => [
+                    'class' => [
+                        'border-dotted',
+                        'border-t-2 border-b-2',
+                        'border-gray-mid',
+                        '-mb-05',
+                        'py-10 xl:py-screen-10',
                     ],
                 ],
             ],
@@ -414,35 +410,33 @@ return [
                     ],
                 ],
             ],
-            'relation' => [
-                'services' => [
-                    'wrap' => [
-                        'class' => [
-                            'sm:px-10 xl:px-screen-10',
-                            'mx-auto',
-                            'my-30 xl:my-screen-30',
-                            'lg:w-10/12',
-                        ]
+            'services' => [
+                'wrap' => [
+                    'class' => [
+                        'sm:px-10 xl:px-screen-10',
+                        'mx-auto',
+                        'my-30 xl:my-screen-30',
+                        'lg:w-10/12',
                     ],
-                    'component' => [
-                        'class' => [
-                            'sm:px-10 xl:px-screen-10',
-                            'lg:w-7/10',
-                            'font-sans',
-                            'font-semibold',
-                            'text-3xl xl:text-like-3xl',
-                        ],
+                ],
+                'component' => [
+                    'class' => [
+                        'sm:px-10 xl:px-screen-10',
+                        'lg:w-7/10',
+                        'font-sans',
+                        'font-semibold',
+                        'text-3xl xl:text-like-3xl',
                     ],
-                    'item' => [
-                        'class' => [
-                            'inline-block',
-                            'mr-5 xl:mr-screen-5'
-                        ],
+                ],
+                'item' => [
+                    'class' => [
+                        'inline-block',
+                        'mr-5 xl:mr-screen-5'
                     ],
-                    'term' => [
-                        'class' => [
-                            //
-                        ],
+                ],
+                'term' => [
+                    'class' => [
+                        //
                     ],
                 ],
             ],

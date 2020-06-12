@@ -13,6 +13,11 @@ class Component
         $this->data = $data;
     }
 
+    public function alias()
+    {
+        return $this->get('alias', $this->is('relation') ? $this->get('resource') : $this->type());
+    }
+
     public function type()
     {
         return $this->get('type', 'component');

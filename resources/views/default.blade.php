@@ -21,23 +21,18 @@
 
     @foreach($content->components() as $component)
         <div {{ $content->attributes([
-            $component->type(),
-            $component->is('relation') ? "{$component->get('resource')}.wrap" : "wrap"
+            $component->alias(), "wrap"
         ]) }}>
             @if($component->has('title'))
-            <div {{ $content->attributes([
-                $component->type(),
-                $component->is('relation') ? "{$component->get('resource')}.title" : "title"
-            ]) }}>
+            <div {{ $content->attributes([$component->alias(), "title"]) }}>
                 {{ $component->get('title') }}
             </div>
             @endif
 
-            @include(view()->exists("components.{$component->type()}") ? "components.{$component->type()}" : "components.error", [
+            @include(view()->exists("components.{$component->alias()}") ? "components.{$component->alias()}" : "components.error", [
                 'component' => $component,
                 'attributes' => $content->attributes([
-                    $component->type(),
-                    $component->is('relation') ? "{$component->get('resource')}.component" : "component"
+                    $component->alias(), "component"
                 ]),
             ])
         </div>
