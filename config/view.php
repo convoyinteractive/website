@@ -39,37 +39,45 @@ return [
                         'px-10 xl:px-screen-10',
                         'mx-auto',
                         'my-50 xl:my-screen-50',
+                        'lg:w-10/12',
+                    ],
+                    'v-theme' => [
+                        'true'
                     ],
                 ],
                 'title' => [
                     'class' => [
                         'mb-10 xl:mb-screen-10',
+                        'px-10 xl:px-screen-10',
                         'font-sans',
                         'text-3xl xl:text-like-3xl',
                         'font-semibold',
-                        'text-center',
+                        'lg:w-7/10',
+                        'ml-auto',
                     ],
                 ],
                 'component' => [
                     'class' => [
-                        'sm:px-10 sm:px-20 xl:px-screen-10',
                         'py-10 lg:py-20 xl:py-screen-20',
-                        'mx-auto',
-                        'lg:w-10/12',
+                        'flex',
+                        'flex-wrap',
+                        'items-start',
                     ],
                 ],
                 'term' => [
                     'class' => [
-                        'mb-10',
                         'text-xl xl:text-like-xl',
                         'font-sans font-semibold',
+                        'w-3/10',
+                        'mb-20 xl:mb-screen-20',
+                        'px-10 xl:px-screen-10',
                     ],
                 ],
                 'item' => [
                     'class' => [
-                        'mb-10',
-                        'pb-10',
-                        'border-b-2 border-dotted',
+                        'w-7/10',
+                        'mb-20 xl:mb-screen-20',
+                        'px-10 xl:px-screen-10',
                     ],
                 ],
                 'items' => [
@@ -325,7 +333,7 @@ return [
                             'justify-center',
                             'bg-gray',
                             'w-full h-full',
-                            'p-10 xl:p-screen-10',
+                            'px-10 py-20 xl:px-screen-10 xl:py-screen-20',
                         ],
                     ],
                 ],
@@ -368,10 +376,72 @@ return [
                     'term' => [
                         'class' => [
                             'border-dotted',
-                            'bg-white',
-                            'border-t border-b',
-                            '-mb-px',
+                            'border-t-2 border-b-2',
+                            'border-gray-mid',
+                            '-mb-05',
                             'py-10 xl:py-screen-10',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        'home' => [
+            'quote' => [
+                'wrap' => [
+                    'class' => [
+                        'sm:px-10 xl:px-screen-10',
+                    ],
+                ],
+                'component' => [
+                    'class' => [
+                        'mx-auto',
+                        'lg:w-10/12',
+                        'sm:px-10 xl:px-screen-10',
+                    ],
+                ],
+                'body' => [
+                    'class' => [
+                        'font-sans font-semibold',
+                        'text-3xl xl:text-like-3xl',
+                        'leading-normal',
+                    ],
+                ],
+                'author' => [
+                    'class' => [
+                        'block',
+                        'font-sans font-normal',
+                    ],
+                ],
+            ],
+            'relation' => [
+                'services' => [
+                    'wrap' => [
+                        'class' => [
+                            'sm:px-10 xl:px-screen-10',
+                            'mx-auto',
+                            'my-30 xl:my-screen-30',
+                            'lg:w-10/12',
+                        ]
+                    ],
+                    'component' => [
+                        'class' => [
+                            'sm:px-10 xl:px-screen-10',
+                            'lg:w-7/10',
+                            'font-sans',
+                            'font-semibold',
+                            'text-3xl xl:text-like-3xl',
+                        ],
+                    ],
+                    'item' => [
+                        'class' => [
+                            'inline-block',
+                            'mr-5 xl:mr-screen-5'
+                        ],
+                    ],
+                    'term' => [
+                        'class' => [
+                            //
                         ],
                     ],
                 ],

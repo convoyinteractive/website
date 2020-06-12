@@ -20,7 +20,10 @@ module.exports = {
             transparent: "transparent",
             black: "#000000",
             white: "#ffffff",
-            gray: "#F4F4F4",
+            gray: {
+                default: "#F4F4F4",
+                mid: "#303030",
+            },
             green: {
                 soft: "#E9F9E3",
                 default: "#00ff00",
@@ -29,6 +32,7 @@ module.exports = {
         spacing: {
             px: "1px",
             "0": "0",
+            "05": "2px",
             "1": "4px",
             "2": "8px",
             "3": "12px",
@@ -39,6 +43,7 @@ module.exports = {
             "10": "40px",
             "15": "60px",
             "20": "80px",
+            "25": "100px",
             "30": "120px",
             "40": "160px",
             "50": "200px",
@@ -178,6 +183,7 @@ module.exports = {
             screen: "100vh",
         }),
         inset: {
+            "1/2": "50%",
             "0": "0",
             "12": "48px",
             "32": "128px",
@@ -209,12 +215,14 @@ module.exports = {
             ...theme("spacing"),
             ...negative(theme("spacing")),
         }),
-        maxHeight: {
+        maxHeight: theme => ({
+            ...theme("spacing"),
             full: "100%",
             screen: "100vh",
-        },
+        }),
         maxWidth: (theme, { breakpoints }) => ({
             none: "none",
+            ...theme("spacing"),
             xs: "20rem",
             sm: "24rem",
             md: "28rem",
