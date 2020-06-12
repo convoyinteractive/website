@@ -14,7 +14,8 @@ class Data implements JsonSerializable
 
     protected $components = [
         'markdown' => Components\MarkdownComponent::class,
-        'relation' => Components\RelationComponent::class,
+        'component' => Components\RelationComponent::class,
+        'collection' => Components\RelationComponent::class,
         'svg' => Components\SvgComponent::class,
     ];
 
