@@ -1,4 +1,4 @@
-@include(view()->exists("components.{$component->get('resource')}") ? "components.{$component->get('resource')}" : "components.error", [
+@include($item->view(), [
     'component' => $component,
     'attributes' => $attributes ?? '',
 ])

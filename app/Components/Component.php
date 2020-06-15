@@ -42,4 +42,11 @@ class Component
     {
         return Arr::has($this->data, $key);
     }
+
+    public function view()
+    {
+        return view()->exists("components.{$this->alias()}")
+            ? "components.{$this->alias()}"
+            : "components.error";
+    }
 }

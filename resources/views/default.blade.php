@@ -12,7 +12,7 @@
         </div>
 
         @if($content->hero()->exists())
-            @include(view()->exists("components.{$content->hero()->type()}") ? "components.{$content->hero()->type()}" : "components.error", [
+            @include($content->hero()->view(), [
                 'component' => $content->hero(),
                 'attributes' => $content->attributes('hero.component'),
             ])
@@ -29,7 +29,7 @@
             </div>
             @endif
 
-            @include(view()->exists("components.{$component->alias()}") ? "components.{$component->alias()}" : "components.error", [
+            @include($component->view(), [
                 'component' => $component,
                 'attributes' => $content->attributes([
                     $component->alias(), "component"
