@@ -1,7 +1,7 @@
 <nav-menu inline-template>
     <nav v-click-away="close" @keydown="onKeydown">
         <div class="
-            px-10 sm:px-20 xl:px-screen-20
+            px-6 md:px-10 sm:px-20 xl:px-screen-20
             pt-10 xl:pt-screen-10
             fixed
             top-0
@@ -17,7 +17,7 @@
 
         <div
             class="
-                px-10 sm:px-20 xl:px-screen-20
+                px-6 md:px-10 sm:px-20 xl:px-screen-20
                 pt-10 xl:pt-screen-10
                 fixed
                 inset-x-0

@@ -4,7 +4,18 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-    @apply font-sans font-semibold text-3xl;
+    @apply font-sans font-semibold text-xl;
+}
+
+@screen md {
+    .markdown h1,
+    .markdown h2,
+    .markdown h3,
+    .markdown h4,
+    .markdown h5,
+    .markdown h6 {
+        @apply text-3xl;
+    }
 }
 
 @screen xl {

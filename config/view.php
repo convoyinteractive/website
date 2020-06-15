@@ -19,7 +19,7 @@ return [
                 ],
                 'title' => [
                     'class' => [
-                        'px-10 sm:px-20 xl:px-screen-20',
+                        'px-6 md:px-10 sm:px-20 xl:px-screen-20',
                         'mx-auto',
                         'my-50 xl:my-screen-50',
                         'lg:w-10/12',
@@ -36,7 +36,7 @@ return [
             'definition' => [
                 'wrap' => [
                     'class' => [
-                        'px-10 xl:px-screen-10',
+                        'md:px-10 xl:px-screen-10',
                         'mx-auto',
                         'my-50 xl:my-screen-50',
                         'lg:w-10/12',
@@ -48,9 +48,9 @@ return [
                 'title' => [
                     'class' => [
                         'mb-10 xl:mb-screen-10',
-                        'px-10 xl:px-screen-10',
+                        'px-6 md:px-10 xl:px-screen-10',
                         'font-sans',
-                        'text-3xl xl:text-like-3xl',
+                        'text-xl md:text-3xl xl:text-like-3xl',
                         'font-semibold',
                         'lg:w-7/10',
                         'ml-auto',
@@ -66,18 +66,18 @@ return [
                 ],
                 'term' => [
                     'class' => [
-                        'text-xl xl:text-like-xl',
+                        'md:text-xl xl:text-like-xl',
                         'font-sans font-semibold',
-                        'w-3/10',
-                        'mb-20 xl:mb-screen-20',
-                        'px-10 xl:px-screen-10',
+                        'md:w-3/10',
+                        'mb-10 md:mb-20 xl:mb-screen-20',
+                        'px-6 md:px-10 xl:px-screen-10',
                     ],
                 ],
                 'item' => [
                     'class' => [
-                        'w-7/10',
+                        'md:w-7/10',
                         'mb-20 xl:mb-screen-20',
-                        'px-10 xl:px-screen-10',
+                        'px-6 md:px-10 xl:px-screen-10',
                     ],
                 ],
                 'items' => [
@@ -144,7 +144,7 @@ return [
                         'md:sticky',
                         'top-32',
                         'font-sans',
-                        'text-2xl xl:text-like-2xl',
+                        'text-xl md:text-2xl xl:text-like-2xl',
                         'font-semibold',
                         'md:w-3/10',
                     ],
@@ -173,7 +173,7 @@ return [
             'markdown' => [
                 'wrap' => [
                     'class' => [
-                        'sm:px-10 xl:px-screen-10',
+                        'md:px-10 xl:px-screen-10',
                         'mx-auto',
                         'my-30 xl:my-screen-30',
                         'md:flex',
@@ -184,10 +184,10 @@ return [
                 ],
                 'title' => [
                     'class' => [
-                        'px-10 xl:px-screen-10',
+                        'px-6 md:px-10 xl:px-screen-10',
                         'pb-10 xl:pb-screen-10',
                         'font-sans',
-                        'text-2xl xl:text-like-2xl',
+                        'text-xl md:text-2xl xl:text-like-2xl',
                         'font-semibold',
                         'md:w-3/10',
                     ],
@@ -195,7 +195,7 @@ return [
                 'component' => [
                     'class' => [
                         'markdown',
-                        'px-10 xl:px-screen-10',
+                        'px-6 md:px-10 xl:px-screen-10',
                         'md:w-7/10',
                     ],
                 ],
@@ -214,10 +214,10 @@ return [
                 ],
                 'component' => [
                     'class' => [
-                        'flex flex-row-reverse',
+                        'block lg:flex flex-row-reverse',
                         'items-center justify-between',
                         'sm:px-10 xl:px-screen-10',
-                        'w-10/12',
+                        'lg:w-10/12',
                     ],
                 ],
                 'body' => [
@@ -227,7 +227,7 @@ return [
                         'my-10',
                         'lg:w-7/10',
                         'font-sans font-semibold',
-                        'text-3xl xl:text-like-3xl',
+                        'text-xl md:text-3xl xl:text-like-3xl',
                         'leading-normal',
                     ],
                 ],
@@ -236,6 +236,7 @@ return [
                         'block',
                         'px-10',
                         'my-10',
+                        'font-sans',
                         'lg:w-3/10 xl:w-2/10'
                     ],
                 ],
@@ -245,7 +246,7 @@ return [
                     'class' => [
                         'mb-10 xl:mb-screen-10',
                         'font-sans',
-                        'text-3xl xl:text-like-3xl',
+                        'text-xl md:text-3xl xl:text-like-3xl',
                         'font-semibold',
                         'text-center',
                     ],
@@ -305,9 +306,9 @@ return [
             'clients' => [
                 'title' => [
                     'class' => [
-                        'mb-10 xl:mb-screen-10',
+                        'px-6 mb-10 xl:mb-screen-10',
                         'font-sans',
-                        'text-3xl xl:text-like-3xl',
+                        'text-xl md:text-3xl xl:text-like-3xl',
                         'font-semibold',
                         'text-center',
                     ],
@@ -315,13 +316,13 @@ return [
                 'component' => [
                     'class' => [
                         'flex flex-wrap',
-                        'px-5 sm:px-15 xl:px-screen-15',
+                        'px-3 md:px-5 sm:px-15 xl:px-screen-15',
                     ],
                 ],
                 'items' => [
                     'class' => [
-                        'w-3/12',
-                        'p-5 xl:p-screen-5',
+                        'w-6/12 md:w-4/12 lg:w-3/12',
+                        'p-3 md:p-5 xl:p-screen-5',
                     ],
                 ],
                 'card' => [
@@ -331,14 +332,14 @@ return [
                         'justify-center',
                         'bg-gray',
                         'w-full h-full',
-                        'px-10 py-20 xl:px-screen-10 xl:py-screen-20',
+                        'px-10 py-10 lg:py-20 xl:px-screen-10 xl:py-screen-20',
                     ],
                 ],
             ],
             'services' => [
                 'wrap' => [
                     'class' => [
-                        'sm:px-10 xl:px-screen-10',
+                        'md:px-10 xl:px-screen-10',
                         'mx-auto',
                         'my-30 xl:my-screen-30',
                         'md:flex',
@@ -349,33 +350,34 @@ return [
                 ],
                 'title' => [
                     'class' => [
-                        'px-10 xl:px-screen-10',
+                        'px-6 md:px-10 xl:px-screen-10',
                         'pb-10 xl:pb-screen-10',
                         'font-sans',
-                        'text-2xl xl:text-like-2xl',
+                        'text-xl md:text-2xl xl:text-like-2xl',
                         'font-semibold',
                         'md:w-3/10',
                     ],
                 ],
                 'component' => [
                     'class' => [
-                        'flex flex-wrap',
-                        'px-5 xl:px-screen-5',
+                        'block sm:flex flex-wrap',
+                        'px-6 sm:px-3 md:px-5 xl:px-screen-5',
                         'md:w-7/10',
                     ],
                 ],
                 'item' => [
                     'class' => [
-                        'w-5/10',
-                        'px-5 xl:px-screen-5',
+                        'sm:w-5/10',
+                        'sm:px-3 md:px-5 xl:px-screen-5',
+                        '-mb-05',
                     ],
                 ],
                 'term' => [
                     'class' => [
+                        'h-full',
                         'border-dotted',
                         'border-t-2 border-b-2',
                         'border-gray-mid',
-                        '-mb-05',
                         'py-10 xl:py-screen-10',
                     ],
                 ],
@@ -386,7 +388,7 @@ return [
             'quote' => [
                 'wrap' => [
                     'class' => [
-                        'sm:px-10 xl:px-screen-10',
+                        'px-6 md:px-10 xl:px-screen-10',
                     ],
                 ],
                 'component' => [
@@ -399,7 +401,7 @@ return [
                 'body' => [
                     'class' => [
                         'font-sans font-semibold',
-                        'text-3xl xl:text-like-3xl',
+                        'text-xl md:text-3xl xl:text-like-3xl',
                         'leading-normal',
                     ],
                 ],
@@ -407,13 +409,14 @@ return [
                     'class' => [
                         'block',
                         'font-sans font-normal',
+                        'text-base md:text-xl',
                     ],
                 ],
             ],
             'services' => [
                 'wrap' => [
                     'class' => [
-                        'sm:px-10 xl:px-screen-10',
+                        'px-6 md:px-10 xl:px-screen-10',
                         'mx-auto',
                         'my-30 xl:my-screen-30',
                         'lg:w-10/12',
@@ -425,7 +428,7 @@ return [
                         'lg:w-7/10',
                         'font-sans',
                         'font-semibold',
-                        'text-3xl xl:text-like-3xl',
+                        'text-xl md:text-3xl xl:text-like-3xl',
                     ],
                 ],
                 'item' => [
@@ -466,7 +469,7 @@ return [
             'hero' => [
                 'wrap' => [
                     'class' => [
-                        'px-10 xl:px-screen-10',
+                        'px-6 md:px-10 xl:px-screen-10',
                         'md:flex',
                         'md:items-center',
                         'md:justify-between',

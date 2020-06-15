@@ -1,4 +1,4 @@
-<div class="flex items-center space-x-10 xl:space-x-screen-10">
+<div class="flex items-center justify-between sm:justify-start space-x-10 xl:space-x-screen-10">
     @foreach ($socials as $item)
     <a
         href="{{ $item->get('url') }}"

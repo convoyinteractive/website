@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <script src="{{ mix('/js/app.js') }}"></script>
 </head>
-<body class="font-serif text-xl xl:text-like-xl leading-relaxed transition duration-500 ease-in-out"
+<body class="font-serif text-base md:text-xl xl:text-like-xl leading-relaxed transition duration-500 ease-in-out"
     theme='@json($meta->get("colors", [
         "text" => "#ffffff",
         "background" => "#000000"
@@ -26,7 +26,7 @@
         <snake></snake>
 
         <footer class="
-            px-10 sm:px-20 xl:px-screen-20
+            px-6 md:px-10 sm:px-20 xl:px-screen-20
             pt-10 pb-40 sm:py-10 xl:py-screen-10
             mt-30 xl:mt-screen-30
             bg-black

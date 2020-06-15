@@ -6,7 +6,7 @@
     <div {{ $content->attributes('hero.wrap') }}>
         <div {{ $content->attributes('hero.title') }}>
             @if($content->has('meta.title'))
-            <h1 class="font-bold font-hero text-6xl xl:text-like-6xl leading-tight">{{ $content->get('meta.title') }}</h1>
+            <h1 class="font-bold font-hero text-4xl sm:text-5xl md:text-6xl xl:text-like-6xl leading-tight">{{ $content->get('meta.title') }}</h1>
             <span class="block font-sans font-light text-sm xl:text-like-sm">{{ $content->get('meta.subtitle') }}</span>
             @endif
         </div>
