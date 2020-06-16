@@ -90,6 +90,15 @@ Vue.component("dragable", () =>
 );
 
 /**
+ * Next we'll load the "Scrollable" component. This component animates its content
+ * by scrolling. The single components root container pins to the viewports top.
+ * Therefore it's best practice that the container fits the viewports height.
+ */
+Vue.component("scrollable", () =>
+    import(/* webpackChunkName: "js/scrollable" */ "./components/Scrollable"),
+);
+
+/**
  * Here we'll load some basic transition components. These components should be stateless
  * functional and reusable components. For defining your animations you may use "gsap".
  * Your transition component may provides handlers for any of the supported hooks:
