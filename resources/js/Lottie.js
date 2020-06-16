@@ -16,6 +16,10 @@ export default class Lottie {
 
         this.animation = Airbnb.loadAnimation(options);
 
+        this.animation.addEventListener("DOMLoaded", function() {
+            document.dispatchEvent(new CustomEvent("lottie:ready"));
+        });
+
         this.handlers = {
             inview: animation => this.handleInView(animation),
             onscroll: animation => this.handleOnScroll(animation),
