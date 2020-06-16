@@ -382,6 +382,58 @@ return [
                     ],
                 ],
             ],
+            'portfolio' => [
+                'wrap' => [
+                    'class' => [
+                        'flex',
+                        'flex-col',
+                        'justify-center',
+                        'min-h-screen',
+                        'overflow-hidden',
+                        'bg-black text-white',
+                        'px-6 md:px-10 xl:px-screen-10',
+                    ],
+                ],
+                'title' => [
+                    'class' => [
+                        'mb-20',
+                        'text-center',
+                        'font-sans',
+                        'font-semibold',
+                        'text-xl md:text-3xl xl:text-screen-3xl',
+
+                    ],
+                ],
+                'component' => [
+                    'class' => [
+                        'flex',
+                        'space-x-10',
+                    ],
+                ],
+                'item' => [
+                    'class' => [
+                        'p-10',
+                        'bg-white text-black',
+                        'w-6/10 lg:w-3/10',
+                        'flex-shrink-0',
+                    ],
+                ],
+                'heading' => [
+                    'class' => [
+                        'font-sans',
+                        'font-semibold',
+                        'text-xl md:text-2xl xl:text-screen-2xl',
+                        'mb-10',
+                    ],
+                ],
+                'items' => [
+                    'markdown' => [
+                        'class' => [
+                            //
+                        ],
+                    ],
+                ],
+            ],
         ],
 
         'home' => [
