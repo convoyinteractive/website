@@ -498,23 +498,7 @@ return [
         ],
 
         'case' => [
-            'gallery' => [
-                'wrap' => [
-                    'class' => [
-                        'overflow-hidden',
-                        'my-50 xl:my-screen-50',
-                    ],
-                ],
-                'component' => [
-                    'class' => [
-                        'px-10 sm:px-20 xl:px-screen-10',
-                        'flex',
-                        'items-center',
-                        'space-x-30 xl:space-x-screen-30',
-                        'carousel',
-                    ],
-                ],
-            ],
+            //
         ],
 
         'services' => [
