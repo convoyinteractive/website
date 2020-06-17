@@ -1,8 +1,8 @@
 <figure {{ $attributes ?? ''}} aria-label="{{ $component->get('alt') }}">
-    <div>
-        <picture class="w-full pointer-events-none">
+    <div class="max-h-full max-w-full">
+        <picture class="pointer-events-none max-h-full max-w-full mx-auto">
             <source media="(min-width: 500px)" srcset="{{ asset($component->get('sizes.large'), []) }}">
-            <img class="w-full" src="{{ asset($component->get('sizes.small'), []) }}" alt="{{ $component->get('alt') }}">
+            <img class="max-h-full max-w-full mx-auto" src="{{ asset($component->get('sizes.small'), []) }}" alt="{{ $component->get('alt') }}">
         </picture>
     </div>
 
