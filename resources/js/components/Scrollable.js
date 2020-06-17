@@ -1,5 +1,5 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { tap } from "@tobiasthaden/tap";
+import gsap, { ScrollTrigger } from "gsap/all";
 
 export default {
     render: function(h) {
@@ -12,28 +12,33 @@ export default {
         );
     },
 
+    data() {
+        return {
+            tween: null,
+        };
+    },
+
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
-        var id;
 
         var _vm = this;
 
-        let initialize = function() {
-            if (id) {
-                ScrollTrigger.getById(id).kill();
-            }
+        let update = function() {
+            tap(_vm.tween, tween => {
+                let width = _vm.calculateWidth();
+                tween.vars.x = `-${width}px`;
+            }).invalidate();
 
+            ScrollTrigger.refresh();
+        };
+
+        let initialize = function() {
             let width = _vm.calculateWidth();
 
-            id = Math.random()
-                .toString(36)
-                .substr(2, 10);
-
-            gsap.to(_vm.$refs.element.children, {
+            _vm.tween = gsap.to(_vm.$refs.element.children, {
                 x: `-${width}px`,
                 ease: "none",
                 scrollTrigger: {
-                    id: id,
                     trigger: _vm.$refs.element.parentElement,
                     pin: _vm.$refs.element.parentElement,
                     pinSpacing: "margin",
@@ -43,8 +48,9 @@ export default {
         };
 
         initialize();
-        document.addEventListener("lottie:ready", initialize);
-        window.addEventListener("resize", initialize);
+
+        document.addEventListener("lottie:ready", update);
+        window.addEventListener("resize", update);
     },
 
     methods: {
