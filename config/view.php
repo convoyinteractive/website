@@ -498,7 +498,26 @@ return [
         ],
 
         'case' => [
-            //
+            'markdown' => [
+                'wrap' => [
+                    'class' => [
+                        'lg:w-8/12',
+                        'mx-auto',
+                        'px-6 md:px-10 xl:px-screen-10',
+                    ],
+                ],
+                'component' => [
+                    'class' => [
+                        'markdown',
+                    ],
+                ],
+                'title' => [
+                    'class' => [
+                        'font-sans font-semibold',
+                        'mb-10 xl:mb-screen-10',
+                    ],
+                ]
+            ]
         ],
 
         'services' => [
