@@ -125,6 +125,43 @@ return [
                     ],
                 ],
             ],
+            'impressions' => [
+                'wrap' => [
+                    'class' => [
+                        'flex',
+                        'flex-col',
+                        'justify-center',
+                        'h-screen',
+                        'overflow-hidden',
+                        'px-6 md:px-10 xl:px-screen-10',
+                    ],
+                ],
+                'component' => [
+                    'class' => [
+                        'flex',
+                        'h-full',
+                        'py-20',
+                        'space-x-10',
+                    ],
+                ],
+                'item' => [
+                    'class' => [
+                        'p-20',
+                        'w-full lg:w-10/12',
+                        'flex-shrink-0',
+                        'bg-gray',
+                    ],
+                ],
+                'items' => [
+                    'image' => [
+                        'class' => [
+                            'h-full',
+                            'flex flex-col',
+                            'justify-center',
+                        ]
+                    ]
+                ]
+            ],
             'list' => [
                 'wrap' => [
                     'class' => [
@@ -390,7 +427,6 @@ return [
                         'justify-center',
                         'min-h-screen',
                         'overflow-hidden',
-                        'bg-black text-white',
                         'px-6 md:px-10 xl:px-screen-10',
                     ],
                 ],
