@@ -112,6 +112,34 @@ return [
                     ],
                 ],
             ],
+            'group' => [
+                'component' => [
+                    'class' => [
+                        'flex',
+                        'flex-wrap',
+                        'px-5 xl:px-screen-5',
+                    ],
+                ],
+
+                'item' => [
+                    'class' => [
+                        'p-5 xl:p-screen-5',
+                        'w-6/12'
+                    ],
+                ],
+
+                'items' => [
+                    'image' => [
+                        'class' => [
+                            'h-full',
+                            'flex flex-col',
+                            'justify-center',
+                            'p-20',
+                            'bg-gray',
+                        ],
+                    ],
+                ]
+            ],
             'image' => [
                 'wrap' => [
                     'class' => [
