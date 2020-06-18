@@ -99,6 +99,15 @@ Vue.component("scrollable", () =>
 );
 
 /**
+ * Next we'll load our device components. These functional components accepting
+ * a "screen" as its default slot – but do not handle any internal state. The
+ * devices are single path Svg's that should inherit ist parents text color.
+ */
+Vue.component("phone", () =>
+    import(/* webpackChunkName: "js/devices" */ "./components/Phone"),
+);
+
+/**
  * Here we'll load some basic transition components. These components should be stateless
  * functional and reusable components. For defining your animations you may use "gsap".
  * Your transition component may provides handlers for any of the supported hooks:

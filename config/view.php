@@ -138,6 +138,15 @@ return [
                             'bg-gray',
                         ],
                     ],
+                    'phone' => [
+                        'class' => [
+                            'h-full',
+                            'flex flex-col',
+                            'justify-center',
+                            'p-20',
+                            'bg-gray',
+                        ],
+                    ],
                 ]
             ],
             'image' => [
