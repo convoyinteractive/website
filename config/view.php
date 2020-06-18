@@ -124,6 +124,14 @@ return [
                         'max-w-6xl',
                     ],
                 ],
+                'item' => [
+                    'class' => [
+                        'shadow-lg',
+                        'pointer-events-none',
+                        'max-h-full max-w-full',
+                        'mx-auto',
+                    ],
+                ]
             ],
             'impressions' => [
                 'wrap' => [
