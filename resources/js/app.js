@@ -72,6 +72,15 @@ Vue.component("newsletter-sign-up", () =>
 );
 
 /**
+ * Now w'll load the "Data Table" component. This component accepts an array of objects as its only
+ * property. Then it renders a definition list using the objects label as the definition term and
+ * the objects value as the definition data. Multiple values will render to an unordered list.
+ */
+Vue.component("data-table", () =>
+    import(/* webpackChunkName: "js/datatable" */ "./components/DataTable"),
+);
+
+/**
  * Now we'll require the "Draw Svg" component. This component depends on our lottie library, which
  * is a wrapper around AirBnb's web animation library with a slightly improved api and waypoints
  * support. The animated svg will be drawn as soon as the outer element reaches the viewport.

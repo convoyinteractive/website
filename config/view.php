@@ -577,6 +577,28 @@ return [
         ],
 
         'case' => [
+            'details' => [
+                'wrap' => [
+                    'class' => [
+                        'flex',
+                        'items-center',
+                        'md:w-10/12',
+                        'mx-auto',
+                        'mt-50 xl:mt-screen-50',
+                        'mb-20 xl:mb-screen-20'
+                    ],
+                ],
+                'aside' => [
+                    'class' => [
+                        'md:w-3/10',
+                    ],
+                ],
+                'component' => [
+                    'class' => [
+                        'md:w-7/10',
+                    ],
+                ],
+            ],
             'markdown' => [
                 'wrap' => [
                     'class' => [
