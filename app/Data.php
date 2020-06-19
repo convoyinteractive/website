@@ -34,10 +34,10 @@ class Data implements JsonSerializable
         return Arr::get($this->data, $key, $default);
     }
 
-    public function components()
+    public function components($key = 'body')
     {
         return $this->transform(
-            $this->get('body')
+            $this->get($key)
         );
     }
 
