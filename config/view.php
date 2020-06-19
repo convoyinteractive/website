@@ -163,10 +163,8 @@ return [
                 ],
                 'item' => [
                     'class' => [
-                        'shadow-lg',
                         'pointer-events-none',
-                        'max-h-full max-w-full',
-                        'mx-auto',
+                        'w-full',
                     ],
                 ]
             ],
@@ -596,6 +594,15 @@ return [
                     'class' => [
                         'font-sans font-semibold',
                         'mb-10 xl:mb-screen-10',
+                    ],
+                ],
+            ],
+            'image' => [
+                'item' => [
+                    'class' => [
+                        'pointer-events-none',
+                        'max-h-full max-w-full',
+                        'mx-auto',
                     ],
                 ]
             ]
