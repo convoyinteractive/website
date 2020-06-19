@@ -2,9 +2,11 @@
 
 namespace App\Components;
 
+use ArrayAccess;
 use Illuminate\Support\Arr;
+use Illuminate\Contracts\Support\Arrayable;
 
-class Component
+class Component implements Arrayable, ArrayAccess
 {
     protected $data;
 
@@ -48,5 +50,35 @@ class Component
         return view()->exists("components.{$this->alias()}")
             ? "components.{$this->alias()}"
             : "components.error";
+    }
+
+    public function __get($key)
+    {
+        return $this->get($key);
+    }
+
+    public function offsetExists($offset)
+    {
+        return ! is_null($this->get($offset));
+    }
+
+    public function offsetGet($offset)
+    {
+        return $this->get($offset);
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        $this->data[$offset] = $value;
+    }
+
+    public function offsetUnset($offset)
+    {
+        unset($this->data[$offset]);
+    }
+
+    public function toArray()
+    {
+        return $this->data;
     }
 }
