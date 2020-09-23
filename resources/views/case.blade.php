@@ -12,9 +12,22 @@
         </div>
     </div>
 
+    @if($content->meta->has('image'))
+    <div class="mb-40">
+        @if($content->has('meta.image.sizes'))
+        <picture class="w-full block">
+            <source media="(min-width: 500px)" srcset="{{ asset($content->get('meta.image.sizes.large'), []) }}">
+            <img class="w-full block" src="{{ asset($content->get('meta.image.sizes.small'), []) }}" alt="{{ $content->get('meta.title') }}">
+        </picture>
+        @elseif($content->has('meta.image.path'))
+            <img class="w-full block" src="{{ asset($content->get('meta.image.path'), []) }}" alt="{{ $content->get('meta.title') }}">
+        @endif
+    </div>
+    @endif
+
     @foreach($content->components() as $component)
         <div {{
-            ($loop->iteration === 2)
+            ($loop->first)
             ? $content->attributes("details.wrap")
             :  $content->attributes([$component->alias(), "wrap"])
         }}>
@@ -24,7 +37,7 @@
             </div>
             @endif
 
-            @if($loop->iteration === 2)
+            @if($loop->first)
             <div {{ $content->attributes("details.aside") }}>
                 <data-table :data="{{json_encode($content->components('details'))}}"></data-table>
             </div>
@@ -32,7 +45,7 @@
 
             @include($component->view(), [
                 'component' => $component,
-                'attributes' => ($loop->iteration === 2)
+                'attributes' => ($loop->first)
                     ? $content->attributes("details.component")
                     : $content->attributes([$component->alias(), "component"]),
             ])
