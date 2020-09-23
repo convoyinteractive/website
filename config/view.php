@@ -196,7 +196,6 @@ return [
                 ],
                 'item' => [
                     'class' => [
-                        'p-20',
                         'w-full lg:w-10/12',
                         'flex-shrink-0',
                         'bg-gray',
@@ -205,6 +204,14 @@ return [
                 'items' => [
                     'image' => [
                         'class' => [
+                            'h-full',
+                            'flex flex-col',
+                            'justify-center',
+                        ]
+                    ],
+                    'screen' => [
+                        'class' => [
+                            'p-20',
                             'h-full',
                             'flex flex-col',
                             'justify-center',
