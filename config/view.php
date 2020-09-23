@@ -134,6 +134,13 @@ return [
                             'h-full',
                             'flex flex-col',
                             'justify-center',
+                        ],
+                    ],
+                    'screen' => [
+                        'class' => [
+                            'h-full',
+                            'flex flex-col',
+                            'justify-center',
                             'p-20',
                             'bg-gray',
                         ],

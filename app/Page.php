@@ -23,14 +23,19 @@ class Page extends Data
         return $this->toComponent($this->get('meta.hero'), []);
     }
 
-    public function attributes($key = [])
+    public function theme()
+    {
+        return new Theme($this->get('theme'));
+    }
+
+    public function attributes($key = [], $options = [])
     {
         if (! is_array($key)) {
             $key = [$key];
         }
 
         return new HtmlString(
-            (string) new Attributes($this, $key)
+            (string) new Attributes($this, $key, $options)
         );
     }
 }
