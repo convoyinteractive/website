@@ -47,9 +47,15 @@ class Component implements Arrayable, ArrayAccess
 
     public function view()
     {
-        return view()->exists("components.{$this->alias()}")
-            ? "components.{$this->alias()}"
-            : "components.error";
+        if ($this->viewExists($this->alias())) {
+            return "components.{$this->alias()}";
+        }
+
+        if ($this->viewExists($this->type())) {
+            return "components.{$this->type()}";
+        }
+
+        return "components.error";
     }
 
     public function __get($key)
@@ -80,5 +86,10 @@ class Component implements Arrayable, ArrayAccess
     public function toArray()
     {
         return $this->data;
+    }
+
+    protected function viewExists($name)
+    {
+        return view()->exists("components.$name");
     }
 }
