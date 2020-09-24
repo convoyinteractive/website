@@ -35,6 +35,11 @@ class Component implements Arrayable, ArrayAccess
         return in_array($this->type(), is_array($types) ? $types : [$types]);
     }
 
+    public function isNot($types)
+    {
+        return ! $this->is($types);
+    }
+
     public function get($key = null, $default = null)
     {
         return Arr::get($this->data, $key, $default);
@@ -51,7 +56,7 @@ class Component implements Arrayable, ArrayAccess
             return "components.{$this->alias()}";
         }
 
-        if ($this->viewExists($this->type())) {
+        if ($this->viewExists($this->type()) && $this->isNot('relation')) {
             return "components.{$this->type()}";
         }
 
