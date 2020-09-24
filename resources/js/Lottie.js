@@ -22,6 +22,7 @@ export default class Lottie {
 
         this.handlers = {
             inview: animation => this.handleInView(animation),
+            loop: animation => this.handleLoop(animation),
             onscroll: animation => this.handleOnScroll(animation),
         };
     }
@@ -41,6 +42,13 @@ export default class Lottie {
                 animation.play();
             },
             offset: "50%",
+        });
+    }
+
+    handleLoop(animation) {
+        animation.addEventListener("DOMLoaded", e => {
+            animation.loop = true;
+            animation.play();
         });
     }
 
