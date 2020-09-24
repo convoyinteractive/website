@@ -258,8 +258,7 @@ return [
             'lottie' => [
                 'component' => [
                     'class' => [
-                        'w-5/12',
-                        'mx-auto',
+                        'px-6 md:px-10 sm:px-20 xl:px-screen-20'
                     ],
                 ],
             ],
@@ -485,6 +484,7 @@ return [
                         'overflow-hidden',
                         'px-6 md:px-10 xl:px-screen-10',
                     ],
+                    'v-theme' => true
                 ],
                 'title' => [
                     'class' => [
@@ -526,6 +526,17 @@ return [
                     ],
                 ],
             ],
+            'process' => [
+                'wrap' => [
+                    'v-theme' => [
+                        'true'
+                    ],
+                    'class' => [
+                        'my-20',
+                        'py-20',
+                    ]
+                ],
+            ]
         ],
 
         'home' => [
