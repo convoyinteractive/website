@@ -261,7 +261,6 @@ return [
                         'w-5/12',
                         'mx-auto',
                     ],
-                    'mode' => ['onscroll'],
                 ],
             ],
             'markdown' => [
@@ -668,7 +667,6 @@ return [
                         'sm:px-10 xl:px-screen-10',
                         'lg:w-4/10',
                     ],
-                    'mode' => ['inview']
                 ],
             ],
         ],

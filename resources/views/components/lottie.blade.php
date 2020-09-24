@@ -1,1 +1,1 @@
-<draw-svg from="/{{ $component->get('path') }}" {{ $attributes ?? '' }}></draw-svg>
+<draw-svg from="/{{ $component->get('path') }}" {{ $attributes ?? '' }} mode="{{ $component->get('mode', 'inview') }}"></draw-svg>
