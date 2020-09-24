@@ -18,14 +18,21 @@ export default {
             element: element,
             handler: direction =>
                 direction === "down" ? addTheme() : removeTheme(),
-            offset: "50%",
+            offset: function() {
+                return this.context.innerHeight() / 2;
+            },
         });
 
         new Waypoints.Waypoint({
             element: element,
             handler: direction =>
                 direction === "up" ? addTheme() : removeTheme(),
-            offset: -element.clientHeight + window.innerHeight / 2,
+            offset: function() {
+                return -(
+                    this.adapter.outerHeight() -
+                    this.context.innerHeight() / 2
+                );
+            },
         });
     },
 };
