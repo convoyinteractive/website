@@ -41,7 +41,6 @@ export default {
                 scrollTrigger: {
                     trigger: _vm.$refs.element.parentElement,
                     pin: _vm.$refs.element.parentElement,
-                    pinSpacing: "margin",
                     scrub: true,
                 },
             });
