@@ -37,12 +37,9 @@ return [
                 'wrap' => [
                     'class' => [
                         'md:px-10 xl:px-screen-10',
-                        'mx-auto',
-                        'my-50 xl:my-screen-50',
-                        'lg:w-10/12',
-                    ],
-                    'v-theme' => [
-                        'true'
+                        'pt-50 xl:pt-screen-50',
+                        'pb-30 xl:pb-screen-30',
+                        'bg-black text-white',
                     ],
                 ],
                 'title' => [
@@ -52,13 +49,14 @@ return [
                         'font-sans',
                         'text-xl md:text-3xl xl:text-like-3xl',
                         'font-semibold',
-                        'lg:w-7/10',
                         'ml-auto',
+                        'lg:w-8/12',
                     ],
                 ],
                 'component' => [
                     'class' => [
-                        'py-10 lg:py-20 xl:py-screen-20',
+                        'mx-auto',
+                        'lg:w-10/12',
                         'flex',
                         'flex-wrap',
                         'items-start',
@@ -483,8 +481,9 @@ return [
                         'min-h-screen',
                         'overflow-hidden',
                         'px-6 md:px-10 xl:px-screen-10',
+                        'mb-40',
+                        'bg-black text-white',
                     ],
-                    'v-theme' => true
                 ],
                 'title' => [
                     'class' => [
@@ -493,7 +492,6 @@ return [
                         'font-sans',
                         'font-semibold',
                         'text-xl md:text-3xl xl:text-screen-3xl',
-
                     ],
                 ],
                 'component' => [
@@ -528,12 +526,10 @@ return [
             ],
             'process' => [
                 'wrap' => [
-                    'v-theme' => [
-                        'true'
-                    ],
                     'class' => [
                         'my-20',
                         'py-20',
+                        'bg-black text-white',
                     ]
                 ],
             ]
