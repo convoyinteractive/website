@@ -1,11 +1,14 @@
 import "waypoints/lib/noframework.waypoints.js";
+import { ScrollTrigger } from "gsap/all";
 
 export default {
     Waypoint: Waypoint,
 
     init: function() {
-        window.addEventListener("resize", Waypoint.refreshAll);
         document.addEventListener("turbolinks:load", Waypoint.disableAll);
+
+        window.addEventListener("resize", Waypoint.refreshAll);
+        ScrollTrigger.addEventListener("refreshInit", Waypoint.refreshAll);
 
         assetsLoaded(Waypoint.refreshAll);
 
@@ -24,6 +27,8 @@ export default {
                     element.addEventListener("load", callback),
                 );
             });
+
+            document.addEventListener("lottie:ready", callback);
         }
     },
 };
