@@ -1,6 +1,9 @@
 <scrollable {{ $attributes ?? '' }}>
     @foreach ($component->get('items', []) as $item)
-        <div {{ $content->attributes(['portfolio.item']) }}>
+        <{{ $item->has('link') ? 'a' : 'div' }} {{ $content->attributes(
+            ['portfolio.item'],
+            $item->has('link') ? ['href' => $item->link] : []
+        ) }}>
             <h3 {{ $content->attributes(['portfolio.heading']) }}>
                 {{ $item->get('title') }}
             </h3>
@@ -8,6 +11,12 @@
                 'component' => $item,
                 'attributes' => $content->attributes(['portfolio.items', $item->alias()])
             ])
-        </div>
+            <div class="mt-20 w-8/12">
+                @include($item->addon->view(), [
+                    'component' => $item->addon,
+                    'attributes' => $content->attributes(['portfolio.items', $item->alias()])
+                ])
+            </div>
+        <{{ $item->has('link') ? '/a' : '/div' }}>
     @endforeach
 </scrollable>
