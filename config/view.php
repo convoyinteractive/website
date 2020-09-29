@@ -504,7 +504,7 @@ return [
                     'class' => [
                         'p-10',
                         'bg-white text-black',
-                        'w-6/10 lg:w-3/10',
+                        'w-8/10 lg:w-3/10',
                         'flex-shrink-0',
                     ],
                 ],
