@@ -374,15 +374,16 @@ return [
                 'component' => [
                     'class' => [
                         'flex flex-wrap',
-                        'px-5 sm:px-15 xl:px-screen-15',
+                        'px-3 md:px-5 sm:px-15 xl:px-screen-15',
                     ],
                 ],
                 'items' => [
                     'class' => [
                         'flex flex-col',
                         'justify-between',
-                        'w-2/12',
+                        'w-6/12 md:w-4/12 lg:w-2/12',
                         'p-5 xl:p-screen-5',
+                        'mb-15',
                     ],
                 ],
                 'card' => [
@@ -424,7 +425,7 @@ return [
                 ],
             ],
             'clients' => [
-                                'wrap' => [
+                'wrap' => [
                     'class' => [
                         'my-20',
                     ],
