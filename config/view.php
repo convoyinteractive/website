@@ -122,7 +122,6 @@ return [
                 'item' => [
                     'class' => [
                         'p-5 xl:p-screen-5',
-                        'w-6/12'
                     ],
                 ],
 
