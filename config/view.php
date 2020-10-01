@@ -267,9 +267,21 @@ return [
                 ],
             ],
             'lottie' => [
+                'wrap' => [
+                    'class' => [
+                        'md:px-10 xl:px-screen-10',
+                        'mx-auto',
+                        'my-30 xl:my-screen-30',
+                        'md:flex',
+                        'md:items-start',
+                        'md:justify-end',
+                        'lg:w-10/12',
+                    ],
+                ],
                 'component' => [
                     'class' => [
-                        'px-6 md:px-10 sm:px-20 xl:px-screen-20'
+                        'px-6 md:px-10 xl:px-screen-10',
+                        'md:w-7/10',
                     ],
                 ],
             ],
@@ -345,6 +357,11 @@ return [
                 ],
             ],
             'awards' => [
+                'wrap' => [
+                    'class' => [
+                        'my-20',
+                    ],
+                ],
                 'title' => [
                     'class' => [
                         'mb-10 xl:mb-screen-10',
@@ -407,6 +424,11 @@ return [
                 ],
             ],
             'clients' => [
+                                'wrap' => [
+                    'class' => [
+                        'my-20',
+                    ],
+                ],
                 'title' => [
                     'class' => [
                         'px-6 mb-10 xl:mb-screen-10',
@@ -544,6 +566,51 @@ return [
                         'py-20',
                         'bg-black text-white',
                     ]
+                ],
+                'lottie' => [
+                    'wrap' => [
+                        'class' => [
+                            'md:px-10 xl:px-screen-10',
+                            'mx-auto',
+                            'my-30 xl:my-screen-30',
+                        ],
+                    ],
+                    'component' => [
+                        'class' => [
+                            'px-6 md:px-10 xl:px-screen-10',
+                            'w-full',
+                        ],
+                    ],
+                ],
+                'markdown' => [
+                    'wrap' => [
+                        'class' => [
+                            'md:px-10 xl:px-screen-10',
+                            'mx-auto',
+                            'my-30 xl:my-screen-30',
+                            'md:flex',
+                            'md:items-start',
+                            'md:justify-end',
+                            'lg:w-10/12',
+                        ],
+                    ],
+                    'title' => [
+                        'class' => [
+                            'px-6 md:px-10 xl:px-screen-10',
+                            'pb-10 xl:pb-screen-10',
+                            'font-sans',
+                            'text-xl md:text-2xl xl:text-like-2xl',
+                            'font-semibold',
+                            'md:w-3/10',
+                        ],
+                    ],
+                    'component' => [
+                        'class' => [
+                            'markdown',
+                            'px-6 md:px-10 xl:px-screen-10',
+                            'md:w-7/10',
+                        ],
+                    ],
                 ],
             ]
         ],
