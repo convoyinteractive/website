@@ -1,5 +1,5 @@
     <div {{ $attributes ?? ''}} style="{{ $content->theme() }}">
-        <div class="max-h-full max-w-full">
+        <div class="max-h-full max-w-full flex items-center justify-center">
             @if($component->has('sizes'))
             <picture {{$content->attributes(['image.item'])}}>
                 <source media="(min-width: 500px)" srcset="{{ asset($component->get('sizes.large'), []) }}">

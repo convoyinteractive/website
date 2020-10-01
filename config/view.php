@@ -169,7 +169,7 @@ return [
                 'item' => [
                     'class' => [
                         'pointer-events-none',
-                        'w-full',
+                        'max-w-full max-h-full',
                     ],
                 ]
             ],
@@ -183,7 +183,7 @@ return [
                 ],
                 'component' => [
                     'class' => [
-                        'p-10 xl:p-screen-10',
+                        'p-20',
                     ]
                 ]
             ],
