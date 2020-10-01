@@ -34,8 +34,12 @@ class Page extends Data
             $key = [$key];
         }
 
-        return new HtmlString(
-            (string) new Attributes($this, $key, $options)
-        );
+        $attributes = new Attributes($this, $key);
+
+        foreach ($options as $key => $value) {
+            $attributes->add($key, $value);
+        }
+
+        return new HtmlString((string) $attributes);
     }
 }

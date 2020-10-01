@@ -8,33 +8,24 @@ class Attributes
 {
     protected $resource;
 
-    protected $key;
+    protected $data;
 
-    protected $options;
-
-    public function __construct(Page $resource, array $key, $options)
+    public function __construct(Page $resource, array $key)
     {
         $this->resource = $resource;
-        $this->key = $key;
-        $this->options = $options;
+
+        $this->data = $this->fromPage($key) ?? $this->fallback($key);
     }
 
-    public function toArray()
+    public function add($key, $value)
     {
-        return array_merge($this->fromPage($this->key) ?? $this->fallback($this->key), $this->options);
-    }
+        $old = Arr::get($this->data, $key, []);
 
-    public function __toString()
-    {
-        $attributes = array_map(function ($value) {
-            return is_array($value) ? implode(' ', $value) : $value;
-        }, $this->toArray());
+        if (! is_array($old)) {
+            $old = [$old];
+        }
 
-        $attributes = array_map(function ($value, $key) {
-            return sprintf('%s="%s"', $key, $value);
-        }, $attributes, array_keys($attributes));
-
-        return (string) implode(' ', $attributes);
+        Arr::set($this->data, $key, array_merge($old, is_array($value) ? $value : [$value]));
     }
 
     protected function fromPage($key)
@@ -56,5 +47,23 @@ class Attributes
             implode('.', $key),
             []
         );
+    }
+
+    public function toArray()
+    {
+        return $this->data;
+    }
+
+    public function __toString()
+    {
+        $attributes = array_map(function ($value) {
+            return is_array($value) ? implode(' ', $value) : $value;
+        }, $this->data);
+
+        $attributes = array_map(function ($value, $key) {
+            return sprintf('%s="%s"', $key, $value);
+        }, $attributes, array_keys($attributes));
+
+        return (string) implode(' ', $attributes);
     }
 }
