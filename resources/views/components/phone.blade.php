@@ -1,4 +1,4 @@
-<div {{ $attributes ?? ''}}>
+<div {{ $attributes ?? ''}} style="{{$content->theme()}}">
     <phone>
         @if($component->has('sizes'))
         <picture class="w-full">

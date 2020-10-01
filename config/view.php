@@ -173,6 +173,20 @@ return [
                     ],
                 ]
             ],
+            'screen' => [
+                'wrap' => [
+                    'class' => [
+                        'md:px-10 xl:px-screen-10',
+                        'mx-auto',
+                        'my-30 xl:my-screen-30'
+                    ],
+                ],
+                'component' => [
+                    'class' => [
+                        'p-10 xl:p-screen-10',
+                    ]
+                ]
+            ],
             'impressions' => [
                 'wrap' => [
                     'class' => [
@@ -639,15 +653,15 @@ return [
                     ],
                 ],
             ],
-            'image' => [
-                'item' => [
-                    'class' => [
-                        'pointer-events-none',
-                        'max-h-full max-w-full',
-                        'mx-auto',
-                    ],
-                ]
-            ]
+            // 'image' => [
+            //     'item' => [
+            //         'class' => [
+            //             'pointer-events-none',
+            //             'max-h-full max-w-full',
+            //             'mx-auto',
+            //         ],
+            //     ]
+            // ]
         ],
 
         'services' => [
