@@ -742,11 +742,13 @@ return [
                         'leading-loose',
                         'px-6 md:px-10 sm:px-20 xl:px-screen-20',
                         'text-sm',
-                        'space-y-10 xl:space-y-screen-10'
+                        'space-y-10 xl:space-y-screen-10',
+                        'hidden md:block',
                     ],
                 ],
                 'component' => [
                     'class' => [
+                        'px-6 sm:px-20 md:px-none',
                         'md:w-7/10',
                     ],
                 ],
