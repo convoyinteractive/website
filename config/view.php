@@ -135,7 +135,6 @@ return [
                 'wrap' => [
                     'class' => [
                         'my-50 xl:my-screen-50',
-                        'mx-auto lg:w-10/12',
                         'px-3 md:px-5 lg:px-10 xl:px-screen-10'
                     ],
                 ],
@@ -217,7 +216,6 @@ return [
                     'class' => [
                         'my-50 xl:my-screen-50',
                         'px-6 md:px-10 lg:px-20 xl:px-screen-20',
-                        'mx-auto lg:w-10/12',
                     ],
                 ],
                 'component' => [
