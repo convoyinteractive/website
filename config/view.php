@@ -726,17 +726,23 @@ return [
             'details' => [
                 'wrap' => [
                     'class' => [
+                        'mx-auto',
+                        'lg:w-10/12',
                         'flex',
                         'items-center',
-                        'md:w-10/12',
-                        'mx-auto',
                         'mt-50 xl:mt-screen-50',
-                        'mb-20 xl:mb-screen-20'
+                        'mb-20 xl:mb-screen-20',
+                        'font-sans',
+                        'font-semibold',
                     ],
                 ],
                 'aside' => [
                     'class' => [
                         'md:w-3/10',
+                        'leading-loose',
+                        'px-6 md:px-10 sm:px-20 xl:px-screen-20',
+                        'text-sm',
+                        'space-y-10 xl:space-y-screen-10'
                     ],
                 ],
                 'component' => [
@@ -750,7 +756,7 @@ return [
                     'class' => [
                         'lg:w-8/12',
                         'mx-auto',
-                        'px-6 md:px-10 xl:px-screen-10',
+                        'px-6 md:px-10 sm:px-20 xl:px-screen-20',
                         'my-50 xl:my-screen-50',
                     ],
                 ],

@@ -40,7 +40,18 @@
 
             @if($loop->first)
             <div {{ $content->attributes("details.aside") }}>
-                <data-table :data="{{json_encode($content->components('details'))}}"></data-table>
+                @foreach($content->components('details') as $detail)
+                <dl>
+                    <dt>{{ $detail->get('label') }}</dt>
+                    <dd>
+                        <ul class="font-medium">
+                            @foreach($detail->get('value', []) as $value)
+                                <li>{{ $value }}</li>
+                            @endforeach
+                        </ul>
+                    </dd>
+                </dl>
+                @endforeach
             </div>
             @endif
 
