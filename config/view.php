@@ -33,6 +33,27 @@ return [
                     ],
                 ],
             ],
+            'video' => [
+                'wrap' => [
+                    'class' => [
+                        'block',
+                        'my-30 xl:my-screen-30',
+                        'sm:px-6 md:px-10 lg:px-20 xl:px-screen-20',
+                        'mx-auto lg:w-10/12',
+                    ],
+                ],
+                'component' => [
+                    'class' => [
+                        'w-full block'
+                    ]
+                ],
+                'controls' => [
+                    'class' => [
+                        'p-6 space-y-6',
+                        'text-white'
+                    ],
+                ],
+            ],
             'definition' => [
                 'wrap' => [
                     'class' => [

@@ -117,6 +117,15 @@ Vue.component("phone", () =>
 );
 
 /**
+ * Next we will load our video player component. This component wraps the native
+ * HTMLMediaElement api in a more expressive data binding object. The provided
+ * methods as well as the data object makes creating media controls a breeze.
+ */
+Vue.component("video-player", () =>
+    import(/* webpackChunkName: "js/media" */ "./components/VideoPlayer"),
+);
+
+/**
  * Here we'll load some basic transition components. These components should be stateless
  * functional and reusable components. For defining your animations you may use "gsap".
  * Your transition component may provides handlers for any of the supported hooks:
