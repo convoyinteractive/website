@@ -37,7 +37,7 @@ return [
                 'wrap' => [
                     'class' => [
                         'block',
-                        'my-30 xl:my-screen-30',
+                        'my-50 xl:my-screen-50',
                         'sm:px-6 md:px-10 lg:px-20 xl:px-screen-20',
                         'mx-auto lg:w-10/12',
                     ],
@@ -88,14 +88,14 @@ return [
                         'md:text-xl xl:text-like-xl',
                         'font-sans font-semibold',
                         'md:w-3/10',
-                        'mb-10 md:mb-20 xl:mb-screen-20',
+                        'my-15 xl:mb-screen-15',
                         'px-6 md:px-10 xl:px-screen-10',
                     ],
                 ],
                 'item' => [
                     'class' => [
                         'md:w-7/10',
-                        'mb-20 xl:mb-screen-20',
+                        'my-15 xl:mb-screen-15',
                         'px-6 md:px-10 xl:px-screen-10',
                     ],
                 ],
@@ -132,17 +132,24 @@ return [
                 ],
             ],
             'group' => [
+                'wrap' => [
+                    'class' => [
+                        'my-50 xl:my-screen-50',
+                        'mx-auto lg:w-10/12',
+                        'px-3 md:px-5 lg:px-10 xl:px-screen-10'
+                    ],
+                ],
                 'component' => [
                     'class' => [
                         'flex',
                         'flex-wrap',
-                        'px-5 xl:px-screen-5',
                     ],
                 ],
 
                 'item' => [
                     'class' => [
-                        'p-5 xl:p-screen-5',
+                        'w-full',
+                        'p-3 md:p-5 lg:p-10 xl:p-screen-10',
                     ],
                 ],
 
@@ -178,12 +185,24 @@ return [
                 'wrap' => [
                     'class' => [
                         'my-50 xl:my-screen-50',
+                        'px-6 md:px-10 lg:px-20 xl:px-screen-20',
+                        'mx-auto lg:w-10/12',
                     ],
+                ],
+                'title' => [
+                    'class' => [
+                        'px-6 md:px-10 xl:px-screen-10',
+                        'pb-10 xl:pb-screen-10',
+                        'font-sans',
+                        'text-xl md:text-2xl xl:text-like-2xl',
+                        'text-center',
+                        'font-semibold',
+                        'lg:w-10/12 mx-auto',
+                    ]
                 ],
                 'component' => [
                     'class' => [
-                        'mx-auto',
-                        'max-w-6xl',
+                        'mx-auto', 'lol'
                     ],
                 ],
                 'item' => [
@@ -196,15 +215,22 @@ return [
             'screen' => [
                 'wrap' => [
                     'class' => [
-                        'md:px-10 xl:px-screen-10',
-                        'mx-auto',
-                        'my-30 xl:my-screen-30'
+                        'my-50 xl:my-screen-50',
+                        'px-6 md:px-10 lg:px-20 xl:px-screen-20',
+                        'mx-auto lg:w-10/12',
                     ],
                 ],
                 'component' => [
                     'class' => [
-                        'p-20',
+                        'p-6 md:p-10 lg:p-20',
                     ]
+                ],
+                'item' => [
+                    'class' => [
+                        'pointer-events-none',
+                        'max-w-full max-h-full',
+                        'shadow-lg',
+                    ],
                 ]
             ],
             'impressions' => [
@@ -292,7 +318,7 @@ return [
                     'class' => [
                         'md:px-10 xl:px-screen-10',
                         'mx-auto',
-                        'my-30 xl:my-screen-30',
+                        'my-50 xl:my-screen-50',
                         'md:flex',
                         'md:items-start',
                         'md:justify-end',
@@ -380,7 +406,7 @@ return [
             'awards' => [
                 'wrap' => [
                     'class' => [
-                        'my-20',
+                        'my-50 xl:my-screen-50',
                     ],
                 ],
                 'title' => [
@@ -448,7 +474,7 @@ return [
             'clients' => [
                 'wrap' => [
                     'class' => [
-                        'my-20',
+                        'my-50 xl:my-screen-50',
                     ],
                 ],
                 'title' => [
@@ -488,7 +514,7 @@ return [
                     'class' => [
                         'md:px-10 xl:px-screen-10',
                         'mx-auto',
-                        'my-30 xl:my-screen-30',
+                        'my-50 xl:my-screen-50',
                         'md:flex',
                         'md:items-start',
                         'md:justify-end',
@@ -594,7 +620,7 @@ return [
                         'class' => [
                             'md:px-10 xl:px-screen-10',
                             'mx-auto',
-                            'my-30 xl:my-screen-30',
+                            'my-50 xl:my-screen-50',
                         ],
                     ],
                     'component' => [
@@ -671,7 +697,7 @@ return [
                     'class' => [
                         'px-6 md:px-10 xl:px-screen-10',
                         'mx-auto',
-                        'my-30 xl:my-screen-30',
+                        'my-50 xl:my-screen-50',
                         'lg:w-10/12',
                     ],
                 ],
@@ -727,6 +753,7 @@ return [
                         'lg:w-8/12',
                         'mx-auto',
                         'px-6 md:px-10 xl:px-screen-10',
+                        'my-50 xl:my-screen-50',
                     ],
                 ],
                 'component' => [
@@ -741,15 +768,6 @@ return [
                     ],
                 ],
             ],
-            // 'image' => [
-            //     'item' => [
-            //         'class' => [
-            //             'pointer-events-none',
-            //             'max-h-full max-w-full',
-            //             'mx-auto',
-            //         ],
-            //     ]
-            // ]
         ],
 
         'services' => [
