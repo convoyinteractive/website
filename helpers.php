@@ -62,7 +62,7 @@ if (! function_exists('mix')) {
             );
 
 
-            return "//lib.convoyinteractive.com/{$path}?" . http_build_query(array_merge($query, [
+            return "//storage.convoyinteractive.com/{$path}?" . http_build_query(array_merge($query, [
                 'sign' => $hash,
             ]));
         }
