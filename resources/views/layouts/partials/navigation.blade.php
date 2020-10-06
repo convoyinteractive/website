@@ -96,6 +96,13 @@
                 ">
                     @foreach($navigation['cases'] as $item)
                         <a class="block font-sans mb-10 xl:mb-screen-10" href="/{{ implode('/', [app('translator')->getLocale(), $item->get('resource')]) }}">
+
+                            <img class="w-full block" src="{{ asset($item->has('meta.image.sizes') ? $item->get('meta.image.sizes.large') : $item->get('meta.image.path'), [
+                                'width' => '640',
+                                'height' => '400',
+                                'crop' => true,
+                            ]) }}" alt="{{ $item->get('meta.title') }}">
+
                             <span class="block text-3xl xl:text-like-3xl font-semibold leading-snug">{{ $item->get('meta.title') }}</span>
                             <span class="block text-sm xl:text-like-sm">{{ $item->get('meta.subtitle') }}</span>
                         </a>
