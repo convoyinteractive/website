@@ -10,7 +10,7 @@
                 @ended="reset"
                 playsinline
                 poster="{{ asset($component->get('poster')) }}"
-                src="{{ $component->get('url') }}"
+                src="{{ asset($component->get('path')) }}"
             ></video>
 
             <div
