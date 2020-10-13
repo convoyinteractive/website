@@ -227,6 +227,7 @@ return [
                     'class' => [
                         'pointer-events-none',
                         'max-w-full max-h-full',
+                        'mx-auto my-auto',
                         'shadow-lg',
                     ],
                 ]

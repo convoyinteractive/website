@@ -5,7 +5,7 @@
             @endif
 
             @if($component->isImage())
-            <picture {{$content->attributes(['screen.item'])}}>
+            <picture class="w-full h-full">
                 @if($component->has('sizes'))
                     <source media="(min-width: 500px)" srcset="{{ asset($component->get('sizes.large'), []) }}">
                     <img {{$content->attributes(['screen.item'])}} src="{{ asset($component->get('sizes.small'), []) }}" alt="{{ $component->get('alt') }}">
