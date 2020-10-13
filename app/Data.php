@@ -6,6 +6,7 @@ use Throwable;
 use App\Components;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Composer;
 use JsonSerializable;
 
 class Data implements JsonSerializable
@@ -17,6 +18,8 @@ class Data implements JsonSerializable
         'component' => Components\RelationComponent::class,
         'collection' => Components\RelationComponent::class,
         'svg' => Components\SvgComponent::class,
+        'image' => Components\AssetComponent::class,
+        'video' => Components\AssetComponent::class,
     ];
 
     public function __construct(array $data)
