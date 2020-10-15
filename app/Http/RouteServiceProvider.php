@@ -43,7 +43,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->app->router->group($options, function ($router) {
             $router->addRoute('GET', 'components/{resource}', ComponentsController::class);
-            $router->addRoute('GET', 'collections/{resource}', CollectionsController::class);
+            $router->addRoute('GET', 'collections/{resource:.*}', CollectionsController::class);
             $router->addRoute('POST', 'subscriptions', SubscriptionsController::class . '@store');
             $router->addRoute('DELETE', 'subscriptions/{email}', SubscriptionsController::class . '@destroy');
         });
