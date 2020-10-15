@@ -1,4 +1,5 @@
 export default {
+    props: ['autoplay'],
     data() {
         return {
             paused: true,
@@ -71,5 +72,9 @@ export default {
         muted(value) {
             this.video.muted = value;
         },
+
+        autoplay(value) {
+            this.paused = !value;
+        }
     },
 };
