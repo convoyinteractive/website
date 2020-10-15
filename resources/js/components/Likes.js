@@ -21,6 +21,7 @@ export default {
 
     methods: {
         fetch() {
+            this.increment = 0;
             Http.get("/api/likes/" + this.resource)
                 .then(({data}) => {
                     this.count = data;
@@ -35,8 +36,8 @@ export default {
                 Http.post("/api/likes", {
                     resource: this.resource,
                     increment: this.increment,
-                })
-            }, 1000);
+                }).then(this.fetch);
+            }, 500);
         }
     },
 
