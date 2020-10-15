@@ -143,3 +143,7 @@ Vue.component("snake", () =>
 Vue.component("fullscreen", () =>
     import(/* webpackChunkName: "js/fullscreen" */ "./components/Fullscreen"),
 );
+
+Vue.component("likes", () =>
+    import(/* webpackChunkName: "js/likes" */ "./components/Likes"),
+);
