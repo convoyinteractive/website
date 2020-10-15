@@ -139,3 +139,7 @@ Vue.component("slide-to-left", () =>
 Vue.component("snake", () =>
     import(/* webpackChunkName: "js/snake" */ "./components/Snake"),
 );
+
+Vue.component("fullscreen", () =>
+    import(/* webpackChunkName: "js/fullscreen" */ "./components/Fullscreen"),
+);
