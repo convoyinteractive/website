@@ -132,18 +132,30 @@ Vue.component("slide-to-left", () =>
 );
 
 /**
+ * Here we will load our fullscreen components. This component toggles the fullscreen state by
+ * mapping the native fullscreen API, but also handles the "fullscreenchange" event without
+ * further configuration. Nevertheless, hooks for additional events are also supported.
+ */
+Vue.component("fullscreen", () =>
+    import(/* webpackChunkName: "js/fullscreen" */ "./components/Fullscreen"),
+);
+
+/**
+ * Next we'll load the likes component. This component uses the "axios" library to fetch the
+ * current likes count and syncs the updated likes with our JSON API.
+ *
+ * Eg.: GET   api/likes/{resource}
+ *      POST  api/likes {count, resource}
+ */
+Vue.component("likes", () =>
+    import(/* webpackChunkName: "js/likes" */ "./components/Likes"),
+);
+
+/**
  * Now, let's have some fun! Here we load our "Snake Game" component. The game is
  * a replication of an application which came with the most popular cell phones
  * from the late 90's the Nokia 3210 and 8210. But ours supports colors. (ツ)
  */
 Vue.component("snake", () =>
     import(/* webpackChunkName: "js/snake" */ "./components/Snake"),
-);
-
-Vue.component("fullscreen", () =>
-    import(/* webpackChunkName: "js/fullscreen" */ "./components/Fullscreen"),
-);
-
-Vue.component("likes", () =>
-    import(/* webpackChunkName: "js/likes" */ "./components/Likes"),
 );
