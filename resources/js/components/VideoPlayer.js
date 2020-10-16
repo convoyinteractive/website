@@ -41,8 +41,7 @@ export default {
             };
         },
         calculateAndUpdateProgress(event) {
-            let progress =
-                (event.pageX - event.target.offsetLeft) /
+            let progress = (event.pageX - event.target.getBoundingClientRect().left) /
                 event.target.clientWidth;
 
             this.video.currentTime = this.time.duration * progress;
