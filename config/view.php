@@ -220,7 +220,7 @@ return [
                 ],
                 'component' => [
                     'class' => [
-                        'p-6 md:p-10 lg:p-20',
+                        'p-6 md:p-10 lg:p-20 xl:p-screen-20',
                     ]
                 ],
                 'item' => [
