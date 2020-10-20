@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Sitemap;
 use Throwable;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Yaml\Exception\ParseException;
@@ -29,6 +30,13 @@ class Handler extends ExceptionHandler
         if ($exception instanceof HttpException) {
             $statusCode = $exception->getStatusCode();
 
+            if ($statusCode === 404) {
+                return response(view('error', [
+                    'suggestion' => $this->similar($request->path()),
+                    'message' => Response::$statusTexts[$statusCode],
+                ]), $statusCode);
+            }
+
             return response(view('error', [
                 'message' => Response::$statusTexts[$statusCode],
             ]), $statusCode);
@@ -36,6 +44,7 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof FileNotFoundException) {
             return response(view('error', [
+                'suggestion' => $this->similar($request->path()),
                 'message' => 'Not found',
             ]), 404);
         }
@@ -49,5 +58,12 @@ class Handler extends ExceptionHandler
         return response(view('error', [
             'message' => 'Something went wrong',
         ]), 500);
+    }
+
+    protected function similar($path)
+    {
+        return (new Sitemap(
+            app('translator')->getLocale()
+        ))->similar($path);
     }
 }
