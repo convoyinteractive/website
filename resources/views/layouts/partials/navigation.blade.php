@@ -114,10 +114,14 @@
                     p-10 xl:p-screen-10
                 ">
                     @foreach($navigation['contact'] as $component)
-                        @include(view()->exists("components.{$component->type()}") ? "components.{$component->type()}" : "components.error", [
-                            'component' => $component,
-                            'class' => '',
-                        ])
+                        <div>
+                            @if($component->has('title'))
+                            <p class="font-sans font-semibold mb-10">{{ $component->get('title') }}</p>
+                            @endif
+                            @include(view()->exists("components.{$component->type()}") ? "components.{$component->type()}" : "components.error", [
+                                'component' => $component,
+                            ])
+                        </div>
                     @endforeach
                 </div>
             </div>
