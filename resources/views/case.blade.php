@@ -7,14 +7,14 @@
     <div {{ $content->attributes('hero.wrap') }}>
         <div {{ $content->attributes('hero.title') }}>
             @if($content->has('meta.title'))
-            <h1 class="font-bold font-hero text-4xl sm:text-5xl md:text-6xl xl:text-like-6xl leading-tight">{{ $content->get('meta.title') }}</h1>
-            <span class="block font-sans font-light text-sm xl:text-like-sm">{{ $content->get('meta.subtitle') }}</span>
+            <h1 {{ $content->attributes('page.title') }}>{{ $content->get('meta.title') }}</h1>
+            <span {{ $content->attributes('page.subtitle') }}>{{ $content->get('meta.subtitle') }}</span>
             @endif
         </div>
     </div>
 
     @if($content->meta->has('image'))
-    <div class="mb-40">
+    <div {{ $content->attributes('hero.component') }}>
         @if($content->has('meta.image.sizes'))
         <picture class="w-full block">
             <source media="(min-width: 500px)" srcset="{{ asset($content->get('meta.image.sizes.large'), []) }}">

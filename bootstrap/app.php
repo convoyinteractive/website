@@ -13,6 +13,8 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Container(dirname(__DIR__));
 
+$app->configure('components');
+
 // Register container bindings.
 
 $app->singleton(

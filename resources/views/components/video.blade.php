@@ -3,6 +3,7 @@
         <div class="relative">
             <video
                 ref="video"
+                class="w-full"
                 @mousemove="showControls(4)"
                 @click="paused = !paused"
                 @durationchage="updateTime"

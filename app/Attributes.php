@@ -33,7 +33,7 @@ class Attributes
         array_unshift($key, $this->resource->get('type'));
 
         return Arr::get(
-            config('view.attributes'),
+            config('components.attributes'),
             implode('.', $key),
         );
     }
@@ -43,7 +43,7 @@ class Attributes
         array_unshift($key, 'default');
 
         return Arr::get(
-            config('view.attributes'),
+            config('components.attributes'),
             implode('.', $key),
             []
         );
