@@ -306,11 +306,29 @@ return [
                         'px-3 md:px-5 lg:px-10 xl:px-screen-10'
                     ],
                 ],
+                'title' => [
+                    'class' => [
+                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                        'pb-10 xl:pb-screen-10',
+                        'font-sans font-semibold',
+                        'text-xl md:text-2xl xl:text-like-2xl',
+                        'text-center',
+                    ]
+                ],
                 'component' => [
                     'class' => [
                         'flex',
                         'flex-wrap',
                     ],
+                ],
+
+                'caption' => [
+                    'class' => [
+                        'px-3 md:px-5 lg:px-10 xl:px-screen-10',
+                        'font-sans font-semibold',
+                        'text-sm xl:text-like-sm',
+                        'text-center',
+                    ]
                 ],
 
                 'item' => [
@@ -778,6 +796,22 @@ return [
                     'class' => [
                         'font-sans font-semibold',
                         'mb-10 xl:mb-screen-10',
+                    ],
+                ],
+            ],
+            'svg' => [
+                'wrap' => [
+                    'class' => [
+                        'px-6 md:px-10 sm:px-20 xl:px-screen-20',
+                        'my-30 xl:my-screen-30',
+                    ],
+                ],
+                'title' => [
+                    'class' => [
+                        'pb-10 xl:pb-screen-10',
+                        'font-sans font-semibold',
+                        'text-xl md:text-2xl xl:text-like-2xl',
+                        'text-center',
                     ],
                 ],
             ],

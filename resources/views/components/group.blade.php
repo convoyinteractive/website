@@ -10,3 +10,6 @@
         </div>
     @endforeach
 </div>
+@if($component->has('caption'))
+<div {{ $content->attributes(['group.caption']) }}>{{ $component->get('caption') }}</div>
+@endif
