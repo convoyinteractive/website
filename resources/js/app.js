@@ -38,8 +38,9 @@ Vue.mixin(Turbovue);
 import ClickAway from "./mixins/ClickAway";
 Vue.directive("click-away", ClickAway);
 
-import Cursor, { DefaultCursor } from "./mixins/Cursor";
+import Cursor, { DefaultCursor, CursorComponent } from "./mixins/Cursor";
 Vue.directive("cursor", Cursor);
+Vue.component("custom-cursor", CursorComponent);
 
 import Theme from "./mixins/Theme";
 Vue.directive("theme", Theme);

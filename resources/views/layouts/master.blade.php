@@ -25,6 +25,8 @@
 
         <snake></snake>
 
+        <custom-cursor></custom-cursor>
+
         <footer class="
             px-6 md:px-10 sm:px-20 xl:px-screen-20
             pt-10 pb-40 sm:py-10 xl:py-screen-10
