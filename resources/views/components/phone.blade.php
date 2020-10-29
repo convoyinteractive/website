@@ -1,5 +1,5 @@
 <div {{ $attributes ?? ''}} style="{{$content->theme()}}">
-    <phone>
+    <phone color="{{ $component->get('color', '#000000') }}">
         @if($component->isVideo())
             <video src="{{ asset($component->get('path'), []) }}" playsinline muted autoplay loop></video>
         @endif
