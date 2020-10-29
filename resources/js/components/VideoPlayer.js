@@ -65,6 +65,7 @@ export default {
 
     watch: {
         paused(value) {
+            this.$root.cursor.label = value ? 'Play' : 'Pause';
             value ? this.video.pause() : this.video.play();
         },
 

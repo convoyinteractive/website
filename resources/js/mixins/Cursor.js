@@ -1,20 +1,37 @@
+import { tap } from "@tobiasthaden/tap";
+
 export const DefaultCursor = {
-    label: function () {
-        return;
-    },
-    size: 20,
+    label: '',
+    size: 16,
 };
+
+export const PlayerCursor = {
+    handle(element) {
+        this.label = element.paused ? 'Play' : 'Pause';
+    },
+    size: 60,
+};
+
+export const Cursors = {
+    default: DefaultCursor,
+    player: PlayerCursor,
+
+    create(cursor, element) {
+        return tap(this[cursor], cursor => cursor.handle(element));
+    },
+}
 
 export const CursorComponent = {
     render(h) {
         return h('div', {
-            class: 'fixed rounded-full bg-green pointer-events-none z-50',
+            class: 'fixed rounded-full bg-green pointer-events-none z-50 font-sans text-sm flex items-center justify-center transition-all duration-100',
             style: this.style,
         }, this.label);
     },
 
     data() {
         return {
+            label: '',
             position: {
                 x: -100,
                 y: -100,
@@ -40,20 +57,22 @@ export const CursorComponent = {
                 height: this.$root.cursor.size + 'px',
             };
         },
-        label() {
-            return this.$root.cursor.label();
+    },
+    watch: {
+        '$root.cursor.label': function (label) {
+            this.label = label;
         }
     }
-}
+};
 
 export default {
     bind(element, binding, vnode) {
         element.onEnter = event => {
-            vnode.context.cursor = binding.value;
+            vnode.context.$root.cursor = Cursors.create(binding.value, element);
         };
 
         element.onLeave = event => {
-            vnode.context.cursor = DefaultCursor;
+            vnode.context.$root.cursor = DefaultCursor;
         };
 
         element.addEventListener("mouseenter", element.onEnter);
