@@ -2,12 +2,19 @@ module.exports = {
     prefix: "",
     important: false,
     separator: ":",
-    purge: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.vue",
-        "./resources/**/*.js",
-        "./config/components.php",
-    ],
+    future: {
+        removeDeprecatedGapUtilities: true,
+    },
+    purge: {
+        mode: 'layers',
+        layers: ['utilities'],
+        content: [
+            "./resources/**/*.blade.php",
+            "./resources/**/*.vue",
+            "./resources/**/*.js",
+            "./config/components.php",
+        ],
+    },
     theme: {
         screens: {
             sm: "480px",
