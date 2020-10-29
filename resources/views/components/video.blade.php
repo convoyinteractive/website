@@ -2,7 +2,7 @@
     <div {{$attributes ?? ''}}>
         <div class="relative">
             <video
-                v-cursor="'player'"
+                v-cursor="{type: 'player'}"
                 ref="video"
                 class="w-full"
                 @mousemove="showControls(4)"

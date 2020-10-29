@@ -6,25 +6,33 @@ export const DefaultCursor = {
 };
 
 export const PlayerCursor = {
-    handle(element) {
+    handle(element, binding) {
         this.label = element.paused ? 'Play' : 'Pause';
     },
     size: 60,
 };
 
+export const TextCursor = {
+    handle(element, binding) {
+        this.label = binding.label;
+        this.size = binding.size || 60;
+    },
+}
+
 export const Cursors = {
     default: DefaultCursor,
     player: PlayerCursor,
+    text: TextCursor,
 
-    create(cursor, element) {
-        return tap(this[cursor], cursor => cursor.handle(element));
+    create(binding, element) {
+        return tap(this[binding.type], cursor => cursor.handle(element, binding));
     },
 }
 
 export const CursorComponent = {
     render(h) {
         return h('div', {
-            class: 'fixed rounded-full bg-green pointer-events-none z-50 font-sans text-sm flex items-center justify-center transition-all duration-100',
+            class: 'p-2 fixed rounded-full bg-green pointer-events-none z-50 font-sans text-sm text-center flex items-center justify-center transition-all duration-100 leading-none',
             style: this.style,
         }, this.label);
     },
