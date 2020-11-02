@@ -14,12 +14,8 @@ class Handler extends ExceptionHandler
 {
     protected $dontReport = [
         HttpException::class,
+        FileNotFoundException::class,
     ];
-
-    public function report(Throwable $exception)
-    {
-        parent::report($exception);
-    }
 
     public function render($request, Throwable $exception)
     {
