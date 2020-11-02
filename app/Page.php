@@ -6,6 +6,19 @@ use Illuminate\Support\HtmlString;
 
 class Page extends Data
 {
+    protected $filename;
+
+    public function __construct(array $data, $filename)
+    {
+        parent::__construct($data);
+        $this->filename = $filename;
+    }
+
+    public function filename()
+    {
+        return $this->filename;
+    }
+
     public function template()
     {
         return view()->exists($this->get('type'))
