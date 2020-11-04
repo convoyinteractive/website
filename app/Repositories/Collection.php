@@ -9,6 +9,11 @@ use Illuminate\Support\Collection as SupportCollection;
 
 class Collection
 {
+    public function localize($resource)
+    {
+        return $this->find($resource, app('translator')->getLocale());
+    }
+
     public function all($directory, $locale)
     {
         return $this->files($directory, $locale)->map(function ($file) use ($locale, $directory) {

@@ -41,9 +41,9 @@ class RelationComponent extends Component
     protected function fetchRelation()
     {
         $repo = new $this->availableRelationTypes[$this->getRelationType()];
-        $resource = $repo->fetch($this->get('resource', null));
+        $resource = $repo->localize($this->get('resource'));
 
-        $this->data['meta'] = $resource->get('meta', null);
+        $this->data['meta'] = $resource->get('meta');
         $this->data['items'] = $resource->components();
     }
 

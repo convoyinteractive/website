@@ -11,6 +11,6 @@ class ComponentsController
     {
         $locale = $request->hl ?? 'en';
 
-        return $component->fetch($resource, $locale);
+        return $component->find($resource, $locale);
     }
 }
