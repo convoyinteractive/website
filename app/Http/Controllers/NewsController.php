@@ -13,4 +13,11 @@ class NewsController
             'articles' => $collection->collect('news', $locale)->sortByDesc->filename(),
         ]);
     }
+
+    public function show($locale, $article, Collection $collection)
+    {
+        $content = $collection->fetchWithDate("news/{$article}", $locale);
+
+        return view($content->template(), compact('content'));
+    }
 }

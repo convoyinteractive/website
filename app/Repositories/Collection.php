@@ -3,7 +3,10 @@
 namespace App\Repositories;
 
 use App\Page;
+use Carbon\Carbon;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+use stdClass;
 use Symfony\Component\Yaml\Yaml;
 
 class Collection
@@ -20,6 +23,24 @@ class Collection
         );
     }
 
+    public function fetchWithDate($resource, $locale = null)
+    {
+        $locale = $locale ?: app('translator')->getLocale();
+
+        $segments = $this->segments($resource);
+
+        return collect($this->getDirectory([$locale, $segments->directory]))->map(function ($file) use ($locale, $segments) {
+            $filename = str_replace('.yml', '', $file->getFilename());
+            if (Str::contains($filename, $segments->filename)) {
+                $content = $this->fetch("{$segments->directory}/{$filename}", $locale);
+
+                if (preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/', $filename, $matches)) {
+                    $content->date = Carbon::parse($matches[0]);
+                }
+                return $content;
+            }
+        })->first();
+    }
 
     public function collect($directory, $locale = null)
     {
@@ -28,6 +49,18 @@ class Collection
         return collect($this->getDirectory([$locale, $directory]))->map(function ($file) use ($locale, $directory) {
             $filename = str_replace('.yml', '', $file->getFilename());
             return $this->fetch("{$directory}/{$filename}", $locale);
+        });
+    }
+
+    public function segments($path)
+    {
+        $segments = explode('/', $path);
+
+        return tap(new stdClass, function ($result) use ($segments) {
+            $result->filename = last($segments);
+
+            unset($segments[count($segments)-1]);
+            $result->directory = implode('/', $segments);
         });
     }
 
