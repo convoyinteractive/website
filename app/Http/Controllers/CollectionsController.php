@@ -11,6 +11,6 @@ class CollectionsController
     {
         $locale = $request->hl ?? 'en';
 
-        return $collection->fetch($resource, $locale);
+        return $collection->find($resource, $locale);
     }
 }

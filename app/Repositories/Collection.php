@@ -3,19 +3,25 @@
 namespace App\Repositories;
 
 use App\Page;
-use Carbon\Carbon;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use stdClass;
 use Symfony\Component\Yaml\Yaml;
+use Illuminate\Support\Collection as SupportCollection;
 
 class Collection
 {
-    public function fetch($resource, $locale = null)
+    public function all($directory, $locale)
     {
-        $locale = $locale ?: app('translator')->getLocale();
+        return $this->files($directory, $locale)->map(function ($file) use ($locale, $directory) {
+            $resource = implode('/', [$directory, $file->getFilename()]);
+            return $this->find($resource, $locale);
+        });
+    }
 
-        $raw = $this->getFile([$locale, $resource]);
+    public function find($resource, $locale)
+    {
+        $raw = $this->exists($resource, $locale)
+            ? $this->content($resource, $locale)
+            : $this->similar($resource, $locale);
 
         return new Page(
             app(Yaml::class)->parse($raw),
@@ -23,59 +29,41 @@ class Collection
         );
     }
 
-    public function fetchWithDate($resource, $locale = null)
+    public function exists($resource, $locale)
     {
-        $locale = $locale ?: app('translator')->getLocale();
-
-        $segments = $this->segments($resource);
-
-        return collect($this->getDirectory([$locale, $segments->directory]))->map(function ($file) use ($locale, $segments) {
-            $filename = str_replace('.yml', '', $file->getFilename());
-            if (Str::contains($filename, $segments->filename)) {
-                $content = $this->fetch("{$segments->directory}/{$filename}", $locale);
-
-                if (preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/', $filename, $matches)) {
-                    $content->date = Carbon::parse($matches[0]);
-                }
-                return $content;
-            }
-        })->first();
+        return app('files')->exists(
+            storage_path("content/collections/{$locale}/{$resource}.yml")
+        );
     }
 
-    public function collect($directory, $locale = null)
+    protected function similar($resource, $locale)
     {
-        $locale = $locale ?: app('translator')->getLocale();
+        $directory = Str::beforeLast($resource, '/');
 
-        return collect($this->getDirectory([$locale, $directory]))->map(function ($file) use ($locale, $directory) {
-            $filename = str_replace('.yml', '', $file->getFilename());
-            return $this->fetch("{$directory}/{$filename}", $locale);
-        });
+        $filename = $this->files($directory, $locale)->filter(function ($file) use ($resource) {
+            return Str::contains($file->getFilename(), Str::afterLast($resource, '/'));
+        })->map->getFilename()->first();
+
+        return $this->content(implode('/', [$directory, $filename]), $locale);
     }
 
-    public function segments($path)
+    protected function content($resource, $locale)
     {
-        $segments = explode('/', $path);
+        if (!Str::endsWith($resource, '.yml')) {
+            $resource .= '.yml';
+        }
 
-        return tap(new stdClass, function ($result) use ($segments) {
-            $result->filename = last($segments);
-
-            unset($segments[count($segments)-1]);
-            $result->directory = implode('/', $segments);
-        });
+        return app('files')->get(
+            storage_path("content/collections/{$locale}/{$resource}")
+        );
     }
 
-    protected function getDirectory(array $params)
+    protected function files($directory, $locale)
     {
-        return app('files')->files($this->getPath($params));
-    }
+        $files = app('files')->files(
+            storage_path("content/collections/{$locale}/{$directory}/")
+        );
 
-    protected function getFile(array $params)
-    {
-        return app('files')->get($this->getPath($params) . '.yml');
-    }
-
-    protected function getPath(array $params)
-    {
-        return storage_path("content/collections/" . implode('/', $params));
+        return new SupportCollection($files);
     }
 }

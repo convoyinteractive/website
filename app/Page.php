@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Carbon;
 use Illuminate\Support\HtmlString;
 
 class Page extends Data
@@ -17,6 +18,13 @@ class Page extends Data
     public function filename()
     {
         return $this->filename;
+    }
+
+    public function date()
+    {
+        if (preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/', $this->filename, $matches)) {
+            return Carbon::parse($matches[0]);
+        }
     }
 
     public function template()

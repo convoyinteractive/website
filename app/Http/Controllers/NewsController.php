@@ -9,14 +9,14 @@ class NewsController
     public function index($locale, Collection $collection)
     {
         return view('blog', [
-            'content' => $collection->fetch('news', $locale),
-            'articles' => $collection->collect('news', $locale)->sortByDesc->filename(),
+            'content' => $collection->find('news', $locale),
+            'articles' => $collection->all('news', $locale)->sortByDesc->date(),
         ]);
     }
 
     public function show($locale, $article, Collection $collection)
     {
-        $content = $collection->fetchWithDate("news/{$article}", $locale);
+        $content = $collection->find("news/{$article}", $locale);
 
         return view($content->template(), compact('content'));
     }

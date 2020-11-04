@@ -8,7 +8,7 @@ class PageController
 {
     public function __invoke($locale, $page = 'home', Collection $collection)
     {
-        $content = $collection->fetch($page, $locale);
+        $content = $collection->find($page, $locale);
 
         return view($content->template(), compact('content'));
     }
