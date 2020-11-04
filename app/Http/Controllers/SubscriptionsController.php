@@ -57,7 +57,7 @@ class SubscriptionsController
 
     public function destroy($email)
     {
-        if (! $signature->check($request->sign, $email)) {
+        if (! $this->signature->check($this->request->sign, $email)) {
             return response(403);
         }
 
