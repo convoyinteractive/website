@@ -21,15 +21,11 @@ class Sitemap
             return $this->routes;
         }
 
-        $routes = $this->files()->filter(function ($file) {
-            return $file->getExtension() === 'yml';
-        })->map(function ($file) {
-            return str_replace('.yml', '/', $file->getRelativePathname());
-        });
+        $routes = $this->files()
+            ->filter(fn ($file) => $file->getExtension() === 'yml')
+            ->map(fn ($file) => str_replace('.yml', '/', $file->getRelativePathname()));
 
-        return tap($routes, function ($routes) {
-            $this->routes = $routes;
-        });
+        return tap($routes, fn ($routes) => $this->routes = $routes);
     }
 
     public function similar($needle)

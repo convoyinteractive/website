@@ -16,10 +16,9 @@ class Collection
 
     public function all($directory, $locale)
     {
-        return $this->files($directory, $locale)->map(function ($file) use ($locale, $directory) {
-            $resource = implode('/', [$directory, $file->getFilename()]);
-            return $this->find($resource, $locale);
-        });
+        return $this->files($directory, $locale)->map(
+            fn ($file) => $this->find("{$directory}/{$file->getFilename()}", $locale)
+        );
     }
 
     public function find($resource, $locale)
@@ -45,9 +44,9 @@ class Collection
     {
         $directory = Str::beforeLast($resource, '/');
 
-        $filename = $this->files($directory, $locale)->filter(function ($file) use ($resource) {
-            return Str::contains($file->getFilename(), Str::afterLast($resource, '/'));
-        })->map->getFilename()->first();
+        $filename = $this->files($directory, $locale)->filter(
+            fn ($file) => Str::contains($file->getFilename(), Str::afterLast($resource, '/'))
+        )->map->getFilename()->first();
 
         return $this->content(implode('/', [$directory, $filename]), $locale);
     }

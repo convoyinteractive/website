@@ -56,13 +56,16 @@ class Attributes
 
     public function __toString()
     {
-        $attributes = array_map(function ($value) {
-            return is_array($value) ? implode(' ', $value) : $value;
-        }, $this->data);
+        $attributes = array_map(
+            fn ($value) => is_array($value) ? implode(' ', $value) : $value,
+            $this->data
+        );
 
-        $attributes = array_map(function ($value, $key) {
-            return sprintf('%s="%s"', $key, $value);
-        }, $attributes, array_keys($attributes));
+        $attributes = array_map(
+            fn ($value, $key) => sprintf('%s="%s"', $key, $value),
+            $attributes,
+            array_keys($attributes)
+        );
 
         return (string) implode(' ', $attributes);
     }
