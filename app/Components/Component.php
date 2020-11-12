@@ -10,6 +10,8 @@ class Component implements Arrayable, ArrayAccess
 {
     protected $data;
 
+    protected $context;
+
     public function __construct($data)
     {
         $this->data = $data;
@@ -23,6 +25,15 @@ class Component implements Arrayable, ArrayAccess
     public function type()
     {
         return $this->get('type', 'component');
+    }
+
+    public function context($context = null)
+    {
+        if ($context) {
+            $this->context = $context;
+        }
+
+        return $this->context;
     }
 
     public function exists()
@@ -66,6 +77,11 @@ class Component implements Arrayable, ArrayAccess
     public function __get($key)
     {
         return $this->get($key);
+    }
+
+    public function __set($key, $value)
+    {
+        return $this->data[$key] = $value;
     }
 
     public function offsetExists($offset)

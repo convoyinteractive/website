@@ -6,7 +6,6 @@ use Throwable;
 use App\Components;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Composer;
 use JsonSerializable;
 
 class Data implements JsonSerializable
@@ -37,11 +36,9 @@ class Data implements JsonSerializable
         return Arr::get($this->data, $key, $default);
     }
 
-    public function components($key = 'body')
+    public function components($key = 'body', $type = null)
     {
-        return $this->transform(
-            $this->get($key)
-        );
+        return $this->transform($this->get($key), $type ?? $this->get('type'));
     }
 
     public function __get($key)
@@ -59,18 +56,28 @@ class Data implements JsonSerializable
         return (array) $this->data;
     }
 
-    protected function transform($items)
+    protected function transform($items, $context)
     {
-        return Collection::make($items)->map(function ($item) {
-            if ($this->hasAddon($item)) {
-                $item['addon'] = $this->toComponent($item['addon']);
+        return Collection::make($items)->map(function ($item) use ($context) {
+            $component = $this->toComponent($item);
+
+            if ($component->has('addon')) {
+                $component->addon = tap(
+                    $this->toComponent($component->addon),
+                    fn ($addon) => $addon->context("{$context}.{$component->alias()}.addon")
+                );
             }
 
-            if ($this->isNested($item)) {
-                $item['items'] = $this->transform($item['items']);
+            if ($component->has('items') && !$component->items instanceof Collection) {
+                $component->items = $this->transform(
+                    $component->items,
+                    "{$context}.{$component->alias()}.items"
+                );
             }
 
-            return $this->toComponent($item);
+            $component->context("{$context}.{$component->alias()}");
+
+            return $component;
         });
     }
 
@@ -82,15 +89,5 @@ class Data implements JsonSerializable
         } catch (Throwable $e) {
             return new Components\Component($item);
         }
-    }
-
-    protected function hasAddon($item)
-    {
-        return Arr::has($item, 'addon');
-    }
-
-    protected function isNested($item)
-    {
-        return Arr::has($item, 'items') && ! Arr::get($item, 'items') instanceof Collection;
     }
 }

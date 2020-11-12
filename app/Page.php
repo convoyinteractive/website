@@ -45,7 +45,10 @@ class Page extends Data
 
     public function hero()
     {
-        return $this->toComponent($this->get('meta.hero'), []);
+        return tap(
+            $this->toComponent($this->get('meta.hero')),
+            fn ($hero) => $hero->context("{$this->template()}.hero")
+        );
     }
 
     public function theme()
