@@ -1,3 +1,3 @@
-<div {{ $attributes ?? '' }}>
+<div {{ $component->attributes('component') }}>
     {{ $component->html() }}
 </div>

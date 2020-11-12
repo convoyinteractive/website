@@ -15,14 +15,6 @@ class RelationComponent extends Component
         'collection' => CollectionRepository::class,
     ];
 
-    public function __construct($data)
-    {
-        parent::__construct($data);
-
-        $this->validate()
-            ->fetchRelation();
-    }
-
     public function type()
     {
         return 'relation';
@@ -38,13 +30,15 @@ class RelationComponent extends Component
         return $this->data['type'];
     }
 
-    protected function fetchRelation()
+    public function fetchRelation()
     {
+        $this->validate();
+
         $repo = new $this->availableRelationTypes[$this->getRelationType()];
         $resource = $repo->localize($this->get('resource'));
 
         $this->data['meta'] = $resource->get('meta');
-        $this->data['items'] = $resource->components();
+        $this->data['items'] = $resource->components('body', "{$this->context}.items");
     }
 
     protected function validate()

@@ -1,10 +1,13 @@
-<scrollable {{ $attributes ?? '' }}>
-    @foreach ($component->get('items', []) as $item)
-        <div {{ $content->attributes(['impressions.item']) }}>
-            @include($item->view(), [
-                'component' => $item,
-                'attributes' => $content->attributes(['impressions.items', $item->alias()])
-            ])
+<div {{ $component->attributes("wrap") }}>
+    @if($component->has('title'))
+        <div {{ $component->attributes("title") }}>
+            {{ $component->get('title') }}
         </div>
-    @endforeach
-</scrollable>
+    @endif
+
+    <scrollable {{ $component->attributes('stage') }}>
+        @foreach ($component->get('items', []) as $item)
+            @include($item->view(), ['component' => $item])
+        @endforeach
+    </scrollable>
+</div>

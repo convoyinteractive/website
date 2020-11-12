@@ -1,4 +1,4 @@
-<scrollable {{ $attributes ?? '' }}>
+<scrollable {{ $component->attributes('component') }}>
     @foreach ($component->get('items', []) as $item)
         <{{ $item->has('link') ? 'a' : 'div' }} {{ $content->attributes(
             ['portfolio.item'],

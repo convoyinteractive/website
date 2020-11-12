@@ -6,22 +6,7 @@
     @include('layouts.partials.hero')
 
     @foreach($content->components() as $component)
-        <div {{ $content->attributes([
-            $component->alias(), "wrap"
-        ]) }}>
-            @if($component->has('title'))
-            <div {{ $content->attributes([$component->alias(), "title"]) }}>
-                {{ $component->get('title') }}
-            </div>
-            @endif
-
-            @include($component->view(), [
-                'component' => $component,
-                'attributes' => $content->attributes([
-                    $component->alias(), "component"
-                ]),
-            ])
-        </div>
+        @include($component->view())
     @endforeach
 
     @if($content->isType('article'))

@@ -1,10 +1,15 @@
-<ul {{ $attributes ?? '' }}>
-    @foreach ($component->get('items', []) as $item)
-        <li class="py-10 border-dotted border-t-2 border-black">
-            @include($item->view(), [
-                'component' => $item,
-                'attributes' => $content->attributes(['list.items', $item->type()]),
-            ])
-        </li>
-    @endforeach
-</ul>
+<div {{ $component->attributes("wrap") }}>
+    @if($component->has('title'))
+        <div {{ $component->attributes("title") }}>
+            {{ $component->get('title') }}
+        </div>
+    @endif
+
+    <ul {{ $component->attributes('body') }}>
+        @foreach ($component->get('items', []) as $item)
+            <li {{ $component->attributes('item') }}>
+                @include($item->view(), ['component' => $item])
+            </li>
+        @endforeach
+    </ul>
+</div>

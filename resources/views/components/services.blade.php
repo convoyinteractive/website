@@ -1,9 +1,17 @@
-<ul {{ $content->attributes([$component->alias(), 'component']) }}>
-@foreach ($component->get('items') as $item)
-    <li {{ $content->attributes([$component->alias(), 'item']) }}>
-        <div {{ $content->attributes([$component->alias(), 'term']) }}>
-            {{ $item->get('title') }}
+<div {{ $component->attributes("wrap") }}>
+    @if($component->has('title'))
+        <div {{ $component->attributes("title") }}>
+            {{ $component->get('title') }}
         </div>
-    </li>
-@endforeach
-</ul>
+    @endif
+
+    <ul {{ $component->attributes('items') }}>
+        @foreach ($component->get('items') as $item)
+            <li {{ $component->attributes('item') }}>
+                <div {{ $component->attributes('term') }}>
+                    {{ $item->get('title') }}
+                </div>
+            </li>
+        @endforeach
+    </ul>
+</div>

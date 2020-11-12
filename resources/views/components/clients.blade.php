@@ -1,17 +1,21 @@
-<ul {{ $attributes }}>
-@foreach ($component->get('items') as $item)
-    <li {{ $content->attributes([$component->alias(), 'items']) }}>
-        <div {{ $content->attributes([$component->alias(), 'card']) }}>
-            <img
-                class="max-w-50 max-h-25"
-                src="{{ asset($item->get('path'), [
-                    'format' => 'png',
-                    'portrait_height' => 240,
-                    'landscape_width' => 400,
-                ]) }}"
-                alt="{{ $item->get('alt') }}"
-            >
+<div {{ $component->attributes("wrap") }}>
+    @if($component->has('title'))
+        <div {{ $component->attributes("title") }}>
+            {{ $component->get('title') }}
         </div>
-    </li>
-@endforeach
-</ul>
+    @endif
+
+    <ul {{ $component->attributes('items') }}>
+        @foreach ($component->get('items') as $item)
+            <li {{ $component->attributes('item') }}>
+                <div {{ $component->attributes('card') }}>
+                    <img {{ $component->attributes('image') }} alt="{{ $item->get('alt') }}" src="{{ asset($item->get('path'), [
+                        'format' => 'png',
+                        'portrait_height' => 240,
+                        'landscape_width' => 400,
+                    ]) }}">
+                </div>
+            </li>
+        @endforeach
+    </ul>
+</div>

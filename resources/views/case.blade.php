@@ -26,11 +26,17 @@
     </div>
     @endif
 
+
+    @foreach($content->components() as $component)
+        @include($component->view())
+    @endforeach
+
+{{--
     @foreach($content->components() as $component)
         <div {{
             ($loop->first)
             ? $content->attributes("details.wrap")
-            :  $content->attributes([$component->alias(), "wrap"])
+            :  $component->attributes("wrap")
         }}>
             @if($component->has('title'))
             <div {{ $content->attributes([$component->alias(), "title"]) }}>
@@ -55,14 +61,11 @@
             </div>
             @endif
 
-            @include($component->view(), [
-                'component' => $component,
-                'attributes' => ($loop->first)
-                    ? $content->attributes("details.component")
-                    : $content->attributes([$component->alias(), "component"]),
-            ])
+            @include($component->view(), ['component' => $component])
         </div>
     @endforeach
+
+    --}}
 
     @if($content->isLikeable())
         <div class="flex justify-center">

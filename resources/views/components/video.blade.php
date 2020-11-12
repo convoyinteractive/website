@@ -1,5 +1,5 @@
 <video-player inline-template>
-    <div {{$attributes ?? ''}}>
+    <div {{ $component->attributes('component') }}>
         <div class="relative">
             <video
                 v-cursor="{type: 'player'}"

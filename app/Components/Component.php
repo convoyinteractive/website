@@ -2,9 +2,11 @@
 
 namespace App\Components;
 
+use App\AttributesRefactor as Attributes;
 use ArrayAccess;
 use Illuminate\Support\Arr;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\HtmlString;
 
 class Component implements Arrayable, ArrayAccess
 {
@@ -59,6 +61,11 @@ class Component implements Arrayable, ArrayAccess
     public function has($key = null)
     {
         return Arr::has($this->data, $key);
+    }
+
+    public function attributes($key)
+    {
+        return new HtmlString(new Attributes("{$this->context}.{$key}"));
     }
 
     public function view()

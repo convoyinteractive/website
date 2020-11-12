@@ -61,6 +61,8 @@ class Data implements JsonSerializable
         return Collection::make($items)->map(function ($item) use ($context) {
             $component = $this->toComponent($item);
 
+            $component->context("{$context}.{$component->alias()}");
+
             if ($component->has('addon')) {
                 $component->addon = tap(
                     $this->toComponent($component->addon),
@@ -75,7 +77,9 @@ class Data implements JsonSerializable
                 );
             }
 
-            $component->context("{$context}.{$component->alias()}");
+            if ($component->is('relation')) {
+                $component->fetchRelation();
+            }
 
             return $component;
         });
