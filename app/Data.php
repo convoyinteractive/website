@@ -68,7 +68,7 @@ class Data implements JsonSerializable
                 );
             }
 
-            if ($component->has('items') && !$component->items instanceof Collection) {
+            if ($this->hasChildren($component)) {
                 $component->items = $this->transform(
                     $component->items,
                     "{$context}.{$component->alias()}.items"
@@ -79,6 +79,11 @@ class Data implements JsonSerializable
 
             return $component;
         });
+    }
+
+    public function hasChildren(Components\Component $component)
+    {
+        return $component->has('items') && !$component->items instanceof Collection;
     }
 
     protected function toComponent($item = [])
