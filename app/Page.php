@@ -61,18 +61,9 @@ class Page extends Data
         return in_array($this->get('type', 'default'), $this->likeableTypes);
     }
 
-    public function attributes($key = [], $options = [])
+    public function attributes($key)
     {
-        if (! is_array($key)) {
-            $key = [$key];
-        }
-
-        $attributes = new Attributes($this, $key);
-
-        foreach ($options as $key => $value) {
-            $attributes->add($key, $value);
-        }
-
-        return new HtmlString((string) $attributes);
+        $context = $this->get('type', 'default');
+        return new HtmlString(new AttributesRefactor("{$context}.{$key}"));
     }
 }

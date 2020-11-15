@@ -21,7 +21,7 @@
                 @mouseenter="showControls"
                 @mouseleave="showControls(2)"
             >
-                <div {{ $content->attributes([$component->alias(), 'controls']) }} >
+                <div {{ $component->attributes('controls') }} >
                     <div class="flex justify-between text-sm font-sans">
                         <button class="cursor-pointer" @click="paused = !paused">
                             <span v-show="paused">Play</span>

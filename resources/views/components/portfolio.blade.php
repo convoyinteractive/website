@@ -1,6 +1,7 @@
-<scrollable {{ $component->attributes('component') }}>
+<scrollable>
+    {{-- TODO: Allow adding attributes --}}
     @foreach ($component->get('items', []) as $item)
-        <{{ $item->has('link') ? 'a' : 'div' }} {{ $content->attributes(
+        {{-- <{{ $item->has('link') ? 'a' : 'div' }} {{ $content->attributes(
             ['portfolio.item'],
             $item->has('link') ? ['href' => $item->link] : []
         ) }}>
@@ -17,6 +18,6 @@
                     'attributes' => $content->attributes(['portfolio.items', $item->alias()])
                 ])
             </div>
-        <{{ $item->has('link') ? '/a' : '/div' }}>
+        <{{ $item->has('link') ? '/a' : '/div' }}> --}}
     @endforeach
 </scrollable>

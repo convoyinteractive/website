@@ -8,8 +8,7 @@
 
     @if($content->hero()->exists())
         @include($content->hero()->view(), [
-            'component' => $content->hero(),
-            'attributes' => $content->attributes('hero.component'),
+            'component' => $content->hero()
         ])
     @endif
 </div>
