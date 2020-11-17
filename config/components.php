@@ -409,6 +409,63 @@ return [
                 ],
             ],
 
+            // default.portfolio
+            'portfolio' => [
+                'wrap' => [
+                    'class' => [
+                        'px-3 mb-40 flex flex-col justify-center min-h-screen overflow-hidden bg-black text-white',
+                        'sm:px-10',
+                        'md:px-5',
+                        'xl:px-screen-10',
+                    ],
+                ],
+                'title' => [
+                    'class' => [
+                        'px-3 mb-20 font-sans font-semibold text-xl text-center',
+                        'sm:px-10',
+                        'md:px-5 md:text-3xl',
+                        'xl:px-screen-10 xl:text-screen-3xl',
+                    ],
+                ],
+                'stage' => [
+                    'class' => [
+                        'px-3 flex space-x-6',
+                        'sm:px-10',
+                        'md:px-5 md:space-x-10',
+                        'xl:px-screen-10 xl:space-x-screen-10',
+                    ],
+                ],
+                'item' => [
+                    'class' => [
+                        'p-10 flex-shrink-0 flex flex-col justify-between w-8/10 bg-white text-black',
+                        'lg:w-3/10',
+                    ],
+                ],
+                'items' => [
+                    'markdown' => [
+                        'title' => [
+                            'class' => [
+                                'font-sans font-semibold text-xl mb-10',
+                                'md:text-2xl',
+                                'xl:text-screen-2xl',
+                            ]
+                        ],
+                        'body' => [
+                            'class' => [
+                                'markdown'
+                            ],
+                        ],
+                        'addon' => [
+                                'wrap' => [
+                                    'class' => [
+                                        "mt-20 w-8/12"
+                                    ]
+                                ]
+                        ]
+                    ],
+                ],
+            ],
+
             // default.process
             'process' => [
                 'wrap' => [
@@ -468,7 +525,6 @@ return [
                     ],
                 ],
             ],
-
 
             'screen' => [
                 'wrap' => [
@@ -653,56 +709,6 @@ return [
                 ],
             ],
 
-            'portfolio' => [
-                'wrap' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'mb-40',
-                        'flex flex-col justify-center',
-                        'min-h-screen',
-                        'overflow-hidden',
-                        'bg-black text-white',
-                    ],
-                ],
-                'title' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'mb-20',
-                        'font-sans font-semibold',
-                        'text-xl md:text-3xl xl:text-screen-3xl',
-                        'text-center',
-                    ],
-                ],
-                'component' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'flex',
-                        'space-x-6 md:space-x-10 xl:space-x-screen-10',
-                    ],
-                ],
-                'item' => [
-                    'class' => [
-                        'p-10',
-                        'flex-shrink-0',
-                        'w-8/10 lg:w-3/10',
-                        'bg-white text-black',
-                    ],
-                ],
-                'heading' => [
-                    'class' => [
-                        'font-sans font-semibold',
-                        'text-xl md:text-2xl xl:text-screen-2xl',
-                        'mb-10',
-                    ],
-                ],
-                'items' => [
-                    'markdown' => [
-                        'class' => [
-                            'markdown'
-                        ],
-                    ],
-                ],
-            ],
         ],
 
         // Within explicit defined templates some components require spacial attributes. Here
