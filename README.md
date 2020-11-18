@@ -9,11 +9,5 @@ All **bug fixes** should be sent to the `production` branch. Bug fixes should **
 
 **New features** should always be sent to the `master` branch which contains the upcoming release.
 
-### Do
-...
-
-### Don't
-...
-
 ### External Contributors
 The project is maintained by the convoyinteractive organization. In general, we do accept contributions from members only. Nevertheless, if you have found a bug somewhere, feel free to send in a PR.
