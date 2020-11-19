@@ -132,7 +132,7 @@ module.exports = {
         container: {},
         cursor: {
             auto: "auto",
-            DEFAULT: "DEFAULT",
+            DEFAULT: "default",
             pointer: "pointer",
             wait: "wait",
             text: "text",
