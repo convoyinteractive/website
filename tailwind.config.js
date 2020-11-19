@@ -2,9 +2,6 @@ module.exports = {
     prefix: "",
     important: false,
     separator: ":",
-    future: {
-        removeDeprecatedGapUtilities: true,
-    },
     purge: {
         mode: 'layers',
         layers: ['utilities'],
@@ -39,12 +36,12 @@ module.exports = {
             black: "#000000",
             white: "#ffffff",
             gray: {
-                default: "#F4F4F4",
+                DEFAULT: "#F4F4F4",
                 mid: "#303030",
             },
             green: {
                 soft: "#E9F9E3",
-                default: "#00ff00",
+                DEFAULT: "#00ff00",
             },
         },
         spacing: {
@@ -100,18 +97,18 @@ module.exports = {
         },
         borderColor: theme => ({
             ...theme("colors"),
-            default: theme("colors.gray.300", "currentColor"),
+            DEFAULT: theme("colors.gray.300", "currentColor"),
         }),
         borderRadius: {
             none: "0",
             sm: "0.125rem",
-            default: "0.25rem",
+            DEFAULT: "0.25rem",
             md: "0.375rem",
             lg: "0.5rem",
             full: "9999px",
         },
         borderWidth: {
-            default: "1px",
+            DEFAULT: "1px",
             "0": "0",
             "2": "2px",
             "4": "4px",
@@ -120,7 +117,7 @@ module.exports = {
         boxShadow: {
             xs: "0 0 0 1px rgba(0, 0, 0, 0.05)",
             sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-            default:
+            DEFAULT:
                 "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
             md:
                 "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
@@ -135,7 +132,7 @@ module.exports = {
         container: {},
         cursor: {
             auto: "auto",
-            default: "default",
+            DEFAULT: "DEFAULT",
             pointer: "pointer",
             wait: "wait",
             text: "text",
@@ -155,11 +152,11 @@ module.exports = {
         },
         flexGrow: {
             "0": "0",
-            default: "1",
+            DEFAULT: "1",
         },
         flexShrink: {
             "0": "0",
-            default: "1",
+            DEFAULT: "1",
         },
         fontFamily: {
             hero: ["Grtsk Tera", "sans-serif"],
@@ -502,7 +499,7 @@ module.exports = {
         transitionProperty: {
             none: "none",
             all: "all",
-            default:
+            DEFAULT:
                 "background-color, border-color, color, fill, stroke, opacity, box-shadow, transform",
             colors: "background-color, border-color, color, fill, stroke",
             opacity: "opacity",

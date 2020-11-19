@@ -9,16 +9,20 @@
     "devDependencies": {
         "laravel-mix": "^6.0.18",
         "postcss": "^8.2.10",
-        "tailwindcss": "^1.9.6",
+        "resolve-url-loader": "^3.1.2",
+        "sw-precache-webpack-plugin": "^1.0.0",
+        "tailwindcss": "^2.0.1",
         "vue-loader": "^15.9.6",
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
         "@tobiasthaden/tap": "^1.0.0",
+        "autoprefixer": "^10.0.2",
         "axios": "^0.21.1",
         "cookieguard": "^0.2.1",
         "gsap": "^3.6.1",
         "lottie-web": "^5.7.8",
+        "postcss": "^8.1.8",
         "turbolinks": "^5.2.0",
         "vue": "^2.6.12",
         "waypoints": "^4.0.1"
