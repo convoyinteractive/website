@@ -1,5 +1,5 @@
-![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/convoyinteractive/website)
-![Website](https://img.shields.io/website?down_message=offline&label=status&up_message=online&url=https%3A%2F%2Fconvoyinteractive.com)
+[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/convoyinteractive/website)](https://www.codefactor.io/repository/github/convoyinteractive/website)
+[![Website](https://img.shields.io/website?down_message=offline&label=status&up_message=online&url=https%3A%2F%2Fconvoyinteractive.com)](https://www.convoyinteractive.com)
 
 ## Contribution Guide
 Doing one thing at a time – keep your PRs small, so they are easier to review and we can keep our release cycles short.
