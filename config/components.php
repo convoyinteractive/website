@@ -643,6 +643,37 @@ return [
                 ]
             ],
 
+            // default.video
+            'video' => [
+                'wrap' => [
+                    'class' => [
+                        'block',
+                        'my-50 xl:my-screen-50',
+                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                        'mx-auto lg:w-10/12',
+                    ],
+                ],
+                'player' => [
+                    'class' => [
+                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                        'w-full block'
+                    ]
+                ],
+                'controls' => [
+                    'class' => [
+                        'p-6 space-y-6',
+                        'text-white'
+                    ],
+                ],
+                'caption' => [
+                    'class' => [
+                        'block mt-5 text-sm text-center font-sans',
+                    ],
+                ],
+            ],
+
+
+
 
 
             //
@@ -682,29 +713,6 @@ return [
                         'block',
                         'w-full',
                         'pointer-events-none',
-                    ],
-                ],
-            ],
-
-            'video' => [
-                'wrap' => [
-                    'class' => [
-                        'block',
-                        'my-50 xl:my-screen-50',
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'mx-auto lg:w-10/12',
-                    ],
-                ],
-                'component' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'w-full block'
-                    ]
-                ],
-                'controls' => [
-                    'class' => [
-                        'p-6 space-y-6',
-                        'text-white'
                     ],
                 ],
             ],
