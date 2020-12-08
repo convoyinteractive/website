@@ -16,7 +16,7 @@
     </div>
 
     @if($component->has('caption'))
-        <div {{ $content->attributes(['group.caption']) }}>
+        <div {{ $component->attributes('caption') }}>
             {{ $component->get('caption') }}
         </div>
     @endif
