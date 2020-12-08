@@ -18,7 +18,7 @@
         "@tobiasthaden/tap": "^1.0.0",
         "axios": "^0.21.0",
         "gsap": "^3.5.0",
-        "lottie-web": "^5.7.4",
+        "lottie-web": "^5.7.5",
         "turbolinks": "^5.2.0",
         "vue": "^2.6.12",
         "waypoints": "^4.0.1"
