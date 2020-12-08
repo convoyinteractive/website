@@ -1,12 +1,10 @@
 import Http from "axios";
-import { shortNumber } from "../helpers"
+import { shortNumber } from "../helpers";
 
 let timer;
 
 export default {
-    props: [
-        'resource'
-    ],
+    props: ["resource"],
 
     data() {
         return {
@@ -22,10 +20,9 @@ export default {
     methods: {
         fetch() {
             this.increment = 0;
-            Http.get("/api/likes/" + this.resource)
-                .then(({data}) => {
-                    this.count = data;
-                });
+            Http.get("/api/likes/" + this.resource).then(({ data }) => {
+                this.count = data;
+            });
         },
         update() {
             this.increment++;
@@ -38,24 +35,33 @@ export default {
                     increment: this.increment,
                 }).then(this.fetch);
             }, 500);
-        }
+        },
     },
 
     computed: {
         likes() {
             return shortNumber(this.count + this.increment);
-        }
+        },
     },
 
-    render: function (h) {
-        let count = h('div', {
-            class: 'absolute flex items-center justify-center text-xs font-sans transform -translate-y-1/2 top-0 right-0 w-8 h-8 rounded-full bg-green text-white'
-        }, this.likes);
-        return h('button', {
-            class: 'relative',
-            on: {
-                click: this.update,
+    render: function(h) {
+        let count = h(
+            "div",
+            {
+                class:
+                    "absolute flex items-center justify-center text-xs font-sans transform -translate-y-1/2 top-0 right-0 w-8 h-8 rounded-full bg-green text-white",
             },
-        }, [count, this.$slots.default]);
-    }
+            this.likes,
+        );
+        return h(
+            "button",
+            {
+                class: "relative",
+                on: {
+                    click: this.update,
+                },
+            },
+            [count, this.$slots.default],
+        );
+    },
 };

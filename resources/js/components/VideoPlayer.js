@@ -1,5 +1,5 @@
 export default {
-    props: ['autoplay'],
+    props: ["autoplay"],
     data() {
         return {
             paused: true,
@@ -41,7 +41,8 @@ export default {
             };
         },
         calculateAndUpdateProgress(event) {
-            let progress = (event.pageX - event.target.getBoundingClientRect().left) /
+            let progress =
+                (event.pageX - event.target.getBoundingClientRect().left) /
                 event.target.clientWidth;
 
             this.video.currentTime = this.time.duration * progress;
@@ -65,7 +66,7 @@ export default {
 
     watch: {
         paused(value) {
-            this.$root.cursor.label = value ? 'Play' : 'Pause';
+            this.$root.cursor.label = value ? "Play" : "Pause";
             value ? this.video.pause() : this.video.play();
         },
 
@@ -75,6 +76,6 @@ export default {
 
         autoplay(value) {
             this.paused = !value;
-        }
+        },
     },
 };

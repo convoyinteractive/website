@@ -41,12 +41,15 @@ export default {
     },
 
     mounted() {
-        document.addEventListener('keydown', e => {
-            if (e.code === 'Space' && e.ctrlKey && this.fresh) this.run();
+        document.addEventListener("keydown", e => {
+            if (e.code === "Space" && e.ctrlKey && this.fresh) this.run();
         });
 
         try {
-            console.info('%c \u0063\u0074\u0072\u006C\u0020\u002B\u0020\u0073\u0070\u0061\u0063\u0065', 'color: #0f0');
+            console.info(
+                "%c \u0063\u0074\u0072\u006C\u0020\u002B\u0020\u0073\u0070\u0061\u0063\u0065",
+                "color: #0f0",
+            );
         } catch {}
     },
 

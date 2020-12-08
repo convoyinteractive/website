@@ -9,12 +9,13 @@ export default {
             if (!document.fullscreenElement) {
                 this.show = false;
             }
-        }
+        },
     },
     watch: {
         show(show) {
-            show ? this.$refs.target.requestFullscreen() : document.exitFullscreen();
-        }
-    }
-
-}
+            show
+                ? this.$refs.target.requestFullscreen()
+                : document.exitFullscreen();
+        },
+    },
+};

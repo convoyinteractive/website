@@ -3,10 +3,10 @@ export default {
     props: {
         color: {
             type: String,
-            default: '#000000',
-        }
+            default: "#000000",
+        },
     },
-    render: function (h, context) {
+    render: function(h, context) {
         const screen = h(
             "div",
             {

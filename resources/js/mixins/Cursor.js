@@ -1,13 +1,13 @@
 import { tap } from "@tobiasthaden/tap";
 
 export const DefaultCursor = {
-    label: '',
+    label: "",
     size: 16,
 };
 
 export const PlayerCursor = {
     handle(element, binding) {
-        this.label = element.paused ? 'Play' : 'Pause';
+        this.label = element.paused ? "Play" : "Pause";
     },
     size: 60,
 };
@@ -17,7 +17,7 @@ export const TextCursor = {
         this.label = binding.label;
         this.size = binding.size || 60;
     },
-}
+};
 
 export const Cursors = {
     default: DefaultCursor,
@@ -25,52 +25,59 @@ export const Cursors = {
     text: TextCursor,
 
     create(binding, element) {
-        return tap(this[binding.type], cursor => cursor.handle(element, binding));
+        return tap(this[binding.type], cursor =>
+            cursor.handle(element, binding),
+        );
     },
-}
+};
 
 export const CursorComponent = {
     render(h) {
-        return h('div', {
-            class: 'p-2 fixed rounded-full bg-green pointer-events-none z-50 font-sans text-sm text-center flex items-center justify-center transition-all duration-100 leading-none',
-            style: this.style,
-        }, this.label);
+        return h(
+            "div",
+            {
+                class:
+                    "p-2 fixed rounded-full bg-green pointer-events-none z-50 font-sans text-sm text-center flex items-center justify-center transition-all duration-100 leading-none",
+                style: this.style,
+            },
+            this.label,
+        );
     },
 
     data() {
         return {
-            label: '',
+            label: "",
             position: {
                 x: -100,
                 y: -100,
-            }
-        }
+            },
+        };
     },
 
     mounted() {
-        window.addEventListener('mousemove', event => {
+        window.addEventListener("mousemove", event => {
             this.position = {
                 x: event.clientX,
                 y: event.clientY,
-            }
+            };
         });
     },
 
     computed: {
         style() {
             return {
-                top: this.position.y - this.$root.cursor.size / 2 + 'px',
-                left: this.position.x - this.$root.cursor.size / 2 + 'px',
-                width: this.$root.cursor.size + 'px',
-                height: this.$root.cursor.size + 'px',
+                top: this.position.y - this.$root.cursor.size / 2 + "px",
+                left: this.position.x - this.$root.cursor.size / 2 + "px",
+                width: this.$root.cursor.size + "px",
+                height: this.$root.cursor.size + "px",
             };
         },
     },
     watch: {
-        '$root.cursor.label': function (label) {
+        "$root.cursor.label": function(label) {
             this.label = label;
-        }
-    }
+        },
+    },
 };
 
 export default {
