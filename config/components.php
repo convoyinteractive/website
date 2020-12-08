@@ -233,6 +233,16 @@ return [
                             ]
                         ]
                     ],
+
+                    // default.group.items.screen
+                    'screen' => [
+                        'canvas' => [
+                            'class' => [
+                                'p-15',
+                                'xl:p-screen-15',
+                            ]
+                        ]
+                    ],
                 ]
             ],
 
@@ -526,6 +536,7 @@ return [
                 ],
             ],
 
+            // default.screen
             'screen' => [
                 'wrap' => [
                     'class' => [
@@ -547,7 +558,9 @@ return [
                     ],
                 ],
                 'caption' => [
-                    'px-10 font-sans text-center text-sm xl:text-like-sm'
+                    'class' => [
+                        'px-10 font-sans text-center text-sm xl:text-like-sm'
+                    ],
                 ]
             ],
 
@@ -672,16 +685,7 @@ return [
                 ],
             ],
 
-
-
-
-
-            //
-
-
-
-
-
+            // TODO: Refactor page and hero attributes
             'page' => [
                 'title' => [
                     'class' => [
@@ -723,20 +727,27 @@ return [
         // we'll define overrides based on the current context. If an attribute doesn't exist
         // it will fall back to the default attributes.
         'home' => [
+
+            // home.quote
             'quote' => [
                 'wrap' => [
                     'class' => [
-                        'px-6 md:px-10 xl:px-screen-10',
-                    ],
-                ],
-                'component' => [
-                    'class' => [
-                        'mx-auto',
+                        'px-3 mx-auto',
+                        'sm:px-10',
+                        'md:px-5',
                         'lg:w-10/12',
-                        'sm:px-10 xl:px-screen-10',
+                        'xl:px-screen-10',
                     ],
                 ],
                 'body' => [
+                    'class' => [
+                        'px-3 w-full',
+                        'sm:px-10',
+                        'md:px-5',
+                        'xl:px-screen-10',
+                    ]
+                ],
+                'cite' => [
                     'class' => [
                         'font-sans font-semibold',
                         'text-xl md:text-3xl xl:text-like-3xl',
@@ -745,12 +756,15 @@ return [
                 ],
                 'author' => [
                     'class' => [
+                        'author',
                         'block',
                         'font-sans font-normal',
                         'text-base md:text-xl',
                     ],
                 ],
             ],
+
+            // home.services
             'services' => [
                 'wrap' => [
                     'class' => [
@@ -760,7 +774,7 @@ return [
                         'lg:w-10/12',
                     ],
                 ],
-                'component' => [
+                'items' => [
                     'class' => [
                         'sm:px-10 xl:px-screen-10',
                         'lg:w-7/10',
@@ -809,11 +823,7 @@ return [
                 ],
             ],
 
-
-
-            //
-
-
+            // TODO: Refactor sidebar
             'details' => [
                 'wrap' => [
                     'class' => [
@@ -843,6 +853,8 @@ return [
                     ],
                 ],
             ],
+
+            // case.svg
             'svg' => [
                 'wrap' => [
                     'class' => [
@@ -858,10 +870,16 @@ return [
                         'text-center',
                     ],
                 ],
+                'caption' => [
+                    'class' => [
+                        'font-sans text-center text-sm xl:text-like-sm mt-5'
+                    ]
+                ]
             ],
         ],
 
         'services' => [
+            // TODO: Refactor page and hero attributes
             'hero' => [
                 'wrap' => [
                     'class' => [
