@@ -1,25 +1,31 @@
-<figure {{ $attributes ?? ''}} aria-label="{{ $component->get('alt') }}">
-    <div class="max-h-full max-w-full">
+<div {{ $component->attributes("wrap") }}>
 
+    @if($component->has('title'))
+        <div {{ $component->attributes("title") }}>
+            {{ $component->get('title') }}
+        </div>
+    @endif
+
+    <figure {{ $component->attributes('figure') }} aria-label="{{ $component->get('alt') }}">
         @if($component->isVideo())
-            <video {{$content->attributes(['image.item'])}} src="{{ asset($component->get('path'), []) }}" playsinline autoplay muted loop></video>
+            <video {{ $component->attributes('item') }} src="{{ asset($component->get('path'), []) }}" playsinline autoplay muted loop></video>
         @endif
 
         @if($component->isImage())
-            <picture {{$content->attributes(['image.item'])}}>
+            <picture {{ $component->attributes('item') }}>
                 @if($component->has('sizes'))
                     <source media="(min-width: 500px)" srcset="{{ asset($component->get('sizes.large'), []) }}">
-                    <img {{$content->attributes(['image.item'])}} src="{{ asset($component->get('sizes.small'), []) }}" alt="{{ $component->get('alt') }}">
+                    <img src="{{ asset($component->get('sizes.small'), []) }}" alt="{{ $component->get('alt') }}">
                 @elseif($component->has('path'))
-                    <img {{$content->attributes(['image.item'])}} src="{{ asset($component->get('path'), []) }}" alt="{{ $component->get('alt') }}">
+                    <img src="{{ asset($component->get('path'), []) }}" alt="{{ $component->get('alt') }}">
                 @endif
             </picture>
         @endif
-    </div>
 
-    @if($component->has('caption'))
-        <figcaption class="px-10 font-sans text-center text-sm xl:text-like-sm">
-            {{ $component->get('caption') }}
-        </figcaption>
-    @endif
-</figure>
+        @if($component->has('caption'))
+            <figcaption {{ $component->attributes('caption') }}>
+                {{ $component->get('caption') }}
+            </figcaption>
+        @endif
+    </figure>
+</div>

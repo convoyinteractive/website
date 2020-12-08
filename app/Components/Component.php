@@ -2,13 +2,17 @@
 
 namespace App\Components;
 
+use App\Attributes;
 use ArrayAccess;
 use Illuminate\Support\Arr;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\HtmlString;
 
 class Component implements Arrayable, ArrayAccess
 {
     protected $data;
+
+    protected $context;
 
     public function __construct($data)
     {
@@ -23,6 +27,15 @@ class Component implements Arrayable, ArrayAccess
     public function type()
     {
         return $this->get('type', 'component');
+    }
+
+    public function context($context = null)
+    {
+        if ($context) {
+            $this->context = $context;
+        }
+
+        return $this->context;
     }
 
     public function exists()
@@ -50,6 +63,11 @@ class Component implements Arrayable, ArrayAccess
         return Arr::has($this->data, $key);
     }
 
+    public function attributes($key)
+    {
+        return new HtmlString(new Attributes("{$this->context}.{$key}"));
+    }
+
     public function view()
     {
         if ($this->viewExists($this->alias())) {
@@ -66,6 +84,11 @@ class Component implements Arrayable, ArrayAccess
     public function __get($key)
     {
         return $this->get($key);
+    }
+
+    public function __set($key, $value)
+    {
+        return $this->data[$key] = $value;
     }
 
     public function offsetExists($offset)

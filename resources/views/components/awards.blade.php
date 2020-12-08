@@ -1,25 +1,30 @@
-<ul {{ $attributes }}>
-@foreach ($component->get('items') as $item)
-    <li {{ $content->attributes([$component->alias(), 'items']) }}>
-        <div {{ $content->attributes([$component->alias(), 'card']) }}>
-            <img
-                class="max-w-30 max-h-15"
-                src="{{ asset($item->get('path'), [
-                    'format' => 'png',
-                    'portrait_height' => 240,
-                    'landscape_width' => 400,
-                ]) }}"
-                alt="{{ $item->get('alt') }}"
-            >
-            @if($item->has('count'))
-            <span {{ $content->attributes([$component->alias(), 'count']) }}>
-                {{$item->get('count')}}x
-            </span>
-            @endif
+<div {{ $component->attributes("wrap") }}>
+    @if($component->has('title'))
+        <div {{ $component->attributes("title") }}>
+            {{ $component->get('title') }}
         </div>
-        <span {{ $content->attributes([$component->alias(), 'caption']) }}>
-            {{ $item->get('caption') }}
-        </span>
-    </li>
-@endforeach
-</ul>
+    @endif
+
+    <ul {{ $component->attributes('items') }}>
+        @foreach ($component->get('items') as $item)
+            <li {{ $component->attributes('item') }}>
+                <div {{ $component->attributes('card') }}>
+                    <img {{ $component->attributes('image') }} alt="{{ $item->get('alt') }}" src="{{ asset($item->get('path'), [
+                        'format' => 'png',
+                        'portrait_height' => 240,
+                        'landscape_width' => 400,
+                    ]) }}">
+
+                    @if($item->has('count'))
+                        <span {{ $component->attributes('count') }}>
+                            {{$item->get('count')}}x
+                        </span>
+                    @endif
+                </div>
+                <span {{ $component->attributes('caption') }}>
+                    {{ $item->get('caption') }}
+                </span>
+            </li>
+        @endforeach
+    </ul>
+</div>

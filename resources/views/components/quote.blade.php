@@ -1,9 +1,13 @@
-<blockquote {{ $attributes }}>
-    <div {{ $content->attributes('quote.body') }}>
-        <p>{{ $component->get('body') }}</p>
-    </div>
-    <footer {{ $content->attributes('quote.author') }}>
-        <span class="block font-semibold">{{$component->get('author.name')}}</span>
-        <span class="block text-sm lg:text-like-sm">{{ $component->get('author.title') }}</span>
-    </footer>
-</blockquote>
+<div {{ $component->attributes("wrap") }}>
+    <blockquote {{ $component->attributes('body') }}>
+        <div {{ $component->attributes('cite') }}>
+            {{ $component->get('body') }}
+        </div>
+        <footer {{ $component->attributes('author') }}>
+            <div>
+                <span {{ $component->attributes('author_name') }}>{{$component->get('author.name')}}</span>
+                <span {{ $component->attributes('author_title') }}>{{ $component->get('author.title') }}</span>
+            </div>
+        </footer>
+    </blockquote>
+</div>

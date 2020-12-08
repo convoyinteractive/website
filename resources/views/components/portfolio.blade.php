@@ -1,22 +1,31 @@
-<scrollable {{ $attributes ?? '' }}>
+{{-- <scrollable>
     @foreach ($component->get('items', []) as $item)
-        <{{ $item->has('link') ? 'a' : 'div' }} {{ $content->attributes(
-            ['portfolio.item'],
-            $item->has('link') ? ['href' => $item->link] : []
-        ) }}>
-            <h3 {{ $content->attributes(['portfolio.heading']) }}>
-                {{ $item->get('title') }}
-            </h3>
+    <a {{ $component->attributes('item') }} href="{{ $item->link }}">
+        <h3 {{ $component->attributes('heading') }}>
+            {{ $item->get('title') }}
+        </h3>
             @include($item->view(), [
                 'component' => $item,
-                'attributes' => $content->attributes(['portfolio.items', $item->alias()])
             ])
-            <div class="mt-20 w-8/12">
-                @include($item->addon->view(), [
-                    'component' => $item->addon,
-                    'attributes' => $content->attributes(['portfolio.items', $item->alias()])
-                ])
-            </div>
-        <{{ $item->has('link') ? '/a' : '/div' }}>
+
+        </a>
     @endforeach
-</scrollable>
+</scrollable> --}}
+
+
+<div {{ $component->attributes("wrap") }}>
+    @if($component->has('title'))
+        <div {{ $component->attributes("title") }}>
+            {{ $component->get('title') }}
+        </div>
+    @endif
+
+    <scrollable {{ $component->attributes('stage') }}>
+        @foreach ($component->get('items', []) as $item)
+            <div {{ $component->attributes("item") }}>
+                @include($item->view(), ['component' => $item])
+                @include($item->addon->view(), ['component' => $item->addon])
+            </div>
+        @endforeach
+    </scrollable>
+</div>
