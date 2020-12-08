@@ -64,6 +64,6 @@ class Page extends Data
     public function attributes($key)
     {
         $context = $this->get('type', 'default');
-        return new HtmlString(new AttributesRefactor("{$context}.{$key}"));
+        return new HtmlString(new Attributes("{$context}.{$key}"));
     }
 }

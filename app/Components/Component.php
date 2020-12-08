@@ -2,7 +2,7 @@
 
 namespace App\Components;
 
-use App\AttributesRefactor as Attributes;
+use App\Attributes;
 use ArrayAccess;
 use Illuminate\Support\Arr;
 use Illuminate\Contracts\Support\Arrayable;

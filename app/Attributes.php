@@ -6,52 +6,23 @@ use Illuminate\Support\Arr;
 
 class Attributes
 {
-    protected $resource;
-
-    protected $data;
-
-    public function __construct(Page $resource, array $key)
+    public function __construct($key)
     {
-        $this->resource = $resource;
-
-        $this->data = $this->fromPage($key) ?? $this->fallback($key);
+        $this->data = $this->data($key) ?? $this->fallback($key);
     }
 
-    public function add($key, $value)
+    public function data($key)
     {
-        $old = Arr::get($this->data, $key, []);
-
-        if (! is_array($old)) {
-            $old = [$old];
-        }
-
-        Arr::set($this->data, $key, array_merge($old, is_array($value) ? $value : [$value]));
+        return Arr::get(config('components.attributes'), $key);
     }
 
-    protected function fromPage($key)
+    public function fallback($key)
     {
-        array_unshift($key, $this->resource->get('type'));
+        $key = explode('.', $key);
+        $key[0] = 'default';
+        $key = implode('.', $key);
 
-        return Arr::get(
-            config('components.attributes'),
-            implode('.', $key),
-        );
-    }
-
-    protected function fallback($key)
-    {
-        array_unshift($key, 'default');
-
-        return Arr::get(
-            config('components.attributes'),
-            implode('.', $key),
-            []
-        );
-    }
-
-    public function toArray()
-    {
-        return $this->data;
+        return $this->data($key) ?? [];
     }
 
     public function __toString()
