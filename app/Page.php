@@ -23,11 +23,6 @@ class Page extends Data
         $this->filename = $filename;
     }
 
-    public function filename()
-    {
-        return $this->filename;
-    }
-
     public function date()
     {
         if (preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/', $this->filename, $matches)) {
