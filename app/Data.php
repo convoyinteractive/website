@@ -26,6 +26,16 @@ class Data implements JsonSerializable
         $this->data = $data;
     }
 
+    public function __get($key)
+    {
+        return $this->component($key);
+    }
+
+    public function __set($name, $value)
+    {
+        $this->data[$name] = $value;
+    }
+
     public function has($key)
     {
         return Arr::has($this->data, $key);
@@ -49,16 +59,6 @@ class Data implements JsonSerializable
             $this->toComponent($this->get($key) ?? []),
             fn ($component) => $component->context("{$context}.{$component->alias()}")
         );
-    }
-
-    public function __get($key)
-    {
-        return $this->component($key);
-    }
-
-    public function __set($name, $value)
-    {
-        $this->data[$name] = $value;
     }
 
     public function jsonSerialize()
