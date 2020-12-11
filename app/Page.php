@@ -13,6 +13,10 @@ class Page extends Data
         'case',
     ];
 
+    protected $hasNewsletterTypes = [
+        'article',
+    ];
+
     public function __construct(array $data, $filename)
     {
         parent::__construct($data);
@@ -54,6 +58,11 @@ class Page extends Data
     public function theme()
     {
         return new Theme($this->get('theme'));
+    }
+
+    public function hasNewsletter()
+    {
+        return in_array($this->get('type', 'default'), $this->hasNewsletterTypes);
     }
 
     public function isLikeable()
