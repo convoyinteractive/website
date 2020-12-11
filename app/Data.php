@@ -95,7 +95,7 @@ class Data implements JsonSerializable
         });
     }
 
-    public function hasChildren(Components\Component $component)
+    protected function hasChildren(Components\Component $component)
     {
         return $component->has('items') && !$component->items instanceof Collection;
     }
