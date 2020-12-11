@@ -23,23 +23,17 @@ class Page extends Data
         $this->filename = $filename;
     }
 
+    public function attributes($key)
+    {
+        $context = $this->get('type', 'default');
+        return new HtmlString(new Attributes("{$context}.{$key}"));
+    }
+
     public function date()
     {
         if (preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/', $this->filename, $matches)) {
             return Carbon::parse($matches[0]);
         }
-    }
-
-    public function template()
-    {
-        return view()->exists($this->get('type'))
-            ? $this->get('type')
-            : 'default';
-    }
-
-    public function isType($type)
-    {
-        return $this->get('type', 'default') === $type;
     }
 
     public function hero()
@@ -55,9 +49,16 @@ class Page extends Data
         return new Theme($this->get('theme'));
     }
 
-    public function hasNewsletter()
+    public function template()
     {
-        return in_array($this->get('type', 'default'), $this->hasNewsletterTypes);
+        return view()->exists($this->get('type'))
+            ? $this->get('type')
+            : 'default';
+    }
+
+    public function isType($type)
+    {
+        return $this->get('type', 'default') === $type;
     }
 
     public function isLikeable()
@@ -65,9 +66,8 @@ class Page extends Data
         return in_array($this->get('type', 'default'), $this->likeableTypes);
     }
 
-    public function attributes($key)
+    public function hasNewsletter()
     {
-        $context = $this->get('type', 'default');
-        return new HtmlString(new Attributes("{$context}.{$key}"));
+        return in_array($this->get('type', 'default'), $this->hasNewsletterTypes);
     }
 }
