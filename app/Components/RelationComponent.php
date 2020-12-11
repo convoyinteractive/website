@@ -38,7 +38,7 @@ class RelationComponent extends Component
         $resource = $repo->localize($this->get('resource'));
 
         $this->data['meta'] = $resource->get('meta');
-        $this->data['items'] = $resource->components('body', "{$this->context}.items");
+        $this->data['items'] = $resource->collection('body', "{$this->context}.items");
     }
 
     protected function validate()

@@ -26,7 +26,7 @@
     </div>
     @endif
 
-    @foreach($content->components() as $component)
+    @foreach($content->collection('body') as $component)
         @include($component->view())
     @endforeach
 

@@ -36,14 +36,24 @@ class Data implements JsonSerializable
         return Arr::get($this->data, $key, $default);
     }
 
-    public function components($key = 'body', $type = null)
+    public function collection($key, $context = null)
     {
-        return $this->transform($this->get($key), $type ?? $this->get('type'));
+        return $this->transform($this->get($key), $context ?? $this->get('type'));
+    }
+
+    public function component($key, $context = null)
+    {
+        $context = $context ?: $this->get('type');
+
+        return tap(
+            $this->toComponent($this->get($key) ?? []),
+            fn ($component) => $component->context("{$context}.{$component->alias()}")
+        );
     }
 
     public function __get($key)
     {
-        return $this->toComponent($this->get($key) ?? []);
+        return $this->component($key);
     }
 
     public function __set($name, $value)

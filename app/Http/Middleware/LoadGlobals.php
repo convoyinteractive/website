@@ -17,14 +17,14 @@ class LoadGlobals
     {
         app('view')->composer('layouts.partials.navigation', function ($view) {
             $view->with('navigation', [
-                'about' => $this->component->localize('about')->components(),
-                'cases' => $this->component->localize('cases')->components(),
-                'contact' => $this->component->localize('contact')->components(),
+                'about' => $this->component->localize('about')->collection('body'),
+                'cases' => $this->component->localize('cases')->collection('body'),
+                'contact' => $this->component->localize('contact')->collection('body'),
             ]);
         });
 
         app('view')->composer('layouts.partials.socials', function ($view) {
-            $view->with('socials', $this->component->localize('socials')->components());
+            $view->with('socials', $this->component->localize('socials')->collection('body'));
         });
 
         return $next($request);
