@@ -6,7 +6,7 @@
 @section('content')
 
     @include('layouts.partials.hero', [
-        'component' => $content->component('meta.hero', "{$content->template()}.hero")
+        'component' => $content->sections()->hero()
     ])
 
     @foreach($content->collection('body') as $component)

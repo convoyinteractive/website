@@ -36,12 +36,9 @@ class Page extends Data
         }
     }
 
-    public function hero()
+    public function sections()
     {
-        return tap(
-            $this->toComponent($this->get('meta.hero')),
-            fn ($hero) => $hero->context("{$this->template()}.hero")
-        );
+        return new Sections($this);
     }
 
     public function theme()
