@@ -1,8 +1,5 @@
 @foreach ($component->get('items', []) as $item)
     <div {{ $component->attributes('component') }}>
-        @include($item->view(), [
-            'component' => $item,
-            'attributes' => $content->attributes(['list.items', $item->type()]),
-        ])
+        @include($item->view(), ['component' => $item])
     </div>
 @endforeach
