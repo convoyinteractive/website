@@ -7,10 +7,10 @@
 
     <dl {{ $component->attributes('body') }}>
         @foreach ($component->get('items', []) as $item)
-            <dt {{ $content->attributes('definition.term') }}>
+            <dt {{ $component->attributes('term') }}>
                 {{ $item->get('term') }}
             </dt>
-            <dd {{ $content->attributes('definition.item') }}>
+            <dd {{ $component->attributes('item') }}>
                 @include($item->view(), ['component' => $item])
             </dd>
         @endforeach
