@@ -13,7 +13,7 @@ class Sections
 
     public function hero()
     {
-        return $this->page->component('meta.hero', "{$this->page->template()}.hero");
+        return $this->page->component('hero', "{$this->page->template()}.hero");
     }
 
     public function body()

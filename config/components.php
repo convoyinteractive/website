@@ -7,6 +7,83 @@ return [
         // fall back to this attributes if there is nothing defined for a specific template.
         'default' => [
 
+            'hero' => [
+                'image' => [
+                    'header' => [
+                        'class' => [
+                            'px-3 mx-auto my-40',
+                            'sm:px-10',
+                            'md:px-5 md:my-70',
+                            'lg:w-10/12',
+                            'xl:px-screen-10 xl:my-screen-70',
+                        ],
+                    ],
+                    'title' => [
+                        'class' => [
+                            'px-3 font-bold font-hero leading-tight text-4xl',
+                            'sm:px-10 sm:text-5xl',
+                            'md:px-5 md:text-6xl',
+                            'xl:px-screen-10 xl:text-like-6xl',
+                        ],
+                    ],
+                    'subtitle' => [
+                        'class' => [
+                            'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                            'block font-sans font-light',
+                            'text-sm xl:text-like-sm',
+                        ],
+                    ],
+                    'body' => [
+                        'class' => [
+                            'block',
+                            'w-full',
+                            'pointer-events-none',
+                        ],
+                    ],
+                ],
+                'lottie' => [
+                    'wrap' => [
+                        'class' => [
+                            'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                            'my-10 xl:my-screen-10',
+                            'mx-auto',
+                            'md:flex md:items-center md:justify-between',
+                            'lg:w-10/12',
+                        ],
+                    ],
+                    'header' => [
+                        'class' => [
+                            'px-3  my-40',
+                            'sm:px-10',
+                            'md:px-5 md:my-70',
+                            'lg:w-10/12 lg:w-6/10',
+                            'xl:px-screen-10 xl:my-screen-70',
+                        ],
+                    ],
+                    'title' => [
+                        'class' => [
+                            'px-3 font-bold font-hero leading-tight text-4xl',
+                            'sm:px-10 sm:text-5xl',
+                            'md:px-5 md:text-6xl',
+                            'xl:px-screen-10 xl:text-like-6xl',
+                        ],
+                    ],
+                    'subtitle' => [
+                        'class' => [
+                            'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                            'block font-sans font-light',
+                            'text-sm xl:text-like-sm',
+                        ],
+                    ],
+                    'body' => [
+                        'class' => [
+                            'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                            'lg:w-4/10',
+                        ],
+                    ],
+                ],
+            ],
+
             // default.awards
             'awards' => [
                 'wrap' => [
@@ -684,43 +761,6 @@ return [
                     ],
                 ],
             ],
-
-            // TODO: Refactor page and hero attributes
-            'page' => [
-                'title' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'font-bold font-hero leading-tight',
-                        'text-4xl sm:text-5xl md:text-6xl xl:text-like-6xl',
-                    ]
-                ],
-                'subtitle' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'block font-sans font-light',
-                        'text-sm xl:text-like-sm',
-                    ],
-                ]
-            ],
-
-            'hero' => [
-                'title' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'mx-auto',
-                        'my-40 md:my-70 xl:my-screen-70',
-                        'lg:w-10/12',
-                    ],
-                ],
-                'component' => [
-                    'class' => [
-                        'block',
-                        'w-full',
-                        'pointer-events-none',
-                    ],
-                ],
-            ],
-
         ],
 
         // Within explicit defined templates some components require spacial attributes. Here
@@ -875,33 +915,6 @@ return [
                         'font-sans text-center text-sm xl:text-like-sm mt-5'
                     ]
                 ]
-            ],
-        ],
-
-        'services' => [
-            // TODO: Refactor page and hero attributes
-            'hero' => [
-                'wrap' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'my-50 xl:my-screen-50',
-                        'mx-auto',
-                        'md:flex md:items-center md:justify-between',
-                        'lg:w-10/12',
-                    ],
-                ],
-                'title' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'lg:w-6/10',
-                    ],
-                ],
-                'component' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'lg:w-4/10',
-                    ],
-                ],
             ],
         ],
     ],
