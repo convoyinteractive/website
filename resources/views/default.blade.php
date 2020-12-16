@@ -4,11 +4,21 @@
 ])
 
 @section('content')
-    @include('layouts.partials.hero')
+    @include('layouts.partials.hero', [
+        'component' => $content->sections()->hero()
+    ])
 
-    @foreach($content->collection('body') as $component)
+    @foreach($content->sections()->aside() as $component)
         @include($component->view())
     @endforeach
+
+    @foreach($content->sections()->body() as $component)
+        @include($component->view())
+    @endforeach
+
+    @include('layouts.partials.likes', [
+        'show' => $content->isLikeable()
+    ])
 
     @include('layouts.partials.newsletter', [
         'show' => $content->hasNewsletter()

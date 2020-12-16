@@ -3,7 +3,9 @@
 ])
 
 @section('content')
-    @include('layouts.partials.hero')
+    @include('layouts.partials.hero', [
+        'component' => $content->sections()->hero()
+    ])
 
     <div>
         @foreach($articles as $article)

@@ -36,12 +36,9 @@ class Page extends Data
         }
     }
 
-    public function hero()
+    public function sections()
     {
-        return tap(
-            $this->toComponent($this->get('meta.hero')),
-            fn ($hero) => $hero->context("{$this->template()}.hero")
-        );
+        return new Sections($this);
     }
 
     public function theme()
@@ -56,9 +53,14 @@ class Page extends Data
             : 'default';
     }
 
+    public function type()
+    {
+        return $this->get('type', 'default');
+    }
+
     public function isType($type)
     {
-        return $this->get('type', 'default') === $type;
+        return $this->type() === $type;
     }
 
     public function isLikeable()
