@@ -1,5 +1,6 @@
 @extends('layouts.master', [
     'meta' => $content->meta,
+    'theme' => $content->theme(),
 ])
 
 @section('content')
