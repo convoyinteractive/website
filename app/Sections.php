@@ -13,16 +13,16 @@ class Sections
 
     public function aside()
     {
-        return $this->page->collection('aside', "{$this->page->template()}.aside");
+        return $this->page->collection('aside', "{$this->page->type()}.aside");
     }
 
     public function hero()
     {
-        return $this->page->component('hero', "{$this->page->template()}.hero");
+        return $this->page->component('hero', "{$this->page->type()}.hero");
     }
 
     public function body()
     {
-        return $this->page->collection('body', $this->page->template());
+        return $this->page->collection('body', $this->page->type());
     }
 }

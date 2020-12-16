@@ -53,9 +53,14 @@ class Page extends Data
             : 'default';
     }
 
+    public function type()
+    {
+        return $this->get('type', 'default');
+    }
+
     public function isType($type)
     {
-        return $this->get('type', 'default') === $type;
+        return $this->type() === $type;
     }
 
     public function isLikeable()
