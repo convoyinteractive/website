@@ -12,6 +12,10 @@
         @include($component->view())
     @endforeach
 
+    @include('layouts.partials.likes', [
+        'show' => $content->isLikeable()
+    ])
+
     @include('layouts.partials.newsletter', [
         'show' => $content->hasNewsletter()
     ])
