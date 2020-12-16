@@ -3,14 +3,20 @@
 namespace App;
 
 use Illuminate\Support\Arr;
+use JsonSerializable;
 
-class Theme
+class Theme implements JsonSerializable
 {
+    protected $defaults = [
+        "text" => "#ffffff",
+        "background" => "#000000",
+    ];
+
     protected $attributes;
 
-    public function __construct($attributes = [])
+    public function __construct($attributes = null)
     {
-        $this->attributes = $attributes;
+        $this->attributes = $attributes ?? $this->defaults;
     }
 
     public function __get($key)
@@ -21,6 +27,11 @@ class Theme
     public function toArray()
     {
         return $this->attributes;
+    }
+
+    public function jsonSerialize()
+    {
+        return $this->toArray();
     }
 
     public function __toString()
