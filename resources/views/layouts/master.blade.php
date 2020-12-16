@@ -10,10 +10,7 @@
     <script src="{{ mix('/js/app.js') }}"></script>
 </head>
 <body class="font-serif text-base md:text-xl xl:text-like-xl leading-relaxed transition duration-500 ease-in-out"
-    theme='@json([
-        "text" => $theme->text ?? "#ffffff",
-        "background" => $theme->background ?? "#000000",
-    ])'>
+    theme='@json($theme)'>
     <div id="convoy" class="flex flex-col min-h-screen">
         <header class="block px-6 z-50">
             @include('layouts.partials.navigation')
