@@ -11,6 +11,11 @@ class Sections
         $this->page = $page;
     }
 
+    public function aside()
+    {
+        return $this->page->collection('aside', "{$this->page->template()}.aside");
+    }
+
     public function hero()
     {
         return $this->page->component('hero', "{$this->page->template()}.hero");

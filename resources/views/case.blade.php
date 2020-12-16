@@ -9,7 +9,11 @@
         'component' => $content->sections()->hero()
     ])
 
-    @foreach($content->collection('body') as $component)
+    @foreach($content->sections()->aside() as $component)
+        @include($component->view())
+    @endforeach
+
+    @foreach($content->sections()->body() as $component)
         @include($component->view())
     @endforeach
 
