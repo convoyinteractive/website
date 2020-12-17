@@ -61,9 +61,14 @@ class Data implements JsonSerializable
         );
     }
 
-    public function jsonSerialize()
+    public function toArray()
     {
         return (array) $this->data;
+    }
+
+    public function jsonSerialize()
+    {
+        return $this->toArray();
     }
 
     protected function transform($items, $context)
