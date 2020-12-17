@@ -34,11 +34,15 @@ class RelationComponent extends Component
     {
         $this->validate();
 
-        $repo = new $this->availableRelationTypes[$this->getRelationType()];
-        $resource = $repo->localize($this->get('resource'));
+        $resource = $this->repository()->find($this->get('resource'));
 
         $this->data['meta'] = $resource->get('meta');
-        $this->data['items'] = $resource->collection('body', "{$this->context}.items");
+        $this->data['items'] = $resource->collection('items', "{$this->context}.items");
+    }
+
+    protected function repository()
+    {
+        return new $this->availableRelationTypes[$this->getRelationType()];
     }
 
     protected function validate()

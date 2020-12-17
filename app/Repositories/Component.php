@@ -7,13 +7,10 @@ use Symfony\Component\Yaml\Yaml;
 
 class Component
 {
-    public function localize($resource)
+    public function find($resource, $locale = null)
     {
-        return $this->find($resource, app('translator')->getLocale());
-    }
+        $locale = $locale ?: app('translator')->getLocale();
 
-    public function find($resource, $locale)
-    {
         $raw = app('files')->get(
             storage_path("content/components/{$locale}/{$resource}.yml")
         );
