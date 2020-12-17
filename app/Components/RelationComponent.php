@@ -2,7 +2,9 @@
 
 namespace App\Components;
 
+use App\Data;
 use Exception;
+use Illuminate\Support\Arr;
 use App\Repositories\Component as ComponentRepository;
 use App\Repositories\Collection as CollectionRepository;
 
@@ -25,6 +27,11 @@ class RelationComponent extends Component
         return $this->relation;
     }
 
+    public function alias()
+    {
+        return $this->get('resource');
+    }
+
     public function getRelationType()
     {
         return $this->data['type'];
@@ -34,10 +41,43 @@ class RelationComponent extends Component
     {
         $this->validate();
 
-        $resource = $this->repository()->find($this->get('resource'));
+        $this->relation = $this->repository()->find($this->get('resource'));
+    }
 
-        $this->data['meta'] = $resource->get('meta');
-        $this->data['items'] = $resource->collection('items', "{$this->context}.items");
+    public function view()
+    {
+        if ($this->viewExists($this->relation->get('type'))) {
+            return "components.{$this->relation->get('type')}";
+        }
+
+        if ($this->viewExists($this->get('resource'))) {
+            return "components.{$this->get('resource')}";
+        }
+
+        return "components.error";
+    }
+
+    public function get($key = null, $default = null)
+    {
+        if (Arr::has($this->data, $key)) {
+            return Arr::get($this->data, $key);
+        }
+
+        if (! Arr::has($this->relation->toArray(), $key)) {
+            return $default;
+        }
+
+        $value = Arr::get($this->relation->toArray(), $key);
+
+        if (! is_array($value)) {
+            return $value;
+        }
+
+        if (Arr::isAssoc($value)) {
+            return $this->relation->component($key, "{$this->context}.{$key}");
+        }
+
+        return  $this->relation->collection($key, "{$this->context}.{$key}");
     }
 
     protected function repository()

@@ -21,7 +21,7 @@ class Component implements Arrayable, ArrayAccess
 
     public function alias()
     {
-        return $this->get('alias', $this->is('relation') ? $this->get('resource') : $this->type());
+        return $this->get('alias', $this->type());
     }
 
     public function type()
@@ -74,7 +74,7 @@ class Component implements Arrayable, ArrayAccess
             return "components.{$this->alias()}";
         }
 
-        if ($this->viewExists($this->type()) && $this->isNot('relation')) {
+        if ($this->viewExists($this->type())) {
             return "components.{$this->type()}";
         }
 
