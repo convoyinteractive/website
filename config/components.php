@@ -763,6 +763,28 @@ return [
             ],
         ],
 
+        // Next we will define the attributes for our components if they'll render within the
+        // navigation context. Attributes that are'nt defined inherit the default attributes.
+        'navigation' => [
+            'markdown' => [
+                'wrap' => [],
+                'title' => [
+                    'class' => [
+                        'text-xl font-sans font-semibold mb-10',
+                        'md:text-2xl',
+                        'xl:text-like-2xl',
+                    ]
+                ],
+                'body' => [
+                    'class' => ['markdown']
+                ],
+            ],
+            'image' => [
+                'wrap' => [],
+                'figure' => [],
+            ]
+        ],
+
         // Within explicit defined templates some components require spacial attributes. Here
         // we'll define overrides based on the current context. If an attribute doesn't exist
         // it will fall back to the default attributes.

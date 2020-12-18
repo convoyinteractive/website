@@ -17,9 +17,9 @@ class LoadGlobals
     {
         app('view')->composer('layouts.partials.navigation', function ($view) {
             $view->with('navigation', [
-                'about' => $this->component->find('about')->collection('items'),
-                'cases' => $this->component->find('cases')->collection('items'),
-                'contact' => $this->component->find('contact')->collection('items'),
+                'about' => $this->component->find('about')->collection('items', 'navigation'),
+                'cases' => $this->component->find('cases')->collection('items', 'navigation'),
+                'contact' => $this->component->find('contact')->collection('items', 'navigation'),
             ]);
         });
 
