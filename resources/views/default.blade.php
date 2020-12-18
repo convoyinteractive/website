@@ -4,22 +4,9 @@
 ])
 
 @section('content')
-    @include('layouts.partials.hero', [
-        'component' => $content->sections()->hero()
-    ])
+    @include('layouts.partials.hero')
 
-    <div {{ $content->attributes('header.wrap') }}>
-        <aside {{ $content->attributes('aside.wrap') }}>
-            @foreach($content->sections()->aside() as $component)
-                @include($component->view())
-            @endforeach
-        </aside>
-        <div {{ $content->attributes('excerpt.wrap') }}>
-            @foreach($content->sections()->excerpt() as $component)
-                @include($component->view())
-            @endforeach
-        </div>
-    </div>
+    @include('layouts.partials.intro')
 
     @foreach($content->sections()->body() as $component)
         @include($component->view())

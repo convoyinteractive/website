@@ -84,7 +84,7 @@ return [
                 ],
             ],
 
-            'header' => [
+            'intro' => [
                 'wrap' => [
                     'class' => [
                         'flex justify-end items-center mx-auto px-3 my-30',
