@@ -23,6 +23,12 @@ class Page extends Data
         $this->filename = $filename;
     }
 
+    public function attributes($key)
+    {
+        $context = $this->get('type', 'default');
+        return new HtmlString(new Attributes("{$context}.{$key}"));
+    }
+
     public function date()
     {
         if (preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/', $this->filename, $matches)) {
