@@ -84,6 +84,35 @@ return [
                 ],
             ],
 
+            'excerpt' => [
+                'markdown' => [
+                    'wrap' => [
+                        'class' => [
+                            'px-3 my-30',
+                            'sm:px-10',
+                            'md:px-5 md:flex md:items-start md:justify-end',
+                            'xl:px-screen-10 xl:my-screen-30',
+                        ],
+                    ],
+                    'title' => [
+                        'class' => [
+                            'px-3 pb-10 text-xl font-sans font-semibold',
+                            'sm:px-10',
+                            'md:px-5 md:text-2xl',
+                            'xl:px-screen-10 xl:pb-screen-10 xl:text-like-2xl',
+                        ],
+                    ],
+                    'body' => [
+                        'class' => [
+                            'px-3 markdown font-sans font-semibold',
+                            'sm:px-10',
+                            'md:px-5',
+                            'xl:px-screen-10',
+                        ],
+                    ],
+                ],
+            ],
+
             'aside' => [
                 'definition' => [
                     'body' => [
