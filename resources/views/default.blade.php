@@ -8,13 +8,18 @@
         'component' => $content->sections()->hero()
     ])
 
-    @foreach($content->sections()->aside() as $component)
-        @include($component->view())
-    @endforeach
-
-    @foreach($content->sections()->excerpt() as $component)
-        @include($component->view())
-    @endforeach
+    <div {{ $content->attributes('header.wrap') }}>
+        <aside {{ $content->attributes('aside.wrap') }}>
+            @foreach($content->sections()->aside() as $component)
+                @include($component->view())
+            @endforeach
+        </aside>
+        <div {{ $content->attributes('excerpt.wrap') }}>
+            @foreach($content->sections()->excerpt() as $component)
+                @include($component->view())
+            @endforeach
+        </div>
+    </div>
 
     @foreach($content->sections()->body() as $component)
         @include($component->view())

@@ -84,37 +84,66 @@ return [
                 ],
             ],
 
+            'header' => [
+                'wrap' => [
+                    'class' => [
+                        'flex justify-end items-center mx-auto px-3 my-30',
+                        'sm:px-10',
+                        'md:px-5',
+                        'lg:w-10/12 ',
+                        'xl:px-screen-10 xl:my-screen-30',
+                    ],
+                ],
+            ],
+
             'excerpt' => [
+                'wrap' => [
+                    'class' => [
+                        'w-full lg:w-7/10'
+                    ],
+                ],
+
                 'markdown' => [
                     'wrap' => [
                         'class' => [
                             'px-3 my-30',
                             'sm:px-10',
-                            'md:px-5 md:flex md:items-start md:justify-end',
-                            'xl:px-screen-10 xl:my-screen-30',
+                            'md:px-5',
+                            'xl:px-screen-10 xl:my-screen-30'
                         ],
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 pb-10 text-xl font-sans font-semibold',
-                            'sm:px-10',
-                            'md:px-5 md:text-2xl',
-                            'xl:px-screen-10 xl:pb-screen-10 xl:text-like-2xl',
+                            'text-xl font-sans font-semibold',
+                            'md:text-2xl',
+                            'xl:text-like-2xl',
                         ],
                     ],
                     'body' => [
                         'class' => [
-                            'px-3 markdown font-sans font-semibold',
-                            'sm:px-10',
-                            'md:px-5',
-                            'xl:px-screen-10',
+                            'markdown font-sans font-semibold',
                         ],
                     ],
                 ],
             ],
 
             'aside' => [
+                'wrap' => [
+                    'class' => [
+                        'hidden',
+                        'lg:block lg:w-3/10'
+                    ],
+                ],
+
                 'definition' => [
+                    'wrap' => [
+                        'class' => [
+                            'px-3 my-30',
+                            'sm:px-10',
+                            'md:px-5',
+                            'xl:px-screen-10 xl:my-screen-30',
+                        ],
+                    ],
                     'body' => [
                         'class' => [
                             'font-sans text-sm leading-loose',
@@ -132,7 +161,7 @@ return [
                             'xl:mb-screen-6',
                         ],
                     ]
-                ]
+                ],
             ],
 
             // default.awards
