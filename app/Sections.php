@@ -16,6 +16,11 @@ class Sections
         return $this->page->collection('aside', "{$this->page->type()}.aside");
     }
 
+    public function excerpt()
+    {
+        return $this->page->collection('excerpt', "{$this->page->type()}.excerpt");
+    }
+
     public function hero()
     {
         return $this->page->component('hero', "{$this->page->type()}.hero");

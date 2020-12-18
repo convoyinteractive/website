@@ -12,6 +12,10 @@
         @include($component->view())
     @endforeach
 
+    @foreach($content->sections()->excerpt() as $component)
+        @include($component->view())
+    @endforeach
+
     @foreach($content->sections()->body() as $component)
         @include($component->view())
     @endforeach
