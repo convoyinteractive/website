@@ -885,37 +885,6 @@ return [
                 ],
             ],
 
-            // TODO: Refactor sidebar
-            'details' => [
-                'wrap' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'mt-50 xl:mt-screen-50',
-                        'mb-20 xl:mb-screen-20',
-                        'mx-auto',
-                        'md:flex md:items-center md:justify-between',
-                        'lg:w-10/12',
-                        'font-sans font-semibold',
-                    ],
-                ],
-                'aside' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'hidden md:block',
-                        'space-y-10 xl:space-y-screen-10',
-                        'md:w-3/10',
-                        'text-sm xl:text-like-sm',
-                        'leading-loose',
-                    ],
-                ],
-                'component' => [
-                    'class' => [
-                        'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                        'md:w-7/10',
-                    ],
-                ],
-            ],
-
             // case.svg
             'svg' => [
                 'wrap' => [
