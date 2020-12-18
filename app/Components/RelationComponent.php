@@ -29,7 +29,7 @@ class RelationComponent extends Component
 
     public function alias()
     {
-        return $this->get('resource');
+        return Arr::get($this->data, 'alias', $this->get('resource'));
     }
 
     public function getRelationType()
@@ -46,6 +46,10 @@ class RelationComponent extends Component
 
     public function view()
     {
+        if ($this->viewExists($this->alias())) {
+            return "components.{$this->alias()}";
+        }
+
         if ($this->viewExists($this->relation->get('type'))) {
             return "components.{$this->relation->get('type')}";
         }
