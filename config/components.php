@@ -84,6 +84,28 @@ return [
                 ],
             ],
 
+            'aside' => [
+                'definition' => [
+                    'body' => [
+                        'class' => [
+                            'font-sans text-sm leading-loose',
+                            'xl:text-like-sm',
+                        ],
+                    ],
+                    'term' => [
+                        'class' => [
+                            'font-semibold'
+                        ],
+                    ],
+                    'item' => [
+                        'class' => [
+                            'mb-6',
+                            'xl:mb-screen-6',
+                        ],
+                    ]
+                ]
+            ],
+
             // default.awards
             'awards' => [
                 'wrap' => [
