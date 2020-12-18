@@ -1,5 +1,3 @@
-@foreach ($component->get('items', []) as $item)
-    <div {{ $component->attributes('component') }}>
-        @include($item->view(), ['component' => $item])
-    </div>
+@foreach ($component->get('body', []) as $item)
+    @include($item->view(), ['component' => $item])
 @endforeach
