@@ -1,18 +1,3 @@
-{{-- <scrollable>
-    @foreach ($component->get('items', []) as $item)
-    <a {{ $component->attributes('item') }} href="{{ $item->link }}">
-        <h3 {{ $component->attributes('heading') }}>
-            {{ $item->get('title') }}
-        </h3>
-            @include($item->view(), [
-                'component' => $item,
-            ])
-
-        </a>
-    @endforeach
-</scrollable> --}}
-
-
 <div {{ $component->attributes("wrap") }}>
     @if($component->has('title'))
         <div {{ $component->attributes("title") }}>
