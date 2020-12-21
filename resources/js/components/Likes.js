@@ -24,9 +24,12 @@ export default {
                 this.count = data;
             });
         },
+        honk() {
+            this.$refs.audio.currentTime = 0;
+            this.$refs.audio.play();
+        },
         update() {
             this.increment++;
-
             clearTimeout(timer);
 
             timer = setTimeout(() => {
@@ -35,6 +38,8 @@ export default {
                     increment: this.increment,
                 }).then(this.fetch);
             }, 500);
+
+            this.honk();
         },
     },
 
@@ -45,6 +50,13 @@ export default {
     },
 
     render: function(h) {
+        let sound = h("audio", {
+            ref: "audio",
+            attrs: {
+                src: "/honk.mp3",
+            },
+        });
+
         let count = h(
             "div",
             {
@@ -61,7 +73,7 @@ export default {
                     click: this.update,
                 },
             },
-            [count, this.$slots.default],
+            [count, this.$slots.default, sound],
         );
     },
 };
