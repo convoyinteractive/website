@@ -12,8 +12,6 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Container(dirname(__DIR__));
 
-$app->configure('components');
-
 // Register container bindings.
 
 $app->singleton(
@@ -42,6 +40,7 @@ if ($app->isStage()) {
 
 $app->register(\App\Http\RouteServiceProvider::class);
 $app->register(\App\Providers\MailchimpServiceProvider::class);
+$app->register(\App\Providers\ViewServiceProvider::class);
 $app->register(\HTMLMin\HTMLMin\HTMLMinServiceProvider::class);
 
 return $app;

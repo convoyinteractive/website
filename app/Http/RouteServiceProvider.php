@@ -3,7 +3,6 @@
 namespace App\Http;
 
 use App\Http\Middleware\Turbolinks;
-use App\Http\Middleware\LoadGlobals;
 use App\Http\Middleware\UpdateLocale;
 use App\Http\Middleware\CacheResponse;
 use Illuminate\Support\ServiceProvider;
@@ -23,7 +22,6 @@ class RouteServiceProvider extends ServiceProvider
         $this->app->routeMiddleware([
             'cache' => CacheResponse::class,
             'locale' => UpdateLocale::class,
-            'globals' => LoadGlobals::class,
             'turbolinks' => Turbolinks::class,
         ]);
     }
@@ -35,7 +33,7 @@ class RouteServiceProvider extends ServiceProvider
         ]);
 
         $this->mapWebRoutes([
-            'middleware' => ['cache', 'locale', 'globals']
+            'middleware' => ['cache', 'locale']
         ]);
 
         $this->app->router->addRoute('GET', '/', LocaleController::class);
