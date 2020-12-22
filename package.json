@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "@tobiasthaden/tap": "^1.0.0",
-        "axios": "^0.21.0",
+        "axios": "^0.21.1",
         "gsap": "^3.5.0",
         "lottie-web": "^5.7.5",
         "turbolinks": "^5.2.0",
