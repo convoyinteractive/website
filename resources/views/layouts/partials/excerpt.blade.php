@@ -1,5 +1,5 @@
 <div {{ $content->attributes('excerpt.wrap') }}>
-    @foreach($content->sections()->excerpt() as $component)
+    @foreach($content->excerpt() as $component)
         @include($component->view())
     @endforeach
 </div>

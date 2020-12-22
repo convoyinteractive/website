@@ -29,21 +29,16 @@ class Page extends Data
         return new HtmlString(new Attributes("{$context}.{$key}"));
     }
 
+    public function context($append = null)
+    {
+        return $append ? "{$this->type()}.{$append}" : $this->type();
+    }
+
     public function date()
     {
         if (preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/', $this->filename, $matches)) {
             return Carbon::parse($matches[0]);
         }
-    }
-
-    public function sections()
-    {
-        return new Sections($this);
-    }
-
-    public function theme()
-    {
-        return new Theme($this->get('theme'));
     }
 
     public function template()
@@ -53,9 +48,34 @@ class Page extends Data
             : 'default';
     }
 
+    public function theme()
+    {
+        return new Theme($this->get('theme'));
+    }
+
     public function type()
     {
         return $this->get('type', 'default');
+    }
+
+    public function aside()
+    {
+        return $this->collection('aside', $this->context('aside'));
+    }
+
+    public function body()
+    {
+        return $this->collection('body', $this->context());
+    }
+
+    public function excerpt()
+    {
+        return $this->collection('excerpt', $this->context('excerpt'));
+    }
+
+    public function hero()
+    {
+        return $this->component('hero', $this->context('hero'));
     }
 
     public function isType($type)

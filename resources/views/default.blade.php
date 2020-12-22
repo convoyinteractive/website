@@ -8,7 +8,7 @@
 
     @include('layouts.partials.intro')
 
-    @foreach($content->sections()->body() as $component)
+    @foreach($content->body() as $component)
         @include($component->view())
     @endforeach
 

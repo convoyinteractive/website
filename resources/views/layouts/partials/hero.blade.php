@@ -1,3 +1,3 @@
-@include($content->sections()->hero()->view(), [
-    'component' => $content->sections()->hero()
+@include($content->hero()->view(), [
+    'component' => $content->hero()
 ])
