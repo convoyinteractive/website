@@ -66,6 +66,7 @@ module.exports = {
             "screen-30": "7.5vw",
             "screen-40": "10vw",
             "screen-50": "12.5vw",
+            "screen-70": "17.5vw",
         },
         backgroundColor: theme => theme("colors"),
         backgroundPosition: {

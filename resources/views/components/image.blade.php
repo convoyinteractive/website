@@ -11,9 +11,9 @@
             <picture {{ $component->attributes('item') }}>
                 @if($component->has('sizes'))
                     <source media="(min-width: 500px)" srcset="{{ asset($component->get('sizes.large'), []) }}">
-                    <img src="{{ asset($component->get('sizes.small'), []) }}" alt="{{ $component->get('alt') }}">
+                    <img {{ $component->attributes('item') }} src="{{ asset($component->get('sizes.small'), []) }}" alt="{{ $component->get('alt') }}">
                 @elseif($component->has('path'))
-                    <img src="{{ asset($component->get('path'), []) }}" alt="{{ $component->get('alt') }}">
+                    <img {{ $component->attributes('item') }} src="{{ asset($component->get('path'), []) }}" alt="{{ $component->get('alt') }}">
                 @endif
             </picture>
         @endif

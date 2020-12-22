@@ -40,6 +40,9 @@ return [
                             'pointer-events-none',
                         ],
                     ],
+                    'item' => [
+                        'class' => ['w-full'],
+                    ],
                 ],
                 'lottie' => [
                     'wrap' => [
