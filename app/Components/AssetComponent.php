@@ -20,6 +20,11 @@ class AssetComponent extends Component
         return $this->is('image');
     }
 
+    public function format()
+    {
+        return $this->get('alpha', false) ? "png" : "jpg";
+    }
+
     protected function pathStartsWith($value)
     {
         if ($this->has('path')) {

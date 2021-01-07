@@ -3,6 +3,7 @@
     <img class="w-full block" src="{{ asset($component->get('meta.image'), [
         'width' => '640',
         'height' => '400',
+        'format' => 'jpg',
         'crop' => true,
     ]) }}" alt="{{ $component->get('meta.title') }}">
 
