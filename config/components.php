@@ -464,6 +464,11 @@ return [
                 ],
                 'items' => [
                     'screen' => [
+                        'item' => [
+                            'class' => [
+                                'mx-auto'
+                            ],
+                        ],
                         'wrap' => [
                             'class' => [
                                 'w-full flex-shrink-0',
