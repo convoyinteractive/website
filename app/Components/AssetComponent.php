@@ -2,8 +2,9 @@
 
 namespace App\Components;
 
-use App\Repositories\Storage;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+use App\Repositories\Storage;
 
 class AssetComponent extends Component
 {
@@ -25,7 +26,7 @@ class AssetComponent extends Component
     {
         return app(Storage::class)->resolve(
             $this->path($size),
-            $this->queryParameters()
+            $this->queryParameters($size)
         );
     }
 
@@ -39,11 +40,35 @@ class AssetComponent extends Component
         return $this->get('alpha', false) ? "png" : "jpg";
     }
 
-    protected function queryParameters()
+    protected function queryParameters($key)
     {
-        return [
+        return array_merge([
             'format' => $this->format(),
-        ];
+        ], $this->queryConfig($key));
+    }
+
+    public function config($key, $default = null)
+    {
+        return Arr::get(config('assets'), $key, $default);
+    }
+
+    protected function queryConfig($key)
+    {
+        $context = "query.{$this->context()}.{$key}";
+
+        return $this->config($context) ?? $this->defaultQueryConfig($key);
+    }
+
+    protected function defaultQueryConfig($key)
+    {
+        $context = explode(".", $this->context());
+        $context[0] = "default";
+        $context = implode(".", $context);
+
+        $default = "query.{$context}.large";
+        $context = "query.{$context}.{$key}";
+
+        return $this->config($context) ?? $this->config($default, []);
     }
 
     protected function pathStartsWith($value)
