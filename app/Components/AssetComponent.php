@@ -55,7 +55,18 @@ class AssetComponent extends Component
     protected function queryConfig($key)
     {
         $context = "query.{$this->context()}.{$key}";
-        $default = "query.{$this->context()}.large";
+
+        return $this->config($context) ?? $this->defaultQueryConfig($key);
+    }
+
+    protected function defaultQueryConfig($key)
+    {
+        $context = explode(".", $this->context());
+        $context[0] = "default";
+        $context = implode(".", $context);
+
+        $default = "query.{$context}.large";
+        $context = "query.{$context}.{$key}";
 
         return $this->config($context) ?? $this->config($default, []);
     }
