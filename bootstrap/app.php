@@ -39,6 +39,7 @@ if ($app->isStage()) {
 // Register Service Providers.
 
 $app->register(\App\Http\RouteServiceProvider::class);
+$app->register(\App\Providers\AssetServiceProvider::class);
 $app->register(\App\Providers\MailchimpServiceProvider::class);
 $app->register(\App\Providers\ViewServiceProvider::class);
 $app->register(\HTMLMin\HTMLMin\HTMLMinServiceProvider::class);

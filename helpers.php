@@ -1,5 +1,6 @@
 <?php
 
+use App\Repositories\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\HtmlString;
 
@@ -53,18 +54,9 @@ if (! function_exists('mix')) {
     }
 
     if (! function_exists('asset')) {
-        function asset($path, $query = [])
+        function asset($path, $parameters = [])
         {
-            $hash = hash_hmac(
-                'sha256',
-                implode('_', array_merge($query, ['path' => "/$path"])),
-                env('APP_KEY')
-            );
-
-
-            return "//storage.convoyinteractive.com/{$path}?" . http_build_query(array_merge($query, [
-                'sign' => $hash,
-            ]));
+            return app(Storage::class)->resolve($path, $parameters);
         }
     }
 }
