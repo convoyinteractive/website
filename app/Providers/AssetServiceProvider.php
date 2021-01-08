@@ -9,7 +9,7 @@ class AssetServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        //
+        $this->app->configure('assets');
     }
 
     public function boot()
