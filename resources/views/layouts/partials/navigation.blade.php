@@ -79,7 +79,7 @@
                     w-full sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12
                 ">
                 <div ref="about" v-show="isActive('about')" class="
-                    h-full
+                    min-h-full
                     p-10 xl:p-screen-10
                 ">
                     @foreach($navigation['about'] as $item)
@@ -95,7 +95,7 @@
                     @endforeach
                 </div>
                 <div ref="work" v-show="isActive('work')" class="
-                    h-full
+                    min-h-full
                     p-10 xl:p-screen-10
                 ">
                     @foreach($navigation['cases'] as $item)
@@ -106,7 +106,7 @@
                 </div>
                 <div ref="hello" v-show="isActive('hello')" class="
                     flex flex-col justify-between
-                    h-full
+                    min-h-full
                     p-10 xl:p-screen-10
                 ">
                     @foreach($navigation['contact'] as $component)
