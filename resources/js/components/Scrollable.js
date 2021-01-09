@@ -46,8 +46,7 @@ export default {
             });
         };
 
-        initialize();
-
+        document.addEventListener("assets:load", initialize);
         document.addEventListener("lottie:ready", update);
         window.addEventListener("resize", update);
     },
