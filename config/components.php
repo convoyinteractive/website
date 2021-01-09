@@ -792,7 +792,7 @@ return [
                 ],
                 'term' => [
                     'class' => [
-                        'h-full border-dotted border-t-2 border-b-2 border-gray-mid py-10',
+                        'block h-full border-dotted border-t-2 border-b-2 border-gray-mid py-10',
                         'xl:py-screen-10',
                     ],
                 ],

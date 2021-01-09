@@ -8,9 +8,9 @@
     <ul {{ $component->attributes('items') }}>
         @foreach ($component->get('items') as $item)
             <li {{ $component->attributes('item') }}>
-                <div {{ $component->attributes('term') }}>
+                <a href="{{ $item->get('link') }}" {{ $component->attributes('term') }}>
                     {{ $item->get('title') }}
-                </div>
+                </a>
             </li>
         @endforeach
     </ul>
