@@ -85,6 +85,33 @@ return [
                         ],
                     ],
                 ],
+                'text' => [
+                    'header' => [
+                        'class' => [
+                            'px-3 mx-auto my-40',
+                            'sm:px-10',
+                            'md:px-5 md:my-70',
+                            'lg:w-10/12',
+                            'xl:px-screen-10 xl:my-screen-70',
+                        ],
+                    ],
+                    'title' => [
+                        'class' => [
+                            'px-3 font-bold font-hero leading-tight text-4xl',
+                            'sm:px-10 sm:text-5xl',
+                            'md:px-5 md:text-6xl',
+                            'lg:w-6/10',
+                            'xl:px-screen-10 xl:text-like-6xl',
+                        ],
+                    ],
+                    'subtitle' => [
+                        'class' => [
+                            'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                            'block font-sans font-light',
+                            'text-sm xl:text-like-sm',
+                        ],
+                    ],
+                ],
             ],
 
             'intro' => [
