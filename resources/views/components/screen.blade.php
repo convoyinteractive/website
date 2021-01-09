@@ -8,10 +8,21 @@
             @if($component->isImage())
             <picture class="w-full h-full">
                 @if($component->has('sizes'))
-                    <source media="(min-width: 500px)" srcset="{{ $component->url('large') }}">
-                    <img {{ $component->attributes('item') }} src="{{ $component->url('small') }}" alt="{{ $component->get('alt') }}">
+                    <source
+                        media="(min-width: 500px)"
+                        srcset="{{ $component->url('large', 1) }}, {{ $component->url('large', 2) }} 2x"
+                    >
+                    <img {{ $component->attributes('item') }}
+                        src="{{ $component->url('small') }}"
+                        srcset="{{ $component->url('small', 2) }} 2x"
+                        alt="{{ $component->get('alt') }}"
+                    >
                 @elseif($component->has('path'))
-                    <img {{ $component->attributes('item') }} src="{{ $component->url() }}" alt="{{ $component->get('alt') }}">
+                    <img {{ $component->attributes('item') }}
+                        src="{{ $component->url(null, 1) }}"
+                        srcset="{{ $component->url(null, 2) }} 2x"
+                        alt="{{ $component->get('alt') }}"
+                    >
                 @endif
             </picture>
             @endif
