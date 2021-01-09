@@ -1,4 +1,5 @@
 import { tap } from "@tobiasthaden/tap";
+import { assetsLoaded } from "./helpers";
 
 /**
  * First we will load 'basecamps' turbolinks to intercept clicks on '<a href>' links and preventing
@@ -14,6 +15,12 @@ document.addEventListener("turbolinks:load", () => {
     let title = document.title;
     window.onfocus = () => (document.title = title);
     window.onblur = () => (document.title = "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧");
+
+    assetsLoaded(["img"])
+        .then(loaded => document.dispatchEvent(new CustomEvent("assets:load")))
+        .catch(failed =>
+            document.dispatchEvent(new CustomEvent("assets:load")),
+        );
 });
 
 /**

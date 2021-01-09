@@ -24,3 +24,33 @@ export const shortNumber = function(value) {
     }
     return newValue;
 };
+
+export const assetsLoaded = function(selectors) {
+    let assets = [];
+    let loaded = [];
+    let failed = [];
+
+    return new Promise((resolve, reject) => {
+        selectors.forEach(selector => {
+            let elements = Array.from(document.querySelectorAll(selector));
+            assets.push(...elements);
+        });
+
+        if (!assets.length) {
+            resolve([]);
+        }
+
+        assets.forEach(element =>
+            element.addEventListener("load", () => {
+                loaded.push(element);
+
+                if (loaded.length + failed.length === assets.length) {
+                    if (failed.length) {
+                        reject(failed);
+                    }
+                    resolve(loaded);
+                }
+            }),
+        );
+    });
+};
