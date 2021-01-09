@@ -22,12 +22,17 @@ class AssetComponent extends Component
         return $this->is('image');
     }
 
-    public function url($size = null)
+    public function url($size = null, $resolution = 1)
     {
-        return app(Storage::class)->resolve(
-            $this->path($size),
-            $this->queryParameters($size)
-        );
+        $query = array_map(function ($value) use ($resolution) {
+            if (is_numeric($value)) {
+                $value = $value * $resolution;
+            }
+
+            return $value;
+        }, $this->queryParameters($size));
+
+        return app(Storage::class)->resolve($this->path($size), $query);
     }
 
     public function path($size = null)
