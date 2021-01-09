@@ -615,26 +615,24 @@ return [
             'portfolio' => [
                 'wrap' => [
                     'class' => [
-                        'px-3 mb-40 flex flex-col justify-center min-h-screen overflow-hidden bg-black text-white',
-                        'sm:px-10',
-                        'md:px-5',
-                        'xl:px-screen-10',
+                        'px-6 mb-40 flex flex-col justify-center min-h-screen overflow-hidden bg-black text-white',
+                        'sm:px-20',
+                        'md:px-10',
+                        'xl:px-screen-20',
                     ],
                 ],
                 'title' => [
                     'class' => [
-                        'px-3 mb-20 font-sans font-semibold text-xl text-center',
-                        'sm:px-10',
-                        'md:px-5 md:text-3xl',
-                        'xl:px-screen-10 xl:text-screen-3xl',
+                        'mb-20 font-sans font-semibold text-xl text-center',
+                        'md:text-3xl',
+                        'xl:text-screen-3xl',
                     ],
                 ],
                 'stage' => [
                     'class' => [
-                        'px-3 flex space-x-6',
-                        'sm:px-10',
-                        'md:px-5 md:space-x-10',
-                        'xl:px-screen-10 xl:space-x-screen-10',
+                        'flex space-x-6',
+                        'md:space-x-10',
+                        'xl:space-x-screen-10',
                     ],
                 ],
                 'item' => [
