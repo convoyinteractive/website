@@ -7,10 +7,10 @@
 
     <scrollable {{ $component->attributes('stage') }}>
         @foreach ($component->get('items', []) as $item)
-            <div {{ $component->attributes("item") }}>
+            <a href="{{ $item->get('link') }}" {{ $component->attributes("item") }}>
                 @include($item->view(), ['component' => $item])
                 @include($item->addon->view(), ['component' => $item->addon])
-            </div>
+            </a>
         @endforeach
     </scrollable>
 </div>
