@@ -14,6 +14,12 @@ module.exports = {
             "./resources/**/*.js",
             "./config/components.php",
         ],
+        options: {
+            whitelist: [
+                'fill-current',
+                'stroke-current',
+            ],
+        },
     },
     theme: {
         screens: {
