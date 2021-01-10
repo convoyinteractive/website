@@ -2,9 +2,9 @@
 
 namespace App\Components;
 
-use Illuminate\Support\Arr;
+use App\Storage\Storage;
+use App\Storage\Attributes;
 use Illuminate\Support\Str;
-use App\Repositories\Storage;
 
 class AssetComponent extends Component
 {
@@ -22,58 +22,25 @@ class AssetComponent extends Component
         return $this->is('image');
     }
 
-    public function url($size = null, $resolution = 1)
-    {
-        $query = array_map(function ($value) use ($resolution) {
-            if (is_numeric($value)) {
-                $value = $value * $resolution;
-            }
-
-            return $value;
-        }, $this->queryParameters($size));
-
-        return app(Storage::class)->resolve($this->path($size), $query);
-    }
-
     public function path($size = null)
     {
         return $this->get($size  ?  "sizes.{$size}" : "path");
     }
 
-    public function format()
+    public function url($size = null, $resolution = 1)
     {
-        return $this->get('alpha', false) ? "png" : "jpg";
+        $context = "{$this->context()}.{$size}";
+        $format = $this->get('alpha', false) ? "png" : "jpg";
+
+        return $this->resolveUrl(
+            $this->path($size),
+            Attributes::from($context)->format($format)->resolution($resolution)->get()
+        );
     }
 
-    protected function queryParameters($key)
+    protected function resolveUrl($path, $params)
     {
-        return array_merge([
-            'format' => $this->format(),
-        ], $this->queryConfig($key));
-    }
-
-    public function config($key, $default = null)
-    {
-        return Arr::get(config('assets'), $key, $default);
-    }
-
-    protected function queryConfig($key)
-    {
-        $context = "query.{$this->context()}.{$key}";
-
-        return $this->config($context) ?? $this->defaultQueryConfig($key);
-    }
-
-    protected function defaultQueryConfig($key)
-    {
-        $context = explode(".", $this->context());
-        $context[0] = "default";
-        $context = implode(".", $context);
-
-        $default = "query.{$context}.large";
-        $context = "query.{$context}.{$key}";
-
-        return $this->config($context) ?? $this->config($default, []);
+        return app(Storage::class)->resolve($path, $params);
     }
 
     protected function pathStartsWith($value)

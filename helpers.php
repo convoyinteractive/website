@@ -1,6 +1,6 @@
 <?php
 
-use App\Repositories\Storage;
+use App\Storage\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\HtmlString;
 

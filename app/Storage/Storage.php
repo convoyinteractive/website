@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Repositories;
-
-use App\Components\AssetComponent;
+namespace App\Storage;
 
 class Storage
 {

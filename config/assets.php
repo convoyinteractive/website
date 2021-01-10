@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'query' => [
+    'attributes' => [
         'default' => [
 
             'gallery' => [

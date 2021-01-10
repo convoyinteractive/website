@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Repositories\Storage;
+use App\Storage\Storage;
 use Illuminate\Support\ServiceProvider;
 
-class AssetServiceProvider extends ServiceProvider
+class StorageServiceProvider extends ServiceProvider
 {
     public function register()
     {
