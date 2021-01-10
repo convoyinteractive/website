@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Http\View\Theme;
+use App\Http\View\Attributes;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\HtmlString;
 

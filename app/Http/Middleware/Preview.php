@@ -10,7 +10,7 @@ class Preview
     {
         if (
             ! $request->preview
-            || app()->isProduction()
+            || app()->environment('production')
         ) {
             return $next($request);
         }

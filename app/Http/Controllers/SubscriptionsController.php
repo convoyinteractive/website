@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Signature;
 use Illuminate\Http\Request;
+use App\Encryption\Signature;
 use App\Repositories\Subscription;
 use Laravel\Lumen\Routing\ProvidesConvenienceMethods;
 

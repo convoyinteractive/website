@@ -2,7 +2,7 @@
 
 namespace App\Components;
 
-use App\Attributes;
+use App\Http\View\Attributes;
 use ArrayAccess;
 use Illuminate\Support\Arr;
 use Illuminate\Contracts\Support\Arrayable;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Http\View;
 
 use Illuminate\Support\Arr;
 use JsonSerializable;

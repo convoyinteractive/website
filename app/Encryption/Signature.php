@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Encryption;
 
 use Throwable;
 use Illuminate\Contracts\Encryption\Encrypter;
