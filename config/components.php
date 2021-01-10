@@ -418,6 +418,11 @@ return [
                                 'p-15',
                                 'xl:p-screen-15',
                             ]
+                        ],
+                        'item' => [
+                            'class' => [
+                                'w-full',
+                            ]
                         ]
                     ],
 
