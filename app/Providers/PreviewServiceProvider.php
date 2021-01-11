@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Middleware\Preview;
 use Illuminate\Support\ServiceProvider;
 
 class PreviewServiceProvider extends ServiceProvider
