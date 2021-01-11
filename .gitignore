@@ -17,3 +17,4 @@ composer.lock
 public/service-worker.js
 storage/content
 storage/likes.json
+.php_cs.cache
