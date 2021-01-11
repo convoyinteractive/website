@@ -2,16 +2,14 @@
     "private": true,
     "scripts": {
         "prettier": "prettier --write 'resources/**/*.{css,js}'",
-        "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "npm run dev -- --watch",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "dev": "mix",
+        "watch": "mix watch",
+        "production": "mix --production"
     },
     "devDependencies": {
-        "cross-env": "^7.0.3",
-        "laravel-mix": "^5.0.9",
-        "resolve-url-loader": "^3.1.2",
-        "tailwindcss": "^1.9.6",
-        "vue-template-compiler": "^2.6.12"
+        "laravel-mix": "^6.0.6",
+        "postcss": "^8.1.0",
+        "tailwindcss": "^1.9.6"
     },
     "dependencies": {
         "@tobiasthaden/tap": "^1.0.0",
