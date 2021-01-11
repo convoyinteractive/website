@@ -445,6 +445,14 @@ return [
                         ]
                     ],
 
+                    'image' => [
+                        'item' => [
+                            'class' => [
+                                'w-full',
+                            ]
+                        ]
+                    ],
+
                     // default.group.items.screen
                     'screen' => [
                         'canvas' => [
