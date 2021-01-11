@@ -48,7 +48,7 @@ return [
                     'wrap' => [
                         'class' => [
                             'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                            'my-10 xl:my-screen-10',
+                            'my-40 xl:my-screen-40',
                             'mx-auto',
                             'md:flex md:items-center md:justify-between',
                             'lg:w-10/12',
@@ -56,11 +56,11 @@ return [
                     ],
                     'header' => [
                         'class' => [
-                            'px-3  my-40',
+                            'px-3 mb-40',
                             'sm:px-10',
-                            'md:px-5 md:my-70',
-                            'lg:w-10/12 lg:w-6/10',
-                            'xl:px-screen-10 xl:my-screen-70',
+                            'md:mb-0',
+                            'lg:w-6/10',
+                            'xl:px-screen-10',
                         ],
                     ],
                     'title' => [
