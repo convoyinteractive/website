@@ -129,17 +129,36 @@ return [
             'excerpt' => [
                 'wrap' => [
                     'class' => [
-                        'w-full lg:w-7/10'
+                        'w-full lg:w-7/10 my-30 space-y-10',
+                        'xl:my-screen-30 xl:space-y-screen-10',
                     ],
+                ],
+
+                'url' => [
+                    'wrap' => [
+                        'class' => [
+                            'px-3',
+                            'sm:px-10',
+                            'md:px-5',
+                            'xl:px-screen-10'
+                        ],
+                    ],
+                    'link' => [
+                        'class' => [
+                            'w-15 h-15 p-2 flex items-center justify-center rounded-full bg-black text-white'
+                        ],
+                        'target' => '_blank',
+                        'rel' => 'noopener',
+                    ]
                 ],
 
                 'markdown' => [
                     'wrap' => [
                         'class' => [
-                            'px-3 my-30',
+                            'px-3',
                             'sm:px-10',
                             'md:px-5',
-                            'xl:px-screen-10 xl:my-screen-30'
+                            'xl:px-screen-10'
                         ],
                     ],
                     'title' => [
