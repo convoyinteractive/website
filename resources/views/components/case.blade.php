@@ -1,12 +1,15 @@
-<a class="block font-sans mb-10 xl:mb-screen-10" href="/{{ implode('/', [app('translator')->getLocale(), $component->get('resource')]) }}">
+<a {{ $component->attributes('wrap') }} href="/{{ implode('/', [app('translator')->getLocale(), $component->get('resource')]) }}">
 
-    <img class="w-full block" src="{{ asset($component->get('meta.image'), [
-        'width' => '640',
-        'height' => '400',
-        'format' => 'jpg',
-        'crop' => true,
-    ]) }}" alt="{{ $component->get('meta.title') }}">
+    <img {{ $component->attributes('image') }}
+        alt="{{ $component->get('meta.title') }}"
+        src="{{ asset($component->get('meta.image'), [
+            'width' => '640',
+            'height' => '400',
+            'format' => 'jpg',
+            'crop' => true,
+        ]) }}"
+    >
 
-    <span class="block text-3xl xl:text-like-3xl font-semibold leading-snug">{{ $component->get('hero.title') }}</span>
-    <span class="block text-sm xl:text-like-sm">{{ $component->get('hero.subtitle') }}</span>
+    <span {{ $component->attributes('title') }}>{{ $component->get('hero.title') }}</span>
+    <span {{ $component->attributes('subtitle') }}>{{ $component->get('hero.subtitle') }}</span>
 </a>

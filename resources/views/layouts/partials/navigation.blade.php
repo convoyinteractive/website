@@ -96,7 +96,9 @@
                 </div>
                 <div ref="work" v-show="isActive('work')" class="
                     min-h-full
-                    p-10 xl:p-screen-10
+                    space-y-20
+                    py-20 xl:py-screen-20
+                    px-10 xl:px-screen-10
                 ">
                     @foreach($navigation['cases'] as $item)
                         @include('components.case', [

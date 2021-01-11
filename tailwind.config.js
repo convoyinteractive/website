@@ -63,6 +63,7 @@ module.exports = {
             "60": "240px",
             "70": "280px",
             "90": "360px",
+            "screen-4": "1vw",
             "screen-5": "1.25vw",
             "screen-6": "1.5vw",
             "screen-8": "2vw",
@@ -162,6 +163,7 @@ module.exports = {
         },
         fontSize: {
             xs: "0.8125rem",
+            "like-xs": "0.75vw",
             sm: "0.90625rem",
             "like-sm": "0.864vw",
             base: "1rem",

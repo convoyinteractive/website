@@ -884,6 +884,31 @@ return [
         // Next we will define the attributes for our components if they'll render within the
         // navigation context. Attributes that are'nt defined inherit the default attributes.
         'navigation' => [
+            'case' => [
+                'wrap' => [
+                    'class' => [
+                        'block font-sans',
+                    ],
+                ],
+                'image' => [
+                    'class' => [
+                        'w-full block mb-4',
+                        'xl:mb-screen-4'
+                    ],
+                ],
+                'title' => [
+                    'class' => [
+                        'block text-2xl font-semibold leading-snug',
+                        'xl:text-like-2xl'
+                    ],
+                ],
+                'subtitle' => [
+                    'class' => [
+                        'block text-xs',
+                        'xl:text-like-xs'
+                    ],
+                ],
+            ],
             'markdown' => [
                 'wrap' => [],
                 'title' => [
@@ -907,6 +932,38 @@ return [
         // we'll define overrides based on the current context. If an attribute doesn't exist
         // it will fall back to the default attributes.
         'home' => [
+
+            // home.feed
+            'feed' => [
+                'items' => [
+                    'case' => [
+                        'wrap' => [
+                            'class' => [
+                                'block font-sans mb-10',
+                                'xl:mb-screen-10'
+                            ],
+                        ],
+                        'image' => [
+                            'class' => [
+                                'w-full block mb-5',
+                                'xl:mb-screen-5'
+                            ],
+                        ],
+                        'title' => [
+                            'class' => [
+                                'block text-3xl font-semibold leading-snug',
+                                'xl:text-like-3xl'
+                            ],
+                        ],
+                        'subtitle' => [
+                            'class' => [
+                                'block text-sm',
+                                'xl:text-like-sm'
+                            ],
+                        ],
+                    ]
+                ]
+            ],
 
             // home.quote
             'quote' => [
