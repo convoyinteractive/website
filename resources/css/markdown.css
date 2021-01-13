@@ -4,28 +4,37 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-    @apply font-sans font-semibold text-xl;
+    @apply font-sans font-semibold;
+}
+
+.markdown h1,
+.markdown h2 {
+    @apply text-xl;
+}
+
+.markdown h3 {
+    @apply text-lg;
 }
 
 @screen md {
     .markdown h1,
-    .markdown h2,
-    .markdown h3,
-    .markdown h4,
-    .markdown h5,
-    .markdown h6 {
+    .markdown h2 {
         @apply text-3xl;
+    }
+
+    .markdown h3 {
+        @apply text-xl;
     }
 }
 
 @screen xl {
     .markdown h1,
-    .markdown h2,
-    .markdown h3,
-    .markdown h4,
-    .markdown h5,
-    .markdown h6 {
+    .markdown h2 {
         @apply text-like-3xl;
+    }
+
+    .markdown h3 {
+        @apply text-like-xl;
     }
 }
 
@@ -35,10 +44,13 @@
 .markdown h4,
 .markdown h5,
 .markdown h6,
+.markdown ul:not(:last-child),
+.markdown ol:not(:last-child),
 .markdown p:not(:last-child) {
     margin-bottom: 2em;
 }
 
-.markdown .cta {
+.markdown .cta,
+.markdown .external {
     @apply font-sans font-semibold;
 }

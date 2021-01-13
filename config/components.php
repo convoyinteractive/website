@@ -1110,5 +1110,28 @@ return [
                 ]
             ],
         ],
+
+        'legal' => [
+            // legal.markdown
+            'markdown' => [
+                'wrap' => [
+                    'class' => [
+                        'px-3 my-30',
+                        'sm:px-10',
+                        'md:px-5',
+                        'lg:w-8/12 lg:mx-auto',
+                        'xl:px-screen-10 xl:my-screen-30',
+                    ],
+                ],
+                'body' => [
+                    'class' => [
+                        'px-3 markdown',
+                        'sm:px-10',
+                        'md:px-5',
+                        'xl:px-screen-10',
+                    ],
+                ],
+            ],
+        ]
     ],
 ];
