@@ -63,12 +63,18 @@ class RelationComponent extends Component
 
     public function get($key = null, $default = null)
     {
-        if (Arr::has($this->data, $key)) {
-            return Arr::get($this->data, $key);
-        }
+        return $this->fromRelation($key) ?? Arr::get($this->data, $key, $default);
+    }
 
-        if (! Arr::has($this->relation->toArray(), $key)) {
-            return $default;
+    public function __call($method, $arguments)
+    {
+        return $this->relation->$method(...$arguments);
+    }
+
+    protected function fromRelation($key)
+    {
+        if (! $this->relation()) {
+            return null;
         }
 
         $value = Arr::get($this->relation->toArray(), $key);
