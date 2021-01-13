@@ -42,6 +42,7 @@ class RelationComponent extends Component
         $this->validate();
 
         $this->relation = $this->repository()->find($this->get('resource'));
+        $this->relation->setContext($this->context);
     }
 
     public function view()

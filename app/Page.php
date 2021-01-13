@@ -75,6 +75,11 @@ class Page extends Data
         return $this->component('hero', "{$this->context}.hero");
     }
 
+    public function relations()
+    {
+        return $this->collection('relations', "{$this->context}.relations");
+    }
+
     public function isType($type)
     {
         return $this->type() === $type;
