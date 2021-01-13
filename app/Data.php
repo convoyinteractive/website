@@ -12,6 +12,8 @@ class Data implements JsonSerializable
 {
     protected $data;
 
+    protected $context;
+
     protected $components = [
         'markdown' => Components\MarkdownComponent::class,
         'component' => Components\RelationComponent::class,
@@ -24,6 +26,7 @@ class Data implements JsonSerializable
     public function __construct(array $data)
     {
         $this->data = $data;
+        $this->context = $this->get('type');
     }
 
     public function __get($key)
@@ -48,17 +51,22 @@ class Data implements JsonSerializable
 
     public function collection($key, $context = null)
     {
-        return $this->transform($this->get($key), $context ?? $this->get('type'));
+        return $this->transform($this->get($key), $context ?? $this->context);
     }
 
     public function component($key, $context = null)
     {
-        $context = $context ?: $this->get('type');
+        $context = $context ?: $this->context;
 
         return tap(
             $this->toComponent($this->get($key) ?? []),
             fn ($component) => $component->context("{$context}.{$component->alias()}")
         );
+    }
+
+    public function setContext($context)
+    {
+        $this->context = $context;
     }
 
     public function toArray()

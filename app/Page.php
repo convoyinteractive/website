@@ -31,11 +31,6 @@ class Page extends Data
         return new HtmlString(new Attributes("{$context}.{$key}"));
     }
 
-    public function context($append = null)
-    {
-        return $append ? "{$this->type()}.{$append}" : $this->type();
-    }
-
     public function date()
     {
         if (preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/', $this->filename, $matches)) {
@@ -62,22 +57,22 @@ class Page extends Data
 
     public function aside()
     {
-        return $this->collection('aside', $this->context('aside'));
+        return $this->collection('aside', "{$this->context}.aside");
     }
 
     public function body()
     {
-        return $this->collection('body', $this->context());
+        return $this->collection('body', $this->context);
     }
 
     public function excerpt()
     {
-        return $this->collection('excerpt', $this->context('excerpt'));
+        return $this->collection('excerpt', "{$this->context}.excerpt");
     }
 
     public function hero()
     {
-        return $this->component('hero', $this->context('hero'));
+        return $this->component('hero', "{$this->context}.hero");
     }
 
     public function isType($type)
