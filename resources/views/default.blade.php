@@ -19,4 +19,12 @@
     @include('layouts.partials.newsletter', [
         'show' => $content->hasNewsletter()
     ])
+
+    @include('layouts.partials.cases', [
+        'show' => $content->relations()->has('case')
+    ])
+
+    @include('layouts.partials.contact', [
+        'component' => $content->relations()->first('contact')
+    ])
 @endsection

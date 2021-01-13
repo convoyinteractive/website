@@ -4,6 +4,7 @@ namespace App;
 
 use App\Http\View\Theme;
 use App\Http\View\Attributes;
+use App\Http\View\Relations;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\HtmlString;
 
@@ -73,6 +74,13 @@ class Page extends Data
     public function hero()
     {
         return $this->component('hero', "{$this->context}.hero");
+    }
+
+    public function relations()
+    {
+        return new Relations(
+            $this->collection('relations', "{$this->context}.relations")
+        );
     }
 
     public function isType($type)
