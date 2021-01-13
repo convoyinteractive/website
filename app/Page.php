@@ -4,6 +4,7 @@ namespace App;
 
 use App\Http\View\Theme;
 use App\Http\View\Attributes;
+use App\Http\View\Relations;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\HtmlString;
 
@@ -77,7 +78,9 @@ class Page extends Data
 
     public function relations()
     {
-        return $this->collection('relations', "{$this->context}.relations");
+        return new Relations(
+            $this->collection('relations', "{$this->context}.relations")
+        );
     }
 
     public function isType($type)
