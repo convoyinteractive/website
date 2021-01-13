@@ -1,7 +1,7 @@
 <?php
 
 use Laravel\Lumen\Application;
-use App\Http\Middleware\Preview;
+use App\Markdown\Markdown;
 use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -25,7 +25,7 @@ $app->singleton(
 );
 
 $app->singleton('markdown', function ($app) {
-    $parsedown = new ParsedownExtra;
+    $parsedown = new Markdown;
     $parsedown->setBreaksEnabled(true);
     return $parsedown;
 });
