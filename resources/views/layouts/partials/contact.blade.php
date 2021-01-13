@@ -1,3 +1,4 @@
+@if($component)
 <div>
     <div>
         {{ $component->get('title') }}
@@ -17,3 +18,4 @@
         </div>
     </div>
 </div>
+@endif
