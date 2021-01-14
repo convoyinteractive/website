@@ -16,6 +16,7 @@ class ViewServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        $this->app['view']->composer('layouts.partials.footer', NavigationComposer::class);
         $this->app['view']->composer('layouts.partials.navigation', NavigationComposer::class);
         $this->app['view']->composer('layouts.partials.socials', SocialsComposer::class);
     }
