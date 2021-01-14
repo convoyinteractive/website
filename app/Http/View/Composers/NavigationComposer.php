@@ -16,15 +16,10 @@ class NavigationComposer
 
     public function compose(View $view)
     {
-        $view->with('navigation', [
-            'about' => $this->fetchCollection('about'),
-            'cases' => $this->fetchCollection('cases'),
-            'contact' => $this->fetchCollection('contact'),
-        ]);
-    }
+        $cases = $this->components->find('cases')->collection('items', 'navigation');
 
-    protected function fetchCollection($key)
-    {
-        return $this->components->find($key)->collection('items', 'navigation');
+        return $view->with('cases', $cases)
+            ->with('sitemap', $this->components->find('sitemap'))
+            ->with('contact', $this->components->find('contact'));
     }
 }
