@@ -213,6 +213,52 @@ return [
                 ],
             ],
 
+            'relations' => [
+                'contact' => [
+                    'wrap' => [
+                        'class' => [
+                            'px-3 md:px-5 mb-10',
+                            'lg:w-10/12 lg:mx-auto lg:px-10 lg:flex lg:flex-row-reverse items-start',
+                            'xl:px-screen-10'
+                        ],
+                    ],
+                    'body' => [
+                        'class' => [
+                            'px-3 md:px-5 mb-10',
+                            'lg:px-10 lg:w-7/10',
+                            'xl:px-screen-10 xl:mb-screen-10',
+                            // 'font-sans font-semibold leading-snug text-xl',
+                            // 'xl:text-like-3xl',
+                        ],
+                    ],
+                    'recipient' => [
+                        'class' => [
+                            'hidden px-3 md:px-5 space-x-5',
+                            'lg:flex lg:items-center',
+                            'lg:px-10 lg:w-3/10',
+                            'xl:px-screen-10 xl:space-x-screen-5'
+                        ],
+                    ],
+                    'avatar' => [
+                        'class' => [
+                            'rounded-full overflow-hidden w-15',
+                            'xl:w-screen-15'
+                        ],
+                    ],
+                    'recipient_name' => [
+                        'class' => [
+                            'block font-semibold font-sans text-lg',
+                        ],
+                    ],
+                    'recipient_title' => [
+                        'class' => [
+                            'block text-sm font-sans',
+                            'lg:text-like-sm',
+                        ],
+                    ]
+                ],
+            ],
+
             // default.awards
             'awards' => [
                 'wrap' => [
