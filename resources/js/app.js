@@ -45,6 +45,9 @@ Vue.mixin(Turbovue);
 import ClickAway from "./mixins/ClickAway";
 Vue.directive("click-away", ClickAway);
 
+import PushEvents from "./mixins/PushEvents";
+Vue.directive("push-events", PushEvents);
+
 import Cursor, { DefaultCursor, CursorComponent } from "./mixins/Cursor";
 Vue.directive("cursor", Cursor);
 Vue.component("custom-cursor", CursorComponent);
