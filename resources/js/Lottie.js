@@ -24,6 +24,7 @@ export default class Lottie {
             inview: animation => this.handleInView(animation),
             loop: animation => this.handleLoop(animation),
             onscroll: animation => this.handleOnScroll(animation),
+            hover: animation => this.handleOnHover(animation),
         };
     }
 
@@ -42,6 +43,16 @@ export default class Lottie {
                 animation.play();
             },
             offset: "50%",
+        });
+    }
+
+    handleOnHover(animation) {
+        animation.wrapper.addEventListener('mouseenter', e => {
+            animation.loop = true;
+            animation.play()
+        });
+        animation.wrapper.addEventListener('mouseleave', e => {
+            animation.pause()
         });
     }
 
