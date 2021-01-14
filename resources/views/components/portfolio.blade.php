@@ -7,7 +7,7 @@
 
     <scrollable {{ $component->attributes('stage') }}>
         @foreach ($component->get('items', []) as $item)
-            <a href="{{ $item->get('link') }}" {{ $component->attributes("item") }}>
+            <a href="{{ $item->get('link') }}" {{ $component->attributes("item") }} v-push-events="['mouseenter', 'mouseleave']">
                 @include($item->view(), ['component' => $item])
                 @include($item->addon->view(), ['component' => $item->addon])
             </a>
