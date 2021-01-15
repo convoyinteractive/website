@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Http\View\Composers\NavigationComposer;
-use App\Http\View\Composers\SocialsComposer;
-use App\Repositories\Component;
 use Illuminate\Support\ServiceProvider;
+use App\Http\View\Composers\SocialsComposer;
+use App\Http\View\Composers\ServicesComposer;
+use App\Http\View\Composers\NavigationComposer;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -18,6 +18,7 @@ class ViewServiceProvider extends ServiceProvider
     {
         $this->app['view']->composer('layouts.partials.footer', NavigationComposer::class);
         $this->app['view']->composer('layouts.partials.navigation', NavigationComposer::class);
+        $this->app['view']->composer('layouts.partials.services', ServicesComposer::class);
         $this->app['view']->composer('layouts.partials.socials', SocialsComposer::class);
     }
 }
