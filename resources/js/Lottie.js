@@ -47,12 +47,12 @@ export default class Lottie {
     }
 
     handleOnHover(animation) {
-        animation.wrapper.addEventListener('mouseenter', e => {
+        animation.wrapper.addEventListener("mouseenter", e => {
             animation.loop = true;
-            animation.play()
+            animation.play();
         });
-        animation.wrapper.addEventListener('mouseleave', e => {
-            animation.pause()
+        animation.wrapper.addEventListener("mouseleave", e => {
+            animation.pause();
         });
     }
 
