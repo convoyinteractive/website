@@ -46,6 +46,13 @@ export default {
             });
         };
 
+        let teardown = function() {
+            document.removeEventListener("assets:load", initialize);
+            document.removeEventListener("lottie:ready", update);
+            window.removeEventListener("resize", update);
+        };
+
+        document.addEventListener("turbolinks:before-render", teardown);
         document.addEventListener("assets:load", initialize);
         document.addEventListener("lottie:ready", update);
         window.addEventListener("resize", update);
