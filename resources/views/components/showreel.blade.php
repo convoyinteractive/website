@@ -8,7 +8,7 @@
     <video class="block w-full" src="{{ asset($component->get('preview')) }}" playsinline muted loop autoplay></video>
     </button>
 
-    <div ref="target" v-show="show" @fullscreenchange="handle" class="fixed top-0 z-50 w-full h-full bg-black text-white flex items-center p-10">
+    <div ref="target" v-show="show" style="display: none" @fullscreenchange="handle" class="fixed top-0 z-50 w-full h-full bg-black text-white flex items-center p-10">
         <button class="absolute top-0 right-0 py-5 px-10 font-sans text-sm" @click="show = false">Close (ESC)</button>
         <video-player inline-template :autoplay="show" :cursor="false">
             <div class="relative w-full">
