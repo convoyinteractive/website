@@ -360,10 +360,10 @@ return [
             'definition' => [
                 'wrap' => [
                     'class' => [
-                        'px-3 pt-50 pb-30 bg-black text-white',
+                        'px-3 pt-50 pb-30 bg-black text-white mb-30',
                         'sm:px-10',
                         'md:px-5',
-                        'xl:px-screen-10 xl:pt-screen-50 xl:pb-screen-30'
+                        'xl:px-screen-10 xl:pt-screen-50 xl:pb-screen-30 xl:mb-screen-30'
                     ],
                 ],
                 'title' => [
