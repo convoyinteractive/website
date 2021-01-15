@@ -2,6 +2,11 @@
 <div {{ $component->attributes('wrap') }}>
     <div {{ $component->attributes('body') }}>
         <p>{{ $component->get('body') }}</p>
+        <div class="mt-10 xl:mt-screen-10">
+            <a href="" class="font-sans font-semibold">
+                Let’s talk
+            </a>
+        </div>
     </div>
     <div {{ $component->attributes('recipient') }}>
         <div class="relative">
@@ -22,13 +27,6 @@
             <span {{ $component->attributes('recipient_name') }}>{{ $component->get('recipient.name') }}</span>
             <span {{ $component->attributes('recipient_title') }}>{{ $component->get('recipient.title') }}</span>
         </div>
-    </div>
-</div>
-<div {{ $component->attributes('wrap') }}>
-    <div {{ $component->attributes('body') }}>
-        <a href="" class="font-sans font-semibold">
-            Let’s talk
-        </a>
     </div>
 </div>
 @endif

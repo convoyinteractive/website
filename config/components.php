@@ -217,9 +217,9 @@ return [
                 'contact' => [
                     'wrap' => [
                         'class' => [
-                            'px-3 md:px-5 mb-10',
+                            'px-3 md:px-5 mb-10 mt-50',
                             'lg:w-10/12 lg:mx-auto lg:px-10 lg:flex lg:flex-row-reverse items-start',
-                            'xl:px-screen-10'
+                            'xl:px-screen-10 xl:mt-screen-50'
                         ],
                     ],
                     'body' => [
