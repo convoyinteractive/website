@@ -11,7 +11,9 @@
     @foreach($content->body() as $component)
         @include($component->view())
     @endforeach
+@endsection
 
+@section('aside')
     @include('layouts.partials.likes', [
         'show' => $content->isLikeable()
     ])

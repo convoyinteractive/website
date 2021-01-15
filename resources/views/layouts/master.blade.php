@@ -18,6 +18,7 @@
 
         <main role="main" class="block flex-1">
             @yield('content')
+            @yield('aside')
         </main>
 
         <snake></snake>
