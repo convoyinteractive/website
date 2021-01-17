@@ -2,7 +2,7 @@
 
 @section('aside')
     @include('layouts.partials.cases', [
-        'show' => $content->relations()->has('case')
+        'title' => __('Related case stories')
     ])
 
     @include('layouts.partials.services', [

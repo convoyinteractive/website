@@ -257,6 +257,59 @@ return [
                         ],
                     ]
                 ],
+                'list' => [
+                    'wrap' => [
+                        'class' => [
+                            'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                            'mx-auto',
+                            'my-30 xl:my-screen-30',
+                            'lg:w-10/12',
+                            'md:flex md:items-start md:justify-end',
+                        ],
+                    ],
+                    'title' => [
+                        'class' => [
+                            'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                            'pb-10 xl:pb-screen-10',
+                            'text-xl md:text-2xl xl:text-like-2xl',
+                            'font-sans font-semibold',
+                            'md:w-3/10',
+                            'md:sticky top-32',
+                        ],
+                    ],
+                    'body' => [
+                        'class' => [
+                            'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                            'md:w-7/10',
+                        ],
+                    ],
+                ],
+                'case' => [
+                    'wrap' => [
+                        'class' => [
+                            'block font-sans mb-10',
+                            'xl:mb-screen-10'
+                        ],
+                    ],
+                    'image' => [
+                        'class' => [
+                            'w-full block mb-5',
+                            'xl:mb-screen-5'
+                        ],
+                    ],
+                    'title' => [
+                        'class' => [
+                            'block text-3xl font-semibold leading-snug',
+                            'xl:text-like-3xl'
+                        ],
+                    ],
+                    'subtitle' => [
+                        'class' => [
+                            'block text-sm',
+                            'xl:text-like-sm'
+                        ],
+                    ],
+                ]
             ],
 
             // default.awards
