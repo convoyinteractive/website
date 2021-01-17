@@ -40,32 +40,32 @@
             {{-- The "display: none" inline-style prevents an annoying flash before the component is fully rendered. --}}
             <div v-show="isOpen"
                 style="display: none"
-                class="bg-white text-black overflow-y-auto fixed inset-y-0 right-0 pt-20 xl:pt-screen-20 pl-10 xl:pl-screen-10 pr-20 xl:pr-screen-20 sm:-mr-10 xl:-mr-screen-10 w-full sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12"
+                class="bg-white text-black overflow-y-auto fixed inset-y-0 right-0 pt-20 xl:pt-screen-20 sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12"
             >
-                <div ref="about" v-show="isActive('about')" class="flex flex-col justify-between min-h-full p-10 xl:p-screen-10">
+                <div ref="about" v-show="isActive('about')" class="flex flex-col justify-between min-h-full w-full space-y-20 pt-10 pb-30 md:px-20 md:pb-20">
                     <div>
                         @foreach($sitemap->collection('about.links', 'navigation') as $item)
-                        <a href="{{ $item->get('path') }}" class="block font-sans font-bold text-3xl xl:text-like-3xl mb-10 xl:mb-screen-10">
+                        <a href="{{ $item->get('path') }}" class="block font-sans font-bold text-2xl md:text-3xl xl:text-like-3xl mb-5 md:mb-10 xl:mb-screen-10 mx-5 md:mx-15">
                             {{ $item->get('label') }}
                         </a>
                         @endforeach
                     </div>
                     <div>
-                        <img
+                        <img class="block w-full"
                             src="{{ asset($sitemap->component('about.image', 'navigation')->get('path'), ['width' => '640', 'format' => 'jpg']) }}"
                             srcset="{{ asset($sitemap->component('about.image', 'navigation')->get('path'), ['width' => '1024', 'format' => 'jpg']) }} 2x"
                             alt="{{ $sitemap->component('about.image', 'navigation')->get('alt') }}">
                     </div>
                 </div>
 
-                <div ref="work" v-show="isActive('work')" class="min-h-full space-y-20 py-20 xl:py-screen-20 px-10 xl:px-screen-10">
+                <div ref="work" v-show="isActive('work')" class="min-h-full w-full space-y-20 px-5 pt-10 pb-30 md:px-20 md:pb-20">
                     @foreach($cases as $component)
                         @include('components.case')
                     @endforeach
                 </div>
 
-                <div ref="hello" v-show="isActive('hello')" class="flex flex-col justify-between min-h-full p-10 xl:p-screen-10 space-y-10 xl:space-y-screen-10">
-                    <div>
+                <div ref="hello" v-show="isActive('hello')" class="flex flex-col justify-between min-h-full w-full space-y-20 pt-10 pb-30 md:px-20 md:pb-20">
+                    <div class="mx-5 md:mx-15">
                         <div class="font-sans font-bold mb-5 xl:mb-screen-5">
                             {{ __('Get in touch') }}
                         </div>
@@ -89,7 +89,7 @@
                         </address>
                     </div>
 
-                    <div>
+                    <div class="mx-5 md:mx-15">
                         @foreach($sitemap->collection('contact.links', 'navigation') as $item)
                         <a href="{{ $item->get('url') }}" target="_blank" rel="noopener" class="block font-sans font-bold text-sm xl:text-like-sm">
                             {{ $item->get('label') }}
@@ -98,7 +98,7 @@
                     </div>
 
                     <div>
-                        <img
+                        <img class="block w-full"
                             src="{{ asset($sitemap->component('contact.image', 'navigation')->get('path'), ['width' => '640', 'format' => 'jpg']) }}"
                             srcset="{{ asset($sitemap->component('contact.image', 'navigation')->get('path'), ['width' => '1024', 'format' => 'jpg']) }} 2x"
                             alt="{{ $sitemap->component('contact.image', 'navigation')->get('alt') }}">
