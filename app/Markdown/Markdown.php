@@ -15,6 +15,10 @@ class Markdown extends ParsedownExtra
             return null;
         }
 
+        if ($this->isCTA($link)) {
+            $link['element']['text'] = "<span>{$link['element']['text']}</span>";
+            $link['element']['attributes']['v-button'] = "true";
+        }
 
         if ($this->isExternalLink($link)) {
             $link['element']['attributes']['target'] = '_blank';
@@ -22,6 +26,15 @@ class Markdown extends ParsedownExtra
         }
 
         return $link;
+    }
+
+    public function isCTA($link)
+    {
+        if (! isset($link['element']['attributes']['class'])) {
+            return false;
+        }
+
+        return Str::contains($link['element']['attributes']['class'], 'cta');
     }
 
     public function isExternalLink($link)

@@ -52,5 +52,5 @@
 
 .markdown .cta,
 .markdown .external {
-    @apply font-sans font-semibold;
+    @apply font-sans font-semibold inline-flex flex-row-reverse items-center;
 }

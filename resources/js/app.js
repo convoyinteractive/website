@@ -42,6 +42,9 @@ import Vue from "vue";
 import Turbovue from "./mixins/Turbovue";
 Vue.mixin(Turbovue);
 
+import Button from "./mixins/Button";
+Vue.directive("button", Button);
+
 import ClickAway from "./mixins/ClickAway";
 Vue.directive("click-away", ClickAway);
 

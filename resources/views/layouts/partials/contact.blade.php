@@ -3,8 +3,8 @@
     <div {{ $component->attributes('body') }}>
         <p>{{ $component->get('body') }}</p>
         <div class="mt-10 xl:mt-screen-10">
-            <a href="" class="font-sans font-semibold">
-                Let’s talk
+            <a href="" class="font-sans font-semibold inline-flex flex-row-reverse items-center" v-button="true">
+                <span>Let’s talk</span>
             </a>
         </div>
     </div>

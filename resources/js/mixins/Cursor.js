@@ -39,8 +39,10 @@ export const CursorComponent = {
                 class:
                     "p-2 fixed rounded-full bg-green pointer-events-none z-50 font-sans text-sm text-center flex items-center justify-center transition-all duration-100 leading-none",
                 style: this.style,
-            },
-            this.label,
+                domProps: {
+                    innerHTML: this.label
+                }
+            }
         );
     },
 
@@ -64,12 +66,34 @@ export const CursorComponent = {
     },
 
     computed: {
+        y() {
+            if (this.$root.cursor.position) {
+                return this.$root.cursor.position.y;
+            }
+
+            return this.position.y;
+        },
+        x() {
+            if (this.$root.cursor.position) {
+                return this.$root.cursor.position.x;
+            }
+
+            return this.position.x;
+        },
+        size() {
+            if (this.$root.cursor.size) {
+                return this.$root.cursor.size;
+            }
+
+            return 0;
+        },
         style() {
             return {
-                top: this.position.y - this.$root.cursor.size / 2 + "px",
-                left: this.position.x - this.$root.cursor.size / 2 + "px",
-                width: this.$root.cursor.size + "px",
-                height: this.$root.cursor.size + "px",
+                top: this.y - this.size / 2 + "px",
+                left: this.x - this.size / 2 + "px",
+                width: this.size + "px",
+                height: this.size + "px",
+                transition: "all 150ms linear",
             };
         },
     },
