@@ -22,6 +22,11 @@ module.exports = {
         },
     },
     theme: {
+        extend: {
+            animation: {
+                'spin-slow': 'spin 30s linear infinite',
+            }
+        },
         screens: {
             sm: "480px",
             md: "768px",
@@ -59,6 +64,7 @@ module.exports = {
             "25": "100px",
             "30": "120px",
             "40": "160px",
+            "45": "180px",
             "50": "200px",
             "60": "240px",
             "70": "280px",
