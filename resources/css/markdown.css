@@ -9,7 +9,7 @@
 
 .markdown h1,
 .markdown h2 {
-    @apply text-xl;
+    @apply text-xl leading-snug;
 }
 
 .markdown h3 {

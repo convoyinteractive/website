@@ -20,7 +20,7 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 font-bold font-hero leading-tight text-4xl',
+                            'px-3 font-bold font-hero leading-none tracking-tight text-4xl',
                             'sm:px-10 sm:text-5xl',
                             'md:px-5 md:text-6xl',
                             'xl:px-screen-10 xl:text-like-6xl',
@@ -65,7 +65,7 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 font-bold font-hero leading-tight text-4xl',
+                            'px-3 font-bold font-hero leading-none tracking-tight text-4xl',
                             'sm:px-10 sm:text-5xl',
                             'md:px-5 md:text-6xl',
                             'xl:px-screen-10 xl:text-like-6xl',
@@ -97,7 +97,7 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 font-bold font-hero leading-tight text-4xl',
+                            'px-3 font-bold font-hero leading-none tracking-tight text-4xl',
                             'sm:px-10 sm:text-5xl',
                             'md:px-5 md:text-6xl',
                             'lg:w-6/10',
