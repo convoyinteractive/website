@@ -1112,9 +1112,8 @@ return [
                 ],
                 'cite' => [
                     'class' => [
-                        'font-sans font-semibold',
+                        'font-sans font-semibold leading-tight mb-2',
                         'text-xl md:text-3xl xl:text-like-3xl',
-                        'leading-normal',
                     ],
                 ],
                 'author' => [
