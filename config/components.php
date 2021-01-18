@@ -145,7 +145,7 @@ return [
                     ],
                     'link' => [
                         'class' => [
-                            'w-15 h-15 p-2 flex items-center justify-center rounded-full bg-black text-white'
+                            'w-15 h-15 p-4 flex items-center justify-center rounded-full bg-black text-white'
                         ],
                         'target' => '_blank',
                         'rel' => 'noopener',
