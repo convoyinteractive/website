@@ -9,13 +9,13 @@ export const PlayerCursor = {
     handle(element, binding) {
         this.label = element.paused ? "Play" : "Pause";
     },
-    size: 60,
+    size: 180,
 };
 
 export const TextCursor = {
     handle(element, binding) {
         this.label = binding.label;
-        this.size = binding.size || 60;
+        this.size = binding.size || 180;
     },
 };
 

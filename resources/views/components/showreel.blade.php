@@ -2,8 +2,7 @@
 <div class="my-25" @keydown.esc="show = false">
     <button class="block w-full" aria-label="Play Showreel" @click="show = true" v-cursor="{
         type: 'text',
-        label: 'Play Reel',
-        size: 120
+        label: 'Play Reel'
     }">
     <video class="block w-full" src="{{ asset($component->get('preview')) }}" playsinline muted loop autoplay></video>
     </button>

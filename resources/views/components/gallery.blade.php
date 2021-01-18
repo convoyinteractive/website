@@ -7,7 +7,7 @@
 
     <dragable {{ $component->attributes('body') }} v-cursor="{
         type: 'text',
-        label: 'Drag',
+        label: 'Drag'
     }">
         @foreach ($component->get('items', []) as $item)
             @include($item->view(), ['component' => $item])

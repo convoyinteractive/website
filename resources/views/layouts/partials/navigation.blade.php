@@ -29,8 +29,7 @@
             <div v-show="isOpen" aria-hidden="true" style="display: none">
                 <div class="fixed bg-black opacity-25 inset-y-0 right-0 w-full" @click="close" v-cursor="{
                     type: 'text',
-                    label: 'Close Menu',
-                    size: 80
+                    label: 'Close Menu'
                 }"></div>
             </div>
         </fade-in-out>
