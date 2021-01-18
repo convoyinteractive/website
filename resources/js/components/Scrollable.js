@@ -23,7 +23,11 @@ export default {
 
         var _vm = this;
 
-        let update = function() {
+        let update = function () {
+            if (!_vm.tween) {
+                return;
+            }
+
             tap(_vm.tween, tween => {
                 let width = _vm.calculateWidth();
                 tween.vars.x = `-${width}px`;
@@ -47,15 +51,17 @@ export default {
         };
 
         let teardown = function() {
-            document.removeEventListener("assets:load", initialize);
+            document.removeEventListener("assets:load", update);
             document.removeEventListener("lottie:ready", update);
             window.removeEventListener("resize", update);
         };
 
         document.addEventListener("turbolinks:before-render", teardown);
-        document.addEventListener("assets:load", initialize);
+        document.addEventListener("assets:load", update);
         document.addEventListener("lottie:ready", update);
         window.addEventListener("resize", update);
+
+        initialize();
     },
 
     methods: {
