@@ -11,7 +11,7 @@ return [
                 'image' => [
                     'header' => [
                         'class' => [
-                            'px-3 mx-auto my-40',
+                            'px-3 mx-auto mt-40 mb-20',
                             'sm:px-10',
                             'md:px-5 md:my-70',
                             'lg:w-10/12',
@@ -48,7 +48,7 @@ return [
                     'wrap' => [
                         'class' => [
                             'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                            'my-40 xl:my-screen-40',
+                            'mt-40 mb-20 xl:my-screen-40',
                             'mx-auto',
                             'md:flex md:items-center md:justify-between',
                             'lg:w-10/12',
@@ -56,7 +56,7 @@ return [
                     ],
                     'header' => [
                         'class' => [
-                            'px-3 mb-40',
+                            'px-3 mb-20',
                             'sm:px-10',
                             'md:mb-0',
                             'lg:w-6/10',
@@ -88,7 +88,7 @@ return [
                 'text' => [
                     'header' => [
                         'class' => [
-                            'px-3 mx-auto my-40',
+                            'px-3 mx-auto mt-40 mb-20',
                             'sm:px-10',
                             'md:px-5 md:my-70',
                             'lg:w-10/12',
