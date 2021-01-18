@@ -37,7 +37,7 @@ export const CursorComponent = {
             "div",
             {
                 class:
-                    "p-2 fixed rounded-full bg-green pointer-events-none z-50 font-sans text-sm text-center flex items-center justify-center transition-all duration-100 leading-none",
+                    "p-2 fixed rounded-full bg-green pointer-events-none z-50 font-sans text-sm text-black text-center flex items-center justify-center transition-all duration-100 leading-none",
                 style: this.style,
                 domProps: {
                     innerHTML: this.label
