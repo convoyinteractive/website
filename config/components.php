@@ -766,7 +766,8 @@ return [
                 ],
                 'title' => [
                     'class' => [
-                        'mb-20 font-sans font-semibold text-xl text-center',
+                        'mb-5 font-sans font-semibold text-xl text-center',
+                        'md:mb-20',
                         'md:text-3xl',
                         'xl:text-screen-3xl',
                     ],
@@ -789,7 +790,7 @@ return [
                     'markdown' => [
                         'title' => [
                             'class' => [
-                                'font-sans font-semibold text-xl mb-5',
+                                'font-sans font-semibold text-xl mb-5 leading-none',
                                 'md:text-2xl',
                                 'lg:mb-10',
                                 'xl:text-screen-2xl',
@@ -803,7 +804,7 @@ return [
                         'addon' => [
                                 'wrap' => [
                                     'class' => [
-                                        'mt-5 w-8/12',
+                                        'mt-6 w-8/12',
                                         'lg:mt-20'
                                     ]
                                 ]
