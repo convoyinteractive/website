@@ -20,7 +20,7 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 font-bold font-hero leading-none tracking-tight text-4xl',
+                            'px-3 font-bold font-hero leading-snug tracking-tight text-4xl',
                             'sm:px-10 sm:text-5xl',
                             'md:px-5 md:text-6xl',
                             'xl:px-screen-10 xl:text-like-6xl',
@@ -65,7 +65,7 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 font-bold font-hero leading-none tracking-tight text-4xl',
+                            'px-3 font-bold font-hero leading-snug tracking-tight text-4xl',
                             'sm:px-10 sm:text-5xl',
                             'md:px-5 md:text-6xl',
                             'xl:px-screen-10 xl:text-like-6xl',
@@ -97,7 +97,7 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 font-bold font-hero leading-none tracking-tight text-4xl',
+                            'px-3 font-bold font-hero leading-snug tracking-tight text-4xl',
                             'sm:px-10 sm:text-5xl',
                             'md:px-5 md:text-6xl',
                             'lg:w-6/10',
@@ -117,10 +117,10 @@ return [
             'intro' => [
                 'wrap' => [
                     'class' => [
-                        'flex justify-end items-center mx-auto px-3 my-30',
+                        'flex justify-end items-center mx-auto px-3 my-10',
                         'sm:px-10',
                         'md:px-5',
-                        'lg:w-10/12 ',
+                        'lg:w-10/12 lg:my-30',
                         'xl:px-screen-10 xl:my-screen-30',
                     ],
                 ],
@@ -129,7 +129,8 @@ return [
             'excerpt' => [
                 'wrap' => [
                     'class' => [
-                        'w-full lg:w-7/10 my-30 space-y-10',
+                        'w-full lg:w-7/10 my-10 space-y-10',
+                        'lg:my-30',
                         'xl:my-screen-30 xl:space-y-screen-10',
                     ],
                 ],
@@ -299,7 +300,8 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'block text-3xl font-semibold leading-snug',
+                            'block text-xl font-semibold leading-snug',
+                            'lg:text-3xl',
                             'xl:text-like-3xl'
                         ],
                     ],
@@ -397,14 +399,15 @@ return [
                 ],
                 'card' => [
                     'class' => [
-                        'flex items-center justify-center bg-gray w-full h-full p-10',
+                        'flex items-center justify-center bg-gray w-full h-full p-6',
+                        'md:p-10',
                         'lg:py-20',
                         'xl:px-screen-10 xl:py-screen-20',
                     ],
                 ],
                 'image' => [
                     'class' => [
-                        'max-w-50 max-h-25',
+                        'w-full max-w-50 max-h-25',
                     ],
                 ],
             ],
@@ -413,15 +416,16 @@ return [
             'definition' => [
                 'wrap' => [
                     'class' => [
-                        'px-3 pt-50 pb-30 bg-black text-white mb-30',
+                        'px-3 pt-20 pb-10 bg-black text-white mb-30',
                         'sm:px-10',
                         'md:px-5',
+                        'lg:pt-50 lg:pb-30',
                         'xl:px-screen-10 xl:pt-screen-50 xl:pb-screen-30 xl:mb-screen-30'
                     ],
                 ],
                 'title' => [
                     'class' => [
-                        'mb-10 px-6 font-sans font-semibold text-xl ml-auto',
+                        'mb-10 px-3 font-sans font-semibold text-xl ml-auto',
                         'md:text-3xl md:px-10',
                         'lg:w-8/12',
                         'xl:mb-screen-10 xl:px-screen-10 xl:text-like-3xl',
@@ -435,17 +439,17 @@ return [
                 ],
                 'term' => [
                     'class' => [
-                        'px-3 my-15 font-sans font-semibold',
+                        'px-3 mb-5 font-sans font-semibold',
                         'sm:px-10 ',
-                        'md:px-5 md:w-3/10 md:text-xl',
+                        'md:px-5 md:w-3/10 md:text-xl md:my-15',
                         'xl:px-screen-10 xl:mb-screen-15 xl:text-like-xl',
                     ],
                 ],
                 'item' => [
                     'class' => [
-                        'px-3 my-15',
+                        'px-3 mb-15',
                         'sm:px-10 ',
-                        'md:px-5 md:w-7/10',
+                        'md:px-5 md:w-7/10 md:mt-15',
                         'xl:px-screen-10 xl:mb-screen-15'
                     ],
                 ],
@@ -462,13 +466,16 @@ return [
             'gallery' => [
                 'wrap' => [
                     'class' => [
-                        'overflow-hidden my-50',
+                        'overflow-hidden my-20',
+                        'md:my-30',
+                        'lg:my-50',
                         'xl:my-screen-50',
                     ],
                 ],
                 'body' => [
                     'class' => [
-                        'pb-10 -mb-10 flex items-center overflow-x-auto space-x-30',
+                        'pb-10 -mb-10 flex items-center overflow-x-auto space-x-10',
+                        'lg:space-x-30',
                         'xl:space-x-screen-30',
                     ],
                 ],
@@ -533,8 +540,7 @@ return [
                     'phone' => [
                         'canvas' => [
                             'class' => [
-                                'p-15',
-                                'xl:p-screen-15',
+                                'w-full p-6 py-10 md:p-10 lg:p-20 xl:p-screen-20',
                             ]
                         ],
                         'item' => [
@@ -556,8 +562,7 @@ return [
                     'screen' => [
                         'canvas' => [
                             'class' => [
-                                'p-15',
-                                'xl:p-screen-15',
+                                'p-6 md:p-10 lg:p-20 xl:p-screen-20',
                             ]
                         ]
                     ],
@@ -568,10 +573,10 @@ return [
             'image' => [
                 'wrap' => [
                     'class' => [
-                        'mx-auto my-50 px-3',
+                        'mx-auto my-20 px-3',
                         'sm:px-10',
-                        'md:px-5',
-                        'lg:w-10/12',
+                        'md:px-5 md:my-30',
+                        'lg:w-10/12 lg:my-50',
                         'xl:px-screen-10 xl:my-screen-50',
                     ],
                 ],
@@ -635,8 +640,7 @@ return [
                         ],
                         'canvas' => [
                             'class' => [
-                                'p-20',
-                                'xl:p-screen-20',
+                                'p-6 md:p-10 lg:p-20 xl:p-screen-20',
                             ]
                         ]
                     ]
@@ -717,18 +721,18 @@ return [
             'markdown' => [
                 'wrap' => [
                     'class' => [
-                        'px-3 my-30',
+                        'px-3 my-20',
                         'sm:px-10',
                         'md:px-5 md:flex md:items-start md:justify-end',
-                        'lg:w-10/12 lg:mx-auto',
+                        'lg:w-10/12 lg:mx-auto lg:my-30',
                         'xl:px-screen-10 xl:my-screen-30',
                     ],
                 ],
                 'title' => [
                     'class' => [
-                        'px-3 pb-10 text-xl font-sans font-semibold',
+                        'px-3 pb-5 text-xl font-sans font-semibold',
                         'sm:px-10',
-                        'md:px-5 md:w-3/10 md:text-2xl',
+                        'md:px-5 md:pb-10 md:w-3/10 md:text-2xl',
                         'xl:px-screen-10 xl:pb-screen-10 xl:text-like-2xl',
                     ],
                 ],
@@ -746,9 +750,10 @@ return [
             'portfolio' => [
                 'wrap' => [
                     'class' => [
-                        'px-6 mb-40 flex flex-col justify-center min-h-screen overflow-hidden bg-black text-white',
+                        'px-6 mb-20 flex flex-col justify-center min-h-screen overflow-hidden bg-black text-white',
                         'sm:px-20',
                         'md:px-10',
+                        'lg:mb-40',
                         'xl:px-screen-20',
                     ],
                 ],
@@ -768,7 +773,8 @@ return [
                 ],
                 'item' => [
                     'class' => [
-                        'p-10 flex-shrink-0 flex flex-col justify-between w-8/10 bg-white text-black',
+                        'p-10 flex-shrink-0 flex flex-col justify-between w-9/10 bg-white text-black',
+                        'md:w-4/10',
                         'lg:w-3/10',
                     ],
                 ],
@@ -776,8 +782,9 @@ return [
                     'markdown' => [
                         'title' => [
                             'class' => [
-                                'font-sans font-semibold text-xl mb-10',
+                                'font-sans font-semibold text-xl mb-5',
                                 'md:text-2xl',
+                                'lg:mb-10',
                                 'xl:text-screen-2xl',
                             ]
                         ],
@@ -789,7 +796,8 @@ return [
                         'addon' => [
                                 'wrap' => [
                                     'class' => [
-                                        "mt-20 w-8/12"
+                                        'mt-5 w-8/12',
+                                        'lg:mt-20'
                                     ]
                                 ]
                         ]
@@ -801,7 +809,9 @@ return [
             'process' => [
                 'wrap' => [
                     'class' => [
-                        'my-20 py-20 bg-black text-white',
+                        'py-10',
+                        'bg-black text-white',
+                        'lg:my-20 lg:py-20',
                     ]
                 ],
                 'items' => [
@@ -810,9 +820,10 @@ return [
                     'lottie' => [
                         'wrap' => [
                             'class' => [
-                                'px-3 my-50',
+                                'px-3 my-10 overflow-x-auto',
                                 'sm:px-10',
                                 'md:px-5',
+                                'lg:my-50',
                                 'xl:px-screen-10 xl:my-screen-50',
                             ],
                         ],
@@ -823,6 +834,9 @@ return [
                                 'md:px-5',
                                 'xl:px-screen-10',
                             ],
+                            'style' => [
+                                'min-width: 1024px'
+                            ]
                         ],
                     ],
 
@@ -830,18 +844,18 @@ return [
                     'markdown' => [
                         'wrap' => [
                             'class' => [
-                                'px-3 my-30',
+                                'px-3 my-20',
                                 'sm:px-10',
                                 'md:px-5 md:flex md:items-start md:justify-end',
-                                'lg:w-10/12 lg:mx-auto',
+                                'lg:w-10/12 lg:mx-auto lg:my-30',
                                 'xl:px-screen-10 xl:my-screen-30',
                             ],
                         ],
                         'title' => [
                             'class' => [
-                                'px-3 pb-10 text-xl font-sans font-semibold',
+                                'px-3 pb-5 text-xl font-sans font-semibold',
                                 'sm:px-10',
-                                'md:px-5 md:w-3/10 md:text-2xl',
+                                'md:px-5 md:w-3/10 md:text-2xl md:pb-10',
                                 'xl:px-screen-10 xl:pb-screen-10 xl:text-like-2xl',
                             ],
                         ],
@@ -1077,7 +1091,8 @@ return [
                         ],
                         'title' => [
                             'class' => [
-                                'block text-3xl font-semibold leading-snug',
+                                'block font-semibold leading-snug text-xl',
+                                'lg:text-3xl',
                                 'xl:text-like-3xl'
                             ],
                         ],

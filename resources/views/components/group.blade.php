@@ -7,7 +7,7 @@
 
     <div {{ $component->attributes('grid') }}>
         @foreach ($component->get('items', []) as $item)
-            <div class="{{ count($component->get('items')) === 3 ? 'md:w-4/12' : 'md:w-6/12' }}">
+            <div class="w-full {{ count($component->get('items')) === 3 ? 'md:w-4/12' : 'md:w-6/12' }}">
                 <div {{ $component->attributes('item') }}>
                     @include($item->view(), ['component' => $item])
                 </div>

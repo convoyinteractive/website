@@ -1,4 +1,4 @@
-<footer class="px-6 md:px-10 sm:px-20 xl:px-screen-20 pt-10 pb-40 sm:py-10 xl:py-screen-10 space-y-20 xl:space-y-screen-10 mt-30 xl:mt-screen-30 bg-black text-white">
+<footer class="px-6 md:px-10 sm:px-20 xl:px-screen-20 pt-10 pb-30 sm:py-10 lg:py-20 xl:py-screen-20 space-y-20 xl:space-y-screen-20 mt-30 xl:mt-screen-30 bg-black text-white">
     <div class="space-y-10 lg:space-y-0 lg:flex lg:justify-between items-end font-sans text-sm lg:space-x-10 xl:space-x-screen-10">
         <address class="not-italic md:flex md:justify-between space-y-10 md:space-y-0 md:space-x-10 xl:space-x-screen-10 xl:w-6/12">
             <div>
