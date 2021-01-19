@@ -901,7 +901,6 @@ return [
                 ],
                 'caption' => [
                     'class' => [
-                        'px-10 mt-5 font-sans text-center font-semibold text-sm xl:text-like-sm'
                         'px-10 mt-5 font-sans font-semibold text-sm xl:text-like-sm',
                         'md:text-center',
                     ],
