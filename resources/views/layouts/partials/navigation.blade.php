@@ -14,7 +14,7 @@
         <div class="px-6 md:px-10 sm:px-20 xl:px-screen-20 pt-10 xl:pt-screen-10 fixed inset-x-0 bottom-0 sm:bottom-auto sm:top-0 text-black sm:text-inherit z-40"
             :class="{'sm:text-black': isOpen}"
         >
-            <div class="mb-5 sm:mb-0 rounded-full bg-white sm:bg-transparent shadow sm:shadow-none flex items-center justify-between sm:justify-end sm:space-x-10 xl:space-x-screen-10">
+            <div class="mb-5 sm:mb-0 rounded-full bg-white sm:bg-transparent shadow-lg sm:shadow-none flex items-center justify-between sm:justify-end sm:space-x-10 xl:space-x-screen-10">
                 @foreach(['work', 'about', 'hello'] as $item)
                 <button @click="toggle('{{$item}}')" class="font-sans text-sm xl:text-like-sm text-center flex-grow sm:flex-grow-0 p-2 sm:p-0 h-12 sm:h-8 xl:h-screen-8">
                     {{ __(ucwords($item)) }}
