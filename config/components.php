@@ -502,7 +502,9 @@ return [
             'group' => [
                 'wrap' => [
                     'class' => [
-                        'my-50 xl:my-screen-50',
+                        'my-20',
+                        'lg:my-50',
+                        'xl:my-screen-50',
                         'px-3 md:px-5 lg:px-10 xl:px-screen-10'
                     ],
                 ],
@@ -875,8 +877,8 @@ return [
             'screen' => [
                 'wrap' => [
                     'class' => [
-                        'my-50 xl:my-screen-50',
-                        'px-6 md:px-10 lg:px-20 xl:px-screen-20',
+                        'my-20 px-6 md:px-10',
+                        'lg:px-20 lg:my-50 xl:my-screen-50 xl:px-screen-20',
                     ],
                 ],
                 'canvas' => [
@@ -1180,10 +1182,10 @@ return [
             'markdown' => [
                 'wrap' => [
                     'class' => [
-                        'px-6 mx-auto my-50',
+                        'px-6 mx-auto my-20',
                         'sm:px-20',
                         'md:px-10',
-                        'lg:w-8/12',
+                        'lg:w-8/12 lg:my-50',
                         'xl:my-screen-50 xl:px-screen-20',
                     ],
                 ],
