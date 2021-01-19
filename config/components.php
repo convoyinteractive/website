@@ -6,7 +6,7 @@ return [
         // Here we'll define the default attributes for our components. All components will
         // fall back to this attributes if there is nothing defined for a specific template.
         'default' => [
-
+            // default.hero
             'hero' => [
                 'image' => [
                     'header' => [
@@ -25,6 +25,9 @@ return [
                             'md:px-5 md:text-6xl',
                             'xl:px-screen-10 xl:text-like-6xl',
                         ],
+                    ],
+                    'figure' => [
+                        // 'v-parallax' => "true"
                     ],
                     'subtitle' => [
                         'class' => [
@@ -94,6 +97,7 @@ return [
                             'lg:w-10/12',
                             'xl:px-screen-10 xl:my-screen-70',
                         ],
+                        'v-fade-in' => 'true',
                     ],
                     'title' => [
                         'class' => [
@@ -133,6 +137,7 @@ return [
                         'lg:my-30',
                         'xl:my-screen-30 xl:space-y-screen-10',
                     ],
+                    'v-fade-in' => 'true',
                 ],
                 'url' => [
                     'wrap' => [
@@ -203,12 +208,14 @@ return [
                         'class' => [
                             'font-semibold'
                         ],
+                        'v-fade-in' => 'true',
                     ],
                     'item' => [
                         'class' => [
                             'mb-6',
                             'xl:mb-screen-6',
                         ],
+                        'v-fade-in' => 'true',
                     ]
                 ],
             ],
@@ -247,6 +254,7 @@ return [
                             'lg:w-10/12 lg:mt-70 lg:mb-30 lg:mx-auto lg:px-10 lg:flex lg:flex-row-reverse items-start',
                             'xl:px-screen-10 xl:mt-screen-70 lg:mb-screen-30'
                         ],
+                        'v-fade-in' => 'true',
                     ],
                     'body' => [
                         'class' => [
@@ -315,12 +323,15 @@ return [
                         'class' => [
                             'block font-sans',
                         ],
+                        'v-fade-in' => 'true',
                     ],
                     'image' => [
                         'class' => [
                             'w-full block mb-5',
                             'xl:mb-screen-5'
                         ],
+                        'v-scale' => "{children:true, on:'hover'}",
+                        'v-curtain' => "'bg-green'",
                     ],
                     'title' => [
                         'class' => [
@@ -456,6 +467,7 @@ return [
                         'lg:w-8/12',
                         'xl:mb-screen-10 xl:px-screen-10 xl:text-like-3xl',
                     ],
+                    'v-fade-in' => 'true',
                 ],
                 'body' => [
                     'class' => [
@@ -470,6 +482,7 @@ return [
                         'md:px-5 md:w-3/10 md:text-xl md:my-15',
                         'xl:px-screen-10 xl:mb-screen-15 xl:text-like-xl',
                     ],
+                    'v-fade-in' => 'true',
                 ],
                 'item' => [
                     'class' => [
@@ -478,6 +491,7 @@ return [
                         'md:px-5 md:w-7/10 md:mt-15',
                         'xl:px-screen-10 xl:mb-screen-15'
                     ],
+                    'v-fade-in' => 'true',
                 ],
             ],
 
@@ -689,6 +703,7 @@ return [
                         'md:w-3/10',
                         'md:sticky top-32',
                     ],
+                    'v-fade-in' => 'true',
                 ],
                 'body' => [
                     'class' => [
@@ -701,7 +716,8 @@ return [
                         'py-6 border-dotted border-t-2 border-black',
                         'lg:py-10',
                         'xl:py-screen-10',
-                    ]
+                    ],
+                    'v-fade-in' => 'true',
                 ],
             ],
 
@@ -744,6 +760,7 @@ return [
                         'lg:w-10/12 lg:mx-auto lg:my-30',
                         'xl:px-screen-10 xl:my-screen-30',
                     ],
+                    'v-fade-in' => true
                 ],
                 'title' => [
                     'class' => [
@@ -807,12 +824,12 @@ return [
                             ]
                         ],
                         'addon' => [
-                                'wrap' => [
-                                    'class' => [
-                                        'mt-6 w-8/12',
-                                        'lg:mt-20'
-                                    ]
+                            'wrap' => [
+                                'class' => [
+                                    'mt-5 w-8/12',
+                                    'lg:mt-20'
                                 ]
+                            ]
                         ]
                     ],
                 ],
@@ -863,6 +880,7 @@ return [
                                 'lg:w-10/12 lg:mx-auto lg:my-30',
                                 'xl:px-screen-10 xl:my-screen-30',
                             ],
+                            'v-fade-in' => 'true',
                         ],
                         'title' => [
                             'class' => [
@@ -924,6 +942,7 @@ return [
                         'lg:w-10/12',
                         'xl:my-screen-50 xl:px-screen-10',
                     ],
+                    'v-fade-in' => 'true',
                 ],
                 'title' => [
                     'class' => [
@@ -966,6 +985,7 @@ return [
                     'v-theme' => [
                         'true'
                     ],
+                    'v-fade-in' => 'true',
                 ],
                 'body' => [
                     'class' => [
@@ -1051,9 +1071,10 @@ return [
                 ],
                 'image' => [
                     'class' => [
-                        'w-full block mb-4',
+                        'w-full block mb-4 overflow-hidden',
                         'xl:mb-screen-4'
                     ],
+                    'v-scale' => "{children:true, on:'hover'}",
                 ],
                 'title' => [
                     'class' => [
@@ -1098,12 +1119,16 @@ return [
                                 'block font-sans mb-10',
                                 'xl:mb-screen-10'
                             ],
+                            'v-fade-in' => 'true',
+                            'v-cursor' => "{type: 'text', label: 'Show', size: 100}"
                         ],
                         'image' => [
                             'class' => [
-                                'w-full block mb-5',
+                                'w-full block mb-5 overflow-hidden',
                                 'xl:mb-screen-5'
                             ],
+                            'v-scale' => "{children:true, on:'hover'}",
+                            'v-curtain' => "'bg-green'",
                         ],
                         'title' => [
                             'class' => [
@@ -1125,12 +1150,16 @@ return [
                                 'block font-sans mb-10',
                                 'xl:mb-screen-10'
                             ],
+                            'v-fade-in' => 'true',
+                            'v-cursor' => "{type: 'text', label: 'Read', size: 100}"
                         ],
                         'image' => [
                             'class' => [
-                                'w-full block mb-5',
+                                'w-full block mb-5 overflow-hidden',
                                 'xl:mb-screen-5'
                             ],
+                            'v-scale' => "{children:true, on:'hover'}",
+                            'v-curtain' => "'bg-green'",
                         ],
                         'title' => [
                             'class' => [
@@ -1392,6 +1421,7 @@ return [
                         'lg:w-8/12 lg:my-50',
                         'xl:my-screen-50 xl:px-screen-20',
                     ],
+                    'v-fade-in' => 'true',
                 ],
                 'title' => [
                     'class' => [
