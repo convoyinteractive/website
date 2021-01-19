@@ -533,7 +533,7 @@ return [
                         'px-3 md:px-5 lg:px-10 xl:px-screen-10',
                         'font-sans font-semibold',
                         'text-sm xl:text-like-sm',
-                        'text-center',
+                        'md:text-center',
                     ]
                 ],
                 'items' => [
@@ -605,7 +605,8 @@ return [
                 ],
                 'caption' => [
                     'class' => [
-                        'px-10 mt-2 font-sans text-center text-sm',
+                        'px-10 mt-2 font-sans text-sm',
+                        'md:text-center',
                         'xl:text-like-sm',
                     ]
                 ]
@@ -897,6 +898,8 @@ return [
                 'caption' => [
                     'class' => [
                         'px-10 mt-5 font-sans text-center font-semibold text-sm xl:text-like-sm'
+                        'px-10 mt-5 font-sans font-semibold text-sm xl:text-like-sm',
+                        'md:text-center',
                     ],
                 ]
             ],
@@ -1017,7 +1020,8 @@ return [
                 ],
                 'caption' => [
                     'class' => [
-                        'block mt-5 text-sm text-center font-sans',
+                        'block mt-5 text-sm font-sans',
+                        'md:text-center',
                     ],
                 ],
             ],
@@ -1220,7 +1224,8 @@ return [
                 ],
                 'caption' => [
                     'class' => [
-                        'font-sans text-center text-sm xl:text-like-sm mt-5'
+                        'font-sans text-sm xl:text-like-sm mt-5',
+                        'md:text-center',
                     ]
                 ]
             ],
