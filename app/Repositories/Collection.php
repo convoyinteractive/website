@@ -9,6 +9,8 @@ use Illuminate\Support\Collection as SupportCollection;
 
 class Collection
 {
+    protected $filename;
+
     public function all($directory, $locale)
     {
         return $this->files($directory, $locale)->map(
@@ -26,7 +28,7 @@ class Collection
 
         return new Page(
             app(Yaml::class)->parse($raw),
-            Str::afterLast($resource, '/')
+            $this->filename
         );
     }
 
@@ -45,6 +47,8 @@ class Collection
             fn ($file) => Str::contains($file->getFilename(), Str::afterLast($resource, '/'))
         )->map->getFilename()->first();
 
+        $this->filename = $filename;
+
         return $this->content(implode('/', [$directory, $filename]), $locale);
     }
 
@@ -53,6 +57,8 @@ class Collection
         if (!Str::endsWith($resource, '.yml')) {
             $resource .= '.yml';
         }
+
+        $this->filename = $resource;
 
         return app('files')->get(
             storage_path("content/collections/{$locale}/{$resource}")
