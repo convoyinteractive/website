@@ -1185,6 +1185,78 @@ return [
             ],
         ],
 
+        'article' => [
+            'hero' => [
+                'image' => [
+                    'header' => [
+                        'class' => [
+                            'px-3 mx-auto mt-40 mb-20',
+                            'sm:px-10',
+                            'md:px-5 md:mt-70',
+                            'lg:w-10/12',
+                            'xl:px-screen-10 xl:mt-screen-70',
+                        ],
+                    ],
+                    'date' => [
+                        'class' => [
+                            'px-3 md:px-5 sm:px-10 xl:px-screen-10 mt-40 mb-10',
+                            'block font-sans font-light',
+                            'text-sm xl:text-like-sm',
+                        ]
+                    ],
+                    'title' => [
+                        'class' => [
+                            'px-3 font-bold font-hero leading-snug tracking-tight text-2xl',
+                            'sm:px-10 sm:text-2xl',
+                            'md:px-5 md:text-3xl',
+                            'xl:px-screen-10 xl:text-like-3xl',
+                        ],
+                    ],
+                    'subtitle' => [
+                        'class' => [
+                            'px-3 md:px-5 sm:px-10 xl:px-screen-10',
+                            'block font-sans font-light',
+                            'text-sm xl:text-like-sm',
+                        ],
+                    ],
+                    'body' => [
+                        'class' => [
+                            'block',
+                            'w-full',
+                            'pointer-events-none',
+                        ],
+                    ],
+                    'item' => [
+                        'class' => ['w-full'],
+                    ],
+                ],
+            ],
+
+            // article.markdown
+            'markdown' => [
+                'wrap' => [
+                    'class' => [
+                        'px-6 mx-auto my-20',
+                        'sm:px-20',
+                        'md:px-10',
+                        'lg:w-8/12 lg:my-50',
+                        'xl:my-screen-50 xl:px-screen-20',
+                    ],
+                ],
+                'title' => [
+                    'class' => [
+                        'font-sans font-semibold mb-10',
+                        'xl:mb-screen-10',
+                    ],
+                ],
+                'body' => [
+                    'class' => [
+                        'markdown',
+                    ],
+                ],
+            ],
+        ],
+
         'case' => [
 
             // case.markdown

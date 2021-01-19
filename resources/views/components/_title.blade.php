@@ -10,5 +10,10 @@
                 {{ $component->get('subtitle') }}
             </div>
         @endif
+        @if($content->date())
+            <div {{ $component->attributes("date") }}>
+                {{ $content->date()->format("m-Y") }}
+            </div>
+        @endif
     </div>
 @endif
