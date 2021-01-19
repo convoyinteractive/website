@@ -407,7 +407,8 @@ return [
                 ],
                 'image' => [
                     'class' => [
-                        'w-full max-w-50 max-h-25',
+                        'max-w-30 max-h-25',
+                        'md:max-w-50',
                     ],
                 ],
             ],
