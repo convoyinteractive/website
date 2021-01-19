@@ -678,7 +678,11 @@ return [
                     ],
                 ],
                 'item' => [
-                    'class' => ['py-10 border-dotted border-t-2 border-black']
+                    'class' => [
+                        'py-6 border-dotted border-t-2 border-black',
+                        'lg:py-10',
+                        'xl:py-screen-10',
+                    ]
                 ],
                 'items' => [
 
@@ -940,7 +944,8 @@ return [
                 ],
                 'term' => [
                     'class' => [
-                        'block h-full border-dotted border-t-2 border-b-2 border-gray-mid py-10',
+                        'block h-full border-dotted border-t-2 border-b-2 border-gray-mid py-6',
+                        'lg:py-10',
                         'xl:py-screen-10',
                     ],
                 ],
