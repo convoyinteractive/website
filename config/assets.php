@@ -23,15 +23,15 @@ return [
                 'items' => [
                     'image' => [
                         'large' => [
-                            'width' => 640
+                            'width' => 1024
                         ],
                         'small' => [
-                            'width' => 640
+                            'width' => 768
                         ],
                     ],
                     'phone' => [
                         'large' => [
-                            'width' => 640
+                            'width' => 840
                         ],
                         'small' => [
                             'width' => 640
@@ -39,7 +39,7 @@ return [
                     ],
                     'screen' => [
                         'large' => [
-                            'width' => 640
+                            'width' => 840
                         ],
                         'small' => [
                             'width' => 640
@@ -51,20 +51,20 @@ return [
             'hero' => [
                 'image' => [
                     'large' => [
-                        'width' => 1200
+                        'width' => 1440
                     ],
                     'small' => [
-                        'width' => 640
+                        'width' => 768
                     ],
                 ],
             ],
 
             'image' => [
                 'large' => [
-                    'width' => 1024
+                    'width' => 1440
                 ],
                 'small' => [
-                    'width' => 640
+                    'width' => 768
                 ],
             ],
 
@@ -72,10 +72,10 @@ return [
                 'items' => [
                     'screen' => [
                         'large' => [
-                            'width' => 1024,
+                            'width' => 1440,
                         ],
                         'small' => [
-                            'width' => 640,
+                            'width' => 768,
                         ],
                     ],
                 ],
@@ -83,10 +83,10 @@ return [
 
             'screen' => [
                 'large' => [
-                    'width' => 1024
+                    'width' => 1440
                 ],
                 'small' => [
-                    'width' => 640
+                    'width' => 768
                 ],
             ],
         ]
