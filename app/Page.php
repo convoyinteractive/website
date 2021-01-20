@@ -56,6 +56,16 @@ class Page extends Data
         return $this->get('type', 'default');
     }
 
+    public function path()
+    {
+        $locale = app('translator')->getLocale();
+        $path = preg_replace('/[0-9]{4}-[0-9]{2}-[0-9]{2}\./', '', $this->filename);
+        $path = str_replace('.yml', '', $path);
+        $path = trim($path, '/');
+
+        return "/{$locale}/{$path}";
+    }
+
     public function aside()
     {
         return $this->collection('aside', "{$this->context}.aside");
