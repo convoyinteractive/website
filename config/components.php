@@ -215,6 +215,32 @@ return [
             ],
 
             'relations' => [
+                'article' => [
+                    'wrap' => [
+                        'class' => [
+                            'block font-sans mb-10',
+                        ],
+                        'v-cursor' => "{type: 'text', label: 'Read article'}"
+                    ],
+                    'image' => [
+                        'class' => [
+                            'w-full block mb-5',
+                            'xl:mb-screen-5'
+                        ],
+                    ],
+                    'title' => [
+                        'class' => [
+                            'block text-xl font-semibold leading-snug',
+                            'xl:text-like-xl'
+                        ],
+                    ],
+                    'subtitle' => [
+                        'class' => [
+                            'block text-sm',
+                            'xl:text-like-sm'
+                        ],
+                    ],
+                ],
                 'contact' => [
                     'wrap' => [
                         'class' => [

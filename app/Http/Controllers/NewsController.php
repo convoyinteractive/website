@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Pagination\Pagination;
+use Carbon\Carbon;
 use App\Repositories\Collection;
 
 class NewsController
@@ -18,6 +20,11 @@ class NewsController
     {
         $content = $collection->find("news/{$article}", $locale);
 
-        return view($content->template(), compact('content'));
+        $pagination = tap(
+            Pagination::make($collection->all('news'))->by('date'),
+            fn ($pagination) => $pagination->current($content->date())
+        );
+
+        return view($content->template(), compact('content', 'pagination'));
     }
 }
