@@ -28,7 +28,7 @@ class Page extends Data
 
     public function attributes($key)
     {
-        $context = $this->get('type', 'default');
+        $context = $this->context;
         return new HtmlString(new Attributes("{$context}.{$key}"));
     }
 

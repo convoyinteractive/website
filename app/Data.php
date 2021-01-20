@@ -26,7 +26,8 @@ class Data implements JsonSerializable
     public function __construct(array $data)
     {
         $this->data = $data;
-        $this->context = $this->get('type');
+
+        $this->setContext($this->get('type'));
     }
 
     public function __get($key)
@@ -67,6 +68,8 @@ class Data implements JsonSerializable
     public function setContext($context)
     {
         $this->context = $context;
+
+        return $this;
     }
 
     public function toArray()
