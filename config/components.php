@@ -632,7 +632,7 @@ return [
                 ],
                 'caption' => [
                     'class' => [
-                        'px-10 mt-2 font-sans text-sm',
+                        'block mt-5 text-sm font-sans font-semibold',
                         'md:text-center',
                         'xl:text-like-sm',
                     ]
@@ -929,8 +929,9 @@ return [
                 ],
                 'caption' => [
                     'class' => [
-                        'px-10 mt-5 font-sans font-semibold text-sm xl:text-like-sm',
+                        'block mt-5 text-sm font-sans font-semibold',
                         'md:text-center',
+                        'xl:text-like-sm',
                     ],
                 ]
             ],
@@ -1052,8 +1053,10 @@ return [
                 ],
                 'caption' => [
                     'class' => [
-                        'block mt-5 text-sm font-sans',
-                        'md:text-center',
+                        'block mt-5 text-sm font-sans font-semibold px-3',
+                        'sm:px-10',
+                        'md:text-center md:px-5',
+                        'xl:px-screen-10 xl:text-like-sm',
                     ],
                 ],
             ],
@@ -1372,7 +1375,7 @@ return [
                 ],
                 'caption' => [
                     'class' => [
-                        'font-sans text-sm xl:text-like-sm mt-5',
+                        'font-sans font-semibold text-sm xl:text-like-sm mt-5',
                         'md:text-center',
                     ]
                 ]
