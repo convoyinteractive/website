@@ -50,10 +50,17 @@
                         @endforeach
                     </div>
                     <div>
-                        <img class="block w-full"
-                            src="{{ asset($sitemap->component('about.image', 'navigation')->get('path'), ['width' => '640', 'format' => 'jpg']) }}"
-                            srcset="{{ asset($sitemap->component('about.image', 'navigation')->get('path'), ['width' => '1024', 'format' => 'jpg']) }} 2x"
-                            alt="{{ $sitemap->component('about.image', 'navigation')->get('alt') }}">
+                        <picture class="block w-full">
+                            <source type="image/webp"
+                                srcset="{{ asset($sitemap->component('about.image', 'navigation')->get('path'), ['format' => 'webp', 'width' => 640]) }},
+                                    {{ asset($sitemap->component('about.image', 'navigation')->get('path'), ['format' => 'webp', 'width' => 1024]) }} 2x"
+                            >
+                            <img class="block w-full"
+                                src="{{ asset($sitemap->component('about.image', 'navigation')->get('path'), ['format' => 'png', 'width' => 640]) }}"
+                                srcset="{{ asset($sitemap->component('about.image', 'navigation')->get('path'), ['format' => 'png', 'width' => 1024]) }} 2x"
+                                alt="{{ $sitemap->component('about.image', 'navigation')->get('alt') }}"
+                            >
+                        </picture>
                     </div>
                 </div>
 
@@ -97,10 +104,17 @@
                     </div>
 
                     <div>
-                        <img class="block w-full"
-                            src="{{ asset($sitemap->component('contact.image', 'navigation')->get('path'), ['width' => '640', 'format' => 'jpg']) }}"
-                            srcset="{{ asset($sitemap->component('contact.image', 'navigation')->get('path'), ['width' => '1024', 'format' => 'jpg']) }} 2x"
-                            alt="{{ $sitemap->component('contact.image', 'navigation')->get('alt') }}">
+                        <picture class="block w-full">
+                            <source type="image/webp"
+                                srcset="{{ asset($sitemap->component('contact.image', 'navigation')->get('path'), ['format' => 'webp', 'width' => 640]) }},
+                                    {{ asset($sitemap->component('contact.image', 'navigation')->get('path'), ['format' => 'webp', 'width' => 1024]) }} 2x"
+                            >
+                            <img class="block w-full"
+                                src="{{ asset($sitemap->component('contact.image', 'navigation')->get('path'), ['format' => 'png', 'width' => 640]) }}"
+                                srcset="{{ asset($sitemap->component('contact.image', 'navigation')->get('path'), ['format' => 'png', 'width' => 1024]) }} 2x"
+                                alt="{{ $sitemap->component('contact.image', 'navigation')->get('alt') }}"
+                            >
+                        </picture>
                     </div>
                 </div>
             </div>

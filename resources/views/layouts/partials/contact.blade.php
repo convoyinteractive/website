@@ -11,9 +11,17 @@
     <div {{ $component->attributes('recipient') }}>
         <div class="relative">
             <div {{ $component->attributes('avatar') }}>
-                <img class="block w-full" alt="{{ $component->get('recipient.name') }}"
-                src="{{ asset($component->get('recipient.image'), ['width' => 200, 'height' => 200, 'crop' => true ]) }}"
-                srcset="{{ asset($component->get('recipient.image'), ['width' => 400, 'height' => 400, 'crop' => true ]) }} 2x">
+                <picture class="block w-full">
+                    <source type="image/webp"
+                        srcset="{{ asset($component->get('recipient.image'), ['format' => 'webp', 'width' => 200, 'height' => 200, 'crop' => true]) }},
+                            {{ asset($component->get('recipient.image'), ['format' => 'webp', 'width' => 400, 'height' => 400, 'crop' => true]) }} 2x"
+                    >
+                    <img class="block w-full"
+                        src="{{ asset($component->get('recipient.image'), ['format' => 'png', 'width' => 200, 'height' => 200, 'crop' => true]) }}"
+                        srcset="{{ asset($component->get('recipient.image'), ['format' => 'png', 'width' => 400, 'height' => 400, 'crop' => true]) }} 2x"
+                        alt="{{ $component->get('recipient.name') }}"
+                    >
+                </picture>
             </div>
             <div class="absolute flex items-center justify-center w-6 h-6 p-1 text-white text-center bg-green rounded-full right-0 bottom-0 -mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">

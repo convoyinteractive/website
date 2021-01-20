@@ -8,16 +8,30 @@
             <source
                 media="(min-width: 500px)"
                 srcset="{{ $component->url('large', 1) }}, {{ $component->url('large', 2) }} 2x"
+                type="image/webp"
+            >
+            <source
+                media="(min-width: 500px)"
+                srcset="{{ $component->fallbackUrl('large', 1) }}, {{ $component->fallbackUrl('large', 2) }} 2x"
+                type="{{ $component->alpha() ? 'image/png' : 'image/jpg' }}"
+            >
+            <source
+                srcset="{{ $component->url('small') }}, {{ $component->url('small', 2) }} 2x"
+                type="image/webp"
             >
             <img {{ $component->attributes('item') }}
-                src="{{ $component->url('small') }}"
-                srcset="{{ $component->url('small', 2) }} 2x"
+                src="{{ $component->fallbackUrl('small') }}"
+                srcset="{{ $component->fallbackUrl('small', 2) }} 2x"
                 alt="{{ $component->get('alt') }}"
             >
         @elseif($component->has('path'))
+            <source
+                srcset="{{ $component->url(null, 1) }}, {{ $component->url(null, 2) }} 2x"
+                type="image/webp"
+            >
             <img {{ $component->attributes('item') }}
-                src="{{ $component->url(null, 1) }}"
-                srcset="{{ $component->url(null, 2) }} 2x"
+                src="{{ $component->fallbackUrl(null, 1) }}"
+                srcset="{{ $component->fallbackUrl(null, 2) }} 2x"
                 alt="{{ $component->get('alt') }}"
             >
         @endif

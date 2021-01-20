@@ -27,15 +27,26 @@ class AssetComponent extends Component
         return $this->get($size  ?  "sizes.{$size}" : "path");
     }
 
-    public function url($size = null, $resolution = 1)
+    public function alpha()
+    {
+        return $this->get('alpha', false);
+    }
+
+    public function url($size = null, $resolution = 1, $format = 'webp')
     {
         $context = "{$this->context()}.{$size}";
-        $format = $this->get('alpha', false) ? "png" : "jpg";
 
         return $this->resolveUrl(
             $this->path($size),
             Attributes::from($context)->format($format)->resolution($resolution)->get()
         );
+    }
+
+    public function fallbackUrl($size = null, $resolution = 1)
+    {
+        $format = $this->alpha() ? "png" : "jpg";
+
+        return $this->url($size, $resolution, $format);
     }
 
     protected function resolveUrl($path, $params)
