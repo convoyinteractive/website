@@ -11,8 +11,10 @@ class Collection
 {
     protected $filename;
 
-    public function all($directory, $locale)
+    public function all($directory, $locale = null)
     {
+        $locale = $locale ?: app('translator')->getLocale();
+
         return $this->files($directory, $locale)->map(
             fn ($file) => $this->find("{$directory}/{$file->getFilename()}", $locale)
         );
