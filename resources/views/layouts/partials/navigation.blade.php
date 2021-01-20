@@ -39,7 +39,7 @@
             {{-- The "display: none" inline-style prevents an annoying flash before the component is fully rendered. --}}
             <div v-show="isOpen"
                 style="display: none"
-                class="bg-white text-black overflow-y-auto fixed inset-y-0 right-0 pt-20 xl:pt-screen-20 sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12"
+                class="bg-white text-black overflow-y-auto fixed inset-y-0 right-0 pt-20 xl:pt-screen-20 w-full sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12"
             >
                 <div ref="about" v-show="isActive('about')" class="flex flex-col justify-between min-h-full w-full space-y-20 pt-10 pb-30 md:px-20 md:pb-20">
                     <div>

@@ -726,10 +726,10 @@ return [
             'lottie' => [
                 'wrap' => [
                     'class' => [
-                        'px-3 my-30',
+                        'px-3 my-20',
                         'sm:px-10',
                         'md:px-5 md:flex md:items-start md:justify-end',
-                        'lg:w-10/12 lg:mx-auto',
+                        'lg:w-10/12 lg:mx-auto lg:my-30',
                         'xl:px-screen-10 xl:my-screen-30',
                     ],
                 ],
@@ -1034,7 +1034,7 @@ return [
                 'wrap' => [
                     'class' => [
                         'block',
-                        'my-50 xl:my-screen-50',
+                        'my-20 lg:my-50 xl:my-screen-50',
                         'px-3 md:px-5 sm:px-10 xl:px-screen-10',
                         'mx-auto lg:w-10/12',
                     ],
