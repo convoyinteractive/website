@@ -1,7 +1,14 @@
-<div class="px-6 md:px-10 lg:px-20 xl:px-screen-20 my-10 md:my-20 lg:my-40 xl:my-screen-40">
+<div class="px-3 md:px-5 lg:px-10 xl:px-screen-10 my-10 md:my-20 lg:my-40 xl:my-screen-40 block md:flex md:flex-wrap lg:block">
 @foreach ($component->get('items', []) as $item)
-    <div class="lg:w-7/12 mb-6 md:mb-10 lg:mb-20 xl:mb-screen-20 {{ $loop->even ? 'ml-auto' : 'mr-auto'}}">
-        @include($item->view(), ['component' => $item])
-    </div>
+    @if($item->isType('case'))
+        <div class="px-3 md:px-5 lg:px-10 xl:px-screen-10 md:w-7/12 mt-6 md:mt-10 lg:mt-20 xl:mt-screen-20 {{ $loop->even ? 'ml-auto' : 'mr-auto'}}">
+            @include($item->view(), ['component' => $item])
+        </div>
+    @endif
+    @if($item->isType('article'))
+        <div class="px-3 md:px-5 lg:px-10 xl:px-screen-10 md:w-5/12 lg:w-4/12 mt-6 md:mt-10 lg:-mb-50 lg:-mt-50 xl:-mb-screen-50 xl:-mt-screen-50 {{ $loop->even ? 'ml-auto' : 'mr-auto'}} article">
+            @include($item->view(), ['component' => $item])
+        </div>
+    @endif
 @endforeach
 </div>

@@ -1143,7 +1143,34 @@ return [
                                 'xl:text-like-sm'
                             ],
                         ],
-                    ]
+                    ],
+                    'article' => [
+                        'wrap' => [
+                            'class' => [
+                                'block font-sans mb-10',
+                                'xl:mb-screen-10'
+                            ],
+                        ],
+                        'image' => [
+                            'class' => [
+                                'w-full block mb-5',
+                                'xl:mb-screen-5'
+                            ],
+                        ],
+                        'title' => [
+                            'class' => [
+                                'block font-semibold leading-snug text-xl',
+                                'lg:text-xl',
+                                'xl:text-like-xl'
+                            ],
+                        ],
+                        'subtitle' => [
+                            'class' => [
+                                'block text-sm',
+                                'xl:text-like-sm'
+                            ],
+                        ],
+                    ],
                 ]
             ],
 
