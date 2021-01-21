@@ -807,7 +807,7 @@ return [
                 ],
                 'item' => [
                     'class' => [
-                        'p-10 flex-shrink-0 flex flex-col justify-between w-9/10 bg-white text-black',
+                        'p-10 flex-shrink-0 flex flex-col justify-between w-9/10 bg-white text-black rounded-lg',
                         'md:w-4/10',
                         'lg:w-3/10',
                     ],
