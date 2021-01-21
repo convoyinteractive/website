@@ -4,7 +4,7 @@
         <source type="image/webp"
             srcset="{{ asset($component->get('meta.image'), [
                 'width' => '640',
-                'height' => '400',
+                'height' => '480',
                 'format' => 'webp',
                 'crop' => true,
             ]) }}"
@@ -13,7 +13,7 @@
             alt="{{ $component->get('meta.title') }}"
             src="{{ asset($component->get('meta.image'), [
                 'width' => '640',
-                'height' => '400',
+                'height' => '480',
                 'format' => 'jpg',
                 'crop' => true,
             ]) }}"

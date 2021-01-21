@@ -20,7 +20,7 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 font-bold font-hero leading-snug tracking-tight text-4xl',
+                            'px-3 font-bold font-hero mb-1 leading-none tracking-tight text-4xl',
                             'sm:px-10 sm:text-5xl',
                             'md:px-5 md:text-6xl',
                             'xl:px-screen-10 xl:text-like-6xl',
@@ -65,7 +65,7 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 font-bold font-hero leading-snug tracking-tight text-4xl',
+                            'px-3 font-bold font-hero mb-1 leading-none tracking-tight text-4xl',
                             'sm:px-10 sm:text-5xl',
                             'md:px-5 md:text-6xl',
                             'xl:px-screen-10 xl:text-like-6xl',
@@ -97,7 +97,7 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 font-bold font-hero leading-snug tracking-tight text-4xl',
+                            'px-3 font-bold font-hero mb-1 leading-none tracking-tight text-4xl',
                             'sm:px-10 sm:text-5xl',
                             'md:px-5 md:text-6xl',
                             'lg:w-6/10',
@@ -218,7 +218,7 @@ return [
                 'article' => [
                     'wrap' => [
                         'class' => [
-                            'block font-sans mb-10',
+                            'block font-sans mb-10 w-full',
                         ],
                         'v-cursor' => "{type: 'text', label: 'Read article'}"
                     ],
@@ -306,16 +306,17 @@ return [
                     ],
                     'body' => [
                         'class' => [
-                            'px-3 md:px-5 sm:px-10 xl:px-screen-10',
-                            'md:w-7/10',
+                            'px-3 md:px-5 space-y-10',
+                            'sm:px-10',
+                            'md:w-7/10 md:space-y-20',
+                            'xl:px-screen-10 xl:space-y-screen-20',
                         ],
                     ],
                 ],
                 'case' => [
                     'wrap' => [
                         'class' => [
-                            'block font-sans mb-10',
-                            'xl:mb-screen-10'
+                            'block font-sans',
                         ],
                     ],
                     'image' => [
@@ -453,7 +454,8 @@ return [
                 'title' => [
                     'class' => [
                         'mb-10 px-3 font-sans font-semibold text-xl ml-auto',
-                        'md:text-3xl md:px-10',
+                        'sm:px-10',
+                        'md:text-3xl md:px-5',
                         'lg:w-8/12',
                         'xl:mb-screen-10 xl:px-screen-10 xl:text-like-3xl',
                     ],
@@ -467,7 +469,7 @@ return [
                 'term' => [
                     'class' => [
                         'px-3 mb-5 font-sans font-semibold',
-                        'sm:px-10 ',
+                        'sm:px-10',
                         'md:px-5 md:w-3/10 md:text-xl md:my-15',
                         'xl:px-screen-10 xl:mb-screen-15 xl:text-like-xl',
                     ],
@@ -1329,6 +1331,27 @@ return [
                     ],
                     'item' => [
                         'class' => ['w-full'],
+                    ],
+                ],
+            ],
+
+            // article.relations
+            'relations' => [
+                'list' => [
+                    'wrap' => [
+                        'class' => [
+                            'px-6 sm:px-20 md:px-10 xl:px-screen-20 my-20 lg:my-50 mx-auto lg:w-10/12'
+                        ],
+                    ],
+                    'title' => [
+                        'class' => [
+                            'text-xl lg:text-3xl xl:text-like-3xl md:text-center font-sans font-semibold mb-10 xl:mb-screen-10'
+                        ],
+                    ],
+                    'body' => [
+                        'class' => [
+                            'space-y-15 lg:space-y-0 lg:flex lg:space-x-20 xl:space-x-screen-20'
+                        ],
                     ],
                 ],
             ],
