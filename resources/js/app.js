@@ -59,6 +59,15 @@ Vue.directive("push-events", PushEvents);
 import Theme from "./mixins/Theme";
 Vue.directive("theme", Theme);
 
+import FadeIn from "./transitions/FadeIn";
+Vue.directive("fade-in", FadeIn);
+
+import Curtain from "./transitions/Curtain";
+Vue.directive("curtain", Curtain);
+
+import Scale from "./transitions/Scale";
+Vue.directive("scale", Scale);
+
 /**
  * Here we register all the cursor related data, a directive and a component. The cursor data
  * is stored on our root application instance and can be updated from the cursor directive
