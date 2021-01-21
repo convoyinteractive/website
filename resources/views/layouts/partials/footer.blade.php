@@ -6,10 +6,10 @@
                     {{ __('Inquiries') }}
                 </div>
                 <div>
-                    <a class="block" href="tel:{{ str_replace(" ", "", $contact->get('phone')) }}">
+                    <a class="block focus:outline-none focus:underline" href="tel:{{ str_replace(" ", "", $contact->get('phone')) }}">
                         {{ $contact->get('phone') }}
                     </a>
-                    <a class="block" href="{{ encode_email('mailto:' . $contact->get('email')) }}">
+                    <a class="block focus:outline-none focus:underline" href="{{ encode_email('mailto:' . $contact->get('email')) }}">
                         {{ encode_email($contact->get('email')) }}
                     </a>
                 </div>
@@ -29,7 +29,7 @@
                 </div>
                 <div>
                     @foreach($sitemap->collection('legal.links', 'footer') as $item)
-                        <a href="{{ $item->get('path') }}" class="block">
+                        <a href="{{ $item->get('path') }}" class="block focus:outline-none focus:underline">
                             {{ $item->get('label') }}
                         </a>
                     @endforeach
@@ -38,7 +38,7 @@
         </address>
         <div>
             @foreach ($meta->get('alternates', []) as $locale => $path)
-            <a href="/{{$locale}}/{{$path}}">
+            <a href="/{{$locale}}/{{$path}}" class="focus:outline-none focus:underline">
                 {{ __($locale) }}
             </a>
             @endforeach

@@ -147,7 +147,7 @@ return [
                     ],
                     'link' => [
                         'class' => [
-                            'w-15 h-15 p-4 flex items-center justify-center rounded-full bg-black text-white'
+                            'w-15 h-15 p-4 flex items-center justify-center rounded-full bg-black text-white focus:outline-none focus:shadow'
                         ],
                         'target' => '_blank',
                         'rel' => 'noopener',
@@ -318,7 +318,7 @@ return [
                 'case' => [
                     'wrap' => [
                         'class' => [
-                            'block font-sans',
+                            'block font-sans focus:outline-none focus:shadow',
                         ],
                         'v-fade-in' => 'true',
                     ],
@@ -1063,7 +1063,7 @@ return [
             'case' => [
                 'wrap' => [
                     'class' => [
-                        'block font-sans',
+                        'block font-sans focus:outline-none focus:shadow pb-2',
                     ],
                 ],
                 'image' => [
@@ -1075,13 +1075,13 @@ return [
                 ],
                 'title' => [
                     'class' => [
-                        'block text-2xl font-semibold leading-snug',
+                        'block text-2xl font-semibold leading-snug px-1',
                         'xl:text-like-2xl'
                     ],
                 ],
                 'subtitle' => [
                     'class' => [
-                        'block text-xs',
+                        'block text-xs px-1',
                         'xl:text-like-xs'
                     ],
                 ],
@@ -1113,7 +1113,7 @@ return [
                     'case' => [
                         'wrap' => [
                             'class' => [
-                                'block font-sans mb-10',
+                                'block font-sans mb-10 focus:outline-none focus:shadow',
                                 'xl:mb-screen-10'
                             ],
                             'v-fade-in' => 'true',
@@ -1143,7 +1143,7 @@ return [
                     'article' => [
                         'wrap' => [
                             'class' => [
-                                'block font-sans mb-10',
+                                'block font-sans mb-10 focus:outline-none focus:shadow',
                                 'xl:mb-screen-10'
                             ],
                             'v-fade-in' => 'true',
@@ -1357,7 +1357,7 @@ return [
                 ],
                 'link' => [
                     'class' => [
-                        'w-15 h-15 p-4 flex items-center justify-center rounded-full bg-black text-white'
+                        'w-15 h-15 p-4 flex items-center justify-center rounded-full bg-black text-white focus:outline-none focus:shadow'
                     ],
                     'target' => '_blank',
                     'rel' => 'noopener',
@@ -1369,7 +1369,7 @@ return [
                 'list' => [
                     'wrap' => [
                         'class' => [
-                            'px-6 sm:px-20 md:px-10 xl:px-screen-20 my-20 lg:my-50 mx-auto lg:w-10/12'
+                            'px-6 sm:px-20 md:px-10 xl:px-screen-20 my-20 lg:my-50 mx-auto lg:w-10/12 focus:outline-none focus:shadow'
                         ],
                     ],
                     'title' => [
