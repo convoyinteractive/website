@@ -32,6 +32,16 @@ class AssetComponent extends Component
         return $this->get('alpha', false);
     }
 
+    public function poster()
+    {
+        if ($this->has('poster')) {
+            return $this->resolveUrl($this->get('poster'), [
+                'width' => 480,
+                'format' => 'jpg',
+            ]);
+        }
+    }
+
     public function url($size = null, $resolution = 1, $format = 'webp')
     {
         $context = "{$this->context()}.{$size}";

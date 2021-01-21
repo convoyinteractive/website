@@ -4,7 +4,7 @@
         type: 'text',
         label: 'Play Reel'
     }">
-    <video class="block w-full" src="{{ asset($component->get('preview')) }}" playsinline muted loop autoplay></video>
+    <video class="block w-full" src="{{ asset($component->get('preview')) }}" poster="{{ asset($component->get('poster'), ['width' => 480, 'format' => 'jpg']) }}" playsinline muted loop autoplay></video>
     </button>
 
     <div ref="target" v-show="show" style="display: none" @fullscreenchange="handle" class="fixed top-0 z-50 w-full h-full bg-black text-white flex items-center p-10">

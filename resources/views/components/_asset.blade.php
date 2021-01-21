@@ -1,5 +1,5 @@
 @if($component->isVideo())
-    <video {{ $component->attributes('item') }} src="{{ $component->url() }}" playsinline autoplay muted loop></video>
+    <video {{ $component->attributes('item') }} src="{{ $component->url() }}" poster="{{ $component->poster() }}" playsinline autoplay muted loop></video>
 @endif
 
 @if($component->isImage())
