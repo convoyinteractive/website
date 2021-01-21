@@ -1432,6 +1432,35 @@ return [
                 ]
             ],
 
+            // case.lottie
+            'lottie' => [
+                'wrap' => [
+                    'class' => [
+                        'px-3 my-20',
+                        'sm:px-10',
+                        'md:px-5',
+                        'lg:w-10/12 lg:mx-auto lg:my-30',
+                        'xl:px-screen-10 xl:my-screen-30',
+                    ],
+                ],
+                'title' => [
+                    'class' => [
+                        'px-3 pb-10 text-xl font-sans font-semibold',
+                        'sm:px-10',
+                        'md:px-5 md:text-2xl',
+                        'xl:px-screen-10 xl:pb-screen-10 xl:text-like-2xl',
+                    ],
+                ],
+                'body' => [
+                    'class' => [
+                        'px-3',
+                        'sm:px-10',
+                        'md:px-5',
+                        'xl:px-screen-10',
+                    ],
+                ],
+            ],
+
             // case.svg
             'svg' => [
                 'wrap' => [
