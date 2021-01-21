@@ -6,7 +6,7 @@ return [
         // Here we'll define the default attributes for our components. All components will
         // fall back to this attributes if there is nothing defined for a specific template.
         'default' => [
-            // default.hero
+
             'hero' => [
                 'image' => [
                     'header' => [
@@ -25,9 +25,6 @@ return [
                             'md:px-5 md:text-6xl',
                             'xl:px-screen-10 xl:text-like-6xl',
                         ],
-                    ],
-                    'figure' => [
-                        // 'v-parallax' => "true"
                     ],
                     'subtitle' => [
                         'class' => [
@@ -826,7 +823,7 @@ return [
                         'addon' => [
                             'wrap' => [
                                 'class' => [
-                                    'mt-5 w-8/12',
+                                    'mt-6 w-8/12',
                                     'lg:mt-20'
                                 ]
                             ]
@@ -1120,7 +1117,6 @@ return [
                                 'xl:mb-screen-10'
                             ],
                             'v-fade-in' => 'true',
-                            'v-cursor' => "{type: 'text', label: 'Show', size: 100}"
                         ],
                         'image' => [
                             'class' => [
@@ -1151,7 +1147,6 @@ return [
                                 'xl:mb-screen-10'
                             ],
                             'v-fade-in' => 'true',
-                            'v-cursor' => "{type: 'text', label: 'Read', size: 100}"
                         ],
                         'image' => [
                             'class' => [
