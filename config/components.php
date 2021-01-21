@@ -1402,6 +1402,9 @@ return [
                         'xl:mb-screen-10',
                     ],
                 ],
+                'body' => [
+                    'class' => 'markdown'
+                ]
             ],
         ],
 
@@ -1424,6 +1427,9 @@ return [
                         'xl:mb-screen-10',
                     ],
                 ],
+                'body' => [
+                    'class' => 'markdown'
+                ]
             ],
 
             // case.svg
