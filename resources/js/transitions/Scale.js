@@ -1,5 +1,5 @@
 import Waypoints from "../mixins/Waypoints";
-import gsap, {Power2, Linear} from "gsap";
+import gsap, { Power2, Linear } from "gsap";
 
 export default {
     bind(element, binding, vnode) {
@@ -10,7 +10,7 @@ export default {
             gsap.to(target, {
                 scale: 1.03,
                 duration: 1.4,
-                ease: Power2.easeOut
+                ease: Power2.easeOut,
             });
         };
 
@@ -18,8 +18,8 @@ export default {
             gsap.killTweensOf(target, "scale");
             gsap.to(target, {
                 scale: 1,
-                duration: .3,
-                ease: Power2.easeInOut
+                duration: 0.3,
+                ease: Power2.easeInOut,
             });
         };
 
