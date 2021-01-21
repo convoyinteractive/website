@@ -7,10 +7,10 @@
         </h2>
         <div {{ $content->attributes('relations.list.body') }}>
             @include('components.article', [
-                'component' => $pagination->prev()->setContext('relations.article'),
+                'component' => $pagination->prev()->setContext('article.relations.article'),
             ])
             @include('components.article', [
-                'component' => $pagination->next()->setContext('relations.article'),
+                'component' => $pagination->next()->setContext('article.relations.article'),
             ])
         </div>
     </div>
