@@ -23,12 +23,8 @@
                     >
                 </picture>
             </div>
-            <div class="absolute flex items-center justify-center w-6 h-6 p-1 text-white text-center bg-green rounded-full right-0 bottom-0 -mr-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                    <circle fill="currentColor" stroke="none" cx="6" cy="26" r="6" />
-                    <circle fill="currentColor" stroke="none" cx="26" cy="26" r="6" />
-                    <circle fill="currentColor" stroke="none" cx="46" cy="26" r="6" />
-                </svg>
+            <div class="absolute flex items-center justify-center w-6 h-6 xl:w-screen-6 xl:h-screen-6 text-white text-center bg-green rounded-full right-0 top-0 -mr-2 xl:-mr-screen-2 -mt-2 xl:-mt-screen-2">
+                <span class="font-sans font-semibold text-xs xl:text-like-xs leading-none tracking-tighter">HI</span>
             </div>
         </div>
         <div>

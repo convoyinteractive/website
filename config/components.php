@@ -244,8 +244,8 @@ return [
                     'wrap' => [
                         'class' => [
                             'px-3 md:px-5 mb-10 mt-50',
-                            'lg:w-10/12 lg:mx-auto lg:px-10 lg:flex lg:flex-row-reverse items-start',
-                            'xl:px-screen-10 xl:mt-screen-50'
+                            'lg:w-10/12 lg:mt-70 lg:mb-30 lg:mx-auto lg:px-10 lg:flex lg:flex-row-reverse items-start',
+                            'xl:px-screen-10 xl:mt-screen-70 lg:mb-screen-30'
                         ],
                     ],
                     'body' => [
@@ -253,8 +253,6 @@ return [
                             'px-3 md:px-5 mb-10',
                             'lg:px-10 lg:w-7/10',
                             'xl:px-screen-10 xl:mb-screen-10',
-                            // 'font-sans font-semibold leading-snug text-xl',
-                            // 'xl:text-like-3xl',
                         ],
                     ],
                     'recipient' => [
@@ -273,7 +271,7 @@ return [
                     ],
                     'recipient_name' => [
                         'class' => [
-                            'block font-semibold font-sans text-lg',
+                            'block font-semibold font-sans text-lg xl:text-like-lg',
                         ],
                     ],
                     'recipient_title' => [
