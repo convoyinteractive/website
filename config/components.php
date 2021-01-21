@@ -170,7 +170,7 @@ return [
                     ],
                     'body' => [
                         'class' => [
-                            'markdown font-sans font-semibold',
+                            'font-sans font-semibold',
                         ],
                     ],
                 ],
@@ -479,13 +479,6 @@ return [
                         'xl:px-screen-10 xl:mb-screen-15'
                     ],
                 ],
-                'items' => [
-                    'markdown' => [
-                        'body' => [
-                            'class' => ['markdown'],
-                        ]
-                    ],
-                ],
             ],
 
             // default.gallery
@@ -710,15 +703,6 @@ return [
                         'xl:py-screen-10',
                     ]
                 ],
-                'items' => [
-
-                    // default.list.items.markdown
-                    'markdown' => [
-                        'body' => [
-                            'class' => ['markdown'],
-                        ]
-                    ],
-                ],
             ],
 
             // default.lottie
@@ -771,7 +755,7 @@ return [
                 ],
                 'body' => [
                     'class' => [
-                        'px-3 markdown',
+                        'px-3',
                         'sm:px-10',
                         'md:px-5 md:w-7/10',
                         'xl:px-screen-10',
@@ -821,11 +805,6 @@ return [
                                 'lg:mb-10',
                                 'xl:text-screen-2xl',
                             ]
-                        ],
-                        'body' => [
-                            'class' => [
-                                'markdown'
-                            ],
                         ],
                         'addon' => [
                                 'wrap' => [
@@ -895,7 +874,7 @@ return [
                         ],
                         'body' => [
                             'class' => [
-                                'px-3 markdown',
+                                'px-3',
                                 'sm:px-10',
                                 'md:px-5 md:w-7/10',
                                 'xl:px-screen-10',
@@ -1097,9 +1076,6 @@ return [
                         'md:text-2xl',
                         'xl:text-like-2xl',
                     ]
-                ],
-                'body' => [
-                    'class' => ['markdown']
                 ],
             ],
             'image' => [
@@ -1402,16 +1378,10 @@ return [
                         'xl:mb-screen-10',
                     ],
                 ],
-                'body' => [
-                    'class' => [
-                        'markdown',
-                    ],
-                ],
             ],
         ],
 
         'case' => [
-
             // case.markdown
             'markdown' => [
                 'wrap' => [
@@ -1427,11 +1397,6 @@ return [
                     'class' => [
                         'font-sans font-semibold mb-10',
                         'xl:mb-screen-10',
-                    ],
-                ],
-                'body' => [
-                    'class' => [
-                        'markdown',
                     ],
                 ],
             ],
@@ -1475,7 +1440,7 @@ return [
                 ],
                 'body' => [
                     'class' => [
-                        'px-3 markdown',
+                        'px-3',
                         'sm:px-10',
                         'md:px-5',
                         'xl:px-screen-10',
