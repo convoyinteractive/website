@@ -134,7 +134,6 @@ return [
                         'xl:my-screen-30 xl:space-y-screen-10',
                     ],
                 ],
-
                 'url' => [
                     'wrap' => [
                         'class' => [
@@ -1247,6 +1246,13 @@ return [
         'article' => [
             'hero' => [
                 'image' => [
+                    'wrap' => [
+                        'class' => [
+                            'mb-10',
+                            'lg:mb-50',
+                            'xl:mb-screen-50',
+                        ],
+                    ],
                     'header' => [
                         'class' => [
                             'px-3 mx-auto mt-40 mb-20',
@@ -1290,7 +1296,13 @@ return [
                     ],
                 ],
                 'lottie' => [
-                    'wrap' => [],
+                    'wrap' => [
+                        'class' => [
+                            'mb-10',
+                            'lg:mb-50',
+                            'xl:mb-screen-50',
+                        ],
+                    ],
                     'header' => [
                         'class' => [
                             'px-3 mx-auto mt-40 mb-20',
@@ -1335,6 +1347,25 @@ return [
                 ],
             ],
 
+            'url' => [
+                'wrap' => [
+                    'class' => [
+                        'px-6 mx-auto my-10',
+                        'sm:px-20',
+                        'md:px-10',
+                        'lg:w-8/12 lg:my-20',
+                        'xl:my-screen-20 xl:px-screen-20',
+                    ],
+                ],
+                'link' => [
+                    'class' => [
+                        'w-15 h-15 p-4 flex items-center justify-center rounded-full bg-black text-white'
+                    ],
+                    'target' => '_blank',
+                    'rel' => 'noopener',
+                ]
+            ],
+
             // article.relations
             'relations' => [
                 'list' => [
@@ -1360,11 +1391,11 @@ return [
             'markdown' => [
                 'wrap' => [
                     'class' => [
-                        'px-6 mx-auto my-20',
+                        'px-6 mx-auto my-10',
                         'sm:px-20',
                         'md:px-10',
-                        'lg:w-8/12 lg:my-50',
-                        'xl:my-screen-50 xl:px-screen-20',
+                        'lg:w-8/12 lg:my-20',
+                        'xl:my-screen-20 xl:px-screen-20',
                     ],
                 ],
                 'title' => [
