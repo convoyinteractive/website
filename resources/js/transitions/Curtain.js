@@ -1,40 +1,35 @@
+import { tap } from "@tobiasthaden/tap"
 import Waypoints from "../mixins/Waypoints";
 import gsap, { Power2 } from "gsap";
 
+const createCurtain = function (css, theme) {
+    return tap(document.createElement("div"), curtain => {
+        curtain.classList.add("absolute", "inset-0", css);
+
+        if (theme) {
+            curtain.style.backgroundColor = theme.background;
+        }
+    });
+}
+
 export default {
     inserted(element, bindings) {
-        element.classList.add("relative", "overflow-hidden");
-
-        let image = element.children[0];
-        let cover = document.createElement("div");
-        cover.classList.add(
-            "h-full",
-            "w-full",
-            bindings.value,
-            "absolute",
-            "top-0",
-            "left-0",
-        );
-
-        if (element.dataset.theme) {
-            cover.style.backgroundColor = JSON.parse(
-                element.dataset.theme,
-            ).background;
-        }
-        element.append(cover);
-
         let complete = false;
+
+        element.classList.add("relative", "overflow-hidden");
+        let curtain = createCurtain(bindings.value, JSON.parse(element.dataset.theme));
+        element.append(curtain);
 
         let tl = gsap
             .timeline({
                 paused: true,
                 onComplete: () => {
                     complete = true;
-                    cover.remove();
+                    curtain.remove();
                 },
             })
             .fromTo(
-                cover,
+                curtain,
                 {
                     y: "100%",
                 },
@@ -46,7 +41,7 @@ export default {
                 "0",
             )
             .fromTo(
-                image,
+                element.children[0],
                 {
                     visibility: "hidden",
                     y: "20%",
@@ -69,9 +64,7 @@ export default {
                     tl.play();
                 }
             },
-            offset: function() {
-                return Waypoint.viewportHeight() * 0.9;
-            },
+            offset: () => Waypoint.viewportHeight() * 0.9,
         });
     },
 };
