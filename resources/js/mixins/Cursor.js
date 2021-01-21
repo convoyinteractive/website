@@ -33,6 +33,9 @@ export const Cursors = {
 
 export const CursorComponent = {
     render(h) {
+        if (this.isTouch) {
+            return;
+        };
         return h(
             "div",
             {
@@ -48,6 +51,7 @@ export const CursorComponent = {
 
     data() {
         return {
+            isTouch: false,
             label: "",
             position: {
                 x: -100,
@@ -62,6 +66,10 @@ export const CursorComponent = {
                 x: event.clientX,
                 y: event.clientY,
             };
+        });
+
+        window.addEventListener('touchstart', event => {
+            this.isTouch = true;
         });
     },
 
