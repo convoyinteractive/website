@@ -2,14 +2,16 @@
 
 namespace App;
 
+use App\Http\View\HasAttributes;
 use App\Http\View\Theme;
-use App\Http\View\Attributes;
 use App\Http\View\Relations;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\HtmlString;
 
 class Page extends Data
 {
+    use HasAttributes;
+
     protected $filename;
 
     protected $likeableTypes = [
@@ -24,12 +26,6 @@ class Page extends Data
     {
         parent::__construct($data);
         $this->filename = $filename;
-    }
-
-    public function attributes($key)
-    {
-        $context = $this->context;
-        return new HtmlString(new Attributes("{$context}.{$key}"));
     }
 
     public function date()
