@@ -42,6 +42,11 @@ import Vue from "vue";
 import Turbovue from "./mixins/Turbovue";
 Vue.mixin(Turbovue);
 
+/**
+ * Next we'll register a handfull directives. These reusable directives can be used within our
+ * whole application to add client rendered behaviour or register additional event listeners.
+ * Note: all event listeners and modifications are undone when the directive gets unbind.
+ */
 import Button from "./mixins/Button";
 Vue.directive("button", Button);
 
@@ -51,12 +56,17 @@ Vue.directive("click-away", ClickAway);
 import PushEvents from "./mixins/PushEvents";
 Vue.directive("push-events", PushEvents);
 
+import Theme from "./mixins/Theme";
+Vue.directive("theme", Theme);
+
+/**
+ * Here we register all the cursor related data, a directive and a component. The cursor data
+ * is stored on our root application instance and can be updated from the cursor directive
+ * The cursor component simply renders the cursor data and updates the cursor position.
+ */
 import Cursor, { DefaultCursor, CursorComponent } from "./mixins/Cursor";
 Vue.directive("cursor", Cursor);
 Vue.component("custom-cursor", CursorComponent);
-
-import Theme from "./mixins/Theme";
-Vue.directive("theme", Theme);
 
 document.addEventListener(
     "turbolinks:load",
