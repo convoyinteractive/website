@@ -20,8 +20,11 @@ export default {
             vnode.context.$root.cursor = Cursors.create(binding.value, element);
         };
 
+        let cssClass = Array.isArray(binding.value) ? binding.value : ['bg-black', 'text-white'];
+
         let icon = createIcon();
-        icon.classList.add('bg-black', 'text-white', 'mr-4');
+
+        icon.classList.add(...cssClass, 'mr-4');
 
         element.appendChild(icon);
 
