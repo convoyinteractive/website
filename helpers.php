@@ -5,6 +5,17 @@ use Illuminate\Support\Str;
 use Illuminate\Support\HtmlString;
 
 if (! function_exists('public_path')) {
+    function encode_email($email)
+    {
+        $output = "";
+        for ($i = 0; $i < strlen($email); $i++) {
+            $output .= "&#" . ord($email[$i]) . ";";
+        }
+        return new HtmlString($output);
+    }
+}
+
+if (! function_exists('public_path')) {
     function public_path($path = '')
     {
         return app()->basePath('public').($path ? '/'.$path : $path);

@@ -88,8 +88,8 @@
                                 </a>
                             </div>
                             <div>
-                                <a href="mailto:{{ $contact->get('email') }}">
-                                    {{ $contact->get('email') }}
+                                <a href="{{ encode_email('mailto:' . $contact->get('email')) }}">
+                                    {{ encode_email($contact->get('email')) }}
                                 </a>
                             </div>
                         </address>

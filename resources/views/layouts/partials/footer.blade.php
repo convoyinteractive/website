@@ -9,8 +9,8 @@
                     <a class="block" href="tel:{{ str_replace(" ", "", $contact->get('phone')) }}">
                         {{ $contact->get('phone') }}
                     </a>
-                    <a class="block" href="mailto:{{ $contact->get('email') }}">
-                        {{ $contact->get('email') }}
+                    <a class="block" href="{{ encode_email('mailto:' . $contact->get('email')) }}">
+                        {{ encode_email($contact->get('email')) }}
                     </a>
                 </div>
             </div>
