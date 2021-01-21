@@ -15,9 +15,10 @@ const createCurtain = function (css, theme) {
 export default {
     inserted(element, bindings) {
         let complete = false;
+        let theme = element.dataset.theme ? JSON.parse(element.dataset.theme) : null;
 
         element.classList.add("relative", "overflow-hidden");
-        let curtain = createCurtain(bindings.value, JSON.parse(element.dataset.theme));
+        let curtain = createCurtain(bindings.value, theme);
         element.append(curtain);
 
         let tl = gsap
