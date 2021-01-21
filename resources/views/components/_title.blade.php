@@ -1,9 +1,9 @@
 @if($component->has('title') || $component->has('subtitle'))
     <div {{ $component->attributes("header") }}>
         @if($component->has('title'))
-            <div {{ $component->attributes("title") }}>
+            <h1 {{ $component->attributes("title") }}>
                 {{ $component->get('title') }}
-            </div>
+            </h1>
         @endif
         @if($component->has('subtitle'))
             <div {{ $component->attributes("subtitle") }}>
@@ -11,9 +11,9 @@
             </div>
         @endif
         @if($content->date())
-            <div {{ $component->attributes("date") }}>
+            <time {{ $component->attributes("date") }} datetime="{{ $content->date() }}">
                 {{ $content->date()->format("m-Y") }}
-            </div>
+            </time>
         @endif
     </div>
 @endif
