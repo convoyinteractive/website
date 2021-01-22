@@ -17,7 +17,12 @@
             <div class="mb-5 sm:mb-0 rounded-full bg-white sm:bg-transparent shadow-lg sm:shadow-none flex items-center justify-between sm:justify-end sm:space-x-10 xl:space-x-screen-10">
                 @foreach(['work', 'about', 'hello'] as $item)
                 <button @click="toggle('{{$item}}')" class="font-sans text-sm xl:text-like-sm text-center flex-grow sm:flex-grow-0 p-2 sm:p-0 h-12 sm:h-8 xl:h-screen-8 focus:outline-none focus:underline">
-                    {{ __(ucwords($item)) }}
+                    <span :class="isActive('{{ $item }}') ? 'hidden underline' : 'block'" class="sm:block">{{ __(ucwords($item)) }}</span>
+                    <span v-show="isActive('{{ $item }}')" class="inline-block sm:hidden text-black w-3 h-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+                              <path stroke="currentColor" stroke-linecap="square" d="M1.34166667 1.34166667l9.56666663 9.56666663m0-9.56666663L1.34166667 10.9083333"/>
+                          </svg>
+                    </span>
                 </button>
                 @endforeach
             </div>
