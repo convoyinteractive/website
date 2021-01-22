@@ -27,7 +27,7 @@
         <fade-in-out>
             {{-- The "display: none" inline-style prevents an annoying flash before the component is fully rendered. --}}
             <div v-show="isOpen" aria-hidden="true" style="display: none">
-                <div class="fixed bg-black opacity-25 inset-y-0 right-0 w-full" @click="close" v-cursor="{
+                <div class="fixed bg-black opacity-10 inset-y-0 right-0 w-full" @click="close" v-cursor="{
                     type: 'text',
                     label: 'Close Menu'
                 }"></div>
