@@ -222,7 +222,7 @@ return [
                         'class' => [
                             'block font-sans mb-10 w-full',
                         ],
-                        'v-cursor' => "{type: 'text', label: 'Read article'}"
+                        'v-cursor' => "{type: 'text', label: 'Read', size: 100}"
                     ],
                     'image' => [
                         'class' => [
@@ -320,6 +320,7 @@ return [
                             'block font-sans focus:outline-none focus:shadow',
                         ],
                         'v-fade-in' => 'true',
+                        'v-cursor' => "{type: 'text', label: 'View', size: 100}"
                     ],
                     'image' => [
                         'class' => [
@@ -808,6 +809,7 @@ return [
                         'md:w-4/10',
                         'lg:w-3/10',
                     ],
+                    'v-cursor' => "{type: 'text', label: 'More', size: 100}"
                 ],
                 'items' => [
                     'markdown' => [
@@ -1116,6 +1118,7 @@ return [
                                 'xl:mb-screen-10'
                             ],
                             'v-fade-in' => 'true',
+                            'v-cursor' => "{type: 'text', label: 'View', size: 100}"
                         ],
                         'image' => [
                             'class' => [
@@ -1146,6 +1149,7 @@ return [
                                 'xl:mb-screen-10'
                             ],
                             'v-fade-in' => 'true',
+                            'v-cursor' => "{type: 'text', label: 'Read', size: 100}"
                         ],
                         'image' => [
                             'class' => [
