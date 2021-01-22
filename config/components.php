@@ -118,11 +118,11 @@ return [
             'intro' => [
                 'wrap' => [
                     'class' => [
-                        'flex justify-end items-center mx-auto px-3 my-10',
+                        'flex justify-end items-center mx-auto px-3 mt-10',
                         'sm:px-10',
                         'md:px-5',
-                        'lg:w-10/12 lg:my-30',
-                        'xl:px-screen-10 xl:my-screen-30',
+                        'lg:w-10/12 lg:mt-30',
+                        'xl:px-screen-10 xl:mt-screen-30',
                     ],
                 ],
             ],
@@ -131,8 +131,7 @@ return [
                 'wrap' => [
                     'class' => [
                         'w-full lg:w-7/10 my-10 space-y-10',
-                        'lg:my-30',
-                        'xl:my-screen-30 xl:space-y-screen-10',
+                        'xl:space-y-screen-10',
                     ],
                     'v-fade-in' => 'true',
                 ],
@@ -189,10 +188,10 @@ return [
                 'definition' => [
                     'wrap' => [
                         'class' => [
-                            'px-3 my-30',
+                            'px-3',
                             'sm:px-10',
                             'md:px-5',
-                            'xl:px-screen-10 xl:my-screen-30',
+                            'xl:px-screen-10',
                         ],
                     ],
                     'body' => [
