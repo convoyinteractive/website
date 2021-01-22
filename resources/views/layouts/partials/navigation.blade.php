@@ -86,6 +86,9 @@
                                 {{ $contact->get('street') }} <br>
                                 {{ $contact->get('postcode') }}
                                 {{ $contact->get('city') }}
+                                @if($contact->has('country'))
+                                    <br>{{ $contact->get('country') }}
+                                @endif
                             </div>
                             <div class="mb-5">
                                 <a class="focus:outline-none" href="tel:{{ str_replace(" ", "", $contact->get('phone')) }}">
