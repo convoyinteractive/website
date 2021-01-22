@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @include('layouts.partials.meta', compact('meta'))
+    <title>{{ $meta->get('title') }} - Convoy Interactive</title>
     <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="preload" href="https://storage.convoyinteractive.com/fonts/grtsk/grtsk-peta-regular.woff2">
+    <link rel="preload" href="https://storage.convoyinteractive.com/fonts/brava/bravaslab-light.woff2">
+    <link rel="preload" href="https://storage.convoyinteractive.com/fonts/grtsk/grtsk-peta-semibold.woff2">
+    <link rel="preload" href="https://storage.convoyinteractive.com/fonts/grtsk/grtsk-tera-bold.woff2">
+
+    @if($meta->has('title'))
+    <meta property="og:title" content="{{ $meta->get('title') }}">
+    @endif
+
+    @if($meta->has('description'))
+    <meta name="description" content="{{ $meta->get('description') }}">
+    <meta property="og:description" content="{{ $meta->get('description') }}">
+    @endif
+
+    @foreach ($meta->get('alternates', []) as $locale => $path)
+    <link rel="alternate" hreflang="{{ $locale }}" href="{{ app('request')->root() }}/{{ $locale }}/{{ $path }}" />
+    @endforeach
+
     <link rel="stylesheet" href="//storage.convoyinteractive.com/type?a=brava,grtsk">
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <script src="{{ mix('/js/app.js') }}"></script>
