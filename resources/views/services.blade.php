@@ -5,9 +5,11 @@
         'title' => __('Related case stories')
     ])
 
-    @include('layouts.partials.services', [
-        'title' => __('Further services'),
-    ])
+    @if($content->isNested())
+        @include('layouts.partials.services', [
+            'title' => __('Further services'),
+        ])
+    @endif
 
     @include('layouts.partials.contact', [
         'component' => $content->relations()->first('contact')

@@ -89,6 +89,13 @@ class Page extends Data
         );
     }
 
+    public function isNested()
+    {
+        $segements = explode('/', $this->filename);
+
+        return count($segements) > 1;
+    }
+
     public function isType($type)
     {
         return $this->type() === $type;
