@@ -12,54 +12,56 @@ export default {
         );
     },
 
-    data() {
-        return {
-            tween: null,
-        };
-    },
-
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
 
-        var _vm = this;
+        let tween, timeout;
+        let width = this.calculateWidth();
 
-        let update = function () {
-            if (!_vm.tween) {
-                return;
-            }
-
-            tap(_vm.tween, tween => {
-                let width = _vm.calculateWidth();
-                tween.vars.x = `-${width}px`;
-            }).invalidate();
-
-            ScrollTrigger.refresh();
-        };
+        let items = this.$refs.element.children;
+        let stage = this.$refs.element.parentElement;
 
         let initialize = function() {
-            let width = _vm.calculateWidth();
-
-            _vm.tween = gsap.to(_vm.$refs.element.children, {
+            tween = gsap.to(items, {
                 x: `-${width}px`,
                 ease: "none",
                 scrollTrigger: {
-                    trigger: _vm.$refs.element.parentElement,
-                    pin: _vm.$refs.element.parentElement,
+                    trigger: stage,
+                    pin: stage,
                     scrub: true,
                 },
             });
         };
 
+        let destroy = function() {
+            if (tween) {
+                tween.scrollTrigger.kill();
+                tween.kill();
+            }
+        };
+
+        window.addEventListener("resize", () => {
+            window.clearTimeout(timeout);
+
+            timeout = window.setTimeout(() => {
+                let newWidth = this.calculateWidth();
+
+                if (width !== newWidth) {
+                    width = newWidth;
+                    destroy();
+                    initialize();
+                }
+            }, 500);
+        });
+
         let teardown = function() {
             document.removeEventListener("assets:load", update);
             document.removeEventListener("lottie:ready", update);
-            window.removeEventListener("resize", update);
         };
 
         document.addEventListener("turbolinks:before-render", teardown);
-        document.addEventListener("assets:load", update);
-        document.addEventListener("lottie:ready", update);
-        window.addEventListener("resize", update);
+        document.addEventListener("assets:load", ScrollTrigger.refresh);
+        document.addEventListener("lottie:ready", ScrollTrigger.refresh);
 
         initialize();
     },
