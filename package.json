@@ -16,6 +16,7 @@
     "dependencies": {
         "@tobiasthaden/tap": "^1.0.0",
         "axios": "^0.21.1",
+        "cookieguard": "^0.1.0",
         "gsap": "^3.6.0",
         "lottie-web": "^5.7.6",
         "turbolinks": "^5.2.0",

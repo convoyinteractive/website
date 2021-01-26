@@ -43,6 +43,19 @@
 
         <snake></snake>
 
+        <cookie-consent inline-template>
+            <div v-show="show" style="display: none" class="md:p-10 fixed bottom-0 right-0 z-50 w-full md:w-auto">
+                <div class="bg-black text-sm text-white text-center md:rounded-full p-10 space-x-5 space-y-10 md:space-y-0 block md:flex items-center justify-between">
+                    <div>
+                        <p>{{ __('This website uses cookies to analyze user behavior') }}.</p>
+                    </div>
+                    <div class="flex justify-center divide-x text-center">
+                        <button class="py-2 px-5 font-sans font-semibold" @click="disable">{{ __('Nah, let it be') }}</button>
+                        <button class="py-2 px-5 font-sans font-semibold" @click="enable">{{ __('That’s okay') }}</button>
+                    </div>
+                </div>
+            </div>
+        </cookie-consent>
         <custom-cursor></custom-cursor>
 
         @include('layouts.partials.footer')
