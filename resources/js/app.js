@@ -2,7 +2,20 @@ import { tap } from "@tobiasthaden/tap";
 import { assetsLoaded } from "./helpers";
 
 /**
- * First we will load 'basecamps' turbolinks to intercept clicks on '<a href>' links and preventing
+ * First we'll require cookieguard to handle our analytics and tracking services. The cookieguard
+ * library loads all the services to which the user has consented. That selection will be saved
+ * to the browsers 'localeStorage'. Cookieguard keeps track if the consent is still active.
+ *
+ * @see https://github.com/tobiasthaden/cookieguard
+ */
+import Cookiegurad, { GoogleAnalytics } from "cookieguard"
+
+window.cookieguard = new Cookiegurad({
+    ga: new GoogleAnalytics("UA-41461831-1"),
+});
+
+/**
+ * Next we will load 'basecamps' turbolinks to intercept clicks on '<a href>' links and preventing
  * the browser from following it. Instead, we change the browsers 'url' using the 'history API',
  * turbolinks requests the page using XMLHttpRequest – and then renders the HTML response.
  *
@@ -84,6 +97,15 @@ document.addEventListener(
             el: "#convoy",
             data: { cursor: DefaultCursor },
         }),
+);
+
+/**
+ * Next we'll load the "Cookie Consent" component. This component acts as an interface for our
+ * cookieguard instance. It alerts the user that the app wants to load third-party-services
+ * and allows to opt-in in these services or to deny the use of third-party services.
+ */
+Vue.component("cookie-consent", () =>
+    import(/* webpackChunkName: "js/consent" */ "./components/CookieConsent"),
 );
 
 /**
