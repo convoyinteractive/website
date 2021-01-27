@@ -1272,7 +1272,7 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 font-bold font-hero leading-snug tracking-tight text-2xl',
+                            'px-3 font-semibold font-sans leading-snug tracking-tight text-2xl',
                             'sm:px-10 sm:text-2xl',
                             'md:px-5 md:text-3xl',
                             'xl:px-screen-10 xl:text-like-3xl',
@@ -1322,7 +1322,7 @@ return [
                     ],
                     'title' => [
                         'class' => [
-                            'px-3 font-bold font-hero leading-snug tracking-tight text-2xl',
+                            'px-3 font-semibold font-sans leading-snug tracking-tight text-2xl',
                             'sm:px-10 sm:text-2xl',
                             'md:px-5 md:text-3xl',
                             'xl:px-screen-10 xl:text-like-3xl',
