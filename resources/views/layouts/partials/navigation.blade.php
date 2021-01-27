@@ -49,7 +49,7 @@
                 <div ref="about" v-show="isActive('about')" class="flex flex-col justify-between min-h-full w-full space-y-20 pt-10 pb-30 md:px-20 md:pb-20">
                     <div>
                         @foreach($sitemap->collection('about.links', 'navigation') as $item)
-                        <a href="{{ $item->get('path') }}" class="block font-sans font-bold text-2xl md:text-3xl xl:text-like-3xl mb-3 lg:mb-5 xl:mb-screen-5 mx-5 md:mx-15 focus:outline-none focus:text-shadow">
+                        <a href="{{ $item->get('path') }}" class="block font-sans font-bold text-2xl md:text-3xl xl:text-like-3xl mb-3 lg:mb-5 xl:mb-screen-5 mx-5 md:mx-15 focus:outline-none border border-dotted border-transparent focus:border-black focus:border-opacity-25">
                             {{ $item->get('label') }}
                         </a>
                         @endforeach
