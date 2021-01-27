@@ -45,11 +45,11 @@
 
         <cookie-consent inline-template>
             <div v-show="show" style="display: none" class="md:p-10 fixed bottom-0 right-0 z-50 w-full md:w-auto">
-                <div class="bg-black text-sm text-white text-center md:rounded-full p-10 space-x-5 space-y-10 md:space-y-0 block md:flex items-center justify-between">
-                    <div>
-                        <p>{{ __('This website uses cookies to analyze user behavior') }}.</p>
+                <div class="bg-black text-white text-center md:rounded-full p-6 space-x-5 space-y-6 md:space-y-0 block md:flex items-center justify-between">
+                    <div class="text-base md:leading-none px-5">
+                        {{ __('This website uses cookies to analyze user behavior') }}.
                     </div>
-                    <div class="flex justify-center divide-x text-center">
+                    <div class="flex justify-center divide-x text-center leading-none text-sm">
                         <button class="py-2 px-5 font-sans font-semibold" @click="disable">{{ __('Nah, let it be') }}</button>
                         <button class="py-2 px-5 font-sans font-semibold" @click="enable">{{ __('That’s okay') }}</button>
                     </div>
