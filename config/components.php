@@ -146,7 +146,7 @@ return [
                     ],
                     'link' => [
                         'class' => [
-                            'w-15 h-15 p-4 flex items-center justify-center rounded-full bg-black text-white focus:outline-none focus:shadow'
+                            'w-15 h-15 p-4 flex items-center justify-center rounded-full bg-black text-white focus:outline-none border border-dotted border-transparent focus:border-black focus:border-opacity-25'
                         ],
                         'target' => '_blank',
                         'rel' => 'noopener',
@@ -317,7 +317,7 @@ return [
                 'case' => [
                     'wrap' => [
                         'class' => [
-                            'block font-sans focus:outline-none focus:shadow',
+                            'block font-sans focus:outline-none border border-dotted border-transparent focus:border-black focus:border-opacity-25',
                         ],
                         'v-fade-in' => 'true',
                         'v-cursor' => "{type: 'text', label: 'View', size: 100}"
@@ -1064,7 +1064,7 @@ return [
             'case' => [
                 'wrap' => [
                     'class' => [
-                        'block font-sans focus:outline-none focus:shadow pb-2',
+                        'block font-sans focus:outline-none border border-dotted border-transparent focus:border-black focus:border-opacity-25',
                     ],
                 ],
                 'image' => [
@@ -1114,7 +1114,7 @@ return [
                     'case' => [
                         'wrap' => [
                             'class' => [
-                                'block font-sans mb-10 focus:outline-none focus:shadow',
+                                'block font-sans mb-10 focus:outline-none border border-dotted border-transparent focus:border-black focus:border-opacity-25',
                                 'xl:mb-screen-10'
                             ],
                             'v-fade-in' => 'true',
@@ -1145,7 +1145,7 @@ return [
                     'article' => [
                         'wrap' => [
                             'class' => [
-                                'block font-sans mb-10 focus:outline-none focus:shadow',
+                                'block font-sans mb-10 focus:outline-none border border-dotted border-transparent focus:border-black focus:border-opacity-25',
                                 'xl:mb-screen-10'
                             ],
                             'v-fade-in' => 'true',
@@ -1360,7 +1360,7 @@ return [
                 ],
                 'link' => [
                     'class' => [
-                        'w-15 h-15 p-4 flex items-center justify-center rounded-full bg-black text-white focus:outline-none focus:shadow'
+                        'w-15 h-15 p-4 flex items-center justify-center rounded-full bg-black text-white focus:outline-none border border-dotted border-transparent focus:border-black focus:border-opacity-25'
                     ],
                     'target' => '_blank',
                     'rel' => 'noopener',
@@ -1372,7 +1372,7 @@ return [
                 'list' => [
                     'wrap' => [
                         'class' => [
-                            'px-6 sm:px-20 md:px-10 xl:px-screen-20 my-20 lg:my-50 mx-auto lg:w-10/12 focus:outline-none focus:shadow'
+                            'px-6 sm:px-20 md:px-10 xl:px-screen-20 my-20 lg:my-50 mx-auto lg:w-10/12 focus:outline-none border border-dotted border-transparent focus:border-black focus:border-opacity-25'
                         ],
                     ],
                     'title' => [

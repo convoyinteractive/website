@@ -3,7 +3,7 @@
     <div {{ $component->attributes('body') }}>
         <p>{{ $component->get('body') }}</p>
         <div class="mt-10 xl:mt-screen-10">
-            <a href="{{ encode_email('mailto:' . $contact->get('email')) }}" class="font-sans font-semibold inline-flex flex-row-reverse items-center focus:outline-none focus:text-shadow" v-button="true">
+            <a href="{{ encode_email('mailto:' . $contact->get('email')) }}" class="font-sans font-semibold inline-flex flex-row-reverse items-center focus:outline-none border border-dotted border-transparent focus:border-black focus:border-opacity-25" v-button="true">
                 <span>Let’s talk</span>
             </a>
         </div>

@@ -52,10 +52,9 @@
 
 .markdown .cta,
 .markdown .external {
-    @apply font-sans font-semibold inline-flex flex-row-reverse items-center;
+    @apply font-sans font-semibold inline-flex flex-row-reverse items-center border border-dotted border-transparent;
 }
 
 .cta:focus {
-    text-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.25);
-    @apply outline-none;
+    @apply outline-none border-black border-opacity-25;
 }
