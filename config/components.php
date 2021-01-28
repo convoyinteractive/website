@@ -1005,11 +1005,11 @@ return [
                 ],
                 'author' => [
                     'class' => [
-                        'block px-3 font-sans mt-5',
+                        'flex items-center px-3 font-sans mt-5',
                         'sm:px-10',
                         'md:px-5',
                         'lg:w-3/10 lg:mt-0',
-                        'xl:px-screen-10 xl:w-2/10',
+                        'xl:px-screen-10 xl:w-3/10',
                     ],
                 ],
                 'author_name' => [
@@ -1022,7 +1022,13 @@ return [
                         'block text-sm',
                         'lg:text-like-sm',
                     ],
-                ]
+                ],
+                'avatar' => [
+                    'class' => [
+                        'rounded-full overflow-hidden w-15 mr-5',
+                        'xl:w-screen-15 xl:mr-screen-5',
+                    ],
+                ],
             ],
 
             // default.video
