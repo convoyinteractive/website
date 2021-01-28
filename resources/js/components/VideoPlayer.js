@@ -50,11 +50,11 @@ export default {
             };
         },
         calculateAndUpdateProgress(event) {
-            let progress =
-                (event.pageX - event.target.getBoundingClientRect().left) /
-                event.target.clientWidth;
+            let progress = event.target.value / 100;
 
             this.video.currentTime = this.time.duration * progress;
+
+            this.updateTime();
         },
 
         showControls(seconds) {

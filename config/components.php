@@ -1049,7 +1049,7 @@ return [
                 ],
                 'controls' => [
                     'class' => [
-                        'p-6 space-y-6',
+                        'px-6',
                         'text-white'
                     ],
                 ],
