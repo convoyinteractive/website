@@ -4,10 +4,6 @@ export default {
             type: Boolean,
             default: false,
         },
-        cursor: {
-            type: Boolean,
-            default: false,
-        },
     },
     data() {
         return {
@@ -75,9 +71,7 @@ export default {
 
     watch: {
         paused(value) {
-            if (this.cursor) {
-                this.$root.cursor.label = value ? "Play" : "Pause";
-            }
+            this.$root.cursor.label = value ? "Play" : "Pause";
 
             value ? this.video.pause() : this.video.play();
         },
