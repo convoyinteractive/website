@@ -40,8 +40,11 @@
                                 <span v-show="!muted">Mute</span>
                             </button>
                         </div>
-                        <div class="h-1 bg-gray cursor-pointer" @click="calculateAndUpdateProgress">
-                            <div class="h-full bg-green pointer-events-none" :style="'width:' + progress + '%'"></div>
+                        <div class="relative h-10 flex items-center">
+                            <div class="h-1 w-full bg-gray absolute">
+                                <div class="h-full bg-green pointer-events-none" :style="'width:' + progress + '%'"></div>
+                            </div>
+                            <input class="relative w-full h-full cursor-pointer opacity-0 z-50" type="range" min="0" max="100" @change="calculateAndUpdateProgress">
                         </div>
                     </div>
                 </div>
