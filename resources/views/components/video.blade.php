@@ -13,7 +13,7 @@
                     v-cursor="{type: 'player'}"
                     ref="video"
                     class="w-full"
-                    @mousemove="showControls(4)"
+                    @mouseenter="showControls(2)"
                     @click="paused = !paused"
                     @durationchage="updateTime"
                     @timeupdate="updateTime"
@@ -25,9 +25,8 @@
 
                 <div
                     class="absolute bottom-0 left-0 w-full"
-                    v-show="controls.show"
-                    @mouseenter="showControls"
-                    @mouseleave="showControls(2)"
+                    :class="controls.show ? 'opacity-100' : 'opacity-0'"
+                    @mouseenter="showControls(60)"
                 >
                     <div {{ $component->attributes('controls') }} >
                         <div class="flex justify-between text-sm font-sans">
