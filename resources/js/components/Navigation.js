@@ -30,10 +30,6 @@ export default {
             this.isOpen = true;
             this.children = Array.from(this.$refs[value].querySelectorAll("a"));
 
-            if (this.hasChildren()) {
-                this.$nextTick(() => this.focus(0));
-            }
-
             document.body.style.overflow = "hidden";
         },
 
