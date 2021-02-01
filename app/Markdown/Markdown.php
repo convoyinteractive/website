@@ -15,14 +15,14 @@ class Markdown extends ParsedownExtra
             return null;
         }
 
-        if ($this->isCTA($link)) {
-            $link['element']['text'] = "<span>{$link['element']['text']}</span>";
-            $link['element']['attributes']['v-button'] = "true";
-        }
-
         if ($this->isExternalLink($link)) {
             $link['element']['attributes']['target'] = '_blank';
             $link['element']['attributes']['rel'] = 'noopener';
+        }
+
+        if ($this->isCTA($link)) {
+            $link['element']['text'] = "<span>{$link['element']['text']}</span>";
+            $link['element']['attributes']['v-button'] = $this->isExternalLink($link) ? "true" : "false";
         }
 
         return $link;
