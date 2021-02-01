@@ -220,7 +220,7 @@ return [
                     'class' => 'relative flex items-center justify-center bg-gray w-full h-full p-10 xl:p-screen-10',
                 ],
                 'caption' => [
-                    'class' => 'block mt-5 text-sm text-center font-sans',
+                    'class' => 'hidden lg:block mt-5 text-sm text-center font-sans',
                 ],
                 'count' => [
                     'class' => 'rounded-full bg-green text-white text-xs font-sans absolute transform -translate-y-1/2 top-0 right-0 flex items-center justify-center w-8 h-8 mr-5 xl:mr-screen-5',
