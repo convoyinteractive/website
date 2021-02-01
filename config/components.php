@@ -31,7 +31,7 @@ return [
                 // default.hero.lottie
                 'lottie' => [
                     'wrap' => [
-                        'class' => 'px-3 md:px-5 sm:px-10 xl:px-screen-10 mt-40 mb-20 xl:my-screen-40 mx-auto md:flex md:items-center md:justify-between lg:w-10/12',
+                        'class' => 'mt-40 mb-20 xl:my-screen-40 mx-auto md:flex md:items-center md:justify-between lg:w-10/12',
                     ],
                     'header' => [
                         'class' => 'px-3 mb-20 sm:px-10 md:mb-0 lg:w-6/10 xl:px-screen-10',
