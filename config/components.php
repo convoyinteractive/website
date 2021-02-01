@@ -361,7 +361,7 @@ return [
             // default.impressions
             'impressions' => [
                 'wrap' => [
-                    'class' => 'flex flex-col justify-center h-screen overflow-hidden px-6 md:px-10 xl:px-screen-10 lg:px-20 xl:px-screen-20',
+                    'class' => 'lg:my-50 xl:my-screen-50 flex flex-col justify-center h-screen overflow-hidden px-6 md:px-10 xl:px-screen-10 lg:px-20 xl:px-screen-20',
                 ],
                 'stage' => [
                     'class' => 'flex space-x-20 xl:space-x-screen-20',
