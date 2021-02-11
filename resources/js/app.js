@@ -27,7 +27,7 @@ Turbolinks.start();
 document.addEventListener("turbolinks:load", () => {
     let title = document.title;
     window.onfocus = () => (document.title = title);
-    window.onblur = () => (document.title = "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧");
+    window.onblur = () => (document.title = "Baby, you can drive my car.");
 
     assetsLoaded(["img"])
         .then(loaded => document.dispatchEvent(new CustomEvent("assets:load")))
