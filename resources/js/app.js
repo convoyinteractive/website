@@ -8,9 +8,9 @@ import { assetsLoaded } from "./helpers";
  *
  * @see https://github.com/tobiasthaden/cookieguard
  */
-import Cookiegurad, { GoogleAnalytics } from "cookieguard"
+import Cookieguard, { GoogleAnalytics } from "cookieguard"
 
-window.cookieguard = new Cookiegurad({
+window.cookieguard = new Cookieguard({
     ga: new GoogleAnalytics("UA-41461831-1"),
 });
 
