@@ -11,7 +11,7 @@
     </div>
 
     @include('layouts.partials.cases', [
-        'title' => __('Similar case stories'),
+        'title' => __('Similar cases'),
     ])
 
     @include('layouts.partials.contact', [

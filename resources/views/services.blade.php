@@ -2,12 +2,12 @@
 
 @section('aside')
     @include('layouts.partials.cases', [
-        'title' => __('Related case stories')
+        'title' => __('Related cases')
     ])
 
     @if($content->isNested())
         @include('layouts.partials.services', [
-            'title' => __('Further services'),
+            'title' => __('Additional services'),
         ])
     @endif
 
