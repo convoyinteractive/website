@@ -20,7 +20,8 @@
             >
         </picture>
     </span>
-
-    <span {{ $component->attributes('title') }}>{{ $component->get('hero.title') }}</span>
-    <span {{ $component->attributes('subtitle') }}>{{ $component->get('hero.subtitle') }}</span>
+    <span>
+        <span {{ $component->attributes('title') }}>{{ $component->get('hero.title') }}</span>
+        <span {{ $component->attributes('subtitle') }}>{{ $component->get('hero.subtitle') }}</span>
+    </span>
 </a>

@@ -631,17 +631,17 @@ return [
                     ],
                     'article' => [
                         'wrap' => [
-                            'class' => 'block font-sans mb-10 focus:outline-none border border-dotted border-transparent focus:border-black focus:border-opacity-25 xl:mb-screen-10',
+                            'class' => 'flex md:block items-center space-x-5 md:space-x-0 font-sans mb-10 focus:outline-none border border-dotted border-transparent focus:border-black focus:border-opacity-25 xl:mb-screen-10',
                             'v-fade-in' => 'true',
                             'v-cursor' => "{type: 'text', label: 'Read', size: 100}"
                         ],
                         'image' => [
-                            'class' => 'w-full block mb-5 overflow-hidden xl:mb-screen-5',
+                            'class' => 'w-full md:w-full block md:mb-5 overflow-hidden xl:mb-screen-5',
                             'v-scale' => "{children:true, on:'hover'}",
                             'v-curtain' => "'bg-green'",
                         ],
                         'title' => [
-                            'class' => 'block font-semibold leading-snug text-xl lg:text-xl xl:text-like-xl',
+                            'class' => 'block font-semibold leading-snug text-lg md:text-xl xl:text-like-xl',
                         ],
                         'subtitle' => [
                             'class' => 'block text-sm xl:text-like-sm',
