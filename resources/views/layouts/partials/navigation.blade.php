@@ -105,7 +105,7 @@
 
                     <div class="mx-5 md:mx-15">
                         @foreach($sitemap->collection('contact.links', 'navigation') as $item)
-                        <a href="{{ $item->get('url') }}" target="_blank" rel="noopener" class="block font-sans font-bold text-sm xl:text-like-sm">
+                        <a href="{{ $item->get('url') }}" target="_blank" rel="noopener" class="block font-sans font-bold text-lg xl:text-like-lg">
                             {{ $item->get('label') }}
                         </a>
                         @endforeach
