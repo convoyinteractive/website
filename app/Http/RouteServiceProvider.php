@@ -13,6 +13,7 @@ use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\ComponentsController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\CollectionsController;
+use App\Http\Controllers\CookieConsentController;
 use App\Http\Controllers\SubscriptionsController;
 
 class RouteServiceProvider extends ServiceProvider
@@ -45,6 +46,7 @@ class RouteServiceProvider extends ServiceProvider
             $router->addRoute('GET', 'components/{resource}', ComponentsController::class);
             $router->addRoute('GET', 'collections/{resource:.*}', CollectionsController::class);
             $router->addRoute('POST', 'likes', LikesController::class . '@update');
+            $router->addRoute('POST', 'cookieconsent', CookieConsentController::class . '@update');
             $router->addRoute('GET', 'likes/{resource:.*}', LikesController::class . '@show');
             $router->addRoute('POST', 'subscriptions', SubscriptionsController::class . '@store');
             $router->addRoute('DELETE', 'subscriptions/{email}', SubscriptionsController::class . '@destroy');
