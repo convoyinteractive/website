@@ -7,7 +7,7 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "laravel-mix": "^6.0.13",
+        "laravel-mix": "^6.0.16",
         "postcss": "^8.2.9",
         "tailwindcss": "^1.9.6",
         "vue-loader": "^15.9.6",
