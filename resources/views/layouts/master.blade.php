@@ -21,6 +21,7 @@
     <meta property="og:description" content="{{ $meta->get('description') }}">
     @endif
 
+    <link rel="alternate" hreflang="{{ app('translator')->getLocale() }}" href="{{ request()->url() }}" />
     @foreach ($meta->get('alternates', []) as $locale => $path)
     <link rel="alternate" hreflang="{{ $locale }}" href="{{ app('request')->root() }}/{{ $locale }}/{{ $path }}" />
     @endforeach
