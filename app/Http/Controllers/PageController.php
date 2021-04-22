@@ -6,9 +6,16 @@ use App\Repositories\Collection;
 
 class PageController
 {
-    public function __invoke($locale, $page = 'home', Collection $collection)
+    protected $collection;
+
+    public function __construct(Collection $collection)
     {
-        $content = $collection->find($page, $locale);
+        $this->collection = $collection;
+    }
+
+    public function __invoke($locale, $page = 'home')
+    {
+        $content = $this->collection->find($page, $locale);
 
         return view($content->template(), compact('content'));
     }
