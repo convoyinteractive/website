@@ -9,7 +9,7 @@
     "devDependencies": {
         "laravel-mix": "^6.0.18",
         "postcss": "^8.2.10",
-        "tailwindcss": "^1.9.6",
+        "tailwindcss": "^2.1.2",
         "vue-loader": "^15.9.6",
         "vue-template-compiler": "^2.6.12"
     },
