@@ -15,7 +15,7 @@ class LocaleController
         $locale = $this->getAcceptLanguage($request);
 
         if (in_array($locale, $this->availableLocales)) {
-            return redirect("/{$locale}");
+            return redirect("/{$locale}", 301);
         }
 
         return redirect("/{$this->defaultLocale}", 301);
