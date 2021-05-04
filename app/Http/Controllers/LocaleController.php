@@ -18,7 +18,7 @@ class LocaleController
             return redirect("/{$locale}");
         }
 
-        return redirect("/{$this->defaultLocale}");
+        return redirect("/{$this->defaultLocale}", 301);
     }
 
     protected function getAcceptLanguage(Request $request)
