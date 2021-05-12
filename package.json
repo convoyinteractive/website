@@ -10,7 +10,7 @@
         "laravel-mix": "^6.0.18",
         "postcss": "^8.2.14",
         "tailwindcss": "^1.9.6",
-        "vue-loader": "^15.9.6",
+        "vue-loader": "^15.9.7",
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
