@@ -22,6 +22,7 @@ class LocaleController
             return redirect("/en");
         }
 
+        app('translator')->setLocale('de');
         $content = $this->collection->find('home', 'de');
         return view($content->template(), compact('content'));
     }
