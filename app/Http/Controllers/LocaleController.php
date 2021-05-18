@@ -3,22 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\Collection;
 
 class LocaleController
 {
-    protected $defaultLocale = 'en';
+    protected $collection;
 
-    protected $availableLocales = ['en', 'de'];
+    public function __construct(Collection $collection)
+    {
+        $this->collection = $collection;
+    }
 
     public function __invoke(Request $request)
     {
         $locale = $this->getAcceptLanguage($request);
 
-        if (in_array($locale, $this->availableLocales)) {
-            return redirect("/{$locale}");
+        if ($locale !== 'de') {
+            return redirect("/en");
         }
 
-        return redirect("/{$this->defaultLocale}", 301);
+        $content = $this->collection->find('home', 'de');
+        return view($content->template(), compact('content'));
     }
 
     protected function getAcceptLanguage(Request $request)
