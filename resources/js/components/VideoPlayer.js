@@ -1,5 +1,9 @@
 export default {
     props: {
+        cursor: {
+            type: Boolean,
+            default: true,
+        },
         autoplay: {
             type: Boolean,
             default: false,
@@ -71,7 +75,9 @@ export default {
 
     watch: {
         paused(value) {
-            this.$root.cursor.label = value ? "Play" : "Pause";
+            if (this.cursor) {
+                this.$root.cursor.label = value ? "Play" : "Pause";
+            }
 
             value ? this.video.pause() : this.video.play();
         },
