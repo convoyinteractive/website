@@ -38,7 +38,7 @@
         </address>
         <div>
             @foreach ($meta->get('alternates', []) as $locale => $path)
-            <a href="/{{$locale}}/{{$path}}" class="focus:outline-none focus:underline">
+            <a href="/{{$locale}}{{ $path ? "/$path" : '' }}" class="focus:outline-none focus:underline">
                 {{ __($locale) }}
             </a>
             @endforeach

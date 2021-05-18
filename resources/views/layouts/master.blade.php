@@ -23,7 +23,7 @@
 
     <link rel="alternate" hreflang="{{ app('translator')->getLocale() }}" href="{{ request()->url() }}" />
     @foreach ($meta->get('alternates', []) as $locale => $path)
-    <link rel="alternate" hreflang="{{ $locale }}" href="{{ app('request')->root() }}/{{ $locale }}/{{ $path }}" />
+    <link rel="alternate" hreflang="{{ $locale }}" href="{{ app('request')->root() }}/{{ $locale }}{{ $path ? "/$path" : '' }}" />
     @endforeach
 
     <link rel="stylesheet" href="//storage.convoyinteractive.com/type?a=brava,grtsk">
