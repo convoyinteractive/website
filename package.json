@@ -11,7 +11,7 @@
         "postcss": "^8.2.14",
         "tailwindcss": "^1.9.6",
         "vue-loader": "^15.9.6",
-        "vue-template-compiler": "^2.6.12"
+        "vue-template-compiler": "^2.6.13"
     },
     "dependencies": {
         "@tobiasthaden/tap": "^1.0.0",
@@ -20,7 +20,7 @@
         "gsap": "^3.6.1",
         "lottie-web": "^5.7.9",
         "turbolinks": "^5.2.0",
-        "vue": "^2.6.12",
+        "vue": "^2.6.13",
         "waypoints": "^4.0.1"
     }
 }
