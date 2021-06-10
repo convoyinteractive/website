@@ -13,3 +13,13 @@
 .focus\:text-shadow:focus {
     text-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.25);
 }
+
+.border-dotted {    
+    border-image-slice: 1 0;
+    border-image-source: url("data:image/svg+xml,%3Csvg width='2' height='1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23000' stroke-dasharray='1,1' d='M0 1h2'/%3E%3C/svg%3E");
+    border-image-repeat: round;
+}
+
+.border-dotted.border-transparent {
+    border: none;
+}
