@@ -19,7 +19,7 @@ class LocaleController
         $locale = $this->getAcceptLanguage($request);
 
         if ($locale !== 'de') {
-            return redirect("/en");
+            // return redirect("/en");
         }
 
         app('translator')->setLocale('de');
